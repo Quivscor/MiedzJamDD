@@ -6,30 +6,30 @@ namespace ExpeditionMap
 {
     public class ExpeditionMapManager : MonoBehaviour
     {
-        [Header("References:")]
-        public GameObject RootField = null;
-
+        [SerializeField] private Vector2Int rootPosition = Vector2Int.zero;
         [SerializeField] private Vector2Int mapSize = Vector2Int.zero;
 
         public Vector2Int MapSize { get => mapSize; }
 
-        private GameObject[,] fieldsMap = null;
-        private GameObject activeField = null;
+        private Field[,] fieldsMap = null;
+        private Field activeField = null;
 
         private void Start()
         {
-            fieldsMap = new GameObject[MapSize.x, MapSize.y];
+            fieldsMap = new Field[MapSize.x, MapSize.y];
 
             SetFieldsMap();
+            InitializeFields();
         }
 
         public void SetActiveField(int x, int z)
         {
+            activeField?.SetActive(false);
+
             if (fieldsMap != null && x < mapSize.x && x >= 0 && z < mapSize.y && z >= 0)
             {
-                activeField?.GetComponent<Animator>()?.SetBool("isActive", false);
                 activeField = fieldsMap[x, z];
-                activeField?.GetComponent<Animator>()?.SetBool("isActive", true);
+                activeField?.SetActive(true);
             }
         }
 
@@ -38,7 +38,22 @@ namespace ExpeditionMap
             for (int i = 0; i < transform.childCount; i++)
             {
                 int x = (int)(i / MapSize.x);
-                fieldsMap[x, i - (x * mapSize.x)] = this.transform.GetChild(i).gameObject;
+
+                Field field = this.transform.GetChild(i).gameObject.GetComponent<Field>();
+                fieldsMap[x, i - (x * mapSize.x)] = field;
+            }
+        }
+
+        public void InitializeFields()
+        {
+            Field rootField = fieldsMap[rootPosition.x, rootPosition.y];
+
+            for (int x = 0; x < MapSize.x; x++)
+            {
+                for (int z = 0; z < MapSize.y; z++)
+                {
+                    fieldsMap[x, z].InitializeField(rootField.transform.position, fieldsMap[x,z] == rootField);
+                }
             }
         }
     }
