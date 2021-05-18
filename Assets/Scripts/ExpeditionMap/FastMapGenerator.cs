@@ -10,15 +10,8 @@ public class FastMapGenerator : MonoBehaviour
     public GameObject fieldPrefab = null;
     public Vector2 mapDimentions = Vector2.zero;
 
-    public bool execute = false;
-
-    private void Update()
+    public void GenerateMap()
     {
-        if (!execute)
-            return;
-
-        execute = !execute;
-
         for (int x = 0; x < mapDimentions.x; x++)
         {
             for (int z = 0; z < mapDimentions.y; z++)
