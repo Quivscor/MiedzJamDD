@@ -40,6 +40,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5889907050471287562}
     m_Modifications:
+    - target: {fileID: 6082941422881749904, guid: f1c40cc3ec27e7e4b920dfc0839ec6f5,
+        type: 3}
+      propertyPath: costTexts.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6082941422881749904, guid: f1c40cc3ec27e7e4b920dfc0839ec6f5,
+        type: 3}
+      propertyPath: categoryObjects.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6082941422881749904, guid: f1c40cc3ec27e7e4b920dfc0839ec6f5,
+        type: 3}
+      propertyPath: percentageCostIncrease
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 6082941422881749905, guid: f1c40cc3ec27e7e4b920dfc0839ec6f5,
         type: 3}
       propertyPath: m_LocalPosition.x

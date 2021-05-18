@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class ResourceController : MonoBehaviour
 {
     public static ResourceController Instance = null;
 
-    private int copper = 0;
+    [SerializeField] private TextMeshProUGUI copperText;
+    private int copper = 100000;
 
     public int Copper { get => copper; }
 
@@ -14,11 +16,13 @@ public class ResourceController : MonoBehaviour
     {
         if (!Instance)
             Instance = this;
+        UpdateUI();
     }
 
     public void AddCopper(int value)
     {
         copper += value;
+        UpdateUI();
     }
 
     public void SpendCopper(int value)
@@ -27,6 +31,13 @@ public class ResourceController : MonoBehaviour
 
         if (copper < 0)
             Debug.LogError("COPPPER IS LESS THAN 0. CHECK IT AMOUNT BEFORE SPENDING");
+
+        UpdateUI();
+    }
+
+    public void UpdateUI()
+    {
+        copperText.text = copper.ToString();
     }
 
     public bool HasEnoughCopper(int value)

@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 namespace ExpeditionMap
 {
-    public class Field : MonoBehaviour
+    public class Field : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
         [SerializeField] private float maxCopper = 0.0f;
+        [SerializeField] private bool hasBeenDiscovered = false;
 
         private float currentCopper = 0.0f;
         private int distanceToRoot = 0;
@@ -14,6 +16,7 @@ namespace ExpeditionMap
 
         private Animator animator = null;
         private FieldUI fieldUI = null;
+        private FieldVisual fieldVisual = null;
 
         public float MaxCopper { get => maxCopper; }
         public int DistanceToRoot { get => distanceToRoot; }
@@ -25,9 +28,12 @@ namespace ExpeditionMap
 
             animator = GetComponent<Animator>();
             fieldUI = GetComponent<FieldUI>();
+            fieldVisual = GetComponent<FieldVisual>();
 
             fieldCoords.x = (int)this.transform.position.x;
             fieldCoords.y = (int)this.transform.position.z;
+
+            fieldVisual?.SetFieldDiscovered(hasBeenDiscovered);
         }
 
         private bool isRoot = false;
@@ -76,6 +82,16 @@ namespace ExpeditionMap
                 fieldUI?.ShowFieldInfo(this);
             else
                 fieldUI?.HideFieldInfo();
+        }
+
+        public void OnPointerEnter(PointerEventData eventData)
+        {
+            SetActive(true);
+        }
+
+        public void OnPointerExit(PointerEventData eventData)
+        {
+            SetActive(false);
         }
     }
 }
