@@ -9,7 +9,7 @@ public class EarthProgressController : MonoBehaviour
 {
     public static EarthProgressController Instance = null;
 
-    [SerializeField] private float percentageCostIncrease = 50f;
+    [SerializeField] private float percentageCostIncrease = 0.5f;
     [SerializeField] private TextMeshProUGUI [] costTexts;
     [SerializeField] private GameObject [] categoryObjects;
 
@@ -37,11 +37,12 @@ public class EarthProgressController : MonoBehaviour
         else return false;
     }
 
-    public void FinishCategory(ProgressCategory category)
+    public void FinishCategory(int category)
     {
         if(CanFinish())
         {
-            finishiedCategories[(int)category] = true;
+            ResourceController.Instance.SpendCopper(currentCost);
+            finishiedCategories[category] = true;
             currentCost += (int)(currentCost * percentageCostIncrease);
             UpdateCosts();
             UpdateViability();
@@ -52,7 +53,7 @@ public class EarthProgressController : MonoBehaviour
     {
         foreach (TextMeshProUGUI text in costTexts)
         {
-            text.text = currentCost.ToString();
+            text.text = "Koszt " + currentCost.ToString();
         }
     }
     public void UpdateViability()
@@ -60,9 +61,9 @@ public class EarthProgressController : MonoBehaviour
         foreach (GameObject category in categoryObjects)
         {
             if (!CanFinish())
-                category.GetComponent<Button>().interactable = false;
+                category.GetComponentInChildren<Button>().interactable = false;
             else
-                category.GetComponent<Button>().interactable = true;
+                category.GetComponentInChildren<Button>().interactable = true;
 
         }
     }
