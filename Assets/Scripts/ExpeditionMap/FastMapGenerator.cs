@@ -5,6 +5,7 @@ using UnityEngine;
 [ExecuteInEditMode]
 public class FastMapGenerator : MonoBehaviour
 {
+    public ExpeditionMap.ExpeditionMapManager mapManager = null;
     public GameObject root = null;
     public GameObject fieldPrefab = null;
     public Vector2 mapDimentions = Vector2.zero;
@@ -22,7 +23,7 @@ public class FastMapGenerator : MonoBehaviour
         {
             for (int z = 0; z < mapDimentions.y; z++)
             {
-                GameObject fieldGO = Instantiate(fieldPrefab, this.transform.position + new Vector3(x, 0, z), Quaternion.identity, root.transform);
+                GameObject fieldGO = Instantiate(fieldPrefab, this.transform.position + new Vector3(x + 0.5f, 0, z + 0.5f), Quaternion.identity, root.transform);
                 fieldGO.name = "Field (" + x + ", " + z + ")";
             }
         }
