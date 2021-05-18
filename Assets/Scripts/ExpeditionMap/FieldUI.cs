@@ -8,21 +8,27 @@ namespace ExpeditionMap
     public class FieldUI : MonoBehaviour
     {
         [Header("References:")]
-        public GameObject ui = null;
+        public GameObject fieldInfoUi = null;
+        public GameObject expeditionSendingUI = null;
         public TextMeshProUGUI uiInfoText = null;
 
         public void ShowFieldInfo(Field field)
         {
-            if (uiInfoText && ui)
+            if (uiInfoText && fieldInfoUi)
             {
                 uiInfoText.text = field.ToString();
-                ui.SetActive(true);
+                fieldInfoUi.SetActive(true);
             }
         }
 
         public void HideFieldInfo()
         {
-            ui?.SetActive(false);
+            fieldInfoUi?.SetActive(false);
+        }
+
+        public void ShowExpeditionInfo(bool value)
+        {
+            expeditionSendingUI?.SetActive(value);
         }
     }
 

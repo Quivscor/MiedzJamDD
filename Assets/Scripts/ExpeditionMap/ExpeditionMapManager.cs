@@ -6,12 +6,23 @@ namespace ExpeditionMap
 {
     public class ExpeditionMapManager : MonoBehaviour
     {
+        public static ExpeditionMapManager Instance = null;
+
+        private void Awake()
+        {
+            if (ExpeditionMapManager.Instance == null)
+                ExpeditionMapManager.Instance = this;
+            else
+                Destroy(this);
+        }
+
         [SerializeField] private Vector2Int rootPosition = Vector2Int.zero;
         [SerializeField] private Vector2Int mapSize = Vector2Int.zero;
 
         public Vector2Int MapSize { get => mapSize; }
 
         private Field[,] fieldsMap = null;
+        private Field selectedField = null;
 
         private void Start()
         {
@@ -52,6 +63,12 @@ namespace ExpeditionMap
                     fieldsMap[x, z].InitializeField(rootField.transform.position, fieldsMap[x,z] == rootField);
                 }
             }
+        }
+
+        public void SetSelectedField(Field field)
+        {
+            selectedField?.OnDeselect();
+            selectedField = field;
         }
     }
 }

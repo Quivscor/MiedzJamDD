@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 
 namespace ExpeditionMap
 {
-    public class Field : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+    public class Field : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
     {
         [SerializeField] private float maxCopper = 0.0f;
         [SerializeField] private bool hasBeenDiscovered = false;
@@ -67,7 +67,15 @@ namespace ExpeditionMap
 
             if (!isRoot)
             {
-                fieldData += "\nCopper: " + currentCopper + "/" + maxCopper;
+                if (hasBeenDiscovered)
+                {
+                    fieldData += "\nCopper: " + currentCopper + "/" + maxCopper;
+                }
+                else
+                {
+                    fieldData += "\nCopper: ???/???";
+                }
+
                 fieldData += "\nDist2Root: " + distanceToRoot;
             }
 
@@ -78,7 +86,7 @@ namespace ExpeditionMap
         {
             animator?.SetBool("isActive", value);
 
-            if (value)
+            if (value && !isSelected)
                 fieldUI?.ShowFieldInfo(this);
             else
                 fieldUI?.HideFieldInfo();
@@ -92,6 +100,23 @@ namespace ExpeditionMap
         public void OnPointerExit(PointerEventData eventData)
         {
             SetActive(false);
+        }
+
+        private bool isSelected = false;
+
+        public void OnPointerClick(PointerEventData eventData)
+        {
+            ExpeditionMapManager.Instance?.SetSelectedField(this);
+
+            isSelected = true;
+            fieldUI?.HideFieldInfo();
+            fieldUI?.ShowExpeditionInfo(true);
+        }
+
+        public void OnDeselect()
+        {
+            isSelected = false;
+            fieldUI?.ShowExpeditionInfo(false);
         }
     }
 }
