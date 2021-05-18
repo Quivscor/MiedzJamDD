@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class BuildingField : MonoBehaviour, IPointerClickHandler
+public class BuildingField : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler
 {
     protected bool m_isEmpty = true;
     public bool IsEmpty => m_isEmpty;
@@ -25,6 +25,14 @@ public class BuildingField : MonoBehaviour, IPointerClickHandler
     public void OnPointerClick(PointerEventData eventData)
     {
         OnClick?.Invoke(new BuildingFieldEventData(this.transform.position, this));
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        if (CityDirector.Instance.SelectedBuilding.SelectedBuilding == null)
+            return;
+
+        CityDirector.Instance.SelectedBuilding.SelectedBuildingMock.transform.position = transform.position;
     }
 }
 

@@ -7,14 +7,15 @@ public class CityDirector : MonoBehaviour
 {
     public static CityDirector Instance;
 
-    private static int CityGridSize = 8;
+    public static int CityGridSize = 8;
     //turn this layer off in physics raycast in camera, so building can't be selected after placing
-    private static int IgnoreCameraRaycastLayerID = 8;
+    public static int IgnoreCameraRaycastLayerID = 8;
     
     private readonly BuildingField[,] m_cityGrid = new BuildingField[CityGridSize, CityGridSize];
     public BuildingField[,] CityGrid { get => m_cityGrid; }
 
     protected LastSelectedBuilding m_lastSelectedBuilding;
+    public LastSelectedBuilding SelectedBuilding => m_lastSelectedBuilding;
 
     #region Setup
     [Header("Scene setup")]
