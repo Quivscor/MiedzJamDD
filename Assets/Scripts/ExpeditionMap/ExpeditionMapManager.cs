@@ -12,7 +12,6 @@ namespace ExpeditionMap
         public Vector2Int MapSize { get => mapSize; }
 
         private Field[,] fieldsMap = null;
-        private Field activeField = null;
 
         private void Start()
         {
@@ -22,25 +21,23 @@ namespace ExpeditionMap
             InitializeFields();
         }
 
-        public void SetActiveField(int x, int z)
-        {
-            activeField?.SetActive(false);
-
-            if (fieldsMap != null && x < mapSize.x && x >= 0 && z < mapSize.y && z >= 0)
-            {
-                activeField = fieldsMap[x, z];
-                activeField?.SetActive(true);
-            }
-        }
-
         public void SetFieldsMap()
         {
-            for (int i = 0; i < transform.childCount; i++)
+            for (int x = 0; x < MapSize.x; x++)
             {
-                int x = (int)(i / MapSize.x);
+                for (int z = 0; z < MapSize.y; z++)
+                {
+                    for (int i = 0; i < this.transform.childCount; i++)
+                    {
+                        Transform child = this.transform.GetChild(i);
 
-                Field field = this.transform.GetChild(i).gameObject.GetComponent<Field>();
-                fieldsMap[x, i - (x * mapSize.x)] = field;
+                        if ((int)child.transform.position.x == x && (int)child.transform.position.z == z)
+                        {
+                            fieldsMap[x, z] = child.transform.GetComponent<Field>();
+                            break;
+                        }
+                    }
+                }
             }
         }
 
