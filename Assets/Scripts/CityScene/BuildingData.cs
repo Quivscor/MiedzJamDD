@@ -5,6 +5,8 @@ using UnityEngine;
 [System.Serializable, CreateAssetMenu(fileName = "BuildingData", menuName = "BuildingData")]
 public class BuildingData : ScriptableObject
 {
+    public string thisBuildingID;
+
     public List<string> buildingIDs;
     public List<float> buildingBoosts;
 
