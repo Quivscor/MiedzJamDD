@@ -7,6 +7,10 @@ namespace ExpeditionMap
 {
     public class Field : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
     {
+        [Header("References:")]
+        public GameObject expeditionModel = null;
+
+        [Header("Paramteres:")]
         [SerializeField] private float maxCopper = 0.0f;
         [SerializeField] private bool hasBeenDiscovered = false;
 
@@ -37,6 +41,8 @@ namespace ExpeditionMap
         }
 
         private bool isRoot = false;
+        private bool isSelected = false;
+        private bool isExpeditionTarget = false;
 
         public void InitializeField(Vector3 root, bool isRoot)
         {
@@ -94,6 +100,9 @@ namespace ExpeditionMap
 
         public void OnPointerEnter(PointerEventData eventData)
         {
+            if (isExpeditionTarget)
+                return;
+
             SetActive(true);
         }
 
@@ -102,10 +111,17 @@ namespace ExpeditionMap
             SetActive(false);
         }
 
-        private bool isSelected = false;
-
         public void OnPointerClick(PointerEventData eventData)
         {
+            if (isRoot || isExpeditionTarget || !ExpeditionManager.Instance.CanSendExpedition())
+                return;
+
+            if (DistanceToRoot > TeamStats.Instance.AvailableDistance * TeamStatsModifiers.DistanceModifier)
+            {
+                Debug.Log("Cannot reach field with given distance!");
+                return;
+            }
+
             ExpeditionMapManager.Instance?.SetSelectedField(this);
 
             isSelected = true;
@@ -118,5 +134,23 @@ namespace ExpeditionMap
             isSelected = false;
             fieldUI?.ShowExpeditionInfo(false);
         }
+
+        public void SetAsExpeditionTarget(bool value)
+        {
+            isExpeditionTarget = value;
+
+            expeditionModel?.SetActive(value);
+        }
+
+        #region Button Actions
+
+        public void CreateExpeditionToThisField()
+        {
+            ExpeditionManager.Instance?.CreateExpedition(this);
+
+            ExpeditionMapManager.Instance?.SetSelectedField(null);
+        }
+
+        #endregion
     }
 }

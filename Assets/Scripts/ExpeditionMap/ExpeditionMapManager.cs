@@ -70,5 +70,10 @@ namespace ExpeditionMap
             selectedField?.OnDeselect();
             selectedField = field;
         }
+
+        public bool HasSelectedField()
+        {
+            return selectedField != null;
+        }
     }
 }

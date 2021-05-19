@@ -12,5 +12,12 @@ namespace ExpeditionMap
         {
             this.destinationField = field;
         }
+
+        public void OnExpeditionFinished()
+        {
+            Debug.Log("Expedition finished! Better implementation required! :(");
+
+            destinationField?.SetAsExpeditionTarget(false);
+        }
     }
 }

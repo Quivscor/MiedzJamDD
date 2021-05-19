@@ -11,20 +11,20 @@ public class EarthProgressController : MonoBehaviour
 
     [SerializeField] private float percentageCostIncrease = 0.5f;
     [SerializeField] private TextMeshProUGUI [] costTexts;
-    [SerializeField] private GameObject [] categoryObjects;
+    [SerializeField] private GameObject [] missionObjects;
 
     private int currentCost = 100;
-    private bool [] finishiedCategories;
+    private bool [] finishedMissions;
 
     private void Awake()
     {
         if (!Instance)
             Instance = this;
 
-        finishiedCategories = new bool[5];
-        for(int i = 0; i < finishiedCategories.Length; i++)
+        finishedMissions = new bool[5];
+        for(int i = 0; i < finishedMissions.Length; i++)
         {
-            finishiedCategories[i] = false;
+            finishedMissions[i] = false;
         }
     }
 
@@ -37,12 +37,12 @@ public class EarthProgressController : MonoBehaviour
         else return false;
     }
 
-    public void FinishCategory(int category)
+    public void FinishMission(int category)
     {
         if(CanFinish())
         {
             ResourceController.Instance.SpendCopper(currentCost);
-            finishiedCategories[category] = true;
+            finishedMissions[category] = true;
             currentCost += (int)(currentCost * percentageCostIncrease);
             UpdateCosts();
             UpdateViability();
@@ -58,17 +58,17 @@ public class EarthProgressController : MonoBehaviour
     }
     public void UpdateViability()
     {
-        foreach (GameObject category in categoryObjects)
+        foreach (GameObject mission in missionObjects)
         {
             if (!CanFinish())
-                category.GetComponentInChildren<Button>().interactable = false;
+                mission.GetComponentInChildren<Button>().interactable = false;
             else
-                category.GetComponentInChildren<Button>().interactable = true;
+                mission.GetComponentInChildren<Button>().interactable = true;
 
         }
     }
 
-    public enum ProgressCategory
+    public enum MissionType
     {
         Category1,
         Category2,
