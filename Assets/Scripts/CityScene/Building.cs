@@ -11,9 +11,9 @@ public class Building : MonoBehaviour, IPointerClickHandler, ISelectHandler
 
     [SerializeField] protected BuildingData m_buildingData;
     //make sure to use the same names here and in building data, otherwise fuckup incoming
-    [SerializeField] protected string m_buildingID;
-    public string BuildingID => m_buildingID;
+    public string BuildingID => m_buildingData.thisBuildingID;
     public List<Vector2Int> BuildingNeighbors => m_buildingData.neighborCoordinatesRelative;
+    public CategoriesProgressController.ScienceCategory BuildingCategory => m_buildingData.pointCategory;
 
     public bool IsPlaced { get; set; }
 
@@ -32,7 +32,6 @@ public class Building : MonoBehaviour, IPointerClickHandler, ISelectHandler
     {
         IsPlaced = false;
         m_neighborBoosts = m_buildingData.GetNeighborBoostsData();
-        m_buildingID = m_buildingData.thisBuildingID;
         m_baseScore = m_buildingData.pointValue;
     }
 
@@ -59,7 +58,7 @@ public class Building : MonoBehaviour, IPointerClickHandler, ISelectHandler
                 continue;
 
             int value = 0;
-            bool canBeBoosted = NeighborBoosts.TryGetValue(field.Building.m_buildingID, out value);
+            bool canBeBoosted = NeighborBoosts.TryGetValue(field.Building.BuildingID, out value);
             result += value;
         }
         return result;
