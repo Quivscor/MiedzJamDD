@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System;
 
 public class TimeController : MonoBehaviour
 {
+    public Action OnEndOfTheWeek;
     public static TimeController Instance = null;
 
     [SerializeField] private TextMeshProUGUI daysText;
@@ -46,9 +48,12 @@ public class TimeController : MonoBehaviour
     {
         if (CurrentDay != DayType.Niedziela)
         {
-            currentDay ++;
+            currentDay++;
             
-            // FAZA EKSPEDYCJI 
+            if (CurrentDay == DayType.Niedziela)
+            {
+                OnEndOfTheWeek?.Invoke();
+            }
         }
         else
         {
@@ -57,7 +62,7 @@ public class TimeController : MonoBehaviour
             // FAZA BUDOWANIA
         }
 
-        totalDays ++;
+        totalDays++;
         thisMonthDays++;
         if (thisMonthDays % 30 == 0)
         {
