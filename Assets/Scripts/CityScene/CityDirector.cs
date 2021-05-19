@@ -16,6 +16,7 @@ public class CityDirector : MonoBehaviour
 
     protected LastSelectedBuilding m_lastSelectedBuilding;
     public LastSelectedBuilding SelectedBuilding => m_lastSelectedBuilding;
+    protected ComboDisplayerComponent m_comboDisplayerComponent;
 
     #region Setup
     [Header("Scene setup")]
@@ -37,10 +38,13 @@ public class CityDirector : MonoBehaviour
                 BuildingField fieldGO = Instantiate(buildingFieldPrefab, this.transform.position + new Vector3(x + 0.5f, 0, z + 0.5f), Quaternion.identity, this.transform);
                 fieldGO.name = "Field (" + x + ", " + z + ")";
                 fieldGO.OnClick += TryConfirmBuilding;
+                fieldGO.CityGridCoordinates = new Vector2Int(x, z);
+                m_cityGrid[x, z] = fieldGO;
             }
         }
 
         m_lastSelectedBuilding = GetComponent<LastSelectedBuilding>();
+        m_comboDisplayerComponent = GetComponent<ComboDisplayerComponent>();
     }
 
     public void TrySelectingBuilding(Building b)
@@ -69,6 +73,10 @@ public class CityDirector : MonoBehaviour
         b.gameObject.layer = IgnoreCameraRaycastLayerID;
         eventData.selfReference.AssignBuilding(b);
 
+        //checking and applying neighborhood boosts
+        //b.CheckNeighbors(eventData.selfReference.CityGridCoordinates, eventData.selfReference.GetDefaultNeighbors());
+
         m_lastSelectedBuilding.Deselect();
+        m_comboDisplayerComponent.CleanupDisplay(new BuildingFieldEventData());
     }
 }

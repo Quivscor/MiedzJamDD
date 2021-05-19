@@ -10,6 +10,9 @@ public class BuildingData : ScriptableObject
     public List<string> buildingIDs;
     public List<float> buildingBoosts;
 
+    //coordinates relative to the owners position on city grid
+    public List<Vector2Int> neighborCoordinatesRelative = new List<Vector2Int>();
+
     public Dictionary<string, float> GetNeighborBoostsData()
     {
         Dictionary<string, float> result = new Dictionary<string, float>();
