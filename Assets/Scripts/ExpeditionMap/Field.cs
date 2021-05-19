@@ -116,6 +116,12 @@ namespace ExpeditionMap
             if (isRoot || isExpeditionTarget || !ExpeditionManager.Instance.CanSendExpedition())
                 return;
 
+            if (DistanceToRoot > TeamStats.Instance.AvailableDistance * TeamStatsModifiers.DistanceModifier)
+            {
+                Debug.Log("Cannot reach field with given distance!");
+                return;
+            }
+
             ExpeditionMapManager.Instance?.SetSelectedField(this);
 
             isSelected = true;
