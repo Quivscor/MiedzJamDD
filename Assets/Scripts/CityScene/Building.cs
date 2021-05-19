@@ -6,8 +6,8 @@ using UnityEngine.EventSystems;
 public class Building : MonoBehaviour, IPointerClickHandler, ISelectHandler
 {
     //Map of boosts and building Ids
-    [SerializeField] protected Dictionary<string, float> m_neighborBoosts;
-    public Dictionary<string, float> NeighborBoosts => m_neighborBoosts;
+    [SerializeField] protected Dictionary<string, int> m_neighborBoosts;
+    public Dictionary<string, int> NeighborBoosts => m_neighborBoosts;
 
     [SerializeField] protected BuildingData m_buildingData;
     //make sure to use the same names here and in building data, otherwise fuckup incoming
@@ -17,11 +17,12 @@ public class Building : MonoBehaviour, IPointerClickHandler, ISelectHandler
 
     public bool IsPlaced { get; set; }
 
-    protected float m_pointScore;
-    public float PointScore => PointScore;
+    protected int m_baseScore;
+    protected int m_pointScore;
+    public int PointScore => m_pointScore;
     //if different than 0, should be displayed when placing down
-    protected float m_pointScoreDelta;
-    public float PointScoreDelta => m_pointScoreDelta;
+    protected int m_pointScoreDelta;
+    public int PointScoreDelta => m_pointScoreDelta;
 
     #region Events
     public Action OnClick;
@@ -32,24 +33,36 @@ public class Building : MonoBehaviour, IPointerClickHandler, ISelectHandler
         IsPlaced = false;
         m_neighborBoosts = m_buildingData.GetNeighborBoostsData();
         m_buildingID = m_buildingData.thisBuildingID;
+        m_baseScore = m_buildingData.pointValue;
+    }
+
+    public void RecalculatePointScore(Vector2Int ownCoords, List<Vector2Int> neighborCoords)
+    {
+        m_pointScoreDelta = m_pointScore;
+
+        m_pointScore = m_baseScore + GetBonusFromNeighbors(ownCoords, neighborCoords);
+        m_pointScoreDelta = Mathf.Abs(m_pointScore - m_pointScoreDelta);
     }
 
     //Check neighbors on placement to determine boosts
-    public void CheckNeighbors(Vector2Int ownCoords, Vector2Int[] neighborCoords)
+    private int GetBonusFromNeighbors(Vector2Int ownCoords, List<Vector2Int> neighborCoords)
     {
-        for(int i = 0; i < neighborCoords.Length; i++)
+        int result = 0;
+        for(int i = 0; i < neighborCoords.Count; i++)
         {
             //if points at itself (basically a skip)
             if (neighborCoords[i] == Vector2Int.zero)
                 continue;
 
-            float value = 1;
-            bool canBeBoosted = NeighborBoosts.TryGetValue(CityDirector.Instance.CityGrid[ownCoords.x + neighborCoords[i].x, ownCoords.y + neighborCoords[i].y].Building.m_buildingID, out value);
-            if (canBeBoosted)
-            {
+            BuildingField field = CityDirector.Instance.CityGrid[ownCoords.x + neighborCoords[i].x, ownCoords.y + neighborCoords[i].y];
+            if (field.Building == null)
+                continue;
 
-            }
+            int value = 0;
+            bool canBeBoosted = NeighborBoosts.TryGetValue(field.Building.m_buildingID, out value);
+            result += value;
         }
+        return result;
     }
 
     public void OnPointerClick(PointerEventData eventData)

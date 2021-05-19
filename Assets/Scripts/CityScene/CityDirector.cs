@@ -81,9 +81,27 @@ public class CityDirector : MonoBehaviour
         eventData.selfReference.AssignBuilding(b);
 
         //checking and applying neighborhood boosts
-        //b.CheckNeighbors(eventData.selfReference.CityGridCoordinates, eventData.selfReference.GetDefaultNeighbors());
+        RecalculateGrid();
 
         m_lastSelectedBuilding.Deselect();
         m_comboDisplayerComponent.CleanupDisplay(new BuildingFieldEventData());
+    }
+
+    public void RecalculateGrid()
+    {
+        int debugScore = 0;
+        for(int i = 0; i < CityGridSize; i++)
+        {
+            for(int j = 0; j < CityGridSize; j++)
+            {
+                if (CityGrid[i, j].Building == null)
+                    continue;
+
+                CityGrid[i, j].Building.RecalculatePointScore(new Vector2Int(i, j), CityGrid[i, j].GetNeighborsFromBuildingData());
+                debugScore += CityGrid[i, j].Building.PointScore;
+            }
+        }
+
+        Debug.Log("Grid score = " + debugScore);
     }
 }
