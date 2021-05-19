@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -12,6 +13,7 @@ public class CityDirector : MonoBehaviour
     public static int IgnoreCameraRaycastLayerID = 8;
     
     private readonly BuildingField[,] m_cityGrid = new BuildingField[CityGridSize, CityGridSize];
+
     public BuildingField[,] CityGrid { get => m_cityGrid; }
 
     protected LastSelectedBuilding m_lastSelectedBuilding;
@@ -50,6 +52,11 @@ public class CityDirector : MonoBehaviour
     public void TrySelectingBuilding(Building b)
     {
         m_lastSelectedBuilding.SetBuilding(b);
+    }
+
+    public void DeselectCurrentBuilding()
+    {
+        m_lastSelectedBuilding.Deselect();
     }
 
     public void TryConfirmBuilding(BuildingFieldEventData eventData)

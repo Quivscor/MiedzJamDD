@@ -111,6 +111,7 @@ public class BuildingField : MonoBehaviour, IPointerClickHandler, IPointerEnterH
         if (CityDirector.Instance.SelectedBuilding.SelectedBuilding == null)
             return;
 
+        CityDirector.Instance.SelectedBuilding.SelectedBuildingMock.transform.position = LastSelectedBuilding.mockHidingPosition;
         BuildingFieldEventData bEventData = new BuildingFieldEventData(this.transform.position, this, GetNeighborsFromBuildingData());
         OnHoverExit?.Invoke(bEventData);
     }
