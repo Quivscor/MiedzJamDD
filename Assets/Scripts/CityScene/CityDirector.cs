@@ -80,10 +80,30 @@ public class CityDirector : MonoBehaviour
         b.gameObject.layer = IgnoreCameraRaycastLayerID;
         eventData.selfReference.AssignBuilding(b);
 
-        //checking and applying neighborhood boosts
-        //b.CheckNeighbors(eventData.selfReference.CityGridCoordinates, eventData.selfReference.GetDefaultNeighbors());
+        //recalculate grid and apply extra points to points controller
+        RecalculateGrid(true);
 
         m_lastSelectedBuilding.Deselect();
         m_comboDisplayerComponent.CleanupDisplay(new BuildingFieldEventData());
+    }
+
+    public void RecalculateGrid(bool updateScore = false)
+    {
+        int debugScore = 0;
+        for(int i = 0; i < CityGridSize; i++)
+        {
+            for(int j = 0; j < CityGridSize; j++)
+            {
+                if (CityGrid[i, j].Building == null)
+                    continue;
+
+                CityGrid[i, j].Building.RecalculatePointScore(new Vector2Int(i, j), CityGrid[i, j].GetNeighborsFromBuildingData());
+                if (updateScore)
+                    CategoriesProgressController.Instance.AddPointsToScience(CityGrid[i, j].Building.BuildingCategory, CityGrid[i, j].Building.PointScoreDelta);
+                debugScore += CityGrid[i, j].Building.PointScore;
+            }
+        }
+
+        Debug.Log("Grid score = " + debugScore);
     }
 }
