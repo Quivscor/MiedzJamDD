@@ -43,5 +43,13 @@ namespace ExpeditionMap
         {
             return currentAvailableTeams > 0;
         }
+
+        public void FinishExpeditions()
+        {
+            foreach (Expedition expedition in expeditions)
+            {
+                expedition.OnExpeditionFinished();
+            }
+        }
     }
 }
