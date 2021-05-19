@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 namespace ExpeditionMap
 {
@@ -63,9 +64,33 @@ namespace ExpeditionMap
 
         private void CalculateDiscoveringNeighbourFields()
         {
-            //bla bla bla idk how should it work yet
+            Field[] neighbours = ExpeditionMapManager.Instance.GetAllNeighbours(destinationField);
+
+            System.Random random = new System.Random();
+
+            neighbours = neighbours.OrderBy(x => random.Next()).ToArray();
+
+            int fieldsToDiscover = 1;
+
+            if (Random.Range(0, 100) <= TeamStats.Instance.ChanceToDiscoverAdditionalNeighbourField)
+                fieldsToDiscover++;
 
             discoveredFields = 0;
+
+            Debug.Log(fieldsToDiscover);
+
+            for (int i = 0; i < neighbours.Length; i++)
+            {
+                if (!neighbours[i].HasBeenDiscovered)
+                {
+                    neighbours[i].HasBeenDiscovered = true;
+                    fieldsToDiscover--;
+                    discoveredFields++;
+
+                    if (fieldsToDiscover <= 0)
+                        break;
+                }
+            }
         }
 
         private void CalculateChancesForAdditionalActions()

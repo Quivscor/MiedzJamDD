@@ -75,5 +75,23 @@ namespace ExpeditionMap
         {
             return selectedField != null;
         }
+
+        public Field[] GetAllNeighbours(Field field)
+        {
+            List<Field> neighbours = new List<Field>();
+
+            for (int x = field.FieldCoords.x - 1; x < field.FieldCoords.x + 2; x++)
+            {
+                for (int z = field.FieldCoords.y - 1; z < field.FieldCoords.y + 2; z++)
+                {
+                    if (x >= 0 && x < MapSize.x && z >= 0 && z < MapSize.y && (x != field.FieldCoords.x || z != field.FieldCoords.y))
+                    {
+                        neighbours.Add(fieldsMap[x, z]);
+                    }
+                }
+            }
+
+            return neighbours.ToArray();
+        }
     }
 }

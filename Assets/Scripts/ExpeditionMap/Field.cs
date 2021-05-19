@@ -27,6 +27,15 @@ namespace ExpeditionMap
         public bool IsRoot { get => isRoot; }
         public Vector2Int FieldCoords { get => fieldCoords; }
         public float CurrentCopper { get => currentCopper; set => currentCopper = value; }
+        public bool HasBeenDiscovered 
+        { 
+            get => hasBeenDiscovered; 
+            set
+            {
+                hasBeenDiscovered = value;
+                fieldVisual?.SetFieldDiscovered(hasBeenDiscovered);
+            }
+        }
 
         private void Start()
         {

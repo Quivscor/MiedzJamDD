@@ -16,4 +16,6 @@ public class TeamStats : MonoBehaviour
 
     public int AvailableDistance = 1;
     public int MaximumLoad = 1;
+
+    public float ChanceToDiscoverAdditionalNeighbourField = 25.0f;
 }
