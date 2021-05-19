@@ -34,7 +34,14 @@ namespace ExpeditionMap
 
             expeditions.Add(new Expedition(destinationField));
 
+            destinationField.SetAsExpeditionTarget();
+
             currentAvailableTeams--;
+        }
+
+        public bool CanSendExpedition()
+        {
+            return currentAvailableTeams > 0;
         }
     }
 }
