@@ -20,20 +20,35 @@ public class CategoriesProgressController : MonoBehaviour
 
     }
 
-    public void AddPointsToScience(int scienceCategory)
+    public void AddPointsToScience(ScienceCategory scienceCategory, int value)
     {
-        float value = 1;
-        if(sciences[(int)scienceCategory].currentExp + value > sciences[(int)scienceCategory].expToNextLevel)
+        if(sciences[(int)scienceCategory].currentExp + value >= sciences[(int)scienceCategory].expToNextLevel)
         {
-            float difference = (sciences[(int)scienceCategory].currentExp + value) - sciences[(int)scienceCategory].expToNextLevel;
+            int difference = (sciences[(int)scienceCategory].currentExp + value) - sciences[(int)scienceCategory].expToNextLevel;
             sciences[(int)scienceCategory].level++;
             sciences[(int)scienceCategory].currentExp = difference;
-            sciences[(int)scienceCategory].expToNextLevel += sciences[(int)scienceCategory].expToNextLevel * percentageCostIncrease;
-            sciences[(int)scienceCategory].expToNextLevel = Mathf.Round(sciences[(int)scienceCategory].expToNextLevel);
+            sciences[(int)scienceCategory].expToNextLevel += (int)(sciences[(int)scienceCategory].expToNextLevel * percentageCostIncrease);
 
         }
+        else
+            sciences[(int)scienceCategory].currentExp += value;
 
-        sciences[(int)scienceCategory].currentExp += value;
+        UpdateUI();
+    }
+
+    public void TestAddPointsToScience(int scienceCategory)
+    {
+        int value = 3;
+        if (sciences[scienceCategory].currentExp + value >= sciences[(int)scienceCategory].expToNextLevel)
+        {
+            int difference = (sciences[scienceCategory].currentExp + value) - sciences[scienceCategory].expToNextLevel;
+            sciences[scienceCategory].level++;
+            sciences[scienceCategory].currentExp = difference;
+            sciences[scienceCategory].expToNextLevel += (int)(sciences[scienceCategory].expToNextLevel * percentageCostIncrease);
+
+        }
+        else
+            sciences[scienceCategory].currentExp += value;
 
         UpdateUI();
     }
@@ -44,7 +59,7 @@ public class CategoriesProgressController : MonoBehaviour
         {
             sciences[i].levelText.text = "Poziom " + sciences[i].level.ToString();
             sciences[i].progressText.text = sciences[i].currentExp + "/" + sciences[i].expToNextLevel;
-            sciences[i].progressBar.fillAmount = sciences[i].currentExp / sciences[i].expToNextLevel;
+            sciences[i].progressBar.fillAmount = (float)(sciences[i].currentExp / (float)sciences[i].expToNextLevel);
         }
     }
 
@@ -64,8 +79,8 @@ public class CategoriesProgressController : MonoBehaviour
     {
         public ScienceCategory scienceCategory;
         public int level;
-        public float expToNextLevel;
-        public float currentExp;
+        public int expToNextLevel;
+        public int currentExp;
         public Image progressBar;
         public TextMeshProUGUI progressText;
         public TextMeshProUGUI levelText;
