@@ -135,11 +135,11 @@ namespace ExpeditionMap
             fieldUI?.ShowExpeditionInfo(false);
         }
 
-        public void SetAsExpeditionTarget()
+        public void SetAsExpeditionTarget(bool value)
         {
-            isExpeditionTarget = true;
+            isExpeditionTarget = value;
 
-            expeditionModel?.SetActive(true);
+            expeditionModel?.SetActive(value);
         }
 
         #region Button Actions

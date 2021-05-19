@@ -16,6 +16,8 @@ namespace ExpeditionMap
         public void OnExpeditionFinished()
         {
             Debug.Log("Expedition finished! Better implementation required! :(");
+
+            destinationField?.SetAsExpeditionTarget(false);
         }
     }
 }

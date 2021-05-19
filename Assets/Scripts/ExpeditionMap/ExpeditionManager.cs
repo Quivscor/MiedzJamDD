@@ -34,7 +34,7 @@ namespace ExpeditionMap
 
             expeditions.Add(new Expedition(destinationField));
 
-            destinationField.SetAsExpeditionTarget();
+            destinationField.SetAsExpeditionTarget(true);
 
             currentAvailableTeams--;
         }
@@ -50,6 +50,8 @@ namespace ExpeditionMap
             {
                 expedition.OnExpeditionFinished();
             }
+
+            currentAvailableTeams = availableTeams;
         }
     }
 }
