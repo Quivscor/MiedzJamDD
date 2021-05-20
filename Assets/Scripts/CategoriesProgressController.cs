@@ -9,7 +9,7 @@ public class CategoriesProgressController : MonoBehaviour
     public static CategoriesProgressController Instance = null;
 
     [SerializeField] private float percentageCostIncrease = 0.5f;
-    [SerializeField] private Science [] sciences;
+    public Science [] sciences;
 
     private void Awake()
     {
@@ -18,6 +18,18 @@ public class CategoriesProgressController : MonoBehaviour
 
         UpdateUI();
 
+    }
+
+    public void AddPointsToScienceHover(ScienceCategory scienceCategory, int value)
+    {
+        sciences[(int)scienceCategory].progressText.text = sciences[(int)scienceCategory].currentExp + "+<color=yellow>" + value +"</color>/" + sciences[(int)scienceCategory].expToNextLevel;
+        sciences[(int)scienceCategory].hoverProgressBar.fillAmount = (float)(sciences[(int)scienceCategory].currentExp + value / (float)sciences[(int)scienceCategory].expToNextLevel);
+    }
+
+    public void StopHover(ScienceCategory scienceCategory)
+    {
+        sciences[(int)scienceCategory].progressText.text = sciences[(int)scienceCategory].progressText.text = sciences[(int)scienceCategory].currentExp + "/" + sciences[(int)scienceCategory].expToNextLevel;
+        sciences[(int)scienceCategory].hoverProgressBar.fillAmount = 0;
     }
 
     public void AddPointsToScience(ScienceCategory scienceCategory, int value)
@@ -60,28 +72,28 @@ public class CategoriesProgressController : MonoBehaviour
             sciences[i].levelText.text = "Poziom " + sciences[i].level.ToString();
             sciences[i].progressText.text = sciences[i].currentExp + "/" + sciences[i].expToNextLevel;
             sciences[i].progressBar.fillAmount = (float)(sciences[i].currentExp / (float)sciences[i].expToNextLevel);
+            sciences[i].hoverProgressBar.fillAmount = 0;
         }
     }
 
     // PLACEHOLDERS
     public enum ScienceCategory
     {
-        Kategoria1,
-        Kategoria2,
-        Kategoria3,
-        Kategoria4,
-        Kategoria5
+        Energetyka,
+        Telekomunikacja,
+        Transport,
+        Rolnictwo,
     }
 
     [System.Serializable]
     public class Science
-
     {
         public ScienceCategory scienceCategory;
         public int level;
         public int expToNextLevel;
         public int currentExp;
         public Image progressBar;
+        public Image hoverProgressBar;
         public TextMeshProUGUI progressText;
         public TextMeshProUGUI levelText;
 
