@@ -9,9 +9,32 @@ namespace ExpeditionMap
     {
         public Field destinationField = null;
 
+        private int timeToFinishExpedition = 0;
+        private int currentTimeToFinishExpedition = 0;
+
         public Expedition(Field field)
         {
             this.destinationField = field;
+
+            timeToFinishExpedition = field.DistanceToRoot + 2;
+
+            TimeController.Instance.OnNextDay += OnNextDay;
+        }
+
+        private void OnNextDay()
+        {
+            currentTimeToFinishExpedition++;
+
+            if (currentTimeToFinishExpedition >= timeToFinishExpedition)
+            {
+                ExpeditionFinished();
+            }
+        }
+
+        private void ExpeditionFinished()
+        {
+            TimeController.Instance.OnNextDay -= OnNextDay;
+            ExpeditionManager.Instance.ExpeditionFinished(OnExpeditionFinished());
         }
 
         public RaportData OnExpeditionFinished()
@@ -34,6 +57,8 @@ namespace ExpeditionMap
             raportData.fieldCoordinatesText = "[ " + destinationField.FieldCoords.x + ", " + destinationField.FieldCoords.y + " ]";
 
             raportData.gainedCopperText = gainedCopper + "";
+
+            raportData.gainedCopper = gainedCopper;
 
             raportData.discoveredFieldsText = discoveredFields + "";
 
@@ -59,7 +84,7 @@ namespace ExpeditionMap
 
             gainedCopper = maxGainedCopper;
 
-            ResourceController.Instance?.AddCopper(gainedCopper);
+            //ResourceController.Instance?.AddCopper(gainedCopper);
         }
 
         private void CalculateDiscoveringNeighbourFields()
@@ -76,8 +101,6 @@ namespace ExpeditionMap
                 fieldsToDiscover++;
 
             discoveredFields = 0;
-
-            Debug.Log(fieldsToDiscover);
 
             for (int i = 0; i < neighbours.Length; i++)
             {

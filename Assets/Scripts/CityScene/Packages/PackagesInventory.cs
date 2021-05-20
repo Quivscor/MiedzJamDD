@@ -23,8 +23,7 @@ public class PackagesInventory : MonoBehaviour
 
     private void Start()
     {
-        TimeController.Instance.OnEndOfTheWeek += OnSunday;
-        TimeController.Instance.OnFirstCommonDay += OnCommonDay;
+
     }
 
     public void AddPackage(ScienceCategory category)
@@ -132,20 +131,4 @@ public class PackagesInventory : MonoBehaviour
         foreach (Button b in buyButtons)
             b.interactable = canBuy;
     }
-
-    private void OnSunday()
-    {
-        if (mainShopCanvas.gameObject.activeSelf == true)
-            CloseShop();
-
-        openShopButton.interactable = false;
-        openPackageButton.interactable = false;
-    }
-
-    private void OnCommonDay()
-    {
-        openShopButton.interactable = true;
-        openPackageButton.interactable = true;
-    }
-
 }
