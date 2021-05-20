@@ -33,6 +33,7 @@ public class Building : MonoBehaviour, IPointerClickHandler, ISelectHandler
         IsPlaced = false;
         m_neighborBoosts = m_buildingData.GetNeighborBoostsData();
         m_baseScore = m_buildingData.pointValue;
+        m_pointScore = m_baseScore;
     }
 
     public void RecalculatePointScore(Vector2Int ownCoords, List<Vector2Int> neighborCoords)
@@ -44,7 +45,7 @@ public class Building : MonoBehaviour, IPointerClickHandler, ISelectHandler
     }
 
     //Check neighbors on placement to determine boosts
-    private int GetBonusFromNeighbors(Vector2Int ownCoords, List<Vector2Int> neighborCoords)
+    public int GetBonusFromNeighbors(Vector2Int ownCoords, List<Vector2Int> neighborCoords)
     {
         int result = 0;
         for(int i = 0; i < neighborCoords.Count; i++)
@@ -62,6 +63,25 @@ public class Building : MonoBehaviour, IPointerClickHandler, ISelectHandler
             result += value;
         }
         return result;
+    }
+
+    //for display purposes, check if given neighbor gives boost and return just his boost
+    public int GetBonusFromSpecificNeighbor(Vector2Int neighborCoords)
+    {
+        BuildingField field = CityDirector.Instance.CityGrid[neighborCoords.x, neighborCoords.y];
+        if (field.Building == null)
+            return int.MinValue;
+
+        int value = 0;
+        bool canBeBoosted = NeighborBoosts.TryGetValue(field.Building.BuildingID, out value);
+        return value;
+    }
+
+    public int GetBonusFromNeighboringWithMock()
+    {
+        int value = 0;
+        bool canBeBoosted = NeighborBoosts.TryGetValue(CityDirector.Instance.SelectedBuilding.SelectedBuildingMock.BuildingID, out value);
+        return value;
     }
 
     public void OnPointerClick(PointerEventData eventData)

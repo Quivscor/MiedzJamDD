@@ -84,7 +84,7 @@ public class CityDirector : MonoBehaviour
         RecalculateGrid(true);
 
         m_lastSelectedBuilding.Deselect();
-        m_comboDisplayerComponent.CleanupDisplay(new BuildingFieldEventData());
+        m_comboDisplayerComponent.CleanupDisplay(eventData);
     }
 
     public void RecalculateGrid(bool updateScore = false)

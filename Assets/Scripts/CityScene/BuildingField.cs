@@ -3,11 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using TMPro;
+using TMProText = TMPro.TextMeshProUGUI;
 
 public class BuildingField : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
     private MeshRenderer m_renderer;
     public MeshRenderer Renderer => m_renderer;
+    private TMProText text;
 
     protected bool m_isEmpty = true;
     public bool IsEmpty => m_isEmpty;
@@ -27,6 +30,8 @@ public class BuildingField : MonoBehaviour, IPointerClickHandler, IPointerEnterH
     private void Awake()
     {
         m_renderer = GetComponent<MeshRenderer>();
+        text = GetComponentInChildren<TMProText>();
+        text.gameObject.SetActive(false);
     }
 
     public void AssignBuilding(Building b)
@@ -114,6 +119,29 @@ public class BuildingField : MonoBehaviour, IPointerClickHandler, IPointerEnterH
         CityDirector.Instance.SelectedBuilding.SelectedBuildingMock.transform.position = LastSelectedBuilding.mockHidingPosition;
         BuildingFieldEventData bEventData = new BuildingFieldEventData(this.transform.position, this, GetNeighborsFromBuildingData());
         OnHoverExit?.Invoke(bEventData);
+    }
+
+    public void DisplayInfo(int boostValue, int baseValue = 0)
+    {
+        if (boostValue == 0 && baseValue == 0)
+            return;
+
+        text.gameObject.SetActive(true);
+        if (baseValue != 0 && boostValue != 0)
+            text.text = baseValue.ToString() + "<color=green> + " + boostValue.ToString() + "</color>";
+        else if (baseValue != 0 && boostValue == 0)
+            text.text = baseValue.ToString();
+        else if (boostValue != 0)
+            text.text = "<color=green>+ " + boostValue.ToString() + "</color>";
+        //if (baseValue > 0)
+        //    text.text = baseValue.ToString() + " + " + boostValue.ToString();
+        //else if(boostValue > 0)
+        //    text.text = "+" + boostValue.ToString();
+    }
+
+    public void HideDisplay()
+    {
+        text.gameObject.SetActive(false);
     }
 }
 

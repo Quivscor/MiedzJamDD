@@ -9,8 +9,8 @@ public class LastSelectedBuilding : MonoBehaviour
 
     public static Vector3 mockHidingPosition = new Vector3(0f, 1000f, 0f);
 
-    private GameObject m_selectedBuildingMock;
-    public GameObject SelectedBuildingMock => m_selectedBuildingMock;
+    private Building m_selectedBuildingMock;
+    public Building SelectedBuildingMock => m_selectedBuildingMock;
 
     public void SetBuilding(Building b)
     {
@@ -20,9 +20,9 @@ public class LastSelectedBuilding : MonoBehaviour
         m_selectedBuilding = b;
         if (m_selectedBuildingMock != null)
             Destroy(m_selectedBuildingMock.gameObject);
-        m_selectedBuildingMock = Instantiate<GameObject>(m_selectedBuilding.gameObject, mockHidingPosition, Quaternion.identity, this.transform);
-        m_selectedBuildingMock.layer = CityDirector.IgnoreCameraRaycastLayerID;
-        m_selectedBuildingMock.GetComponent<MeshRenderer>().material.color = new Color(1, 1, 1, .5f);
+        m_selectedBuildingMock = Instantiate(m_selectedBuilding, mockHidingPosition, Quaternion.identity, this.transform);
+        m_selectedBuildingMock.gameObject.layer = CityDirector.IgnoreCameraRaycastLayerID;
+        //m_selectedBuildingMock.GetComponent<MeshRenderer>().material.color = new Color(1, 1, 1, .5f);
     }
 
     public void Deselect()
