@@ -103,7 +103,7 @@ public class CityDirector : MonoBehaviour
                 if (CityGrid[i, j].Building == null)
                     continue;
 
-                CityGrid[i, j].Building.RecalculatePointScore(new Vector2Int(i, j), CityGrid[i, j].GetNeighborsFromBuildingData());
+                CityGrid[i, j].Building.RecalculatePointScore(new Vector2Int(i, j), CityGrid[i, j].GetNeighborsFromPlacedBuilding());
                 // TODO: Assign points to proper categories for all affected buildings, not only the one placed currently
                 // Idea: remember buildings that have points delta != 0
                 if (updateScore)
