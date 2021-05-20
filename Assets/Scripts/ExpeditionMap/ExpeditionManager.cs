@@ -25,6 +25,10 @@ namespace ExpeditionMap
         private void Start()
         {
             currentAvailableTeams = availableTeams;
+
+            TimeController.Instance.OnEndOfTheWeek += FinishExpeditions;
+
+            RaportsReader.Instance.OnAllRaportsReaded += OnRaportsReaded;
         }
 
         public void CreateExpedition(Field destinationField)
@@ -46,11 +50,20 @@ namespace ExpeditionMap
 
         public void FinishExpeditions()
         {
+            List<RaportData> raportsData = new List<RaportData>();
+
             foreach (Expedition expedition in expeditions)
             {
-                expedition.OnExpeditionFinished();
+                raportsData.Add(expedition.OnExpeditionFinished());
             }
 
+            RaportsReader.Instance.ShowRaports(raportsData.ToArray());
+
+            expeditions.Clear();
+        }
+
+        public void OnRaportsReaded()
+        {
             currentAvailableTeams = availableTeams;
         }
     }

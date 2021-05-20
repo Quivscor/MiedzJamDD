@@ -25,6 +25,17 @@ namespace ExpeditionMap
         public float MaxCopper { get => maxCopper; }
         public int DistanceToRoot { get => distanceToRoot; }
         public bool IsRoot { get => isRoot; }
+        public Vector2Int FieldCoords { get => fieldCoords; }
+        public float CurrentCopper { get => currentCopper; set => currentCopper = value; }
+        public bool HasBeenDiscovered 
+        { 
+            get => hasBeenDiscovered; 
+            set
+            {
+                hasBeenDiscovered = value;
+                fieldVisual?.SetFieldDiscovered(hasBeenDiscovered);
+            }
+        }
 
         private void Start()
         {
@@ -47,6 +58,10 @@ namespace ExpeditionMap
         public void InitializeField(Vector3 root, bool isRoot)
         {
             this.isRoot = isRoot;
+
+            fieldCoords.x = (int)this.transform.position.x;
+            fieldCoords.y = (int)this.transform.position.z;
+
             CalculateDistanceToRoot(new Vector2Int((int)root.x, (int)root.z));
         }
 
