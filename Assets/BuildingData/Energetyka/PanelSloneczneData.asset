@@ -16,10 +16,14 @@ MonoBehaviour:
   buildingIDs:
   - PoleRoslin
   buildingBoosts: 01000000
-  pointValue: 5
+  pointValue: 1
   pointCategory: 0
   neighborCoordinatesRelative:
   - {x: 0, y: 1}
   - {x: 0, y: -1}
   - {x: 1, y: 0}
   - {x: -1, y: 0}
+  - {x: -1, y: 1}
+  - {x: 1, y: 1}
+  - {x: 1, y: -1}
+  - {x: -1, y: -1}

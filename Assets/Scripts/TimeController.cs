@@ -33,6 +33,7 @@ public class TimeController : MonoBehaviour
         totalDays = 1;
         months = 0;
         currentDay = DayType.Niedziela;
+        CityDirector.Instance.OnBuildingPlaced += NextDay;
         UpdateUI();
     }
 
@@ -40,11 +41,11 @@ public class TimeController : MonoBehaviour
     {
         while(currentDay != DayType.Niedziela)
         {
-            NextDay();
+            NextDay(null);
         }
     }
 
-    public void NextDay()
+    public void NextDay(CityDirectorEventData cityDirectorEventData)
     {
         if (CurrentDay != DayType.Niedziela)
         {
