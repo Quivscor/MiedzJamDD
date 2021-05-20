@@ -25,6 +25,10 @@ public class CityDirector : MonoBehaviour
     public BuildingField buildingFieldPrefab;
     #endregion
 
+    #region Events
+    public Action<CityDirectorEventData> OnBuildingPlaced;
+    #endregion
+
     private void Awake()
     {
         if (Instance == null)
@@ -82,6 +86,8 @@ public class CityDirector : MonoBehaviour
 
         //recalculate grid and apply extra points to points controller
         RecalculateGrid(true);
+        //if needed some info from city director here, edit the class and add what's needed
+        OnBuildingPlaced?.Invoke(new CityDirectorEventData());
 
         m_lastSelectedBuilding.Deselect();
         m_comboDisplayerComponent.CleanupDisplay(eventData);
@@ -108,4 +114,9 @@ public class CityDirector : MonoBehaviour
 
         Debug.Log("Grid score = " + debugScore);
     }
+}
+
+public class CityDirectorEventData
+{
+
 }
