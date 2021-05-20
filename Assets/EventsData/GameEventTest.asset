@@ -14,4 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eventText: 
   hasOptions: 0
-  eventChoices: []
+  eventChoices:
+  - choiceText: 
+    choiceCost: 0
+    currencyReward: 0
+    packageReward: {fileID: 0}
+  - choiceText: 
+    choiceCost: 0
+    currencyReward: 0
+    packageReward: {fileID: 0}
