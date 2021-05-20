@@ -85,7 +85,9 @@ public class CityDirector : MonoBehaviour
         eventData.selfReference.AssignBuilding(b);
 
         //recalculate grid and apply extra points to points controller
-        RecalculateGrid(true);
+        b.RecalculatePointScore(eventData.selfReference.CityGridCoordinates, eventData.selfReference.GetNeighborsFromPlacedBuilding());
+        CategoriesProgressController.Instance.AddPointsToScience(b.BuildingCategory, b.PointScoreDelta);
+
         //if needed some info from city director here, edit the class and add what's needed
         OnBuildingPlaced?.Invoke(new CityDirectorEventData(b));
 
@@ -105,8 +107,7 @@ public class CityDirector : MonoBehaviour
                     continue;
 
                 CityGrid[i, j].Building.RecalculatePointScore(new Vector2Int(i, j), CityGrid[i, j].GetNeighborsFromPlacedBuilding());
-                // TODO: Assign points to proper categories for all affected buildings, not only the one placed currently
-                // Idea: remember buildings that have points delta != 0
+
                 if (updateScore)
                     CategoriesProgressController.Instance.AddPointsToScience(CityGrid[i, j].Building.BuildingCategory, CityGrid[i, j].Building.PointScoreDelta);
                 debugScore += CityGrid[i, j].Building.PointScore;

@@ -44,30 +44,12 @@ public class ComboDisplayerComponent : MonoBehaviour
                 eventData.selfReference.CityGridCoordinates.y + eventData.neighborCoordsRelative[i].y]);
         }
 
-
-        //go through all fields and find what comboes with mock outside of mock's own range
-        Vector2Int mockCoords = eventData.selfReference.CityGridCoordinates;
-        for (int x = 0; x < CityDirector.CityGridSize; x++)
-        {
-            for (int z = 0; z < CityDirector.CityGridSize; z++)
-            {
-                if (CityDirector.Instance.CityGrid[x, z].Building == null)
-                    continue;
-                List<Vector2Int> coords = CityDirector.Instance.CityGrid[x, z].GetNeighborsFromPlacedBuilding(false);
-                foreach (Vector2Int field in coords)
-                {
-                    if (mockCoords == field && !displayedFields.Contains(CityDirector.Instance.CityGrid[x, z]))
-                        displayedFields.Add(CityDirector.Instance.CityGrid[x, z]);
-                }
-            }
-        }
-
         //save the list to cleanup list, because this will be overwritten first
         fieldsToCleanup = new List<BuildingField>(displayedFields);
 
         //change material so they're more visible
         HighlightBuildingFields();
-        HighlightOtherBuildingComboRanges(eventData.selfReference.CityGridCoordinates);
+
         //display numerical values of boosts above fields
         DisplayNumericalBoosts(eventData.selfReference);
     }
@@ -125,14 +107,14 @@ public class ComboDisplayerComponent : MonoBehaviour
         pointedField.DisplayInfo(extra, CityDirector.Instance.SelectedBuilding.SelectedBuildingMock.BaseScore);
         categoryPoints[(int)CityDirector.Instance.SelectedBuilding.SelectedBuildingMock.BuildingCategory] += CityDirector.Instance.SelectedBuilding.SelectedBuildingMock.BaseScore + extra;
 
-        foreach (BuildingField f in displayedFields)
-        {
-            if (f.Building == null)
-                continue;
-            int bonus = f.Building.GetBonusFromNeighboringWithMock(f.CityGridCoordinates, pointedField.CityGridCoordinates);
-            f.DisplayInfo(bonus);
-            categoryPoints[(int)f.Building.BuildingCategory] += bonus;
-        }
+        //foreach (BuildingField f in displayedFields)
+        //{
+        //    if (f.Building == null)
+        //        continue;
+        //    int bonus = f.Building.GetBonusFromNeighboringWithMock(f.CityGridCoordinates, pointedField.CityGridCoordinates);
+        //    f.DisplayInfo(bonus);
+        //    categoryPoints[(int)f.Building.BuildingCategory] += bonus;
+        //}
 
         for(int i = 0; i < categoryPoints.Length; i++)
         {
