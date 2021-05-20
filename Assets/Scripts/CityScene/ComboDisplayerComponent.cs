@@ -9,6 +9,7 @@ public class ComboDisplayerComponent : MonoBehaviour
 
     public Material defaultBuildingFieldMaterial;
     public Material boostedField;
+    public Material otherComboField;
 
     private void Start()
     {
@@ -43,7 +44,7 @@ public class ComboDisplayerComponent : MonoBehaviour
                 eventData.selfReference.CityGridCoordinates.y + eventData.neighborCoordsRelative[i].y]);
         }
 
-        //PROBLEM HERE
+
         //go through all fields and find what comboes with mock outside of mock's own range
         Vector2Int mockCoords = eventData.selfReference.CityGridCoordinates;
         for (int x = 0; x < CityDirector.CityGridSize; x++)
@@ -66,6 +67,7 @@ public class ComboDisplayerComponent : MonoBehaviour
 
         //change material so they're more visible
         HighlightBuildingFields();
+        HighlightOtherBuildingComboRanges();
         //display numerical values of boosts above fields
         DisplayNumericalBoosts(eventData.selfReference);
     }
@@ -75,6 +77,26 @@ public class ComboDisplayerComponent : MonoBehaviour
         foreach(BuildingField f in displayedFields)
         {
             f.Renderer.material = boostedField;
+        }
+    }
+
+    public void HighlightOtherBuildingComboRanges()
+    {
+        foreach (BuildingField f in displayedFields)
+        {
+            if (f.Building == null)
+                continue;
+
+            List<Vector2Int> neighborCoords = f.GetNeighborsFromPlacedBuilding(false);
+            foreach(Vector2Int coords in neighborCoords)
+            {
+                //does it combo with hovered building
+                int value = 0; //not important
+                if (!f.Building.NeighborBoosts.TryGetValue(CityDirector.Instance.SelectedBuilding.SelectedBuildingMock.BuildingID, out value))
+                    continue;
+                CityDirector.Instance.CityGrid[coords.x, coords.y].Renderer.material = otherComboField;
+                fieldsToCleanup.Add(CityDirector.Instance.CityGrid[coords.x, coords.y]);
+            }
         }
     }
 

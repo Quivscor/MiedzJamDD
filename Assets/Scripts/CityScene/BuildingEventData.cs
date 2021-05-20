@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BuildingEventData : MonoBehaviour
+public class BuildingEventData
 {
     public string buildingName;
     public string category;
