@@ -50,7 +50,7 @@ public class CategoriesProgressController : MonoBehaviour
 
     public void TestAddPointsToScience(int scienceCategory)
     {
-        int value = 3;
+        int value = 1;
         if (sciences[scienceCategory].currentExp + value >= sciences[(int)scienceCategory].expToNextLevel)
         {
             int difference = (sciences[scienceCategory].currentExp + value) - sciences[scienceCategory].expToNextLevel;
