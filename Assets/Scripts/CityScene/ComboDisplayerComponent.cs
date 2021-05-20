@@ -38,9 +38,27 @@ public class ComboDisplayerComponent : MonoBehaviour
             if (eventData.neighborCoordsRelative[i] == Vector2Int.zero)
                 continue;
 
-            //PROBLEM HERE
+            
             displayedFields.Add(CityDirector.Instance.CityGrid[eventData.selfReference.CityGridCoordinates.x + eventData.neighborCoordsRelative[i].x,
                 eventData.selfReference.CityGridCoordinates.y + eventData.neighborCoordsRelative[i].y]);
+        }
+
+        //PROBLEM HERE
+        //go through all fields and find what comboes with mock outside of mock's own range
+        Vector2Int mockCoords = eventData.selfReference.CityGridCoordinates;
+        for (int x = 0; x < CityDirector.CityGridSize; x++)
+        {
+            for (int z = 0; z < CityDirector.CityGridSize; z++)
+            {
+                if (CityDirector.Instance.CityGrid[x, z].Building == null)
+                    continue;
+                List<Vector2Int> coords = CityDirector.Instance.CityGrid[x, z].GetNeighborsFromPlacedBuilding(false);
+                foreach (Vector2Int field in coords)
+                {
+                    if (mockCoords == field && !displayedFields.Contains(CityDirector.Instance.CityGrid[x, z]))
+                        displayedFields.Add(CityDirector.Instance.CityGrid[x, z]);
+                }
+            }
         }
 
         //save the list to cleanup list, because this will be overwritten first

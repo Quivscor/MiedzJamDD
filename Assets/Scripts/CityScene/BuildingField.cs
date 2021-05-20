@@ -71,8 +71,10 @@ public class BuildingField : MonoBehaviour, IPointerClickHandler, IPointerEnterH
         return result;
     }
 
-    public List<Vector2Int> GetNeighborsFromBuildingData()
+    //Used to get info about possible neighbors for the mock that is placed on this field, NOT FOR PLACED BUILDING
+    public List<Vector2Int> GetNeighborsFromBuildingData(bool relative = true)
     {
+        //BAD
         List<Vector2Int> originalNeighbors = CityDirector.Instance.SelectedBuilding.SelectedBuilding.BuildingNeighbors;
         List<Vector2Int> result = new List<Vector2Int>(originalNeighbors);
 
@@ -90,6 +92,37 @@ public class BuildingField : MonoBehaviour, IPointerClickHandler, IPointerEnterH
 
             if (m_cityGridCoords.x + result[i].x >= CityDirector.CityGridSize)
                 result[i] = Vector2Int.zero;
+
+            if (!relative)
+                result[i] += m_cityGridCoords;
+        }
+
+        return result;
+    }
+
+    public List<Vector2Int> GetNeighborsFromPlacedBuilding(bool relative = true)
+    {
+        //BAD
+        List<Vector2Int> originalNeighbors = Building.BuildingNeighbors;
+        List<Vector2Int> result = new List<Vector2Int>(originalNeighbors);
+
+        //need to zero all illegal placements
+        for (int i = 0; i < result.Count; i++)
+        {
+            if (m_cityGridCoords.y + result[i].y < 0)
+                result[i] = Vector2Int.zero;
+
+            if (m_cityGridCoords.y + result[i].y >= CityDirector.CityGridSize)
+                result[i] = Vector2Int.zero;
+
+            if (m_cityGridCoords.x + result[i].x < 0)
+                result[i] = Vector2Int.zero;
+
+            if (m_cityGridCoords.x + result[i].x >= CityDirector.CityGridSize)
+                result[i] = Vector2Int.zero;
+
+            if (!relative)
+                result[i] += m_cityGridCoords;
         }
 
         return result;
