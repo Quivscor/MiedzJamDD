@@ -252,6 +252,7 @@ GameObject:
   - component: {fileID: 8314289503299474643}
   - component: {fileID: 1780040997981477798}
   - component: {fileID: 3134550310504987465}
+  - component: {fileID: 4995030440078653386}
   m_Layer: 8
   m_Name: FieldInfoCanvas
   m_TagString: Untagged
@@ -339,3 +340,15 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!225 &4995030440078653386
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7638866455619479249}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
