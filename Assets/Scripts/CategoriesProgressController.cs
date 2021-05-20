@@ -49,6 +49,8 @@ public class CategoriesProgressController : MonoBehaviour
             sciences[(int)scienceCategory].expToNextLevel += (int)(sciences[(int)scienceCategory].expToNextLevel * percentageCostIncrease);
             PopUpController.Instance.AddToList(scienceCategory);
 
+            if (scienceCategory == ScienceCategory.Rolnictwo)
+                ExpeditionMap.ExpeditionManager.Instance?.AddFreeTeam();
         }
         else
             sciences[(int)scienceCategory].currentExp += value;

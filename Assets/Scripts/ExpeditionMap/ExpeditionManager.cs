@@ -8,6 +8,8 @@ namespace ExpeditionMap
     {
         public static ExpeditionManager Instance = null;
 
+        public GameObject newRaportsButton = null;
+
         private void Awake()
         {
             if (ExpeditionManager.Instance == null)
@@ -16,19 +18,15 @@ namespace ExpeditionMap
                 Destroy(this);
         }
 
-        [SerializeField] private int availableTeams = 2;
-
         private List<Expedition> expeditions = new List<Expedition>();
 
-        private int currentAvailableTeams = 0;
+        private int currentAvailableTeams = 1;
 
         private void Start()
         {
-            currentAvailableTeams = availableTeams;
+            currentAvailableTeams = 1;
 
-            TimeController.Instance.OnEndOfTheWeek += FinishExpeditions;
-
-            RaportsReader.Instance.OnAllRaportsReaded += OnRaportsReaded;
+            RaportsReader.Instance.OnAllRaportsReaded += OnAllRaportsReaded;
         }
 
         public void CreateExpedition(Field destinationField)
@@ -48,26 +46,35 @@ namespace ExpeditionMap
             return currentAvailableTeams > 0;
         }
 
-        public void FinishExpeditions()
+        List<RaportData> waitingRaports = new List<RaportData>();
+
+        public void ExpeditionFinished(RaportData raportData)
         {
-            List<RaportData> raportsData = new List<RaportData>();
+            waitingRaports.Add(raportData);
 
-            foreach (Expedition expedition in expeditions)
-            {
-                raportsData.Add(expedition.OnExpeditionFinished());
-            }
-
-            if (expeditions.Count > 0)
-                RaportsReader.Instance.ShowRaports(raportsData.ToArray());
-            else
-                OnRaportsReaded();
-
-            expeditions.Clear();
+            newRaportsButton?.SetActive(true);
         }
 
-        public void OnRaportsReaded()
+        public void AddFreeTeam()
         {
-            currentAvailableTeams = availableTeams;
+            currentAvailableTeams++;
         }
+
+        public void OnAllRaportsReaded()
+        {
+            if (waitingRaports.Count <= 0)
+                newRaportsButton?.SetActive(false);
+        }
+
+        #region Buttons
+
+        public void ShowNewRaports()
+        {
+            RaportsReader.Instance.ShowRaports(waitingRaports.ToArray());
+
+            waitingRaports.Clear();
+        }
+
+        #endregion
     }
 }

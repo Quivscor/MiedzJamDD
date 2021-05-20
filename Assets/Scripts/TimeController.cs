@@ -8,6 +8,7 @@ public class TimeController : MonoBehaviour
 {
     public Action OnEndOfTheWeek;
     public Action OnFirstCommonDay;
+    public Action OnNextDay;
     public static TimeController Instance = null;
 
     [SerializeField] private TextMeshProUGUI daysText;
@@ -46,12 +47,9 @@ public class TimeController : MonoBehaviour
         }
     }
 
-    public void StartNewWeek()
+    public void NextDay()
     {
-        while (currentDay != DayType.Poniedziałek)
-        {
-            NextDay(null);
-        }
+        NextDay(null);
     }
 
     public void NextDay(CityDirectorEventData cityDirectorEventData)
@@ -72,6 +70,8 @@ public class TimeController : MonoBehaviour
             OnFirstCommonDay?.Invoke();
             // FAZA BUDOWANIA
         }
+
+        OnNextDay?.Invoke();
 
         totalDays++;
         thisMonthDays++;

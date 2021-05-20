@@ -35,6 +35,8 @@ public class RaportsReader : MonoBehaviour
 
     public void RaportReaded()
     {
+        AddResourcesFromRaports();
+
         currentRaportIndex++;
 
         if (currentRaportIndex < raportsData.Length)
@@ -46,5 +48,12 @@ public class RaportsReader : MonoBehaviour
         {
             OnAllRaportsReaded?.Invoke();
         }
+    }
+
+    private void AddResourcesFromRaports()
+    {
+        ResourceController.Instance.AddCopper(raportsData[currentRaportIndex].gainedCopper);
+
+        ExpeditionMap.ExpeditionManager.Instance.AddFreeTeam();
     }
 }

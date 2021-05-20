@@ -10,4 +10,6 @@ public class RaportData
     public string discoveredFieldsText = null;
     public bool additionalActivity = false;
     public string additionalActivityText = null;
+
+    public int gainedCopper = 0;
 }
