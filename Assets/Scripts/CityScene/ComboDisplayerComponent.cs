@@ -61,17 +61,31 @@ public class ComboDisplayerComponent : MonoBehaviour
 
     public void DisplayNumericalBoosts(BuildingField pointedField)
     {
-        int sumScore = CityDirector.Instance.SelectedBuilding.SelectedBuildingMock.BaseScore;
-        pointedField.DisplayInfo(CityDirector.Instance.SelectedBuilding.SelectedBuildingMock.GetBonusFromNeighbors(pointedField.CityGridCoordinates, pointedField.GetNeighborsFromBuildingData()), CityDirector.Instance.SelectedBuilding.SelectedBuildingMock.PointScore);
-        foreach(BuildingField f in displayedFields)
+        CategoriesProgressController.ScienceCategory[] categories = new CategoriesProgressController.ScienceCategory[4];
+        int[] categoryPoints = new int[4];
+
+        categories[0] = CategoriesProgressController.ScienceCategory.Energetyka;
+        categories[1] = CategoriesProgressController.ScienceCategory.Telekomunikacja;
+        categories[2] = CategoriesProgressController.ScienceCategory.Transport;
+        categories[3] = CategoriesProgressController.ScienceCategory.Rolnictwo;
+
+        int extra = CityDirector.Instance.SelectedBuilding.SelectedBuildingMock.GetBonusFromNeighbors(pointedField.CityGridCoordinates, pointedField.GetNeighborsFromBuildingData());
+        pointedField.DisplayInfo(extra, CityDirector.Instance.SelectedBuilding.SelectedBuildingMock.BaseScore);
+        categoryPoints[(int)CityDirector.Instance.SelectedBuilding.SelectedBuildingMock.BuildingCategory] += CityDirector.Instance.SelectedBuilding.SelectedBuildingMock.BaseScore + extra;
+
+        foreach (BuildingField f in displayedFields)
         {
             if (f.Building == null)
                 continue;
             int bonus = f.Building.GetBonusFromNeighboringWithMock();
             f.DisplayInfo(bonus);
-            sumScore += bonus;
+            categoryPoints[(int)f.Building.BuildingCategory] += bonus;
         }
-        CategoriesProgressController.Instance.AddPointsToScienceHover(CityDirector.Instance.SelectedBuilding.SelectedBuilding.BuildingCategory, sumScore);
+
+        for(int i = 0; i < categoryPoints.Length; i++)
+        {
+            CategoriesProgressController.Instance.AddPointsToScienceHover(categories[i], categoryPoints[i]);
+        }
     }
 
     //this is called after TryDisplayComboPotential
@@ -83,6 +97,6 @@ public class ComboDisplayerComponent : MonoBehaviour
             f.Renderer.material = defaultBuildingFieldMaterial;
             f.HideDisplay();
         }
-        CategoriesProgressController.Instance.StopHover(eventData.scienceCategory);
+        CategoriesProgressController.Instance.StopHover();
     }
 }

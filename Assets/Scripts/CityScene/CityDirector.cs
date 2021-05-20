@@ -98,6 +98,8 @@ public class CityDirector : MonoBehaviour
                     continue;
 
                 CityGrid[i, j].Building.RecalculatePointScore(new Vector2Int(i, j), CityGrid[i, j].GetNeighborsFromBuildingData());
+                // TODO: Assign points to proper categories for all affected buildings, not only the one placed currently
+                // Idea: remember buildings that have points delta != 0
                 if (updateScore)
                     CategoriesProgressController.Instance.AddPointsToScience(CityGrid[i, j].Building.BuildingCategory, CityGrid[i, j].Building.PointScoreDelta);
                 debugScore += CityGrid[i, j].Building.PointScore;

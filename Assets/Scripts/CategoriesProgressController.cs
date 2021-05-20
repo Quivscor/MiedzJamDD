@@ -22,14 +22,21 @@ public class CategoriesProgressController : MonoBehaviour
 
     public void AddPointsToScienceHover(ScienceCategory scienceCategory, int value)
     {
+        if (value == 0)
+            return;
+
         sciences[(int)scienceCategory].progressText.text = sciences[(int)scienceCategory].currentExp + "+<color=yellow>" + value +"</color>/" + sciences[(int)scienceCategory].expToNextLevel;
         sciences[(int)scienceCategory].hoverProgressBar.fillAmount = (float)((sciences[(int)scienceCategory].currentExp + value) / (float)sciences[(int)scienceCategory].expToNextLevel);
     }
 
-    public void StopHover(ScienceCategory scienceCategory)
+    public void StopHover()
     {
-        sciences[(int)scienceCategory].progressText.text = sciences[(int)scienceCategory].progressText.text = sciences[(int)scienceCategory].currentExp + "/" + sciences[(int)scienceCategory].expToNextLevel;
-        sciences[(int)scienceCategory].hoverProgressBar.fillAmount = 0;
+        //clean up all bars anyway
+        for(int i = 0; i < 4; i++)
+        {
+            sciences[i].progressText.text = sciences[i].progressText.text = sciences[i].currentExp + "/" + sciences[i].expToNextLevel;
+            sciences[i].hoverProgressBar.fillAmount = 0;
+        }
     }
 
     public void AddPointsToScience(ScienceCategory scienceCategory, int value)
