@@ -38,8 +38,6 @@ public class TimeController : MonoBehaviour
         UpdateUI();
     }
 
-
-
     public void SkipToSunday()
     {
         while(currentDay != DayType.Niedziela)
