@@ -8,7 +8,7 @@ public class ResourceController : MonoBehaviour
     public static ResourceController Instance = null;
 
     [SerializeField] private TextMeshProUGUI copperText;
-    private int copper = 100000;
+    private int copper = 250;
 
     public int Copper { get => copper; }
 

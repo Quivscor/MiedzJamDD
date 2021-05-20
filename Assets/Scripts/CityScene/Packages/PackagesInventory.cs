@@ -2,11 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using static CategoriesProgressController;
+using UnityEngine.UI;
 
 public class PackagesInventory : MonoBehaviour
 {
     [Header("References:")]
     public PackageData[] packageDatas = new PackageData[4];
+    public GameObject mainShopCanvas = null;
+    public Button[] buyButtons = new Button[4];
+
 
     [SerializeField] private int buildingsInOnePackage = 3;
 
@@ -53,6 +57,66 @@ public class PackagesInventory : MonoBehaviour
     public void AddRandomPackage()
     {
         AddPackage((ScienceCategory)Random.Range(0, 4));
+    }
+
+    #region Button Actions
+
+    public void OpenShop()
+    {
+        mainShopCanvas?.SetActive(true);
+
+        UpdateButtonsInteractions();
+    }
+
+    public void CloseShop()
+    {
+        mainShopCanvas?.SetActive(false);
+    }
+
+    public void BuyRolnictwoPackage()
+    {
+        ResourceController.Instance?.SpendCopper(100);
+
+        UpdateButtonsInteractions();
+
+        AddPackage(ScienceCategory.Rolnictwo);
+    }
+
+    public void BuyEnergetykaPackage()
+    {
+        ResourceController.Instance?.SpendCopper(100);
+
+        UpdateButtonsInteractions();
+
+        AddPackage(ScienceCategory.Energetyka);
+    }
+
+    public void BuyTelekomunikacjaPackage()
+    {
+        ResourceController.Instance?.SpendCopper(100);
+
+        UpdateButtonsInteractions();
+
+        AddPackage(ScienceCategory.Telekomunikacja);
+    }
+
+    public void BuyTransportPackage()
+    {
+        ResourceController.Instance?.SpendCopper(100);
+
+        UpdateButtonsInteractions();
+
+        AddPackage(ScienceCategory.Transport);
+    }
+
+    #endregion
+
+    private void UpdateButtonsInteractions()
+    {
+        bool canBuy = ResourceController.Instance.Copper >= 100;
+
+        foreach (Button b in buyButtons)
+            b.interactable = canBuy;
     }
 
 }
