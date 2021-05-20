@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thisBuildingID: PoleRoslin
   buildingIDs:
-  - PoleRoslin
-  buildingBoosts: 01000000
+  - PanelSloneczny
+  buildingBoosts: 05000000
   pointValue: 1
   pointCategory: 3
   neighborCoordinatesRelative:

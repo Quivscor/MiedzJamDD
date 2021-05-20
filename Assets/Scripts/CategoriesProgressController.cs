@@ -47,6 +47,7 @@ public class CategoriesProgressController : MonoBehaviour
             sciences[(int)scienceCategory].level++;
             sciences[(int)scienceCategory].currentExp = difference;
             sciences[(int)scienceCategory].expToNextLevel += (int)(sciences[(int)scienceCategory].expToNextLevel * percentageCostIncrease);
+            PopUpController.Instance.AddToList(scienceCategory);
 
         }
         else
