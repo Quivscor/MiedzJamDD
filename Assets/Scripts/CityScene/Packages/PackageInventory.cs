@@ -4,10 +4,16 @@ using UnityEngine;
 
 public class PackageInventory : MonoBehaviour
 {
-    List<Building> buildings;
+    [Header("Debug")]
+    public PackageData debugPackage;
+
+    List<Building> buildings = new List<Building>();
 
     private void Start()
     {
+        if (debugPackage != null)
+            FillInventoryFromPackage(debugPackage);
+
         CityDirector.Instance.OnBuildingPlaced += RemoveBuildingFromInventory;
     }
 

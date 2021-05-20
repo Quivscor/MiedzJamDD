@@ -38,6 +38,7 @@ public class ComboDisplayerComponent : MonoBehaviour
             if (eventData.neighborCoordsRelative[i] == Vector2Int.zero)
                 continue;
 
+            //PROBLEM HERE
             displayedFields.Add(CityDirector.Instance.CityGrid[eventData.selfReference.CityGridCoordinates.x + eventData.neighborCoordsRelative[i].x,
                 eventData.selfReference.CityGridCoordinates.y + eventData.neighborCoordsRelative[i].y]);
         }
