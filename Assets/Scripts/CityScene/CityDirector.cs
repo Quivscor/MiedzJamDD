@@ -87,7 +87,7 @@ public class CityDirector : MonoBehaviour
         //recalculate grid and apply extra points to points controller
         RecalculateGrid(true);
         //if needed some info from city director here, edit the class and add what's needed
-        OnBuildingPlaced?.Invoke(new CityDirectorEventData());
+        OnBuildingPlaced?.Invoke(new CityDirectorEventData(b));
 
         m_lastSelectedBuilding.Deselect();
         m_comboDisplayerComponent.CleanupDisplay(eventData);
