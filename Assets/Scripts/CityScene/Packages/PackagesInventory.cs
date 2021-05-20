@@ -9,6 +9,8 @@ public class PackagesInventory : MonoBehaviour
     [Header("References:")]
     public PackageData[] packageDatas = new PackageData[4];
     public GameObject mainShopCanvas = null;
+    public Animator scienceAnimator;
+    public Animator buildDescriptionAnimator;
     public Button[] buyButtons = new Button[4];
 
 
@@ -64,13 +66,16 @@ public class PackagesInventory : MonoBehaviour
     public void OpenShop()
     {
         mainShopCanvas?.SetActive(true);
-
+        scienceAnimator.SetTrigger("HideScience");
+        buildDescriptionAnimator.SetTrigger("HideBuildDescription");
         UpdateButtonsInteractions();
     }
 
     public void CloseShop()
     {
         mainShopCanvas?.SetActive(false);
+        scienceAnimator.SetTrigger("ShowScience");
+        buildDescriptionAnimator.SetTrigger("ShowBuildDescription");
     }
 
     public void BuyRolnictwoPackage()
