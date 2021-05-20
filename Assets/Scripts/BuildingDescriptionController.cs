@@ -5,10 +5,18 @@ using TMPro;
 
 public class BuildingDescriptionController : MonoBehaviour
 {
+    public static BuildingDescriptionController Instance = null;
+
     [SerializeField] private TextMeshProUGUI buildingNameText;
     [SerializeField] private TextMeshProUGUI categoryText;
     [SerializeField] private TextMeshProUGUI descriptionText;
     [SerializeField] private TextMeshProUGUI bonusesText;
+
+    private void Awake()
+    {
+        if (!Instance)
+            Instance = this;
+    }
 
     private void Start()
     {
@@ -19,11 +27,16 @@ public class BuildingDescriptionController : MonoBehaviour
 
     }
 
-    public void UpdateUI()
+    public void AddToEvent(Building building)
     {
-        buildingNameText.text = "Energol";
-        categoryText.text = "Energetyka";
-        descriptionText.text = "Fajnie świeci i daje dużo prądu";
-        bonusesText.text = "- Bonus +1/n-Bonus +2";
+        building.OnClick += UpdateUI;
+    }
+
+    public void UpdateUI(BuildingEventData buildingEventData)
+    {
+        buildingNameText.text = buildingEventData.buildingName;
+        categoryText.text = buildingEventData.category;
+        descriptionText.text = buildingEventData.description;
+        bonusesText.text = buildingEventData.bonuses;
     }
 }

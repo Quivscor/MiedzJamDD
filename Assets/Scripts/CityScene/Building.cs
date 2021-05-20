@@ -26,7 +26,7 @@ public class Building : MonoBehaviour, IPointerClickHandler, ISelectHandler
     public int PointScoreDelta => m_pointScoreDelta;
 
     #region Events
-    public Action OnClick;
+    public Action<BuildingEventData> OnClick;
     #endregion
 
     private void Start()
@@ -86,12 +86,24 @@ public class Building : MonoBehaviour, IPointerClickHandler, ISelectHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        OnClick?.Invoke();
+        OnClick?.Invoke(new BuildingEventData(m_buildingData.thisBuildingID, m_buildingData.pointCategory.ToString(), "Krótki opis", BonusesStringGenerator()));
         EventSystem.current.SetSelectedGameObject(this.gameObject);
     }
 
     public void OnSelect(BaseEventData eventData)
     {
         CityDirector.Instance.TrySelectingBuilding(this);
+    }
+
+    public string BonusesStringGenerator()
+    {
+        string result = "";
+        result = "- Wszystkich z " + m_buildingData.pointCategory + " <color=yellow>(+1)</color>\n";
+        for (int i = 0; i < m_buildingData.buildingIDs.Count; i++)
+        {
+            result += "- " + m_buildingData.buildingIDs[i] + " <color=yellow>(+" + m_buildingData.buildingBoosts[i] + ")</color>\n";
+        }
+
+        return result;
     }
 }

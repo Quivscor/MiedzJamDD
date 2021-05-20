@@ -41,6 +41,7 @@ public class BuildingsInventory : MonoBehaviour
 
             Building bScr = building.GetComponent<Building>();
 
+            BuildingDescriptionController.Instance.AddToEvent(bScr);
             this.buildings.Add(bScr);
         }
 

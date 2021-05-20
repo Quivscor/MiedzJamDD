@@ -12,11 +12,6 @@ public class PackagesInventory : MonoBehaviour
 
     List<ScienceCategory> packages = new List<ScienceCategory>();
 
-    private void Start()
-    {
-
-    }
-
     public void AddPackage(ScienceCategory category)
     {
         packages.Add(category);
