@@ -29,4 +29,9 @@ public class LastSelectedBuilding : MonoBehaviour
     {
         m_selectedBuilding = null;
     }
+
+    public void DestroyMock()
+    {
+        Destroy(m_selectedBuildingMock.gameObject);
+    }
 }
