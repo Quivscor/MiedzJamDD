@@ -18,6 +18,7 @@ public class Building : MonoBehaviour, IPointerClickHandler, ISelectHandler
     public bool IsPlaced { get; set; }
 
     protected int m_baseScore;
+    public int BaseScore => m_baseScore;
     protected int m_pointScore;
     public int PointScore => m_pointScore;
     //if different than 0, should be displayed when placing down
@@ -33,7 +34,6 @@ public class Building : MonoBehaviour, IPointerClickHandler, ISelectHandler
         IsPlaced = false;
         m_neighborBoosts = m_buildingData.GetNeighborBoostsData();
         m_baseScore = m_buildingData.pointValue;
-        m_pointScore = m_baseScore;
     }
 
     public void RecalculatePointScore(Vector2Int ownCoords, List<Vector2Int> neighborCoords)

@@ -23,7 +23,7 @@ public class CategoriesProgressController : MonoBehaviour
     public void AddPointsToScienceHover(ScienceCategory scienceCategory, int value)
     {
         sciences[(int)scienceCategory].progressText.text = sciences[(int)scienceCategory].currentExp + "+<color=yellow>" + value +"</color>/" + sciences[(int)scienceCategory].expToNextLevel;
-        sciences[(int)scienceCategory].hoverProgressBar.fillAmount = (float)(sciences[(int)scienceCategory].currentExp + value / (float)sciences[(int)scienceCategory].expToNextLevel);
+        sciences[(int)scienceCategory].hoverProgressBar.fillAmount = (float)((sciences[(int)scienceCategory].currentExp + value) / (float)sciences[(int)scienceCategory].expToNextLevel);
     }
 
     public void StopHover(ScienceCategory scienceCategory)
