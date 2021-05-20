@@ -53,7 +53,7 @@ namespace ExpeditionMap
 
         private void CalculateGainingCopper()
         {
-            int maxGainedCopper = (int)Mathf.Min(TeamStats.Instance.MaximumLoad * TeamStatsModifiers.LoadModifier, destinationField.CurrentCopper);
+            int maxGainedCopper = (int)Mathf.Min((int)CategoriesProgressController.Instance.sciences[(int)CategoriesProgressController.ScienceCategory.Transport].level * TeamStatsModifiers.LoadModifier, destinationField.CurrentCopper);
 
             destinationField.CurrentCopper = (int)Mathf.Max(destinationField.CurrentCopper - maxGainedCopper, 0);
 

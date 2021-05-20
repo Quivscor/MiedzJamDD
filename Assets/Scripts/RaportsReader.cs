@@ -27,7 +27,7 @@ public class RaportsReader : MonoBehaviour
     {
         this.raportsData = raportsData;
 
-        int currentRaportIndex = 0;
+        currentRaportIndex = 0;
 
         GameObject raport = Instantiate(raportPrefab, this.transform.position, Quaternion.identity, this.transform);
         raport.GetComponent<Raport>().SetRaportData(raportsData[currentRaportIndex]);
