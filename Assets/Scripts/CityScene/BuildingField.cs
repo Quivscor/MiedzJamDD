@@ -117,7 +117,7 @@ public class BuildingField : MonoBehaviour, IPointerClickHandler, IPointerEnterH
             return;
 
         CityDirector.Instance.SelectedBuilding.SelectedBuildingMock.transform.position = LastSelectedBuilding.mockHidingPosition;
-        BuildingFieldEventData bEventData = new BuildingFieldEventData(this.transform.position, this, GetNeighborsFromBuildingData());
+        BuildingFieldEventData bEventData = new BuildingFieldEventData(this.transform.position, this, GetNeighborsFromBuildingData(), CityDirector.Instance.SelectedBuilding.SelectedBuilding.BuildingCategory);
         OnHoverExit?.Invoke(bEventData);
     }
 
@@ -162,7 +162,16 @@ public class BuildingFieldEventData
         neighborCoordsRelative = neighborCoords;
     }
 
+    public BuildingFieldEventData(Vector3 pos, BuildingField selfRef, List<Vector2Int> neighborCoords, CategoriesProgressController.ScienceCategory category)
+    {
+        fieldPosition = pos;
+        selfReference = selfRef;
+        neighborCoordsRelative = neighborCoords;
+        scienceCategory = category;
+    }
+
     public Vector3 fieldPosition;
     public BuildingField selfReference;
     public List<Vector2Int> neighborCoordsRelative;
+    public CategoriesProgressController.ScienceCategory scienceCategory;
 }

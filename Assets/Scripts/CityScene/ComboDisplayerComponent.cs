@@ -61,13 +61,17 @@ public class ComboDisplayerComponent : MonoBehaviour
 
     public void DisplayNumericalBoosts(BuildingField pointedField)
     {
+        int sumScore = CityDirector.Instance.SelectedBuilding.SelectedBuildingMock.BaseScore;
         pointedField.DisplayInfo(CityDirector.Instance.SelectedBuilding.SelectedBuildingMock.GetBonusFromNeighbors(pointedField.CityGridCoordinates, pointedField.GetNeighborsFromBuildingData()), CityDirector.Instance.SelectedBuilding.SelectedBuildingMock.PointScore);
         foreach(BuildingField f in displayedFields)
         {
             if (f.Building == null)
                 continue;
-            f.DisplayInfo(f.Building.GetBonusFromNeighboringWithMock());
+            int bonus = f.Building.GetBonusFromNeighboringWithMock();
+            f.DisplayInfo(bonus);
+            sumScore += bonus;
         }
+        CategoriesProgressController.Instance.AddPointsToScienceHover(CityDirector.Instance.SelectedBuilding.SelectedBuilding.BuildingCategory, sumScore);
     }
 
     //this is called after TryDisplayComboPotential
@@ -79,5 +83,6 @@ public class ComboDisplayerComponent : MonoBehaviour
             f.Renderer.material = defaultBuildingFieldMaterial;
             f.HideDisplay();
         }
+        CategoriesProgressController.Instance.StopHover(eventData.scienceCategory);
     }
 }
