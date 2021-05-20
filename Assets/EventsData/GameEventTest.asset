@@ -12,14 +12,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 404d57312517f374fa27ee1f15bd23c8, type: 3}
   m_Name: GameEventTest
   m_EditorClassIdentifier: 
-  eventText: 
-  hasOptions: 0
+  eventTitle: Test wydarzenie
+  eventText: Lorem ipsum czary mary test
   eventChoices:
-  - choiceText: 
+  - choiceButtonText: Zajebiscie
+    choiceTitle: Git
+    choiceText: No i zajebiscie B)
     choiceCost: 0
+    category: 0
+    scienceCategoryScorePenalty: 0
     currencyReward: 0
     packageReward: {fileID: 0}
-  - choiceText: 
+  - choiceButtonText: Jednak nie
+    choiceTitle: Nope
+    choiceText: No to pogchampn't
     choiceCost: 0
+    category: 0
+    scienceCategoryScorePenalty: 0
     currencyReward: 0
     packageReward: {fileID: 0}

@@ -8,6 +8,7 @@ public class TimeController : MonoBehaviour
 {
     public Action OnEndOfTheWeek;
     public Action OnFirstCommonDay;
+    public Action<int> OnEndOfDay;
     public static TimeController Instance = null;
 
     [SerializeField] private TextMeshProUGUI daysText;
@@ -81,6 +82,7 @@ public class TimeController : MonoBehaviour
             months++;
         }
 
+        OnEndOfDay((int)currentDay);
         UpdateUI();
     }
 
