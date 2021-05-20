@@ -13,10 +13,19 @@ public class PackagesInventory : MonoBehaviour
     public Animator buildDescriptionAnimator;
     public Button[] buyButtons = new Button[4];
 
+    public Button openShopButton = null;
+    public Button openPackageButton = null;
+
 
     [SerializeField] private int buildingsInOnePackage = 3;
 
     List<ScienceCategory> packages = new List<ScienceCategory>();
+
+    private void Start()
+    {
+        TimeController.Instance.OnEndOfTheWeek += OnSunday;
+        TimeController.Instance.OnFirstCommonDay += OnCommonDay;
+    }
 
     public void AddPackage(ScienceCategory category)
     {
@@ -122,6 +131,21 @@ public class PackagesInventory : MonoBehaviour
 
         foreach (Button b in buyButtons)
             b.interactable = canBuy;
+    }
+
+    private void OnSunday()
+    {
+        if (mainShopCanvas.gameObject.activeSelf == true)
+            CloseShop();
+
+        openShopButton.interactable = false;
+        openPackageButton.interactable = false;
+    }
+
+    private void OnCommonDay()
+    {
+        openShopButton.interactable = true;
+        openPackageButton.interactable = true;
     }
 
 }

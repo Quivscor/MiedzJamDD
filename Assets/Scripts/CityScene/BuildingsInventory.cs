@@ -27,6 +27,9 @@ public class BuildingsInventory : MonoBehaviour
     private void Start()
     {
         CityDirector.Instance.OnBuildingPlaced += RemoveBuildingFromInventory;
+
+        TimeController.Instance.OnEndOfTheWeek += OnSunday;
+        TimeController.Instance.OnFirstCommonDay += OnCommonDay;
     }
 
     public void AddBuildingsToInventory(Building[] buildings)
@@ -62,6 +65,22 @@ public class BuildingsInventory : MonoBehaviour
         for (int i = 0; i < buildings.Count; i++)
         {
             buildings[i].transform.position = inventoryFirstSlot + (slotsOffset * i);
+        }
+    }
+
+    public void OnSunday()
+    {
+        for (int i = 0; i < buildings.Count; i++)
+        {
+            buildings[i].gameObject.SetActive(false);
+        }
+    }
+
+    public void OnCommonDay()
+    {
+        for (int i = 0; i < buildings.Count; i++)
+        {
+            buildings[i].gameObject.SetActive(false);
         }
     }
 }

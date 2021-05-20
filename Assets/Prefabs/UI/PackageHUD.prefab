@@ -2425,6 +2425,8 @@ MonoBehaviour:
   - {fileID: 427278974287275978}
   - {fileID: 427278975756832154}
   - {fileID: 427278974011621183}
+  openShopButton: {fileID: 427278975423650192}
+  openPackageButton: {fileID: 427278973867137090}
   buildingsInOnePackage: 3
 --- !u!1 &427278975184047658
 GameObject:

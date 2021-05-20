@@ -7,6 +7,7 @@ using System;
 public class TimeController : MonoBehaviour
 {
     public Action OnEndOfTheWeek;
+    public Action OnFirstCommonDay;
     public static TimeController Instance = null;
 
     [SerializeField] private TextMeshProUGUI daysText;
@@ -32,14 +33,24 @@ public class TimeController : MonoBehaviour
     {
         totalDays = 1;
         months = 0;
-        currentDay = DayType.Niedziela;
+        currentDay = DayType.Poniedziałek;
         CityDirector.Instance.OnBuildingPlaced += NextDay;
         UpdateUI();
     }
 
+
+
     public void SkipToSunday()
     {
         while(currentDay != DayType.Niedziela)
+        {
+            NextDay(null);
+        }
+    }
+
+    public void StartNewWeek()
+    {
+        while (currentDay != DayType.Poniedziałek)
         {
             NextDay(null);
         }
@@ -60,6 +71,7 @@ public class TimeController : MonoBehaviour
         {
             currentDay = DayType.Poniedziałek;
 
+            OnFirstCommonDay?.Invoke();
             // FAZA BUDOWANIA
         }
 
