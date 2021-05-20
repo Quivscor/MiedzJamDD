@@ -775,12 +775,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 66309704}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &66309706 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5889907050471287563, guid: f1c99db0fef3bb746abeed0c2bb55ddc,
-    type: 3}
-  m_PrefabInstance: {fileID: 66309704}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &69634487
 GameObject:
   m_ObjectHideFlags: 0
@@ -11645,10 +11639,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   citySceneObjects:
   - {fileID: 57061073}
-  - {fileID: 66309706}
+  - {fileID: 1802161758}
   - {fileID: 875319216}
   - {fileID: 2026623657}
-  - {fileID: 1802161758}
   expeditionSceneObjects:
   - {fileID: 249380203}
   - {fileID: 1549629823}

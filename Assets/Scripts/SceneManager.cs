@@ -9,6 +9,8 @@ public class SceneManager : MonoBehaviour
 
     public void SwitchToCityScene()
     {
+        HUDController.Instance.ToggleCityHUD(true);
+
         foreach (GameObject go in citySceneObjects)
             go.SetActive(true);
 
@@ -18,6 +20,9 @@ public class SceneManager : MonoBehaviour
 
     public void SwitchToExpeditionScene()
     {
+        HUDController.Instance.ToggleCityHUD(false);
+
+
         foreach (GameObject go in citySceneObjects)
             go.SetActive(false);
 
