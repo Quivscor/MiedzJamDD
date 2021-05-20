@@ -35,6 +35,9 @@ public class EventController : MonoBehaviour
 
     public void WeekStartRandomizeSeed()
     {
+        if (currentLibrary.Count == 0)
+            currentLibrary = new List<GameEventData>(gameEventLibrary);
+
         weekRandomSeed = Random.Range(0, 6);
         eventFiredThisWeek = false;
     }
