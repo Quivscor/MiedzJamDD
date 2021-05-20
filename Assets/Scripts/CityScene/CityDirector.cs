@@ -118,5 +118,12 @@ public class CityDirector : MonoBehaviour
 
 public class CityDirectorEventData
 {
+    public CityDirectorEventData() { }
 
+    public CityDirectorEventData(Building building)
+    {
+        placedBuilding = building;
+    }
+
+    public Building placedBuilding;
 }
