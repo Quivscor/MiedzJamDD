@@ -57,7 +57,10 @@ namespace ExpeditionMap
                 raportsData.Add(expedition.OnExpeditionFinished());
             }
 
-            RaportsReader.Instance.ShowRaports(raportsData.ToArray());
+            if (expeditions.Count > 0)
+                RaportsReader.Instance.ShowRaports(raportsData.ToArray());
+            else
+                OnRaportsReaded();
 
             expeditions.Clear();
         }
