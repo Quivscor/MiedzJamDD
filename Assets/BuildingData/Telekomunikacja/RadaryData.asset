@@ -13,8 +13,10 @@ MonoBehaviour:
   m_Name: RadaryData
   m_EditorClassIdentifier: 
   thisBuildingID: Radary
+  description: "Dzi\u0119ki falom radiowym wykrywaj\u0105 najdrobniejsze szumy na
+    planecie."
   buildingIDs:
-  - PanelSloneczny
+  - "Panele S\u0142oneczne"
   buildingBoosts: 01000000
   pointValue: 1
   pointCategory: 1

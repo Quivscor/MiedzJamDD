@@ -86,7 +86,7 @@ public class Building : MonoBehaviour, IPointerClickHandler, ISelectHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        OnClick?.Invoke(new BuildingEventData(m_buildingData.thisBuildingID, m_buildingData.pointCategory.ToString(), "Krótki opis", BonusesStringGenerator()));
+        OnClick?.Invoke(new BuildingEventData(m_buildingData.thisBuildingID, m_buildingData.pointCategory.ToString(), m_buildingData.description, BonusesStringGenerator()));
         EventSystem.current.SetSelectedGameObject(this.gameObject);
     }
 

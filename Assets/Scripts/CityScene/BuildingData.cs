@@ -6,7 +6,7 @@ using UnityEngine;
 public class BuildingData : ScriptableObject
 {
     public string thisBuildingID;
-
+    public string description;
     public List<string> buildingIDs;
     public List<int> buildingBoosts;
 

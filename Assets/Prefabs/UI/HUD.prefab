@@ -794,6 +794,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1938935510}
+  - component: {fileID: 6447424140973768533}
   m_Layer: 0
   m_Name: ScienceProgress
   m_TagString: Untagged
@@ -822,6 +823,18 @@ RectTransform:
   m_AnchoredPosition: {x: -210, y: 220.7}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!225 &6447424140973768533
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1938935509}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &1945280419
 GameObject:
   m_ObjectHideFlags: 0
@@ -1785,8 +1798,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0000047684, y: 28.411}
-  m_SizeDelta: {x: 392.83588, y: 72.128174}
+  m_AnchoredPosition: {x: 5.6588, y: 28.411}
+  m_SizeDelta: {x: 381.51825, y: 72.128174}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5021551007898839639
 CanvasRenderer:
@@ -1844,8 +1857,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 23
-  m_fontSizeBase: 23
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8ec76fc7e2a51845a2d5ca2fbb1b007, type: 3}
   m_Name: FabrykaMechowData
   m_EditorClassIdentifier: 
-  thisBuildingID: FabrykaMechow
+  thisBuildingID: "Fabryka Mech\xF3w"
+  description: "To tutaj powstaj\u0105 mechy mog\u0105ce pracowa\u0107 w ci\u0119\u017Ckich
+    warunkach."
   buildingIDs:
-  - PanelSloneczny
+  - "Panele S\u0142oneczne"
   buildingBoosts: 01000000
   pointValue: 1
   pointCategory: 2
