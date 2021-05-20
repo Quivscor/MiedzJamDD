@@ -47,6 +47,8 @@ public class ComboDisplayerComponent : MonoBehaviour
 
         //change material so they're more visible
         HighlightBuildingFields();
+        //display numerical values of boosts above fields
+        DisplayNumericalBoosts(eventData.selfReference);
     }
 
     public void HighlightBuildingFields()
@@ -57,12 +59,25 @@ public class ComboDisplayerComponent : MonoBehaviour
         }
     }
 
+    public void DisplayNumericalBoosts(BuildingField pointedField)
+    {
+        pointedField.DisplayInfo(CityDirector.Instance.SelectedBuilding.SelectedBuildingMock.GetBonusFromNeighbors(pointedField.CityGridCoordinates, pointedField.GetNeighborsFromBuildingData()), CityDirector.Instance.SelectedBuilding.SelectedBuildingMock.PointScore);
+        foreach(BuildingField f in displayedFields)
+        {
+            if (f.Building == null)
+                continue;
+            f.DisplayInfo(f.Building.GetBonusFromNeighboringWithMock());
+        }
+    }
+
     //this is called after TryDisplayComboPotential
     public void CleanupDisplay(BuildingFieldEventData eventData)
     {
-        foreach (BuildingField f in displayedFields)
+        eventData.selfReference.HideDisplay();
+        foreach (BuildingField f in fieldsToCleanup)
         {
             f.Renderer.material = defaultBuildingFieldMaterial;
+            f.HideDisplay();
         }
     }
 }
