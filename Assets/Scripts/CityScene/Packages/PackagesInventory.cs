@@ -9,6 +9,7 @@ public class PackagesInventory : MonoBehaviour
     [Header("References:")]
     public PackageData[] packageDatas = new PackageData[4];
     public GameObject mainShopCanvas = null;
+    public Animator shopAnimator;
     public Animator scienceAnimator;
     public Animator buildDescriptionAnimator;
     public Button[] buyButtons = new Button[4];
@@ -73,7 +74,8 @@ public class PackagesInventory : MonoBehaviour
 
     public void OpenShop()
     {
-        mainShopCanvas?.SetActive(true);
+        //mainShopCanvas?.SetActive(true);
+        shopAnimator.SetTrigger("ShowShop");
         scienceAnimator.SetTrigger("HideScience");
         buildDescriptionAnimator.SetTrigger("HideBuildDescription");
         UpdateButtonsInteractions();
@@ -81,7 +83,8 @@ public class PackagesInventory : MonoBehaviour
 
     public void CloseShop()
     {
-        mainShopCanvas?.SetActive(false);
+        //mainShopCanvas?.SetActive(false);
+        shopAnimator.SetTrigger("HideShop");
         scienceAnimator.SetTrigger("ShowScience");
         buildDescriptionAnimator.SetTrigger("ShowBuildDescription");
     }
