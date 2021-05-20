@@ -67,7 +67,7 @@ public class ComboDisplayerComponent : MonoBehaviour
 
         //change material so they're more visible
         HighlightBuildingFields();
-        HighlightOtherBuildingComboRanges();
+        HighlightOtherBuildingComboRanges(eventData.selfReference.CityGridCoordinates);
         //display numerical values of boosts above fields
         DisplayNumericalBoosts(eventData.selfReference);
     }
@@ -80,7 +80,7 @@ public class ComboDisplayerComponent : MonoBehaviour
         }
     }
 
-    public void HighlightOtherBuildingComboRanges()
+    public void HighlightOtherBuildingComboRanges(Vector2Int hoverPosition)
     {
         foreach (BuildingField f in displayedFields)
         {
@@ -88,14 +88,25 @@ public class ComboDisplayerComponent : MonoBehaviour
                 continue;
 
             List<Vector2Int> neighborCoords = f.GetNeighborsFromPlacedBuilding(false);
+            bool shouldDisplay = false;
             foreach(Vector2Int coords in neighborCoords)
             {
                 //does it combo with hovered building
                 int value = 0; //not important
                 if (!f.Building.NeighborBoosts.TryGetValue(CityDirector.Instance.SelectedBuilding.SelectedBuildingMock.BuildingID, out value))
                     continue;
-                CityDirector.Instance.CityGrid[coords.x, coords.y].Renderer.material = otherComboField;
-                fieldsToCleanup.Add(CityDirector.Instance.CityGrid[coords.x, coords.y]);
+                if (coords != hoverPosition)
+                    continue;
+                shouldDisplay = true;
+                break;
+            }
+            if(shouldDisplay)
+            {
+                foreach (Vector2Int coords in neighborCoords)
+                {
+                    CityDirector.Instance.CityGrid[coords.x, coords.y].Renderer.material = otherComboField;
+                    fieldsToCleanup.Add(CityDirector.Instance.CityGrid[coords.x, coords.y]);
+                }
             }
         }
     }
@@ -118,7 +129,7 @@ public class ComboDisplayerComponent : MonoBehaviour
         {
             if (f.Building == null)
                 continue;
-            int bonus = f.Building.GetBonusFromNeighboringWithMock();
+            int bonus = f.Building.GetBonusFromNeighboringWithMock(f.CityGridCoordinates, pointedField.CityGridCoordinates);
             f.DisplayInfo(bonus);
             categoryPoints[(int)f.Building.BuildingCategory] += bonus;
         }

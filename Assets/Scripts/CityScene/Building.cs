@@ -77,8 +77,18 @@ public class Building : MonoBehaviour, IPointerClickHandler, ISelectHandler
         return value;
     }
 
-    public int GetBonusFromNeighboringWithMock()
+    public int GetBonusFromNeighboringWithMock(Vector2Int coordsToCheck, Vector2Int ownCoords)
     {
+        bool correctPlacement = false;
+        foreach(Vector2Int coords in m_buildingData.neighborCoordinatesRelative)
+        {
+            if (coordsToCheck == ownCoords + coords)
+                correctPlacement = true;
+        }
+
+        if (!correctPlacement)
+            return 0;
+
         int value = 0;
         bool canBeBoosted = NeighborBoosts.TryGetValue(CityDirector.Instance.SelectedBuilding.SelectedBuildingMock.BuildingID, out value);
         return value;
