@@ -16,3 +16,4 @@ MonoBehaviour:
   cost: 100
   buildings:
   - {fileID: 2201244982822464578, guid: 00d14057d136e63499ce34eb70082c1f, type: 3}
+  - {fileID: 2201244982822464578, guid: 515d8a723fab0e9459f982d42c51cefe, type: 3}
