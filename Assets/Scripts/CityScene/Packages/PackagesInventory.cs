@@ -34,7 +34,7 @@ public class PackagesInventory : MonoBehaviour
 
     public void OpenPackage()
     {
-        if (packages.Count == 0 || BuildingsInventory.Instance.FreeSlots < buildingsInOnePackage)
+        if (packages.Count == 0 || BuildingsInventory.Instance.FreeSlots < buildingsInOnePackage || !PackageDisplayManager.Instance.CanOpenPack)
             return;
 
         ScienceCategory category = packages[0];
@@ -48,7 +48,7 @@ public class PackagesInventory : MonoBehaviour
             buildingsToAdd[i] = GetRandomBuildingFromCategory(category);
         }
 
-        BuildingsInventory.Instance?.AddBuildingsToInventory(buildingsToAdd);
+        BuildingsInventory.Instance?.AddBuildingsToInventory(buildingsToAdd, category);
     }
 
     private Building GetRandomBuildingFromCategory(ScienceCategory category)

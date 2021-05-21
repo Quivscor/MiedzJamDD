@@ -32,9 +32,14 @@ public class BuildingsInventory : MonoBehaviour
         CityDirector.Instance.OnBuildingPlaced += RemoveBuildingFromInventory;
     }
 
-    public void AddBuildingsToInventory(Building[] buildings)
+    public void AddBuildingsToInventory(Building[] buildings, CategoriesProgressController.ScienceCategory category)
     {
-        foreach (Building b in buildings)
+        int slotNumber = this.buildings.Count;
+        int buildingsToAddLength = buildings.Length;
+
+        PackageDisplayManager.Instance?.ShowPackages(buildings, slotNumber, buildingsToAddLength, category);
+
+        /*foreach (Building b in buildings)
         {
             int slotNumber = this.buildings.Count;
 
@@ -46,7 +51,23 @@ public class BuildingsInventory : MonoBehaviour
 
             BuildingDescriptionController.Instance.AddToEvent(bScr);
             this.buildings.Add(bScr);
-        }
+        }*/
+
+        //FreeSlots = maxSlots - this.buildings.Count;
+    }
+
+    public void SpawnBuilding(Building buildingRef, int slotIndex)
+    {
+        int slotNumber = slotIndex;
+
+        Vector3 slotPosition = inventoryFirstSlot + (slotsOffset * slotNumber);
+
+        GameObject building = Instantiate(buildingRef.gameObject, slotPosition, Quaternion.identity);
+
+        Building bScr = building.GetComponent<Building>();
+
+        BuildingDescriptionController.Instance.AddToEvent(bScr);
+        this.buildings.Add(bScr);
 
         FreeSlots = maxSlots - this.buildings.Count;
     }
