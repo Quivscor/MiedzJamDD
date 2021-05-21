@@ -1668,12 +1668,22 @@ PrefabInstance:
     - target: {fileID: 3131252748573579863, guid: 2f4360491e4c4c7459a31fbe036dac01,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SwitchToExpeditionScene
+      value: FadeInAndOut
       objectReference: {fileID: 0}
     - target: {fileID: 3131252748573579863, guid: 2f4360491e4c4c7459a31fbe036dac01,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3131252748573579863, guid: 2f4360491e4c4c7459a31fbe036dac01,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3131252748573579863, guid: 2f4360491e4c4c7459a31fbe036dac01,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3212205797944828199, guid: 2f4360491e4c4c7459a31fbe036dac01,
         type: 3}
@@ -1683,7 +1693,12 @@ PrefabInstance:
     - target: {fileID: 3611119967344746022, guid: 2f4360491e4c4c7459a31fbe036dac01,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SwitchToCityScene
+      value: FadeInAndOut
+      objectReference: {fileID: 0}
+    - target: {fileID: 3611119967344746022, guid: 2f4360491e4c4c7459a31fbe036dac01,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3725430178382309386, guid: 2f4360491e4c4c7459a31fbe036dac01,
         type: 3}
