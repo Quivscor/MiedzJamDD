@@ -26,4 +26,15 @@ public class PackageDisplay : MonoBehaviour
     {
         PackageDisplayManager.Instance?.SpawnBuilding(index);
     }
+
+    public void SetupPackageVisual(PackageSettings settings)
+    {
+        foreach (MeshRenderer mr in glowElements)
+        {
+            mr.material = settings.glowMaterial;
+        }
+
+        icon.sprite = settings.icon;
+        icon.color = settings.iconColor;
+    }
 }

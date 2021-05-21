@@ -21,26 +21,44 @@ public class PackagesInventory : MonoBehaviour
 
     public Action<int> OnBuyPackage;
 
+    public PackageSettings[] packagesSettings = new PackageSettings[4];
+    public PackageDisplay[] packageDisplay = new PackageDisplay[4];
+
+    private Animator animator = null;
+
+
     [SerializeField] private int buildingsInOnePackage = 3;
 
     List<ScienceCategory> packages = new List<ScienceCategory>();
 
     private void Start()
     {
-
+        animator = GetComponent<Animator>();
     }
 
     public void AddPackage(ScienceCategory category)
     {
         packages.Add(category);
+
+        if (packages.Count <= 4 && packages.Count != 0)
+        {
+            packageDisplay[packages.Count - 1].gameObject.SetActive(true);
+            packageDisplay[packages.Count - 1].SetupPackageVisual(packagesSettings[(int)category]);
+        }
     }
+
+    private bool openingLocked = false;
 
     public void OpenPackage()
     {
-        if (packages.Count == 0 || BuildingsInventory.Instance.FreeSlots < buildingsInOnePackage || !PackageDisplayManager.Instance.CanOpenPack)
+        if (packages.Count == 0 || BuildingsInventory.Instance.FreeSlots < buildingsInOnePackage || !PackageDisplayManager.Instance.CanOpenPack || openingLocked)
             return;
 
-        ScienceCategory category = packages[0];
+        openingLocked = true;
+
+        animator?.SetTrigger("openPackageTrigger");
+
+        /*ScienceCategory category = packages[0];
 
         packages.RemoveAt(0);
 
@@ -51,7 +69,41 @@ public class PackagesInventory : MonoBehaviour
             buildingsToAdd[i] = GetRandomBuildingFromCategory(category);
         }
 
+        BuildingsInventory.Instance?.AddBuildingsToInventory(buildingsToAdd, category);*/
+    }
+
+    public void OpenPackageFromAnimation()
+    {
+        ScienceCategory category = packages[0];
+
+        Building[] buildingsToAdd = new Building[buildingsInOnePackage];
+
+        for (int i = 0; i < buildingsToAdd.Length; i++)
+        {
+            buildingsToAdd[i] = GetRandomBuildingFromCategory(category);
+        }
+
         BuildingsInventory.Instance?.AddBuildingsToInventory(buildingsToAdd, category);
+
+        openingLocked = false;
+
+        packages.RemoveAt(0);
+    }
+
+    //call in animations
+    public void UpdatePackagesColors()
+    {
+        OpenPackageFromAnimation();
+
+        for (int i = 0; i < 4; i++)
+            packageDisplay[i].gameObject.SetActive(false);
+
+        for (int i = 0; i < (int)Mathf.Min(packages.Count, 4); i++)
+        {
+            packageDisplay[i].gameObject.SetActive(true);
+
+            packageDisplay[i].SetupPackageVisual(packagesSettings[(int)packages[i]]);
+        }
     }
 
     private Building GetRandomBuildingFromCategory(ScienceCategory category)
