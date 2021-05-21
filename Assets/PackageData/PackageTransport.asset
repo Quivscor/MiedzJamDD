@@ -15,5 +15,5 @@ MonoBehaviour:
   scienceCategory: 2
   cost: 100
   buildings:
-  - {fileID: 2201244982822464578, guid: 1c045028a18373045b9c5cdc8ad8b7fe, type: 3}
+  - {fileID: 2201244982822464578, guid: 78727f09e44f31944b51b50906930344, type: 3}
   - {fileID: 2201244982822464578, guid: 4bcebcb8c3bf70b4f96de03d4e90e56e, type: 3}
