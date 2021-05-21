@@ -11944,6 +11944,54 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 197744705751548224, guid: 6e89962b28899a34580d55142bc56c3f,
+        type: 3}
+      propertyPath: sequences.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 197744705751548224, guid: 6e89962b28899a34580d55142bc56c3f,
+        type: 3}
+      propertyPath: sequences.Array.data[3].dialogues.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 197744705751548224, guid: 6e89962b28899a34580d55142bc56c3f,
+        type: 3}
+      propertyPath: sequences.Array.data[3].name
+      value: WydarzenieTutorial
+      objectReference: {fileID: 0}
+    - target: {fileID: 197744705751548224, guid: 6e89962b28899a34580d55142bc56c3f,
+        type: 3}
+      propertyPath: sequences.Array.data[3].dialogues.Array.data[0].dialogueSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3f9354d9f1b3fd045a5286d4cc41e21b,
+        type: 3}
+    - target: {fileID: 197744705751548224, guid: 6e89962b28899a34580d55142bc56c3f,
+        type: 3}
+      propertyPath: sequences.Array.data[3].dialogues.Array.data[0].dialogueMsg
+      value: Rzucaj wszystko, ja perdole
+      objectReference: {fileID: 0}
+    - target: {fileID: 197744705751548224, guid: 6e89962b28899a34580d55142bc56c3f,
+        type: 3}
+      propertyPath: sequences.Array.data[3].dialogues.Array.data[1].dialogueSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c886fb8dd2fe2a74493214e38a11ea07,
+        type: 3}
+    - target: {fileID: 197744705751548224, guid: 6e89962b28899a34580d55142bc56c3f,
+        type: 3}
+      propertyPath: sequences.Array.data[3].dialogues.Array.data[1].dialogueMsg
+      value: "Cos sie sta\u0142o, we\u017A no sp\xF3jrz"
+      objectReference: {fileID: 0}
+    - target: {fileID: 197744705751548224, guid: 6e89962b28899a34580d55142bc56c3f,
+        type: 3}
+      propertyPath: sequences.Array.data[3].dialogues.Array.data[2].dialogueSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c886fb8dd2fe2a74493214e38a11ea07,
+        type: 3}
+    - target: {fileID: 197744705751548224, guid: 6e89962b28899a34580d55142bc56c3f,
+        type: 3}
+      propertyPath: sequences.Array.data[3].dialogues.Array.data[2].dialogueMsg
+      value: Z fartem, elo.
+      objectReference: {fileID: 0}
     - target: {fileID: 197744705751548225, guid: 6e89962b28899a34580d55142bc56c3f,
         type: 3}
       propertyPath: m_LocalPosition.x

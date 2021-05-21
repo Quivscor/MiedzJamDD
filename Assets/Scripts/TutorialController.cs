@@ -18,6 +18,7 @@ public class TutorialController : MonoBehaviour
     {
         BuildingsInventory.Instance.OnEmptyInventory += DisplaySequence; //InventoryTutorial
         EarthProgressController.Instance.OnMissionsFromEarthWindowOpen += DisplaySequence; //MissionsFromEarthTutorial
+        EventController.Instance.OnGameEventFire += DisplaySequence; //GameEventTutorial
 
         //DisplaySequence(0);
     }

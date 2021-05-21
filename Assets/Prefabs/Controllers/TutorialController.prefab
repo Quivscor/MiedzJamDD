@@ -473,6 +473,13 @@ MonoBehaviour:
     - dialogueSprite: {fileID: 21300000, guid: c886fb8dd2fe2a74493214e38a11ea07, type: 3}
       dialogueMsg: Z fartem, elo.
     hasFired: 0
+  - name: WydarzenieTutorial
+    dialogues:
+    - dialogueSprite: {fileID: 21300000, guid: 3f9354d9f1b3fd045a5286d4cc41e21b, type: 3}
+      dialogueMsg: Rzucaj wszystko, ja perdole
+    - dialogueSprite: {fileID: 21300000, guid: c886fb8dd2fe2a74493214e38a11ea07, type: 3}
+      dialogueMsg: "Cos sie sta\u0142o, we\u017A no sp\xF3jrz"
+    hasFired: 0
   TutorialHUD: {fileID: 197744706308569468}
   dialogueText: {fileID: 197744705300829950}
   tutorialLadyImage: {fileID: 197744707271353739}

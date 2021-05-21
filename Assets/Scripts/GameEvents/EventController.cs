@@ -2,9 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMProText = TMPro.TextMeshProUGUI;
+using System;
+using Random = UnityEngine.Random;
 
 public class EventController : MonoBehaviour
 {
+    public static EventController Instance;
+
     public GameEventData currentEventData;
 
     public GameObject eventHUD;
@@ -18,16 +22,22 @@ public class EventController : MonoBehaviour
     public List<GameEventData> gameEventLibrary;
     public List<GameEventData> currentLibrary;
     private int weekRandomSeed;
+    private int daysSinceEvent;
     private bool eventFiredThisWeek = false;
+
+    public Action<int> OnGameEventFire;
 
     private void Awake()
     {
+        if (Instance == null)
+            Instance = this;
+
         currentLibrary = new List<GameEventData>(gameEventLibrary);
     }
 
     private void Start()
     {
-        TimeController.Instance.OnFirstCommonDay += WeekStartRandomizeSeed;
+        //TimeController.Instance.OnFirstCommonDay += WeekStartRandomizeSeed;
         TimeController.Instance.OnEndOfDay += TryGetEvent;
 
         WeekStartRandomizeSeed();
@@ -38,24 +48,31 @@ public class EventController : MonoBehaviour
         if (currentLibrary.Count == 0)
             currentLibrary = new List<GameEventData>(gameEventLibrary);
 
-        weekRandomSeed = Random.Range(0, 6);
+        weekRandomSeed = Random.Range(7, 10); //days from last event
         eventFiredThisWeek = false;
     }
 
     public void TryGetEvent(int dayOfTheWeek)
     {
-        if(dayOfTheWeek >= weekRandomSeed && !eventFiredThisWeek)
+        if(daysSinceEvent >= weekRandomSeed)
         {
             int randomEventIndex = Random.Range(0, currentLibrary.Count);
             currentEventData = currentLibrary[randomEventIndex];
             DisplayEvent();
             currentLibrary.RemoveAt(randomEventIndex);
-            eventFiredThisWeek = true;
+            //eventFiredThisWeek = true;
+            daysSinceEvent = 0;
+        }
+        else
+        {
+            daysSinceEvent++;
         }
     }
 
     public void DisplayEvent()
     {
+        OnGameEventFire?.Invoke(3); // game event tutorial plays here
+
         eventHUD.SetActive(true);
         titleObject.text = currentEventData.eventTitle;
         descriptionObject.text = currentEventData.eventText;
