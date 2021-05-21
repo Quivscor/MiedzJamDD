@@ -613,6 +613,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 66309704}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &66309708 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1095577861, guid: f1c99db0fef3bb746abeed0c2bb55ddc,
+    type: 3}
+  m_PrefabInstance: {fileID: 66309704}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &66309709 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 934635185, guid: f1c99db0fef3bb746abeed0c2bb55ddc,
+    type: 3}
+  m_PrefabInstance: {fileID: 66309704}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &82553820
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8887,6 +8899,7 @@ MonoBehaviour:
   - {fileID: 1605081994}
   - {fileID: 657905970}
   - {fileID: 579193392}
+  - {fileID: 66309709}
   expeditionSceneObjects:
   - {fileID: 249380203}
   - {fileID: 66309707}
@@ -11242,6 +11255,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newRaportsButton: {fileID: 1168613478}
+  newRaportsInCitySceneButton: {fileID: 66309708}
   numberOfFreeTeamsText: {fileID: 818655334}
 --- !u!4 &1956205568
 Transform:

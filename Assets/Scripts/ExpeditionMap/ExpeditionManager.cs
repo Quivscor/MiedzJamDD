@@ -10,6 +10,7 @@ namespace ExpeditionMap
         public static ExpeditionManager Instance = null;
 
         public GameObject newRaportsButton = null;
+        public GameObject newRaportsInCitySceneButton = null;
         public TextMeshProUGUI numberOfFreeTeamsText = null;
 
         private void Awake()
@@ -63,6 +64,7 @@ namespace ExpeditionMap
             waitingRaports.Add(raportData);
 
             newRaportsButton?.SetActive(true);
+            newRaportsInCitySceneButton?.SetActive(true);
         }
 
         public void OnCategoryLevelUp(CategoriesProgressController.ScienceCategory category)
@@ -83,7 +85,10 @@ namespace ExpeditionMap
         public void OnAllRaportsReaded()
         {
             if (waitingRaports.Count <= 0)
+            {
                 newRaportsButton?.SetActive(false);
+                newRaportsInCitySceneButton?.SetActive(false);
+            }
         }
 
         #region Buttons
