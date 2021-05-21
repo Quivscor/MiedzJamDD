@@ -17,11 +17,11 @@ MonoBehaviour:
   eventChoices:
   - choiceButtonText: Zajebiscie
     choiceTitle: Git
-    choiceText: No i zajebiscie B)
+    choiceText: "No i zajebiscie B) Dosta\u0142e\u015B byczku troche miedzi i science"
     choiceCost: 0
     category: 0
-    scienceCategoryScorePenalty: 0
-    currencyReward: 0
+    scienceCategoryScorePenalty: 5
+    currencyReward: 100
     packageReward: {fileID: 0}
   - choiceButtonText: Jednak nie
     choiceTitle: Nope

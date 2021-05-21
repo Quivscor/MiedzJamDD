@@ -30,8 +30,8 @@ public class BuildingField : MonoBehaviour, IPointerClickHandler, IPointerEnterH
     private void Awake()
     {
         m_renderer = GetComponent<MeshRenderer>();
-        text = GetComponentInChildren<TMProText>();
-        text.gameObject.SetActive(false);
+        text = transform.parent.GetComponentInChildren<TMProText>();
+        text.transform.parent.gameObject.SetActive(false);
     }
 
     public void AssignBuilding(Building b)
@@ -162,13 +162,13 @@ public class BuildingField : MonoBehaviour, IPointerClickHandler, IPointerEnterH
         if (boostValue == 0 && baseValue == 0)
             return;
 
-        text.gameObject.SetActive(true);
+        text.transform.parent.gameObject.SetActive(true);
         if (baseValue != 0 && boostValue != 0)
-            text.text = baseValue.ToString() + "<color=green> + " + boostValue.ToString() + "</color>";
+            text.text = baseValue.ToString() + "<color=green>+" + boostValue.ToString() + "</color>";
         else if (baseValue != 0 && boostValue == 0)
             text.text = baseValue.ToString();
         else if (boostValue != 0)
-            text.text = "<color=green>+ " + boostValue.ToString() + "</color>";
+            text.text = "<color=green>+" + boostValue.ToString() + "</color>";
         //if (baseValue > 0)
         //    text.text = baseValue.ToString() + " + " + boostValue.ToString();
         //else if(boostValue > 0)
@@ -177,7 +177,7 @@ public class BuildingField : MonoBehaviour, IPointerClickHandler, IPointerEnterH
 
     public void HideDisplay()
     {
-        text.gameObject.SetActive(false);
+        text.transform.parent.gameObject.SetActive(false);
     }
 }
 

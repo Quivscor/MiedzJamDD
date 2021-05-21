@@ -107,16 +107,17 @@ public class ComboDisplayerComponent : MonoBehaviour
         pointedField.DisplayInfo(extra, CityDirector.Instance.SelectedBuilding.SelectedBuildingMock.BaseScore);
         categoryPoints[(int)CityDirector.Instance.SelectedBuilding.SelectedBuildingMock.BuildingCategory] += CityDirector.Instance.SelectedBuilding.SelectedBuildingMock.BaseScore + extra;
 
-        //foreach (BuildingField f in displayedFields)
-        //{
-        //    if (f.Building == null)
-        //        continue;
-        //    int bonus = f.Building.GetBonusFromNeighboringWithMock(f.CityGridCoordinates, pointedField.CityGridCoordinates);
-        //    f.DisplayInfo(bonus);
-        //    categoryPoints[(int)f.Building.BuildingCategory] += bonus;
-        //}
+        foreach (BuildingField f in displayedFields)
+        {
+            if (f.Building == null)
+                continue;
+            int value = 0;
+            f.Building.NeighborBoosts.TryGetValue(CityDirector.Instance.SelectedBuilding.SelectedBuildingMock.BuildingID, out value);
+            f.DisplayInfo(value);
+            categoryPoints[(int)f.Building.BuildingCategory] += value;
+        }
 
-        for(int i = 0; i < categoryPoints.Length; i++)
+        for (int i = 0; i < categoryPoints.Length; i++)
         {
             CategoriesProgressController.Instance.AddPointsToScienceHover(categories[i], categoryPoints[i]);
         }

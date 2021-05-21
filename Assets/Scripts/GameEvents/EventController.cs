@@ -63,7 +63,7 @@ public class EventController : MonoBehaviour
         for(int i = 0; i < currentEventData.eventChoices.Count; i++)
         {
             buttonRefs[i].SetActive(true);
-            buttonRefs[i].GetComponentInChildren<TMProText>().text = currentEventData.eventChoices[i].choiceText;
+            buttonRefs[i].GetComponentInChildren<TMProText>().text = currentEventData.eventChoices[i].choiceButtonText;
         }
     }
 
@@ -72,7 +72,11 @@ public class EventController : MonoBehaviour
         if (!nextButtonActionCloseEvent)
             nextButtonActionCloseEvent = true;
         else
+        {
             HideEvent();
+            return;
+        }
+            
 
         buttonRefs[0].GetComponentInChildren<TMProText>().text = defaultCloseWindowText;
         for(int i = 1; i < currentEventData.eventChoices.Count; i++)
@@ -82,8 +86,14 @@ public class EventController : MonoBehaviour
 
         descriptionObject.text = currentEventData.eventChoices[choice].choiceText;
 
-        //currentEventData.eventChoices[choice].currencyReward
+        if (currentEventData.eventChoices[choice].currencyReward > 0)
+            ResourceController.Instance.AddCopper(currentEventData.eventChoices[choice].currencyReward);
+        else if (currentEventData.eventChoices[choice].currencyReward < 0)
+            ResourceController.Instance.SpendCopper(currentEventData.eventChoices[choice].currencyReward);
+
         //currentEventData.eventChoices[choice].packageReward
+
+        CategoriesProgressController.Instance.AddPointsToScience(currentEventData.eventChoices[choice].category, currentEventData.eventChoices[choice].scienceCategoryScorePenalty);
         //currentEventData.eventChoices[choice].scienceCategoryScorePenalty
         //currentEventData.eventChoices[choice].category
     }

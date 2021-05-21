@@ -22,7 +22,7 @@ public class CityDirector : MonoBehaviour
 
     #region Setup
     [Header("Scene setup")]
-    public BuildingField buildingFieldPrefab;
+    public GameObject buildingFieldPrefab;
     #endregion
 
     #region Events
@@ -41,8 +41,8 @@ public class CityDirector : MonoBehaviour
         {
             for (int z = 0; z < CityGridSize; z++)
             {
-                BuildingField fieldGO = Instantiate(buildingFieldPrefab, this.transform.position + new Vector3(x + 0.5f, 0, z + 0.5f), Quaternion.identity, this.transform);
-                fieldGO.name = "Field (" + x + ", " + z + ")";
+                BuildingField fieldGO = Instantiate(buildingFieldPrefab, this.transform.position + new Vector3(x + 0.5f, 0, z + 0.5f), Quaternion.identity, this.transform).GetComponentInChildren<BuildingField>();
+                fieldGO.gameObject.name = "Field (" + x + ", " + z + ")";
                 fieldGO.OnClick += TryConfirmBuilding;
                 fieldGO.CityGridCoordinates = new Vector2Int(x, z);
                 m_cityGrid[x, z] = fieldGO;
@@ -87,6 +87,7 @@ public class CityDirector : MonoBehaviour
         //recalculate grid and apply extra points to points controller
         b.RecalculatePointScore(eventData.selfReference.CityGridCoordinates, eventData.selfReference.GetNeighborsFromPlacedBuilding());
         CategoriesProgressController.Instance.AddPointsToScience(b.BuildingCategory, b.PointScoreDelta);
+        RecalculateHighlightedNeighbors(eventData.selfReference.GetNeighborsFromBuildingData(false), eventData.selfReference.CityGridCoordinates);
 
         //if needed some info from city director here, edit the class and add what's needed
         OnBuildingPlaced?.Invoke(new CityDirectorEventData(b));
@@ -94,6 +95,20 @@ public class CityDirector : MonoBehaviour
         m_lastSelectedBuilding.DestroyMock();
         m_lastSelectedBuilding.Deselect();
         m_comboDisplayerComponent.CleanupDisplay(eventData);
+    }
+
+    public void RecalculateHighlightedNeighbors(List<Vector2Int> coords, Vector2Int owncoords)
+    {
+        foreach(Vector2Int coord in coords)
+        {
+            if (CityGrid[coord.x, coord.y].Building == null || owncoords == coord)
+                continue;
+
+            Building b = CityGrid[coord.x, coord.y].Building;
+            int value = 0;
+            b.NeighborBoosts.TryGetValue(SelectedBuilding.SelectedBuildingMock.BuildingID, out value);
+            CategoriesProgressController.Instance.AddPointsToScience(b.BuildingCategory, value);
+        }
     }
 
     public void RecalculateGrid(bool updateScore = false)
