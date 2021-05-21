@@ -14,14 +14,11 @@ public class TutorialController : MonoBehaviour
     public TMProText dialogueText;
     public Image tutorialLadyImage;
 
-    private void Awake()
+    private void Start()
     {
         BuildingsInventory.Instance.OnEmptyInventory += DisplaySequence; //InventoryTutorial
         EarthProgressController.Instance.OnMissionsFromEarthWindowOpen += DisplaySequence; //MissionsFromEarthTutorial
-    }
 
-    private void Start()
-    {
         //DisplaySequence(0);
     }
 
