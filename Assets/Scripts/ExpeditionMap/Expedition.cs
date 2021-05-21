@@ -76,6 +76,8 @@ namespace ExpeditionMap
         private bool additionalActivityOccured = false;
         private string additionalActivityOutput = "";
 
+        public int CurrentTimeToFinishExpedition { get => currentTimeToFinishExpedition;  }
+
         private void CalculateGainingCopper()
         {
             int maxGainedCopper = (int)Mathf.Min((int)CategoriesProgressController.Instance.sciences[(int)CategoriesProgressController.ScienceCategory.Transport].level * TeamStatsModifiers.LoadModifier, destinationField.CurrentCopper);

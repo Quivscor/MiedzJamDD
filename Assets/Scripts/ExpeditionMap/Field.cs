@@ -37,6 +37,8 @@ namespace ExpeditionMap
             }
         }
 
+        private Expedition expedition = null;
+
         private void Start()
         {
             currentCopper = maxCopper;
@@ -115,15 +117,19 @@ namespace ExpeditionMap
 
         public void OnPointerEnter(PointerEventData eventData)
         {
-            if (isExpeditionTarget)
-                return;
+            //if (isExpeditionTarget)
+            //    return;
 
-            SetActive(true);
+            //SetActive(true);
+            if (isExpeditionTarget && expedition != null)
+                FieldInfoDisplay.Instance.DisplayFieldInfo(FieldCoords, (int)CategoriesProgressController.Instance.sciences[(int)CategoriesProgressController.ScienceCategory.Transport].level * TeamStatsModifiers.LoadModifier, (int)maxCopper, expedition.CurrentTimeToFinishExpedition, isExpeditionTarget);
+            else
+                FieldInfoDisplay.Instance.DisplayFieldInfo(FieldCoords, (int)currentCopper, (int)maxCopper, DistanceToRoot + 2, isExpeditionTarget);
         }
 
         public void OnPointerExit(PointerEventData eventData)
         {
-            SetActive(false);
+            //SetActive(false);
         }
 
         public void OnPointerClick(PointerEventData eventData)
@@ -155,6 +161,11 @@ namespace ExpeditionMap
             isExpeditionTarget = value;
 
             expeditionModel?.SetActive(value);
+        }
+
+        public void SetExpedition(Expedition expedition)
+        {
+            this.expedition = expedition;
         }
 
         #region Button Actions
