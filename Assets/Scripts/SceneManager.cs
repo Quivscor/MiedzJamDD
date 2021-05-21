@@ -4,8 +4,16 @@ using UnityEngine;
 
 public class SceneManager : MonoBehaviour
 {
+    public static SceneManager Instance = null;
+
     public GameObject[] citySceneObjects;
     public GameObject[] expeditionSceneObjects;
+
+    private void Awake()
+    {
+        if (!Instance)
+            Instance = this;
+    }
 
     public void SwitchToCityScene()
     {
