@@ -9,7 +9,7 @@ public class EarthProgressController : MonoBehaviour
 {
     public static EarthProgressController Instance = null;
 
-    [SerializeField] private float percentageCostIncrease = 0.5f;
+    [SerializeField] private float costIncreaseMutliplier = 1f;
     [SerializeField] private TextMeshProUGUI [] costTexts;
     [SerializeField] private GameObject [] missionObjects;
 
@@ -36,14 +36,18 @@ public class EarthProgressController : MonoBehaviour
         }
         else return false;
     }
-
+    public void Refresh()
+    {
+        UpdateCosts();
+        UpdateViability();
+    }
     public void FinishMission(int category)
     {
         if(CanFinish())
         {
             ResourceController.Instance.SpendCopper(currentCost);
             finishedMissions[category] = true;
-            currentCost += (int)(currentCost * percentageCostIncrease);
+            currentCost *= (int)(costIncreaseMutliplier);
             UpdateCosts();
             UpdateViability();
         }
@@ -51,21 +55,31 @@ public class EarthProgressController : MonoBehaviour
 
     public void UpdateCosts()
     {
-        foreach (TextMeshProUGUI text in costTexts)
+        for (int i = 0; i < missionObjects.Length; i++)
         {
-            text.text = "Koszt " + currentCost.ToString();
+            if(!finishedMissions[i])
+            {
+                costTexts[i].text = "Zakończ (" + currentCost + ")";
+            }
+            else
+                costTexts[i].text = "Zakończono";
         }
+
     }
     public void UpdateViability()
     {
-        foreach (GameObject mission in missionObjects)
+
+        for (int i = 0; i < missionObjects.Length; i++)
         {
-            if (!CanFinish())
-                mission.GetComponentInChildren<Button>().interactable = false;
+            if (!CanFinish() || finishedMissions[i])
+            {
+                missionObjects[i].GetComponentInChildren<Button>().interactable = false;
+            }
             else
-                mission.GetComponentInChildren<Button>().interactable = true;
+                missionObjects[i].GetComponentInChildren<Button>().interactable = true;
 
         }
+
     }
 
     public enum MissionType
