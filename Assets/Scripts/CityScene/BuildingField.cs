@@ -74,7 +74,8 @@ public class BuildingField : MonoBehaviour, IPointerClickHandler, IPointerEnterH
     //Used to get info about possible neighbors for the mock that is placed on this field, NOT FOR PLACED BUILDING
     public List<Vector2Int> GetNeighborsFromBuildingData(bool relative = true)
     {
-        //BAD
+        if (CityDirector.Instance.SelectedBuilding.SelectedBuilding == null)
+            return null;
         List<Vector2Int> originalNeighbors = CityDirector.Instance.SelectedBuilding.SelectedBuilding.BuildingNeighbors;
         List<Vector2Int> result = new List<Vector2Int>(originalNeighbors);
 
@@ -130,6 +131,13 @@ public class BuildingField : MonoBehaviour, IPointerClickHandler, IPointerEnterH
 
     public void OnPointerClick(PointerEventData eventData)
     {
+        if (eventData.button == PointerEventData.InputButton.Right)
+        {
+            CityDirector.Instance.SelectedBuilding.Deselect();
+            CityDirector.Instance.GetComponent<ComboDisplayerComponent>().CleanupDisplay(new BuildingFieldEventData(transform.position, this));
+        }
+            
+
         BuildingFieldEventData bEventData = new BuildingFieldEventData(this.transform.position, this, GetNeighborsFromBuildingData());
         OnClick?.Invoke(bEventData);
     }
