@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System;
 
 public class CategoriesProgressController : MonoBehaviour
 {
+    public Action<ScienceCategory> OnCategoryLevelUp;
+
     public static CategoriesProgressController Instance = null;
 
     [SerializeField] private float percentageCostIncrease = 0.5f;
@@ -49,8 +52,9 @@ public class CategoriesProgressController : MonoBehaviour
             sciences[(int)scienceCategory].expToNextLevel += (int)(sciences[(int)scienceCategory].expToNextLevel * percentageCostIncrease);
             PopUpController.Instance.AddToList(scienceCategory);
 
-            if (scienceCategory == ScienceCategory.Rolnictwo)
-                ExpeditionMap.ExpeditionManager.Instance?.AddFreeTeam();
+            //if (scienceCategory == ScienceCategory.Rolnictwo)
+            //    ExpeditionMap.ExpeditionManager.Instance?.AddFreeTeam();
+            OnCategoryLevelUp?.Invoke(scienceCategory);
         }
         else
             sciences[(int)scienceCategory].currentExp += value;

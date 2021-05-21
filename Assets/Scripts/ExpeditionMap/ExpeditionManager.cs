@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 namespace ExpeditionMap
 {
@@ -9,6 +10,7 @@ namespace ExpeditionMap
         public static ExpeditionManager Instance = null;
 
         public GameObject newRaportsButton = null;
+        public TextMeshProUGUI numberOfFreeTeamsText = null;
 
         private void Awake()
         {
@@ -24,9 +26,12 @@ namespace ExpeditionMap
 
         private void Start()
         {
-            currentAvailableTeams = 1;
+            currentAvailableTeams = (int)CategoriesProgressController.Instance.sciences[(int)CategoriesProgressController.ScienceCategory.Rolnictwo].level;
+
+            numberOfFreeTeamsText.text = currentAvailableTeams + "";
 
             RaportsReader.Instance.OnAllRaportsReaded += OnAllRaportsReaded;
+            CategoriesProgressController.Instance.OnCategoryLevelUp += OnCategoryLevelUp;
         }
 
         public void CreateExpedition(Field destinationField)
@@ -34,11 +39,16 @@ namespace ExpeditionMap
             if (currentAvailableTeams <= 0)
                 return;
 
-            expeditions.Add(new Expedition(destinationField));
+            Expedition expedition = new Expedition(destinationField);
+
+            expeditions.Add(expedition);
 
             destinationField.SetAsExpeditionTarget(true);
+            destinationField.SetExpedition(expedition);
 
             currentAvailableTeams--;
+
+            numberOfFreeTeamsText.text = currentAvailableTeams + "";
         }
 
         public bool CanSendExpedition()
@@ -55,9 +65,19 @@ namespace ExpeditionMap
             newRaportsButton?.SetActive(true);
         }
 
+        public void OnCategoryLevelUp(CategoriesProgressController.ScienceCategory category)
+        {
+            if (category == CategoriesProgressController.ScienceCategory.Rolnictwo)
+            {
+                AddFreeTeam();
+            }
+        }
+
         public void AddFreeTeam()
         {
             currentAvailableTeams++;
+
+            numberOfFreeTeamsText.text = currentAvailableTeams + "";
         }
 
         public void OnAllRaportsReaded()
