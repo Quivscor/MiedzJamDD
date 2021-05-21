@@ -17,6 +17,7 @@ public class TutorialController : MonoBehaviour
     private void Awake()
     {
         BuildingsInventory.Instance.OnEmptyInventory += DisplaySequence; //InventoryTutorial
+        EarthProgressController.Instance.OnMissionsFromEarthWindowOpen += DisplaySequence; //MissionsFromEarthTutorial
     }
 
     private void Start()
@@ -26,10 +27,10 @@ public class TutorialController : MonoBehaviour
 
     public void DisplaySequence(int sequenceID)
     {
+        currentSequenceIndex = sequenceID;
         if (sequences[currentSequenceIndex].hasFired)
             return;
 
-        currentSequenceIndex = sequenceID;
         sequences[currentSequenceIndex].hasFired = true;
 
         TutorialHUD.SetActive(true);

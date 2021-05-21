@@ -16,6 +16,8 @@ public class EarthProgressController : MonoBehaviour
     private int currentCost = 100;
     private bool [] finishedMissions;
 
+    public Action<int> OnMissionsFromEarthWindowOpen;
+
     private void Awake()
     {
         if (!Instance)
@@ -38,6 +40,7 @@ public class EarthProgressController : MonoBehaviour
     }
     public void Refresh()
     {
+        OnMissionsFromEarthWindowOpen?.Invoke(2); // this fires tutorial nr 2
         UpdateCosts();
         UpdateViability();
     }
