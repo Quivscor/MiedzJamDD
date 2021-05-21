@@ -122,9 +122,9 @@ namespace ExpeditionMap
 
             //SetActive(true);
             if (isExpeditionTarget && expedition != null)
-                FieldInfoDisplay.Instance.DisplayFieldInfo(FieldCoords, (int)CategoriesProgressController.Instance.sciences[(int)CategoriesProgressController.ScienceCategory.Transport].level * TeamStatsModifiers.LoadModifier, (int)maxCopper, expedition.LeftTimeToFinishExpedition, isExpeditionTarget);
+                FieldInfoDisplay.Instance.DisplayFieldInfo(FieldCoords, (int)CategoriesProgressController.Instance.sciences[(int)CategoriesProgressController.ScienceCategory.Transport].level * TeamStatsModifiers.LoadModifier, (int)maxCopper, expedition.LeftTimeToFinishExpedition, isExpeditionTarget, DistanceToRoot);
             else
-                FieldInfoDisplay.Instance.DisplayFieldInfo(FieldCoords, (int)currentCopper, (int)maxCopper, DistanceToRoot + 2, isExpeditionTarget);
+                FieldInfoDisplay.Instance.DisplayFieldInfo(FieldCoords, (int)currentCopper, (int)maxCopper, DistanceToRoot + 2, isExpeditionTarget, DistanceToRoot);
         }
 
         public void OnPointerExit(PointerEventData eventData)

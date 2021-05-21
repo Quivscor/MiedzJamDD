@@ -29,7 +29,7 @@ public class FieldInfoDisplay : MonoBehaviour
     public TextMeshProUGUI scienceChanceText = null;
     public TextMeshProUGUI distanceText = null;
 
-    public void DisplayFieldInfo(Vector2Int fieldCoords, int copperLeft, int maxCopper, int timeToExtract, bool hasExpedition)
+    public void DisplayFieldInfo(Vector2Int fieldCoords, int copperLeft, int maxCopper, int timeToExtract, bool hasExpedition, int distanceToRoot)
     {
         fieldTitleText.text = "Pozycja: [ " + fieldCoords.x + " , " + fieldCoords.y + " ]";
 
@@ -51,7 +51,7 @@ public class FieldInfoDisplay : MonoBehaviour
             timeToExtractText.text = timeToExtract + " dni";
         }
 
-        distanceText.text = (timeToExtract - 2) + "";
+        distanceText.text = distanceToRoot + "";
 
         //scienceChanceText.text = scienceChance + "";
     }
