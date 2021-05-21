@@ -28,10 +28,13 @@ public class LastSelectedBuilding : MonoBehaviour
     public void Deselect()
     {
         m_selectedBuilding = null;
+        DestroyMock();
     }
 
     public void DestroyMock()
     {
+        if (m_selectedBuildingMock == null)
+            return;
         Destroy(m_selectedBuildingMock.gameObject);
     }
 }
