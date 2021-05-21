@@ -1645,6 +1645,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Category Name
       objectReference: {fileID: 0}
+    - target: {fileID: 1137107679135476166, guid: 2f4360491e4c4c7459a31fbe036dac01,
+        type: 3}
+      propertyPath: m_text
+      value: Do Kolonii
+      objectReference: {fileID: 0}
+    - target: {fileID: 1634497540846775735, guid: 2f4360491e4c4c7459a31fbe036dac01,
+        type: 3}
+      propertyPath: m_text
+      value: "Do Mapy G\xF3rniczej"
+      objectReference: {fileID: 0}
     - target: {fileID: 2405389490627465942, guid: 2f4360491e4c4c7459a31fbe036dac01,
         type: 3}
       propertyPath: m_AnchoredPosition.x
