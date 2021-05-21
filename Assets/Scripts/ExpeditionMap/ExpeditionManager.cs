@@ -39,9 +39,12 @@ namespace ExpeditionMap
             if (currentAvailableTeams <= 0)
                 return;
 
-            expeditions.Add(new Expedition(destinationField));
+            Expedition expedition = new Expedition(destinationField);
+
+            expeditions.Add(expedition);
 
             destinationField.SetAsExpeditionTarget(true);
+            destinationField.SetExpedition(expedition);
 
             currentAvailableTeams--;
 

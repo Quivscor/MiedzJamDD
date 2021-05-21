@@ -77,6 +77,7 @@ namespace ExpeditionMap
         private string additionalActivityOutput = "";
 
         public int CurrentTimeToFinishExpedition { get => currentTimeToFinishExpedition;  }
+        public int LeftTimeToFinishExpedition { get => timeToFinishExpedition - currentTimeToFinishExpedition; }
 
         private void CalculateGainingCopper()
         {
