@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System;
 
 namespace ExpeditionMap
 {
@@ -12,6 +13,7 @@ namespace ExpeditionMap
         public GameObject newRaportsButton = null;
         public GameObject newRaportsInCitySceneButton = null;
         public TextMeshProUGUI numberOfFreeTeamsText = null;
+        public Action<int> OnExpeditionConfirmation;
 
         private void Awake()
         {
@@ -39,6 +41,8 @@ namespace ExpeditionMap
         {
             if (currentAvailableTeams <= 0)
                 return;
+
+            OnExpeditionConfirmation?.Invoke(4); //On sending expedition tutorial
 
             Expedition expedition = new Expedition(destinationField);
 

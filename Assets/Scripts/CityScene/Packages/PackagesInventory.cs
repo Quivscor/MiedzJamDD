@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using static CategoriesProgressController;
 using UnityEngine.UI;
+using System;
+using Random = UnityEngine.Random;
 
 public class PackagesInventory : MonoBehaviour
 {
@@ -17,6 +19,7 @@ public class PackagesInventory : MonoBehaviour
     public Button openShopButton = null;
     public Button openPackageButton = null;
 
+    public Action<int> OnBuyPackage;
 
     [SerializeField] private int buildingsInOnePackage = 3;
 
@@ -93,6 +96,7 @@ public class PackagesInventory : MonoBehaviour
     {
         ResourceController.Instance?.SpendCopper(100);
 
+        OnBuyPackage?.Invoke(5); //Buying package tutorial
         UpdateButtonsInteractions();
 
         AddPackage(ScienceCategory.Rolnictwo);
@@ -102,6 +106,7 @@ public class PackagesInventory : MonoBehaviour
     {
         ResourceController.Instance?.SpendCopper(100);
 
+        OnBuyPackage?.Invoke(5); //Buying package tutorial
         UpdateButtonsInteractions();
 
         AddPackage(ScienceCategory.Energetyka);
@@ -111,6 +116,7 @@ public class PackagesInventory : MonoBehaviour
     {
         ResourceController.Instance?.SpendCopper(100);
 
+        OnBuyPackage?.Invoke(5); //Buying package tutorial
         UpdateButtonsInteractions();
 
         AddPackage(ScienceCategory.Telekomunikacja);
@@ -120,6 +126,7 @@ public class PackagesInventory : MonoBehaviour
     {
         ResourceController.Instance?.SpendCopper(100);
 
+        OnBuyPackage?.Invoke(5); //Buying package tutorial
         UpdateButtonsInteractions();
 
         AddPackage(ScienceCategory.Transport);

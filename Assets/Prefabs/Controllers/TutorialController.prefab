@@ -480,6 +480,19 @@ MonoBehaviour:
     - dialogueSprite: {fileID: 21300000, guid: c886fb8dd2fe2a74493214e38a11ea07, type: 3}
       dialogueMsg: "Cos sie sta\u0142o, we\u017A no sp\xF3jrz"
     hasFired: 0
+  - name: PoWyslaniuEkspedycjiTutorial
+    dialogues:
+    - dialogueSprite: {fileID: 21300000, guid: 3f9354d9f1b3fd045a5286d4cc41e21b, type: 3}
+      dialogueMsg: "Dobra robota byczku, za ile\u015Btam dni sp\u0142yn\u0105 do
+        nas miedziane szekle."
+    hasFired: 0
+  - name: PrzyKupowaniuPaczkiTutorial
+    dialogues:
+    - dialogueSprite: {fileID: 21300000, guid: 3f9354d9f1b3fd045a5286d4cc41e21b, type: 3}
+      dialogueMsg: "Zajebista paka byku, teraz we\u017A j\u0105 otw\xF3rz."
+    - dialogueSprite: {fileID: 21300000, guid: 3f9354d9f1b3fd045a5286d4cc41e21b, type: 3}
+      dialogueMsg: "A potem klepnij gdzie\u015B na mapie essa."
+    hasFired: 0
   TutorialHUD: {fileID: 197744706308569468}
   dialogueText: {fileID: 197744705300829950}
   tutorialLadyImage: {fileID: 197744707271353739}

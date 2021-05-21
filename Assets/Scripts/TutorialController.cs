@@ -19,8 +19,10 @@ public class TutorialController : MonoBehaviour
         BuildingsInventory.Instance.OnEmptyInventory += DisplaySequence; //InventoryTutorial
         EarthProgressController.Instance.OnMissionsFromEarthWindowOpen += DisplaySequence; //MissionsFromEarthTutorial
         EventController.Instance.OnGameEventFire += DisplaySequence; //GameEventTutorial
+        ExpeditionMap.ExpeditionManager.Instance.OnExpeditionConfirmation += DisplaySequence; //AfterExpeditionTutorial
+        FindObjectOfType<PackagesInventory>().OnBuyPackage += DisplaySequence; //OnBuyingPackage
 
-        //DisplaySequence(0);
+        DisplaySequence(0);
     }
 
     public void DisplaySequence(int sequenceID)
