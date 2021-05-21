@@ -118,7 +118,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 197744705290482315}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 197744705751548224}
+        m_MethodName: ButtonNext
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &197744705300829944
 GameObject:
   m_ObjectHideFlags: 0
@@ -435,7 +446,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 534313247aa0f0c4299e13b6a88f69ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sequences: []
+  sequences:
+  - name: TestSekwencja
+    dialogues:
+    - dialogueSprite: {fileID: 21300000, guid: 3f9354d9f1b3fd045a5286d4cc41e21b, type: 3}
+      dialogueMsg: "Dzie\u0144 dobry."
+    - dialogueSprite: {fileID: 21300000, guid: c886fb8dd2fe2a74493214e38a11ea07, type: 3}
+      dialogueMsg: "Szcz\u0119\u015B\u0107 Bo\u017Ce."
+    hasFired: 0
+  - name: PustyInventoryTutorial
+    dialogues:
+    - dialogueSprite: {fileID: 21300000, guid: 3f9354d9f1b3fd045a5286d4cc41e21b, type: 3}
+      dialogueMsg: Hej byku, masz puste inventory.
+    - dialogueSprite: {fileID: 21300000, guid: 9a7b213f2ee592c40aeccf1771b3513f, type: 3}
+      dialogueMsg: Kliknij se tu byczku i kup nowe paczki.
+    - dialogueSprite: {fileID: 21300000, guid: c886fb8dd2fe2a74493214e38a11ea07, type: 3}
+      dialogueMsg: "Kontynuuj dobr\u0105 robot\u0119 byczku, z pierogiem."
+    hasFired: 0
   TutorialHUD: {fileID: 197744706308569468}
   dialogueText: {fileID: 197744705300829950}
   tutorialLadyImage: {fileID: 197744707271353739}

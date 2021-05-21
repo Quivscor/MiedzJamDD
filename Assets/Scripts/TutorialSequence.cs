@@ -1,11 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 [System.Serializable]
-public class TutorialSequence : ScriptableObject
+public class TutorialSequence
 {
+    public string name;
     public List<Dialogue> dialogues;
+    public bool hasFired = false;
 }
 
 [System.Serializable]

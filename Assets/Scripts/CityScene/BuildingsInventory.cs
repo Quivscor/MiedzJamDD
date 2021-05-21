@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class BuildingsInventory : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class BuildingsInventory : MonoBehaviour
     [SerializeField] private Vector3 inventoryFirstSlot = Vector3.zero;
     [SerializeField] private Vector3 slotsOffset = Vector3.zero;
     [SerializeField] private int maxSlots = 6;
+
+    public Action<int> OnEmptyInventory;
 
     public int FreeSlots { get; private set; }
 
@@ -53,6 +56,8 @@ public class BuildingsInventory : MonoBehaviour
         buildings.Remove(eventData.placedBuilding);
 
         FreeSlots = maxSlots - this.buildings.Count;
+        if (buildings.Count == 0)
+            OnEmptyInventory?.Invoke(1); //this plays tutorial sequence 1
 
         RecalculateBuildingsInSlots();
     }

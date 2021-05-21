@@ -12,23 +12,48 @@ public class TutorialController : MonoBehaviour
 
     public GameObject TutorialHUD;
     public TMProText dialogueText;
-    public Image tutorialLadyImage; 
+    public Image tutorialLadyImage;
 
-    public void DisplaySequence()
+    private void Awake()
     {
-        //Here be UI shenanigans
+        BuildingsInventory.Instance.OnEmptyInventory += DisplaySequence; //InventoryTutorial
+    }
 
-        currentSequenceIndex++;
+    private void Start()
+    {
+        //DisplaySequence(0);
+    }
+
+    public void DisplaySequence(int sequenceID)
+    {
+        if (sequences[currentSequenceIndex].hasFired)
+            return;
+
+        currentSequenceIndex = sequenceID;
+        sequences[currentSequenceIndex].hasFired = true;
+
+        TutorialHUD.SetActive(true);
+        DisplayDialogue();
     }    
+
+    public void DisplayDialogue()
+    {
+        dialogueText.text = sequences[currentSequenceIndex].dialogues[currentDialogueInSequenceIndex].dialogueMsg;
+        tutorialLadyImage.sprite = sequences[currentSequenceIndex].dialogues[currentDialogueInSequenceIndex].dialogueSprite;
+    }
 
     public void ButtonNext()
     {
-
+        currentDialogueInSequenceIndex++;
+        if (currentDialogueInSequenceIndex == sequences[currentSequenceIndex].dialogues.Count)
+            HideDisplay();
+        else
+            DisplayDialogue();
     }
 
     public void HideDisplay()
     {
         currentDialogueInSequenceIndex = 0;
-        //Here be UI shenanigans
+        TutorialHUD.SetActive(false);
     }
 }

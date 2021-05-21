@@ -8,7 +8,7 @@ public class CityDirector : MonoBehaviour
 {
     public static CityDirector Instance;
 
-    public static int CityGridSize = 8;
+    public static int CityGridSize = 9;
     //turn this layer off in physics raycast in camera, so building can't be selected after placing
     public static int IgnoreCameraRaycastLayerID = 8;
     
