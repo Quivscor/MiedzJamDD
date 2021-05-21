@@ -92,6 +92,8 @@ public class CityDirector : MonoBehaviour
         //if needed some info from city director here, edit the class and add what's needed
         OnBuildingPlaced?.Invoke(new CityDirectorEventData(b));
 
+        b.ProcessPlacingInAnimation();
+
         m_lastSelectedBuilding.Deselect();
         m_comboDisplayerComponent.CleanupDisplay(eventData);
     }

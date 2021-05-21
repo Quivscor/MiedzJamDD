@@ -5,6 +5,7 @@ using UnityEngine.EventSystems;
 
 public class Building : MonoBehaviour, IPointerClickHandler, ISelectHandler
 {
+    public RuntimeAnimatorController personalAnimatorController = null;
     //Map of boosts and building Ids
     [SerializeField] protected Dictionary<string, int> m_neighborBoosts;
     public Dictionary<string, int> NeighborBoosts => m_neighborBoosts;
@@ -116,4 +117,21 @@ public class Building : MonoBehaviour, IPointerClickHandler, ISelectHandler
 
         return result;
     }
+
+    public void ProcessPlacingInAnimation()
+    {
+        GetComponent<Animator>()?.SetTrigger("buildingPlacedTrigger");
+    }
+
+    #region Anim Events
+
+    public void OnBuildingPlaced()
+    {
+        Animator animator = GetComponent<Animator>();
+
+        if (animator && personalAnimatorController)
+            animator.runtimeAnimatorController = personalAnimatorController;
+    }
+
+    #endregion
 }

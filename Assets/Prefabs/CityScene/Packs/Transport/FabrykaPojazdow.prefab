@@ -32,7 +32,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 4956530046787365127}
+  - {fileID: 1487757976785911892}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -108,6 +108,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e718ca1ee758db4d976ad68c2d6e4dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  personalAnimatorController: {fileID: 9100000, guid: fee2df9f87cfaca45a69f5d88fca4280,
+    type: 2}
   m_buildingData: {fileID: 11400000, guid: 5825d003b591d4c47b72c51f60a7d395, type: 2}
 --- !u!95 &4670307784683554981
 Animator:
@@ -119,7 +121,7 @@ Animator:
   m_GameObject: {fileID: 2201244982822464577}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: fee2df9f87cfaca45a69f5d88fca4280, type: 2}
+  m_Controller: {fileID: 9100000, guid: cefc033e1c36ca24eaa8c7f88d650523, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -128,12 +130,43 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!1 &8426946097170767037
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1487757976785911892}
+  m_Layer: 0
+  m_Name: Model
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1487757976785911892
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8426946097170767037}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4956530046787365127}
+  m_Father: {fileID: 2201244982822464590}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &4846885490293657324
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 2201244982822464590}
+    m_TransformParent: {fileID: 1487757976785911892}
     m_Modifications:
     - target: {fileID: -8701747031941446012, guid: 99f5e3f3ebbc0614f8b2cb66c96c94d5,
         type: 3}

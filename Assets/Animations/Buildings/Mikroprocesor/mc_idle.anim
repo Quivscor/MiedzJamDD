@@ -38,7 +38,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: MicroFactory/wind.004
+    path: Model/MicroFactory/wind.005
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -46,15 +46,6 @@ AnimationClip:
         time: 0
         value: {x: 0, y: -90.00001, z: 29.189001}
         inSlope: {x: 0, y: 0, z: 0}
-        outSlope: {x: 0, y: 0, z: 360.00003}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-      - serializedVersion: 3
-        time: 0.05
-        value: {x: 0, y: -90.00001, z: 47.189003}
-        inSlope: {x: 0, y: 0, z: 360.00003}
         outSlope: {x: 0, y: 0, z: 360}
         tangentMode: 0
         weightedMode: 0
@@ -72,7 +63,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: MicroFactory/wind.005
+    path: Model/MicroFactory/wind.004
   m_PositionCurves: []
   m_ScaleCurves: []
   m_FloatCurves: []
@@ -85,14 +76,14 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 2689141528
+      path: 3059826130
       attribute: 4
       script: {fileID: 0}
       typeID: 4
       customType: 4
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 3612228494
+      path: 3244690756
       attribute: 4
       script: {fileID: 0}
       typeID: 4
@@ -145,7 +136,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.x
-    path: MicroFactory/wind.004
+    path: Model/MicroFactory/wind.005
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -173,7 +164,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.y
-    path: MicroFactory/wind.004
+    path: Model/MicroFactory/wind.005
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -201,7 +192,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.z
-    path: MicroFactory/wind.004
+    path: Model/MicroFactory/wind.005
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -229,7 +220,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.x
-    path: MicroFactory/wind.005
+    path: Model/MicroFactory/wind.004
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -257,7 +248,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.y
-    path: MicroFactory/wind.005
+    path: Model/MicroFactory/wind.004
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -267,17 +258,8 @@ AnimationClip:
         time: 0
         value: 29.189001
         inSlope: 0
-        outSlope: 360.00003
-        tangentMode: 65
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.05
-        value: 47.189003
-        inSlope: 360.00003
         outSlope: 360
-        tangentMode: 69
+        tangentMode: 65
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
@@ -294,7 +276,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.z
-    path: MicroFactory/wind.005
+    path: Model/MicroFactory/wind.004
     classID: 4
     script: {fileID: 0}
   m_EulerEditorCurves:
@@ -305,7 +287,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: MicroFactory/wind.005
+    path: Model/MicroFactory/wind.004
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -315,7 +297,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: MicroFactory/wind.005
+    path: Model/MicroFactory/wind.004
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -325,7 +307,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: MicroFactory/wind.005
+    path: Model/MicroFactory/wind.004
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -335,7 +317,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: MicroFactory/wind.004
+    path: Model/MicroFactory/wind.005
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -345,7 +327,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: MicroFactory/wind.004
+    path: Model/MicroFactory/wind.005
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -355,7 +337,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: MicroFactory/wind.004
+    path: Model/MicroFactory/wind.005
     classID: 4
     script: {fileID: 0}
   m_HasGenericRootTransform: 0
