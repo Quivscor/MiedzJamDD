@@ -14,6 +14,7 @@ namespace ExpeditionMap
         public GameObject newRaportsInCitySceneButton = null;
         public TextMeshProUGUI numberOfFreeTeamsText = null;
         public Action<int> OnExpeditionConfirmation;
+        private Animator popupAnimator;
 
         private void Awake()
         {
@@ -21,6 +22,8 @@ namespace ExpeditionMap
                 ExpeditionManager.Instance = this;
             else
                 Destroy(this);
+
+            popupAnimator = newRaportsInCitySceneButton.GetComponent<Animator>();
         }
 
         private List<Expedition> expeditions = new List<Expedition>();
@@ -69,6 +72,7 @@ namespace ExpeditionMap
 
             newRaportsButton?.SetActive(true);
             newRaportsInCitySceneButton?.SetActive(true);
+            popupAnimator.SetTrigger("ShowPopup");
         }
 
         public void OnCategoryLevelUp(CategoriesProgressController.ScienceCategory category)
