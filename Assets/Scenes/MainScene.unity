@@ -11132,6 +11132,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: TutorialController
       objectReference: {fileID: 0}
+    - target: {fileID: 197744706308569345, guid: 6e89962b28899a34580d55142bc56c3f,
+        type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 197744706308569345, guid: 6e89962b28899a34580d55142bc56c3f,
+        type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 197744706308569345, guid: 6e89962b28899a34580d55142bc56c3f,
+        type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e89962b28899a34580d55142bc56c3f, type: 3}
 --- !u!1001 &427278975626303010
