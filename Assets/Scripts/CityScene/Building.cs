@@ -12,7 +12,7 @@ public class Building : MonoBehaviour, IPointerClickHandler, ISelectHandler
     [SerializeField] protected Dictionary<string, int> m_neighborBoosts;
     public Dictionary<string, int> NeighborBoosts => m_neighborBoosts;
 
-    [SerializeField] protected BuildingData m_buildingData;
+    public BuildingData m_buildingData;
     //make sure to use the same names here and in building data, otherwise fuckup incoming
     public string BuildingID => m_buildingData.thisBuildingID;
     public List<Vector2Int> BuildingNeighbors => m_buildingData.neighborCoordinatesRelative;
@@ -30,6 +30,7 @@ public class Building : MonoBehaviour, IPointerClickHandler, ISelectHandler
 
     #region Events
     public Action<BuildingEventData> OnClick;
+    public Action<int> OnSelectPlaySequence;
     #endregion
 
     private void Start()
@@ -105,22 +106,25 @@ public class Building : MonoBehaviour, IPointerClickHandler, ISelectHandler
 
     public void OnSelect(BaseEventData eventData)
     {
+        OnSelectPlaySequence?.Invoke(7); //OnBuildingSelection tutorial
         CityDirector.Instance.TrySelectingBuilding(this);
     }
 
     public string BonusesStringGenerator()
     {
         string result = "";
-        result = "- Wszystkich z " + m_buildingData.pointCategory + " <color=yellow>(+1)</color>\n";
+        result = "- Wszystkich z " + BuildingEventData.GetCategoryColor(m_buildingData.pointCategory) + m_buildingData.pointCategory + " (+1)</color>\n";
         for (int i = 0; i < m_buildingData.buildingIDs.Count; i++)
         {
             // skipping building within same category
             if(m_buildingData.buildingBoosts[i] != 1)
-                result += "- " + m_buildingData.buildingIDs[i] + " <color=yellow>(+" + m_buildingData.buildingBoosts[i] + ")</color>\n";
+                result += "- " + BuildingEventData.GetCategoryColor(PackagesHolder.CheckCategoryFromID(m_buildingData.buildingIDs[i])) + m_buildingData.buildingIDs[i] + " (+" + m_buildingData.buildingBoosts[i] + ")</color>\n";
         }
 
         return result;
     }
+
+    //public 
 
     public void ProcessPlacingInAnimation(int points, PointsComboVisualManager visualManager)
     {

@@ -58,7 +58,7 @@ public class BuildingsInventory : MonoBehaviour
         //FreeSlots = maxSlots - this.buildings.Count;
     }
 
-    public void SpawnBuilding(Building buildingRef, int slotIndex)
+    public Building SpawnBuilding(Building buildingRef, int slotIndex)
     {
         int slotNumber = slotIndex;
 
@@ -73,6 +73,8 @@ public class BuildingsInventory : MonoBehaviour
         this.buildings.Add(bScr);
 
         FreeSlots = maxSlots - this.buildings.Count;
+
+        return bScr;
     }
 
     public void RemoveBuildingFromInventory(CityDirectorEventData eventData)

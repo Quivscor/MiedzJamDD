@@ -14,6 +14,7 @@ namespace ExpeditionMap
         public GameObject newRaportsInCitySceneButton = null;
         public TextMeshProUGUI numberOfFreeTeamsText = null;
         public Action<int> OnExpeditionConfirmation;
+        public Action<int> OnReceiveRaport;
         private Animator popupAnimator;
 
         private void Awake()
@@ -69,6 +70,8 @@ namespace ExpeditionMap
         public void ExpeditionFinished(RaportData raportData)
         {
             waitingRaports.Add(raportData);
+
+            OnReceiveRaport?.Invoke(6); // On receiving raport tutorial
 
             newRaportsButton?.SetActive(true);
             newRaportsInCitySceneButton?.SetActive(true);

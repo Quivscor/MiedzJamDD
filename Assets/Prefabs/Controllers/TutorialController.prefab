@@ -493,9 +493,32 @@ MonoBehaviour:
     - dialogueSprite: {fileID: 21300000, guid: 3f9354d9f1b3fd045a5286d4cc41e21b, type: 3}
       dialogueMsg: "A potem klepnij gdzie\u015B na mapie essa."
     hasFired: 0
+  - name: PoOtrzymaniuRaportuTutorial
+    dialogues:
+    - dialogueSprite: {fileID: 21300000, guid: 3f9354d9f1b3fd045a5286d4cc41e21b, type: 3}
+      dialogueMsg: "Ty patrz, wr\xF3cili g\xF3rnicy, we\u017A no id\u017A tam zobacz
+        co maj\u0105"
+    - dialogueSprite: {fileID: 21300000, guid: 3f9354d9f1b3fd045a5286d4cc41e21b, type: 3}
+      dialogueMsg: O chuj.
+    - dialogueSprite: {fileID: 21300000, guid: 9a7b213f2ee592c40aeccf1771b3513f, type: 3}
+      dialogueMsg: "To mied\u017A."
+    hasFired: 0
+  - name: PoWybraniuBudynkuTutorial
+    dialogues:
+    - dialogueSprite: {fileID: 21300000, guid: 3f9354d9f1b3fd045a5286d4cc41e21b, type: 3}
+      dialogueMsg: "No i patrz z\u0142ociutki, we\u017A no poje\u017Adzij sobie tym
+        budynkiem po mapie."
+    - dialogueSprite: {fileID: 21300000, guid: 3f9354d9f1b3fd045a5286d4cc41e21b, type: 3}
+      dialogueMsg: "Ma takie zielone pole, to jest zasi\u0119g kombienia."
+    - dialogueSprite: {fileID: 21300000, guid: 9a7b213f2ee592c40aeccf1771b3513f, type: 3}
+      dialogueMsg: "Tak si\u0119 progressuje gre B)"
+    hasFired: 0
   TutorialHUD: {fileID: 197744706308569468}
   dialogueText: {fileID: 197744705300829950}
   tutorialLadyImage: {fileID: 197744707271353739}
+  IsWorking: 1
+  startingBuilding: {fileID: 2201244982822464578, guid: 6b0004b73bfe00545894c88b32d105a8,
+    type: 3}
 --- !u!1 &197744706100324223
 GameObject:
   m_ObjectHideFlags: 0
@@ -645,10 +668,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3

@@ -131,8 +131,11 @@ public class CityDirector : MonoBehaviour
             Building b = CityGrid[coord.x, coord.y].Building;
             int value = 0;
             b.NeighborBoosts.TryGetValue(SelectedBuilding.SelectedBuildingMock.BuildingID, out value);
-            listToFill.Add(b);
-            pointsToAdd.Add(value);
+            if(value > 0)
+            {
+                listToFill.Add(b);
+                pointsToAdd.Add(value);
+            }
             CategoriesProgressController.Instance.AddPointsToScience(b.BuildingCategory, value);
         }
 

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8ec76fc7e2a51845a2d5ca2fbb1b007, type: 3}
   m_Name: "Wytw\xF3rnia Mikroprocesor\xF3w Data"
   m_EditorClassIdentifier: 
-  thisBuildingID: "Wytw\xF3rnia mikroprocesor\xF3w"
+  thisBuildingID: "Wytw\xF3rnia Mikroprocesor\xF3w"
   description: "To tu powstaj\u0105 elementy potrzebne do produkcji wszelkich pojazd\xF3w
     i mech\xF3w."
   buildingIDs:
@@ -20,7 +20,7 @@ MonoBehaviour:
   - "Wytw\xF3rnia Mikroprocesor\xF3w"
   - Talerze Satelitarne
   - Komunikator Molekularny
-  - "Fabryka pojazd\xF3w"
+  - "Fabryka Pojazd\xF3w"
   buildingBoosts: 0100000001000000010000000100000002000000
   pointValue: 1
   pointCategory: 1
