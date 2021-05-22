@@ -53,10 +53,10 @@ MonoBehaviour:
   - {fileID: 3726864596130842462}
   defaultCloseWindowText: Zamknij
   gameEventLibrary:
-  - {fileID: 11400000, guid: 966c65b0e650a224ca67debce27dbd5c, type: 2}
-  - {fileID: 11400000, guid: 966c65b0e650a224ca67debce27dbd5c, type: 2}
-  - {fileID: 11400000, guid: 966c65b0e650a224ca67debce27dbd5c, type: 2}
-  - {fileID: 11400000, guid: 966c65b0e650a224ca67debce27dbd5c, type: 2}
+  - {fileID: 11400000, guid: f714b1db32f6a7543b145513cf6666ba, type: 2}
+  - {fileID: 11400000, guid: a67704abc59f7f847922dabffecfaa14, type: 2}
+  - {fileID: 11400000, guid: 2d941255b9800b24595a8ea4d4176154, type: 2}
+  - {fileID: 11400000, guid: 2059fee5fee2b4145993ee7a8d0807b9, type: 2}
   currentLibrary: []
 --- !u!1 &5889907050471287563
 GameObject:

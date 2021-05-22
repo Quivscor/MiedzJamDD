@@ -306,6 +306,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 911463466}
     m_Modifications:
+    - target: {fileID: 1564034141, guid: f1c99db0fef3bb746abeed0c2bb55ddc, type: 3}
+      propertyPath: gameEventLibrary.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: f714b1db32f6a7543b145513cf6666ba,
+        type: 2}
+    - target: {fileID: 1564034141, guid: f1c99db0fef3bb746abeed0c2bb55ddc, type: 3}
+      propertyPath: gameEventLibrary.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: a67704abc59f7f847922dabffecfaa14,
+        type: 2}
+    - target: {fileID: 1564034141, guid: f1c99db0fef3bb746abeed0c2bb55ddc, type: 3}
+      propertyPath: gameEventLibrary.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 2d941255b9800b24595a8ea4d4176154,
+        type: 2}
+    - target: {fileID: 1564034141, guid: f1c99db0fef3bb746abeed0c2bb55ddc, type: 3}
+      propertyPath: gameEventLibrary.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: 2059fee5fee2b4145993ee7a8d0807b9,
+        type: 2}
     - target: {fileID: 441604718740943482, guid: f1c99db0fef3bb746abeed0c2bb55ddc,
         type: 3}
       propertyPath: m_Color.r
