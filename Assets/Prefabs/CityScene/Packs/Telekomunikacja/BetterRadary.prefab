@@ -110,7 +110,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   personalAnimatorController: {fileID: 9100000, guid: dbc452bc7e7cec149962262df1deaf28,
     type: 2}
-  m_buildingData: {fileID: 11400000, guid: 6a3a262cc36e86443b94b8615a20517d, type: 2}
+  m_buildingData: {fileID: 11400000, guid: 6227ae45e2e281642b0e2b7a9b9d41a6, type: 2}
 --- !u!95 &5119020651259716572
 Animator:
   serializedVersion: 3

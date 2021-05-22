@@ -296,7 +296,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxMovement: {x: 2, y: 2}
-  moveSpeed: 1
+  moveSpeed: 1.75
 --- !u!1001 &66309704
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -453,6 +453,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Controllers
+      objectReference: {fileID: 0}
+    - target: {fileID: 5889907050812164460, guid: f1c99db0fef3bb746abeed0c2bb55ddc,
+        type: 3}
+      propertyPath: costIncreaseMultiplier
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7329242100366046673, guid: f1c99db0fef3bb746abeed0c2bb55ddc,
         type: 3}

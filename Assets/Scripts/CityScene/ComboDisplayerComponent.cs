@@ -101,7 +101,7 @@ public class ComboDisplayerComponent : MonoBehaviour
         categories[0] = CategoriesProgressController.ScienceCategory.Energetyka;
         categories[1] = CategoriesProgressController.ScienceCategory.Telekomunikacja;
         categories[2] = CategoriesProgressController.ScienceCategory.Transport;
-        categories[3] = CategoriesProgressController.ScienceCategory.Rolnictwo;
+        categories[3] = CategoriesProgressController.ScienceCategory.Społeczność;
 
         int extra = CityDirector.Instance.SelectedBuilding.SelectedBuildingMock.GetBonusFromNeighbors(pointedField.CityGridCoordinates, pointedField.GetNeighborsFromBuildingData());
         pointedField.DisplayInfo(extra, CityDirector.Instance.SelectedBuilding.SelectedBuildingMock.BaseScore);

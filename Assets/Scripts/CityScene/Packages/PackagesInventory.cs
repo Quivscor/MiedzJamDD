@@ -151,7 +151,7 @@ public class PackagesInventory : MonoBehaviour
         OnBuyPackage?.Invoke(5); //Buying package tutorial
         UpdateButtonsInteractions();
 
-        AddPackage(ScienceCategory.Rolnictwo);
+        AddPackage(ScienceCategory.Społeczność);
     }
 
     public void BuyEnergetykaPackage()

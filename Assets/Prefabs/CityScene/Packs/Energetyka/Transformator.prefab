@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2201244982822464588}
   - component: {fileID: 2201244982822464579}
   - component: {fileID: 2201244982822464578}
+  - component: {fileID: 4123067888932568778}
   m_Layer: 0
   m_Name: Transformator
   m_TagString: Untagged
@@ -107,7 +108,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e718ca1ee758db4d976ad68c2d6e4dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_buildingData: {fileID: 11400000, guid: 8fc289e0abe492948a85d3433de2b8be, type: 2}
+  personalAnimatorController: {fileID: 0}
+  m_buildingData: {fileID: 11400000, guid: c76e58b3619686e4f818667309c6337c, type: 2}
+--- !u!95 &4123067888932568778
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2201244982822464577}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cefc033e1c36ca24eaa8c7f88d650523, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &5430104498304133566
 GameObject:
   m_ObjectHideFlags: 0

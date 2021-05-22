@@ -10,22 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b8ec76fc7e2a51845a2d5ca2fbb1b007, type: 3}
-  m_Name: PanelSloneczneData
+  m_Name: "Stacja \u0141aduj\u0105ca Data"
   m_EditorClassIdentifier: 
-  thisBuildingID: "Panele S\u0142oneczne"
-  description: "Produkuj\u0105 zielon\u0105 energi\u0119 dzi\u0119ki reaktorowi termoj\u0105drowego
-    na niebosk\u0142onie."
+  thisBuildingID: "Stacja \u0141aduj\u0105ca"
+  description: "Zapewnia energi\u0119 wszystkim pojazdom z nap\u0119dem elektrycznym"
   buildingIDs:
-  - Pole Uprawne
-  buildingBoosts: 01000000
+  - "Fabryka Pojazd\xF3w"
+  - Fabryka Baterii
+  - "Stacja \u0141aduj\u0105ca"
+  - "Fabryka Mech\xF3w"
+  - "Panele S\u0142oneczne"
+  buildingBoosts: 0100000001000000010000000100000002000000
   pointValue: 1
-  pointCategory: 0
+  pointCategory: 2
   neighborCoordinatesRelative:
-  - {x: 0, y: 1}
-  - {x: 0, y: -1}
-  - {x: 1, y: 0}
-  - {x: -1, y: 0}
-  - {x: -1, y: 1}
-  - {x: 1, y: 1}
-  - {x: 1, y: -1}
   - {x: -1, y: -1}
+  - {x: 1, y: 1}
+  - {x: -1, y: 1}
+  - {x: 1, y: -1}

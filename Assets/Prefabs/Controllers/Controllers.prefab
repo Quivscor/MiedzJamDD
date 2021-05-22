@@ -1531,6 +1531,11 @@ PrefabInstance:
       propertyPath: sciences.Array.data[3].level
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7364815004456953169, guid: 3ab6206a7f309f54f81116bff96606db,
+        type: 3}
+      propertyPath: costIncreaseMultiplier
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7364815004456953171, guid: 3ab6206a7f309f54f81116bff96606db,
         type: 3}
       propertyPath: m_Name

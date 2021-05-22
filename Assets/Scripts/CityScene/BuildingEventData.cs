@@ -27,7 +27,7 @@ public class BuildingEventData
                 return "#B900F8";
             case CategoriesProgressController.ScienceCategory.Transport:
                 return "#A40713";
-            case CategoriesProgressController.ScienceCategory.Rolnictwo:
+            case CategoriesProgressController.ScienceCategory.Społeczność:
                 return "#00B917";
         }
 

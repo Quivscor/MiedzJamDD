@@ -2162,8 +2162,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 16.5, y: 96.64}
-  m_SizeDelta: {x: 275.8731, y: 44.914307}
+  m_AnchoredPosition: {x: 9.76, y: 96.64}
+  m_SizeDelta: {x: 429.03223, y: 44.914307}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &9066615347693442201
 CanvasRenderer:
@@ -4784,7 +4784,7 @@ PrefabInstance:
     - target: {fileID: 5235979137340266199, guid: 76a4d643f0fb86344b75271e13617e09,
         type: 3}
       propertyPath: m_text
-      value: Rolnictwo
+      value: "Spo\u0142eczno\u015B\u0107"
       objectReference: {fileID: 0}
     - target: {fileID: 5235979137340266199, guid: 76a4d643f0fb86344b75271e13617e09,
         type: 3}

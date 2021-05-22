@@ -10,18 +10,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b8ec76fc7e2a51845a2d5ca2fbb1b007, type: 3}
-  m_Name: FabrykaMechowData
+  m_Name: Szpital Data
   m_EditorClassIdentifier: 
-  thisBuildingID: "Fabryka Mech\xF3w"
-  description: "To tutaj powstaj\u0105 mechy mog\u0105ce pracowa\u0107 w ci\u0119\u017Ckich
-    warunkach."
+  thisBuildingID: Szpital
+  description: "Ochrona zdrowia na mi\u0119dzygwiezdnym poziomie."
   buildingIDs:
-  - "Panele S\u0142oneczne"
-  buildingBoosts: 01000000
+  - Dom Plus Energetyczny
+  - Pole Uprawne
+  - Szpital
+  - Gwiezdna Ambasada
+  - Talerze Satelitarne
+  buildingBoosts: 0100000001000000010000000100000002000000
   pointValue: 1
-  pointCategory: 2
+  pointCategory: 3
   neighborCoordinatesRelative:
-  - {x: 1, y: 1}
-  - {x: 1, y: -1}
-  - {x: -1, y: 1}
-  - {x: -1, y: -1}
+  - {x: 0, y: 1}
+  - {x: 0, y: 2}
+  - {x: 0, y: -1}
+  - {x: 0, y: -2}
+  - {x: -1, y: 0}
+  - {x: -2, y: 0}
+  - {x: 1, y: 0}
+  - {x: 2, y: 0}

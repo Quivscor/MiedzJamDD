@@ -63,7 +63,7 @@ public class PopUpController : MonoBehaviour
         {
             popupText.text = "Zwiększyła się szansa na znalezienie dodatkowych pakietów";
         }
-        if (scienceCategory == CategoriesProgressController.ScienceCategory.Rolnictwo)
+        if (scienceCategory == CategoriesProgressController.ScienceCategory.Społeczność)
         {
             popupText.text = "Powstał nowy zespół do ekspedycji";
         }

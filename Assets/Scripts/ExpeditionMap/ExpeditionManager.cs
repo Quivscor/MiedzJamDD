@@ -29,7 +29,7 @@ namespace ExpeditionMap
 
         private void Start()
         {
-            currentAvailableTeams = (int)CategoriesProgressController.Instance.sciences[(int)CategoriesProgressController.ScienceCategory.Rolnictwo].level;
+            currentAvailableTeams = (int)CategoriesProgressController.Instance.sciences[(int)CategoriesProgressController.ScienceCategory.Społeczność].level;
 
             numberOfFreeTeamsText.text = currentAvailableTeams + "";
 
@@ -73,7 +73,7 @@ namespace ExpeditionMap
 
         public void OnCategoryLevelUp(CategoriesProgressController.ScienceCategory category)
         {
-            if (category == CategoriesProgressController.ScienceCategory.Rolnictwo)
+            if (category == CategoriesProgressController.ScienceCategory.Społeczność)
             {
                 AddFreeTeam();
             }

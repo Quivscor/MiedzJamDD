@@ -112,7 +112,9 @@ public class Building : MonoBehaviour, IPointerClickHandler, ISelectHandler
         result = "- Wszystkich z " + m_buildingData.pointCategory + " <color=yellow>(+1)</color>\n";
         for (int i = 0; i < m_buildingData.buildingIDs.Count; i++)
         {
-            result += "- " + m_buildingData.buildingIDs[i] + " <color=yellow>(+" + m_buildingData.buildingBoosts[i] + ")</color>\n";
+            // skipping building within same category
+            if(m_buildingData.buildingBoosts[i] != 1)
+                result += "- " + m_buildingData.buildingIDs[i] + " <color=yellow>(+" + m_buildingData.buildingBoosts[i] + ")</color>\n";
         }
 
         return result;
@@ -129,7 +131,7 @@ public class Building : MonoBehaviour, IPointerClickHandler, ISelectHandler
     {
         Animator animator = GetComponent<Animator>();
 
-        if (animator && personalAnimatorController)
+        if (animator && personalAnimatorController != null)
             animator.runtimeAnimatorController = personalAnimatorController;
     }
 

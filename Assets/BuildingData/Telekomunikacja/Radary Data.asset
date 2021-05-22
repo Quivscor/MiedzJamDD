@@ -10,14 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b8ec76fc7e2a51845a2d5ca2fbb1b007, type: 3}
-  m_Name: RadaryData
+  m_Name: Radary Data
   m_EditorClassIdentifier: 
   thisBuildingID: Radary
-  description: "Dzi\u0119ki falom radiowym wykrywaj\u0105 najdrobniejsze szumy na
-    planecie."
+  description: "Pozwalaj\u0105 na podstawow\u0105 komunikacj\u0119 ekspedycj\u0105
+    g\xF3rniczym z koloni\u0105."
   buildingIDs:
-  - "Panele S\u0142oneczne"
-  buildingBoosts: 01000000
+  - Radary
+  - "Wytw\xF3rnia Mikroprocesor\xF3w"
+  - Talerze Satelitarne
+  - Komunikator Molekularny
+  - Transformator
+  buildingBoosts: 0100000001000000010000000100000002000000
   pointValue: 1
   pointCategory: 1
   neighborCoordinatesRelative:
@@ -25,3 +29,7 @@ MonoBehaviour:
   - {x: 0, y: -1}
   - {x: 1, y: 0}
   - {x: -1, y: 0}
+  - {x: -1, y: -1}
+  - {x: -1, y: 1}
+  - {x: 1, y: -1}
+  - {x: 1, y: 1}

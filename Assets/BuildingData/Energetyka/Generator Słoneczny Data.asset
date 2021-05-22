@@ -10,18 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b8ec76fc7e2a51845a2d5ca2fbb1b007, type: 3}
-  m_Name: PoleRoslinData
+  m_Name: "Generator S\u0142oneczny Data"
   m_EditorClassIdentifier: 
-  thisBuildingID: Pole Uprawne
-  description: "Zamni\u0119te pod kopu\u0142\u0105 przed negatywnym wp\u0142ywem
-    promieniowania."
+  thisBuildingID: "Generator S\u0142oneczny"
+  description: "Stanowi podpor\u0119 bezpiecze\u0144stwa energetycznego kolonii."
   buildingIDs:
-  - Pole Uprawne
-  buildingBoosts: 01000000
-  pointValue: 1
-  pointCategory: 3
+  - "Panele S\u0142oneczne"
+  - Wiatraki
+  - Transformator
+  - "Generator S\u0142oneczny"
+  - "Stacja \u0141aduj\u0105ca"
+  buildingBoosts: 010000000100000001000000010000000300000003000000
+  pointValue: 2
+  pointCategory: 0
   neighborCoordinatesRelative:
+  - {x: 1, y: 0}
+  - {x: -1, y: 0}
   - {x: 0, y: 1}
-  - {x: 0, y: 2}
   - {x: 0, y: -1}
-  - {x: 0, y: -2}

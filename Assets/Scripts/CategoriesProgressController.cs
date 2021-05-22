@@ -11,7 +11,7 @@ public class CategoriesProgressController : MonoBehaviour
 
     public static CategoriesProgressController Instance = null;
 
-    [SerializeField] private float percentageCostIncrease = 0.5f;
+    [SerializeField] private int costIncreaseMultiplier = 1;
     public Science [] sciences;
 
     private void Awake()
@@ -49,7 +49,7 @@ public class CategoriesProgressController : MonoBehaviour
             int difference = (sciences[(int)scienceCategory].currentExp + value) - sciences[(int)scienceCategory].expToNextLevel;
             sciences[(int)scienceCategory].level++;
             sciences[(int)scienceCategory].currentExp = difference;
-            sciences[(int)scienceCategory].expToNextLevel += (int)(sciences[(int)scienceCategory].expToNextLevel * percentageCostIncrease);
+            sciences[(int)scienceCategory].expToNextLevel *= costIncreaseMultiplier;
             PopUpController.Instance.AddToList(scienceCategory);
 
             //if (scienceCategory == ScienceCategory.Rolnictwo)
@@ -70,7 +70,7 @@ public class CategoriesProgressController : MonoBehaviour
             int difference = (sciences[scienceCategory].currentExp + value) - sciences[scienceCategory].expToNextLevel;
             sciences[scienceCategory].level++;
             sciences[scienceCategory].currentExp = difference;
-            sciences[scienceCategory].expToNextLevel += (int)(sciences[scienceCategory].expToNextLevel * percentageCostIncrease);
+            sciences[scienceCategory].expToNextLevel *= costIncreaseMultiplier;
 
         }
         else
@@ -96,7 +96,7 @@ public class CategoriesProgressController : MonoBehaviour
         Energetyka,
         Telekomunikacja,
         Transport,
-        Rolnictwo,
+        Społeczność,
     }
 
     [System.Serializable]

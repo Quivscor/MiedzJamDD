@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8ec76fc7e2a51845a2d5ca2fbb1b007, type: 3}
+  m_Name: Wiatraki Data
+  m_EditorClassIdentifier: 
+  thisBuildingID: Wiatraki
+  description: "Podczas ich budowy stosuj\u0119 si\u0119 mied\u017A do uzwoje\u0144
+    wirnik\xF3w i stojan\xF3w generator\xF3w."
+  buildingIDs:
+  - "Panele S\u0142oneczne"
+  - Wiatraki
+  - Transformator
+  - "Generator S\u0142oneczny"
+  - Pole Uprawne
+  buildingBoosts: 0100000001000000010000000100000002000000
+  pointValue: 1
+  pointCategory: 0
+  neighborCoordinatesRelative:
+  - {x: 1, y: 1}
+  - {x: 2, y: 2}
+  - {x: -1, y: -1}
+  - {x: -2, y: -2}
+  - {x: -1, y: 1}
+  - {x: -2, y: 2}
+  - {x: 1, y: -1}
+  - {x: 2, y: -2}
