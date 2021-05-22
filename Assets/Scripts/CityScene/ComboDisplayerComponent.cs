@@ -104,7 +104,7 @@ public class ComboDisplayerComponent : MonoBehaviour
         categories[3] = CategoriesProgressController.ScienceCategory.Społeczność;
 
         int extra = CityDirector.Instance.SelectedBuilding.SelectedBuildingMock.GetBonusFromNeighbors(pointedField.CityGridCoordinates, pointedField.GetNeighborsFromBuildingData());
-        pointedField.DisplayInfo(extra, CityDirector.Instance.SelectedBuilding.SelectedBuildingMock.BaseScore);
+        pointedField.DisplayInfo(extra, BuildingEventData.GetCategoryColor(CityDirector.Instance.SelectedBuilding.SelectedBuildingMock.BuildingCategory) ,CityDirector.Instance.SelectedBuilding.SelectedBuildingMock.BaseScore);
         categoryPoints[(int)CityDirector.Instance.SelectedBuilding.SelectedBuildingMock.BuildingCategory] += CityDirector.Instance.SelectedBuilding.SelectedBuildingMock.BaseScore + extra;
 
         foreach (BuildingField f in displayedFields)
@@ -113,7 +113,7 @@ public class ComboDisplayerComponent : MonoBehaviour
                 continue;
             int value = 0;
             f.Building.NeighborBoosts.TryGetValue(CityDirector.Instance.SelectedBuilding.SelectedBuildingMock.BuildingID, out value);
-            f.DisplayInfo(value);
+            f.DisplayInfo(value, BuildingEventData.GetCategoryColor(f.Building.BuildingCategory));
             categoryPoints[(int)f.Building.BuildingCategory] += value;
         }
 

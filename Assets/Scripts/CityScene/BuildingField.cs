@@ -165,18 +165,18 @@ public class BuildingField : MonoBehaviour, IPointerClickHandler, IPointerEnterH
         OnHoverExit?.Invoke(bEventData);
     }
 
-    public void DisplayInfo(int boostValue, int baseValue = 0)
+    public void DisplayInfo(int boostValue, string boostColor, int baseValue = 0)
     {
         if (boostValue == 0 && baseValue == 0)
             return;
 
         text.transform.parent.gameObject.SetActive(true);
         if (baseValue != 0 && boostValue != 0)
-            text.text = baseValue.ToString() + "<color=green>+" + boostValue.ToString() + "</color>";
+            text.text = baseValue.ToString() + boostColor + "+" + boostValue.ToString() + "</color>";
         else if (baseValue != 0 && boostValue == 0)
             text.text = baseValue.ToString();
         else if (boostValue != 0)
-            text.text = "<color=green>+" + boostValue.ToString() + "</color>";
+            text.text = boostColor + "+" + boostValue.ToString() + "</color>";
         //if (baseValue > 0)
         //    text.text = baseValue.ToString() + " + " + boostValue.ToString();
         //else if(boostValue > 0)

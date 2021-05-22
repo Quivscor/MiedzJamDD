@@ -11,8 +11,8 @@ public class BuildingEventData
 
     public BuildingEventData(string buildingName, CategoriesProgressController.ScienceCategory category, string description, string bonuses)
     {
-        this.buildingName = "<color=" + GetCategoryColor(category) + ">" + buildingName + "</color>";
-        this.category = "<color=" + GetCategoryColor(category) + ">" + category.ToString() + "</color>";
+        this.buildingName = GetCategoryColor(category) + buildingName + "</color>";
+        this.category = GetCategoryColor(category) + category.ToString() + "</color>";
         this.description = description;
         this.bonuses = bonuses;
     }
@@ -22,13 +22,13 @@ public class BuildingEventData
         switch(category)
         {
             case CategoriesProgressController.ScienceCategory.Energetyka:
-                return "#FFFA34";
+                return "<color=#FFFA34>";
             case CategoriesProgressController.ScienceCategory.Telekomunikacja:
-                return "#B900F8";
+                return "<color=#B900F8>";
             case CategoriesProgressController.ScienceCategory.Transport:
-                return "#A40713";
+                return "<color=#A40713>";
             case CategoriesProgressController.ScienceCategory.Społeczność:
-                return "#00B917";
+                return "<color=#00B917>";
         }
 
         return "black";
