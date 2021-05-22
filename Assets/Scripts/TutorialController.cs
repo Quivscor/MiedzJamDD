@@ -26,6 +26,7 @@ public class TutorialController : MonoBehaviour
         EventController.Instance.OnGameEventFire += DisplaySequence; //GameEventTutorial
         ExpeditionMap.ExpeditionManager.Instance.OnExpeditionConfirmation += DisplaySequence; //AfterExpeditionTutorial
         FindObjectOfType<PackagesInventory>().OnBuyPackage += DisplaySequence; //OnBuyingPackage
+        ExpeditionMap.ExpeditionManager.Instance.OnReceiveRaport += DisplaySequence; //OnReceiveRaportTutorial
 
         DisplaySequence(0);
     }

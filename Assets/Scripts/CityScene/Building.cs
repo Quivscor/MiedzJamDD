@@ -30,6 +30,7 @@ public class Building : MonoBehaviour, IPointerClickHandler, ISelectHandler
 
     #region Events
     public Action<BuildingEventData> OnClick;
+    public Action<int> OnSelectPlaySequence;
     #endregion
 
     private void Start()
