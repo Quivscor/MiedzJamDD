@@ -26,7 +26,7 @@ public class BuildingEventData
             case CategoriesProgressController.ScienceCategory.Telekomunikacja:
                 return "<color=#B900F8>";
             case CategoriesProgressController.ScienceCategory.Transport:
-                return "<color=#A40713>";
+                return "<color=#CD1725>";
             case CategoriesProgressController.ScienceCategory.Społeczność:
                 return "<color=#00B917>";
         }
