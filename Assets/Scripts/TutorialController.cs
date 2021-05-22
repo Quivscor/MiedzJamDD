@@ -14,8 +14,13 @@ public class TutorialController : MonoBehaviour
     public TMProText dialogueText;
     public Image tutorialLadyImage;
 
+    public bool IsWorking = true;
+
     private void Start()
     {
+        if (!IsWorking)
+            return;
+
         BuildingsInventory.Instance.OnEmptyInventory += DisplaySequence; //InventoryTutorial
         EarthProgressController.Instance.OnMissionsFromEarthWindowOpen += DisplaySequence; //MissionsFromEarthTutorial
         EventController.Instance.OnGameEventFire += DisplaySequence; //GameEventTutorial
