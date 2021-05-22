@@ -106,9 +106,11 @@ public class CityDirector : MonoBehaviour
         eventData.selfReference.AssignBuilding(b);
 
         //recalculate grid and apply extra points to points controller
+        List<Building> buildingsGivingPoints = new List<Building>();
+        buildingsGivingPoints.Add(b);
         b.RecalculatePointScore(eventData.selfReference.CityGridCoordinates, eventData.selfReference.GetNeighborsFromPlacedBuilding());
         CategoriesProgressController.Instance.AddPointsToScience(b.BuildingCategory, b.PointScoreDelta);
-        RecalculateHighlightedNeighbors(eventData.selfReference.GetNeighborsFromBuildingData(false), eventData.selfReference.CityGridCoordinates);
+        RecalculateHighlightedNeighbors(eventData.selfReference.GetNeighborsFromBuildingData(false), eventData.selfReference.CityGridCoordinates, ref buildingsGivingPoints);
 
         //if needed some info from city director here, edit the class and add what's needed
         OnBuildingPlaced?.Invoke(new CityDirectorEventData(b));
@@ -119,7 +121,7 @@ public class CityDirector : MonoBehaviour
         m_comboDisplayerComponent.CleanupDisplay(eventData);
     }
 
-    public void RecalculateHighlightedNeighbors(List<Vector2Int> coords, Vector2Int owncoords)
+    public void RecalculateHighlightedNeighbors(List<Vector2Int> coords, Vector2Int owncoords, ref List<Building> listToFill)
     {
         foreach(Vector2Int coord in coords)
         {
@@ -129,6 +131,7 @@ public class CityDirector : MonoBehaviour
             Building b = CityGrid[coord.x, coord.y].Building;
             int value = 0;
             b.NeighborBoosts.TryGetValue(SelectedBuilding.SelectedBuildingMock.BuildingID, out value);
+            listToFill.Add(b);
             CategoriesProgressController.Instance.AddPointsToScience(b.BuildingCategory, value);
         }
     }
