@@ -13,14 +13,16 @@ MonoBehaviour:
   m_Name: "Generator S\u0142oneczny Data"
   m_EditorClassIdentifier: 
   thisBuildingID: "Generator S\u0142oneczny"
-  description: "Stanowi podpor\u0119 bezpiecze\u0144stwa energetycznego kolonii."
+  description: "P o t \u0119 \u017C n y  generator zasilany reaktorem termoj\u0105drowym
+    na niebosk\u0142onie."
   buildingIDs:
   - "Panele S\u0142oneczne"
   - Wiatraki
   - Transformator
   - "Generator S\u0142oneczny"
-  - "Stacja \u0141aduj\u0105ca"
-  buildingBoosts: 010000000100000001000000010000000300000003000000
+  - "Fabryka Mech\xF3w"
+  - Dom Plus Energetyczny
+  buildingBoosts: 010000000100000001000000010000000300000002000000
   pointValue: 2
   pointCategory: 0
   neighborCoordinatesRelative:
