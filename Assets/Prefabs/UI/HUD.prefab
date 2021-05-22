@@ -1560,7 +1560,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1880,7 +1880,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2297,7 +2297,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2579,7 +2579,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2787,7 +2787,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -3196,7 +3196,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0.48584908, g: 0.78039527, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -3270,7 +3270,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 0.6}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -3850,7 +3850,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0.48584908, g: 0.78039527, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -5620,6 +5620,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hover FillAmount
       objectReference: {fileID: 0}
+    - target: {fileID: 5235979136958211888, guid: 76a4d643f0fb86344b75271e13617e09,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.08067818
+      objectReference: {fileID: 0}
+    - target: {fileID: 5235979136958211888, guid: 76a4d643f0fb86344b75271e13617e09,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.46226418
+      objectReference: {fileID: 0}
+    - target: {fileID: 5235979136958211888, guid: 76a4d643f0fb86344b75271e13617e09,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.1281186
+      objectReference: {fileID: 0}
     - target: {fileID: 5235979137340266199, guid: 76a4d643f0fb86344b75271e13617e09,
         type: 3}
       propertyPath: m_text
@@ -5744,6 +5759,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ScienceProgressFuturistic (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6296126870827898834, guid: 76a4d643f0fb86344b75271e13617e09,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6296126870827898834, guid: 76a4d643f0fb86344b75271e13617e09,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.7254902
+      objectReference: {fileID: 0}
+    - target: {fileID: 6296126870827898834, guid: 76a4d643f0fb86344b75271e13617e09,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.09019608
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76a4d643f0fb86344b75271e13617e09, type: 3}
@@ -6075,6 +6105,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hover FillAmount
       objectReference: {fileID: 0}
+    - target: {fileID: 5235979136958211888, guid: 76a4d643f0fb86344b75271e13617e09,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.4716981
+      objectReference: {fileID: 0}
+    - target: {fileID: 5235979136958211888, guid: 76a4d643f0fb86344b75271e13617e09,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.08232467
+      objectReference: {fileID: 0}
+    - target: {fileID: 5235979136958211888, guid: 76a4d643f0fb86344b75271e13617e09,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.11208572
+      objectReference: {fileID: 0}
     - target: {fileID: 5235979137340266199, guid: 76a4d643f0fb86344b75271e13617e09,
         type: 3}
       propertyPath: m_text
@@ -6200,6 +6245,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: ScienceProgressFuturistic (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6296126870827898834, guid: 76a4d643f0fb86344b75271e13617e09,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.8018868
+      objectReference: {fileID: 0}
+    - target: {fileID: 6296126870827898834, guid: 76a4d643f0fb86344b75271e13617e09,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.08699717
+      objectReference: {fileID: 0}
+    - target: {fileID: 6296126870827898834, guid: 76a4d643f0fb86344b75271e13617e09,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.14163846
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76a4d643f0fb86344b75271e13617e09, type: 3}
 --- !u!224 &8319332959705782292 stripped
@@ -6219,6 +6279,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Hover FillAmount
+      objectReference: {fileID: 0}
+    - target: {fileID: 5235979136958211888, guid: 76a4d643f0fb86344b75271e13617e09,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.764151
+      objectReference: {fileID: 0}
+    - target: {fileID: 5235979136958211888, guid: 76a4d643f0fb86344b75271e13617e09,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.74612856
+      objectReference: {fileID: 0}
+    - target: {fileID: 5235979136958211888, guid: 76a4d643f0fb86344b75271e13617e09,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.032440357
       objectReference: {fileID: 0}
     - target: {fileID: 5235979137340266199, guid: 76a4d643f0fb86344b75271e13617e09,
         type: 3}
@@ -6360,6 +6435,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hover FillAmount
       objectReference: {fileID: 0}
+    - target: {fileID: 5235979136958211888, guid: 76a4d643f0fb86344b75271e13617e09,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.46322975
+      objectReference: {fileID: 0}
+    - target: {fileID: 5235979136958211888, guid: 76a4d643f0fb86344b75271e13617e09,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.08130119
+      objectReference: {fileID: 0}
+    - target: {fileID: 5235979136958211888, guid: 76a4d643f0fb86344b75271e13617e09,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.5943396
+      objectReference: {fileID: 0}
     - target: {fileID: 5235979137340266196, guid: 76a4d643f0fb86344b75271e13617e09,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -6494,6 +6584,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ScienceProgressFuturistic (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6296126870827898834, guid: 76a4d643f0fb86344b75271e13617e09,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.7254902
+      objectReference: {fileID: 0}
+    - target: {fileID: 6296126870827898834, guid: 76a4d643f0fb86344b75271e13617e09,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6296126870827898834, guid: 76a4d643f0fb86344b75271e13617e09,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.972549
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76a4d643f0fb86344b75271e13617e09, type: 3}

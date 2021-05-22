@@ -6,6 +6,12 @@ public class HUDController : MonoBehaviour
 {
     public static HUDController Instance = null;
 
+    [Header("Animators")]
+    [SerializeField] private Animator earthMissionsAnimator;
+    [SerializeField] private Animator scienceAnimator;
+    [SerializeField] private Animator buildDescriptionAnimator;
+
+    [Header("Animators")]
     [SerializeField] GameObject daysObject;
     [SerializeField] GameObject buttonsObject;
     [SerializeField] GameObject copperObject;
@@ -16,6 +22,20 @@ public class HUDController : MonoBehaviour
     {
         if (!Instance)
             Instance = this;
+    }
+
+    public void ShowEarthMissions()
+    {
+        scienceAnimator.SetTrigger("HideScience");
+        buildDescriptionAnimator.SetTrigger("HideBuildDescription");
+        earthMissionsAnimator.SetTrigger("ShowEarthMissions");
+    }
+
+    public void HideEarthMissions()
+    {
+        scienceAnimator.SetTrigger("ShowScience");
+        buildDescriptionAnimator.SetTrigger("ShowBuildDescription");
+        earthMissionsAnimator.SetTrigger("HideEarthMissions");
     }
 
     public void ToggleCityHUD(bool toggle)

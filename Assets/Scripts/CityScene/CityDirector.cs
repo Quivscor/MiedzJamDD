@@ -53,6 +53,7 @@ public class CityDirector : MonoBehaviour
             if (x >= roadX2)
                 extraX += .5f;
 
+            extraX += x / 10f;
             for (int z = 0; z < CityGridSize; z++)
             {
                 //DODAC DROGI
@@ -60,6 +61,8 @@ public class CityDirector : MonoBehaviour
                     extraZ = .5f;
                 else
                     extraZ = 0;
+
+                extraZ += z / 10f;
 
                 BuildingField fieldGO = Instantiate(buildingFieldPrefab, this.transform.position + new Vector3(x + extraX + 0.5f, 0, z + extraZ + 0.5f), Quaternion.identity, this.transform).GetComponentInChildren<BuildingField>();
                 fieldGO.gameObject.name = "Field (" + x + ", " + z + ")";
