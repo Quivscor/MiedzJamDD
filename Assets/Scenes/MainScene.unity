@@ -456,6 +456,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Controllers
       objectReference: {fileID: 0}
+    - target: {fileID: 5889907051544111488, guid: f1c99db0fef3bb746abeed0c2bb55ddc,
+        type: 3}
+      propertyPath: startingCopper
+      value: 100000
+      objectReference: {fileID: 0}
     - target: {fileID: 7329242100366046673, guid: f1c99db0fef3bb746abeed0c2bb55ddc,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -4843,20 +4848,6 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1168613480, guid: fb9dc7b8e16c93345bf8c2faa74cf1b8, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1956205567}
-    - target: {fileID: 6027239570043769266, guid: fb9dc7b8e16c93345bf8c2faa74cf1b8,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6027239570427774724, guid: fb9dc7b8e16c93345bf8c2faa74cf1b8,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6027239571563074690, guid: fb9dc7b8e16c93345bf8c2faa74cf1b8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4967,21 +4958,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ExpeditionCanvas
       objectReference: {fileID: 0}
-    - target: {fileID: 6027239571892602786, guid: fb9dc7b8e16c93345bf8c2faa74cf1b8,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7411454214625115763, guid: fb9dc7b8e16c93345bf8c2faa74cf1b8,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1956205567}
-    - target: {fileID: 7411454214625115763, guid: fb9dc7b8e16c93345bf8c2faa74cf1b8,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: ShowNewRaports
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb9dc7b8e16c93345bf8c2faa74cf1b8, type: 3}
 --- !u!224 &818655330 stripped
@@ -6265,7 +6246,7 @@ Transform:
   m_LocalScale: {x: 0.8, y: 1, z: 0.8}
   m_Children: []
   m_Father: {fileID: 92557600}
-  m_RootOrder: 3
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &1113598450
 MeshRenderer:
@@ -8137,6 +8118,49 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1349169739}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1355481063
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1355481065}
+  - component: {fileID: 1355481064}
+  m_Layer: 0
+  m_Name: PackagesHolder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1355481064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1355481063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f091049b47c9b40489d48367c4fe30eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1355481065
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1355481063}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 199.91428, y: 467.80304, z: 50.735413}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1369443225 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6164585437833704841, guid: fb9dc7b8e16c93345bf8c2faa74cf1b8,
@@ -11441,6 +11465,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 197744705751548224, guid: 6e89962b28899a34580d55142bc56c3f,
+        type: 3}
+      propertyPath: IsWorking
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 197744705751548225, guid: 6e89962b28899a34580d55142bc56c3f,
         type: 3}
       propertyPath: m_LocalPosition.x

@@ -31,7 +31,7 @@ public class BuildingEventData
                 return "<color=#00B917>";
         }
 
-        return "black";
+        return "<color=black>";
     }
 
 }
