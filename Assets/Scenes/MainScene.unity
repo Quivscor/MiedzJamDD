@@ -4882,6 +4882,16 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7411454214625115763, guid: fb9dc7b8e16c93345bf8c2faa74cf1b8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1956205567}
+    - target: {fileID: 7411454214625115763, guid: fb9dc7b8e16c93345bf8c2faa74cf1b8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: ShowNewRaports
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb9dc7b8e16c93345bf8c2faa74cf1b8, type: 3}
 --- !u!224 &818655330 stripped
@@ -6553,12 +6563,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1139669469}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1168613478 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1168613478, guid: fb9dc7b8e16c93345bf8c2faa74cf1b8,
-    type: 3}
-  m_PrefabInstance: {fileID: 818655329}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1177293684
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7961,6 +7965,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2729801294509557260, guid: 8aab5efa39f9ce24c9d65efd3a973f3c,
     type: 3}
   m_PrefabInstance: {fileID: 1349169739}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1369443225 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6164585437833704841, guid: fb9dc7b8e16c93345bf8c2faa74cf1b8,
+    type: 3}
+  m_PrefabInstance: {fileID: 818655329}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1387723129
 PrefabInstance:
@@ -10431,7 +10441,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f878e79a2354424c8df7e2d2846fcaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newRaportsButton: {fileID: 1168613478}
+  newRaportsButton: {fileID: 1369443225}
   newRaportsInCitySceneButton: {fileID: 66309708}
   numberOfFreeTeamsText: {fileID: 818655334}
 --- !u!4 &1956205568
