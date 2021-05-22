@@ -516,7 +516,9 @@ MonoBehaviour:
   TutorialHUD: {fileID: 197744706308569468}
   dialogueText: {fileID: 197744705300829950}
   tutorialLadyImage: {fileID: 197744707271353739}
-  IsWorking: 0
+  IsWorking: 1
+  startingBuilding: {fileID: 2201244982822464578, guid: 6b0004b73bfe00545894c88b32d105a8,
+    type: 3}
 --- !u!1 &197744706100324223
 GameObject:
   m_ObjectHideFlags: 0

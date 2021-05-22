@@ -106,6 +106,7 @@ public class Building : MonoBehaviour, IPointerClickHandler, ISelectHandler
 
     public void OnSelect(BaseEventData eventData)
     {
+        OnSelectPlaySequence?.Invoke(7); //OnBuildingSelection tutorial
         CityDirector.Instance.TrySelectingBuilding(this);
     }
 

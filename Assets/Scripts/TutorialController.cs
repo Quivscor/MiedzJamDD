@@ -16,6 +16,8 @@ public class TutorialController : MonoBehaviour
 
     public bool IsWorking = true;
 
+    public Building startingBuilding;
+
     private void Start()
     {
         if (!IsWorking)
@@ -27,6 +29,9 @@ public class TutorialController : MonoBehaviour
         ExpeditionMap.ExpeditionManager.Instance.OnExpeditionConfirmation += DisplaySequence; //AfterExpeditionTutorial
         FindObjectOfType<PackagesInventory>().OnBuyPackage += DisplaySequence; //OnBuyingPackage
         ExpeditionMap.ExpeditionManager.Instance.OnReceiveRaport += DisplaySequence; //OnReceiveRaportTutorial
+
+        startingBuilding = BuildingsInventory.Instance.SpawnBuilding(startingBuilding, 0);
+        startingBuilding.OnSelectPlaySequence += DisplaySequence; //OnFirstBuildingSelected;
 
         DisplaySequence(0);
     }
