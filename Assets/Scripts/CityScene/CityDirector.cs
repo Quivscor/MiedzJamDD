@@ -98,6 +98,7 @@ public class CityDirector : MonoBehaviour
         }
         Building b = m_lastSelectedBuilding.SelectedBuilding;
 
+        b.transform.parent = null;
         b.transform.position = eventData.fieldPosition;
         b.IsPlaced = true;
         //turn this layer off in physics raycast in camera

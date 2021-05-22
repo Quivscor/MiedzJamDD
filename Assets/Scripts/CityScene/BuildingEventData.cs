@@ -17,7 +17,7 @@ public class BuildingEventData
         this.bonuses = bonuses;
     }
 
-    private string GetCategoryColor(CategoriesProgressController.ScienceCategory category)
+    public static string GetCategoryColor(CategoriesProgressController.ScienceCategory category)
     {
         switch(category)
         {
