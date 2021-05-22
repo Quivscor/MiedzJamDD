@@ -3836,6 +3836,25 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!95 &1583956947659025814
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6164585437833704841}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ba25f15e52d7d3e4fbb66c3c6a02b43d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7011424535935234444
 GameObject:
   m_ObjectHideFlags: 0
@@ -4134,7 +4153,7 @@ PrefabInstance:
     - target: {fileID: 9075200518311319902, guid: 6f06babdf16ca2f4bbfa8058246e0c16,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 199.9
+      value: 188
       objectReference: {fileID: 0}
     - target: {fileID: 9075200518311319902, guid: 6f06babdf16ca2f4bbfa8058246e0c16,
         type: 3}
@@ -4176,11 +4195,32 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 9075200518311319902, guid: 6f06babdf16ca2f4bbfa8058246e0c16,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.2331
+      objectReference: {fileID: 0}
+    - target: {fileID: 9075200518311319902, guid: 6f06babdf16ca2f4bbfa8058246e0c16,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.2331
+      objectReference: {fileID: 0}
+    - target: {fileID: 9075200518311319902, guid: 6f06babdf16ca2f4bbfa8058246e0c16,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.2331
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f06babdf16ca2f4bbfa8058246e0c16, type: 3}
 --- !u!224 &501676666586032765 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 9075200518311319902, guid: 6f06babdf16ca2f4bbfa8058246e0c16,
+    type: 3}
+  m_PrefabInstance: {fileID: 8865272699733504803}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6164585437833704841 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3353711982452328106, guid: 6f06babdf16ca2f4bbfa8058246e0c16,
     type: 3}
   m_PrefabInstance: {fileID: 8865272699733504803}
   m_PrefabAsset: {fileID: 0}
