@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 404d57312517f374fa27ee1f15bd23c8, type: 3}
+  m_Name: Zlocimir
+  m_EditorClassIdentifier: 
+  eventTitle: List od specjalisty
+  eventText: "Z\u0142ocimir Patynowicz to szanowany geolog, z wykszta\u0142cenia
+    in\u017Cynier g\xF3rnik, specjalista w zakresie geologii z\u0142\xF3\u017C miedzi.\r\nW
+    li\u015Bcie skierowanym do Ciebie pisze o znajduj\u0105cym si\u0119 w obszarze
+    dzia\u0142a\u0144 naszej kolonii z\u0142o\u017Cu, i to niema\u0142ym. Ot\xF3\u017C
+    Pan Patynowicz wys\u0142a\u0142 w przestrze\u0144 kosmiczn\u0105 sond\u0119,
+    w celu wykrycia najwi\u0119kszego skoncentrowania miedzi na okolicznych planetach.
+    Po wielu pr\xF3\u017Cnych tygodniach odebrany zosta\u0142 sygna\u0142 na temat
+    z\u0142o\u017Ca o wysokim nasyceniu miedzi.\r\nMamy w\u0105tpliwo\u015Bci co
+    do tej informacji. Jak dobre musz\u0105 by\u0107 czujniki w sondzie in\u017C.
+    Patynowicza, \u017Ce to z\u0142o\u017Ce nie zosta\u0142o wykryte przez nasz\u0105
+    organizacj\u0119? Z drugiej strony, do tej porywszystkie jego stwierdzenia o
+    obecno\u015Bci rud miedzi by\u0142y prawdziwe. Ale nigdy z tak du\u017Cej odleg\u0142o\u015Bci.\r\n"
+  eventChoices:
+  - choiceButtonText: "Sprawd\u017A"
+    choiceTitle: Nic tu nie ma
+    choiceText: "Odczyty z sondy in\u017C. Patynowicza okaza\u0142y si\u0119 by\u0107
+      b\u0142\u0119dne. Zesp\xF3\u0142 wydobywczy, kt\xF3ry tam wys\u0142ali\u015Bmy
+      zg\u0142osi\u0142 brak odczyt\xF3w na naszych geo-sondach. By\u0107 mo\u017Ce
+      wyst\u0105pi\u0142y zak\u0142\xF3cenia w przesy\u0142aniu informacji mi\u0119dzy
+      jego sond\u0105 a Ziemi\u0105. W ko\u0144cu telekomunikacja bezprzewodowa potrafi
+      by\u0107 zawodna, nie to co stary dobry miedziany kabel.\n<color=red>Zu\u017Cyto
+      50 miedzi.</color>"
+    choiceCost: 0
+    category: 0
+    scienceCategoryScorePenalty: 0
+    currencyReward: -50
+    packageReward: {fileID: 0}
+  - choiceButtonText: Zrezygnuj
+    choiceTitle: "Lepiej nie ryzykowa\u0107"
+    choiceText: "Bezpieczniej b\u0119dzie nie marnowa\u0107 naszych zasob\xF3w na
+      odczyty z sondy znajduj\u0105cej si\u0119 tak daleko od planety. Gdyby tam
+      faktycznie co\u015B by\u0142o, nasze czujniki na pewno by to wykry\u0142y."
+    choiceCost: 0
+    category: 0
+    scienceCategoryScorePenalty: 0
+    currencyReward: 0
+    packageReward: {fileID: 0}

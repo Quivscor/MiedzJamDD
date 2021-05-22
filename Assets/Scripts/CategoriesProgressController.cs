@@ -59,6 +59,8 @@ public class CategoriesProgressController : MonoBehaviour
         else
             sciences[(int)scienceCategory].currentExp += value;
 
+        if (sciences[(int)scienceCategory].currentExp <= 0)
+            sciences[(int)scienceCategory].currentExp = 0;
         UpdateUI();
     }
 

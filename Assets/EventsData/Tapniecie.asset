@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 404d57312517f374fa27ee1f15bd23c8, type: 3}
+  m_Name: Tapniecie
+  m_EditorClassIdentifier: 
+  eventTitle: "T\u0105pni\u0119cie w kopalni"
+  eventText: "Eksploatacja g\xF3rnicza narusza naturaln\u0105 wytrzyma\u0142o\u015B\u0107
+    ska\u0142y. W przypadku przekroczenia granicy wytrzyma\u0142o\u015Bci, nast\u0119puje
+    zniszczenie jej struktury, wywo\u0142uj\u0105c lawin\u0119 skruszonych ska\u0142.\r\nTo
+    w\u0142a\u015Bnie mia\u0142o miejsce w jednym z naszych szyb\xF3w wydobywczych.
+    Niestety, kilku z naszych pracownik\xF3w zosta\u0142o uwi\u0119zionych pod ziemi\u0105.
+    Ratownicy ju\u017C s\u0105 na miejscu. Przed wyruszeniem prosili o dodatkowy
+    przydzia\u0142 maszyn do usuwania gruzowisk. Je\u015Bli je przydzielimy, na pewno
+    szybciej poradz\u0105 sobie z problemem, natomiast ucierpi na tym tempo naszego
+    wydobywania miedzi.\r\n"
+  eventChoices:
+  - choiceButtonText: "Wy\u015Blij maszyny"
+    choiceTitle: "Wys\u0142ano maszyny"
+    choiceText: "Misja ratownicza zako\u0144czona w mniej ni\u017C dwie godziny!
+      Pi\u0119tnastu g\xF3rnik\xF3w zosta\u0142o wyci\u0105gni\u0119tych na powierzchni\u0119,
+      przy pomocy nowego sprz\u0119tu wydobywczego. \u201CBez niego nie wiemy jak
+      d\u0142ugo musieliby\u015Bmy sp\u0119dzi\u0107 na obszarze kopalni\u201D -
+      m\xF3wi\u0142 jeden z ratownik\xF3w. \r\nPomimo niewielkich strat materialnych,
+      zyskali\u015Bmy na zaufaniu pracownik\xF3w.\r\n<color=red>Zu\u017Cyto 50 miedzi.
+      </color><color=green>Zwi\u0119kszono post\u0119p w kategorii <color=#00B917>Spo\u0142ecze\u0144stwo</color>.</color>"
+    choiceCost: 50
+    category: 3
+    scienceCategoryScorePenalty: 2
+    currencyReward: 0
+    packageReward: {fileID: 0}
+  - choiceButtonText: "Nie wysy\u0142aj"
+    choiceTitle: "Nie wys\u0142ano maszyn"
+    choiceText: "Misja ratownicza trwa\u0142a d\u0142ugo. Trzy maszyny do usuwania
+      gruzowisk to by\u0142o za ma\u0142o. Ponadto, starszy model maszyny radzi\u0142
+      sobie gorzej na niestabilnym rumowisku. W ko\u0144cu, po trzynastu godzinach
+      ci\u0119\u017Ckiej pracy uda\u0142o si\u0119 utorowa\u0107 drog\u0119 na powierzchni\u0119.
+      Dwunastu g\xF3rnik\xF3w zosta\u0142o wyci\u0105gni\u0119tych na powierzchni\u0119.
+      Wszyscy wr\xF3cili do bazy.\r\nMo\u017Ce nie ponie\u015Bli\u015Bmy strat materialnych,
+      ale ucierpia\u0142o zaufanie naszych pracownik\xF3w do zarz\u0105du.\r\n<color=red>Utracono
+      post\u0119p w kategorii <color=#00B917>Spo\u0142ecze\u0144stwo</color>.</color>"
+    choiceCost: 0
+    category: 3
+    scienceCategoryScorePenalty: -2
+    currencyReward: 0
+    packageReward: {fileID: 0}

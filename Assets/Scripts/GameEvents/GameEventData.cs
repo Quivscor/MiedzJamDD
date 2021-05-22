@@ -6,7 +6,7 @@ using UnityEngine;
 public class GameEventData : ScriptableObject
 {
     public string eventTitle;
-    [TextArea(4,10)]
+    [TextArea(4,20)]
     public string eventText;
 
     //need at least 1
@@ -18,7 +18,7 @@ public class GameEventChoice
 {
     public string choiceButtonText;
     public string choiceTitle;
-    [TextArea(4, 10)]
+    [TextArea(4, 20)]
     public string choiceText;
 
     public int choiceCost;

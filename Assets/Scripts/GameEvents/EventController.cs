@@ -1,9 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMProText = TMPro.TextMeshProUGUI;
 using System;
 using Random = UnityEngine.Random;
+using System.Linq;
 
 public class EventController : MonoBehaviour
 {
@@ -33,6 +35,7 @@ public class EventController : MonoBehaviour
             Instance = this;
 
         currentLibrary = new List<GameEventData>(gameEventLibrary);
+        currentLibrary = currentLibrary.OrderBy(x => Guid.NewGuid()).ToList(); //something from the web
     }
 
     private void Start()
@@ -46,8 +49,11 @@ public class EventController : MonoBehaviour
     public void WeekStartRandomizeSeed()
     {
         if (currentLibrary.Count == 0)
+        {
             currentLibrary = new List<GameEventData>(gameEventLibrary);
-
+            currentLibrary = currentLibrary.OrderBy(x => Guid.NewGuid()).ToList(); //something from the web
+        }
+            
         weekRandomSeed = Random.Range(7, 10); //days from last event
         eventFiredThisWeek = false;
     }
@@ -80,7 +86,13 @@ public class EventController : MonoBehaviour
         for(int i = 0; i < currentEventData.eventChoices.Count; i++)
         {
             buttonRefs[i].SetActive(true);
-            buttonRefs[i].GetComponentInChildren<TMProText>().text = currentEventData.eventChoices[i].choiceButtonText;
+            if (currentEventData.eventChoices[i].choiceCost > ResourceController.Instance.Copper)
+            {
+                buttonRefs[i].GetComponent<Button>().interactable = false;
+                buttonRefs[i].GetComponentInChildren<TMProText>().text = "<color=red>" + currentEventData.eventChoices[i].choiceCost + " miedzi</color>";
+            }
+            else
+                buttonRefs[i].GetComponentInChildren<TMProText>().text = currentEventData.eventChoices[i].choiceButtonText;
         }
     }
 
@@ -96,6 +108,7 @@ public class EventController : MonoBehaviour
             
 
         buttonRefs[0].GetComponentInChildren<TMProText>().text = defaultCloseWindowText;
+        buttonRefs[0].GetComponent<Button>().interactable = true;
         for(int i = 1; i < currentEventData.eventChoices.Count; i++)
         {
             buttonRefs[i].SetActive(false);
@@ -106,7 +119,10 @@ public class EventController : MonoBehaviour
         if (currentEventData.eventChoices[choice].currencyReward > 0)
             ResourceController.Instance.AddCopper(currentEventData.eventChoices[choice].currencyReward);
         else if (currentEventData.eventChoices[choice].currencyReward < 0)
-            ResourceController.Instance.SpendCopper(currentEventData.eventChoices[choice].currencyReward);
+            ResourceController.Instance.SpendCopper(-1 * currentEventData.eventChoices[choice].currencyReward);
+
+        if (currentEventData.eventChoices[choice].choiceCost > 0)
+            ResourceController.Instance.SpendCopper(currentEventData.eventChoices[choice].choiceCost);
 
         //currentEventData.eventChoices[choice].packageReward
 
@@ -121,5 +137,7 @@ public class EventController : MonoBehaviour
             buttonRefs[i].SetActive(false);
         nextButtonActionCloseEvent = false;
         eventHUD.SetActive(false);
+        WeekStartRandomizeSeed();
     }
 }
+
