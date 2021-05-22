@@ -7,6 +7,8 @@ public class BuildingsInventory : MonoBehaviour
 {
     public static BuildingsInventory Instance = null;
 
+    public Transform buildingsSlots = null;
+
     [SerializeField] private Vector3 inventoryFirstSlot = Vector3.zero;
     [SerializeField] private Vector3 slotsOffset = Vector3.zero;
     [SerializeField] private int maxSlots = 6;
@@ -62,7 +64,8 @@ public class BuildingsInventory : MonoBehaviour
 
         Vector3 slotPosition = inventoryFirstSlot + (slotsOffset * slotNumber);
 
-        GameObject building = Instantiate(buildingRef.gameObject, slotPosition, Quaternion.identity);
+        GameObject building = Instantiate(buildingRef.gameObject, slotPosition, Quaternion.identity, buildingsSlots);
+        building.transform.localPosition = slotPosition;
 
         Building bScr = building.GetComponent<Building>();
 
@@ -87,7 +90,7 @@ public class BuildingsInventory : MonoBehaviour
     {
         for (int i = 0; i < buildings.Count; i++)
         {
-            buildings[i].transform.position = inventoryFirstSlot + (slotsOffset * i);
+            buildings[i].transform.localPosition = inventoryFirstSlot + (slotsOffset * i);
         }
     }
 }
