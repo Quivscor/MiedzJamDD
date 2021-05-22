@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 51488974}
+  - component: {fileID: 1107673448539390077}
   m_Layer: 0
   m_Name: Copper Resource
   m_TagString: Untagged
@@ -40,6 +41,18 @@ RectTransform:
   m_AnchoredPosition: {x: 316.8, y: -83}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!225 &1107673448539390077
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 51488973}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &579121458
 GameObject:
   m_ObjectHideFlags: 0
@@ -1246,7 +1259,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1486,7 +1499,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0.5235849, g: 0.7963417, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1806,7 +1819,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0.48584908, g: 0.78039527, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2223,7 +2236,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0.5235849, g: 0.7963417, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -3344,7 +3357,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -3702,7 +3715,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0.5235849, g: 0.7963417, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -4204,7 +4217,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 0.6}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -4471,6 +4484,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d5e9e0d47f0fd74991d475eb6923f34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  earthMissionsAnimator: {fileID: 0}
+  scienceAnimator: {fileID: 0}
+  buildDescriptionAnimator: {fileID: 0}
   daysObject: {fileID: 7596233853418482978}
   buttonsObject: {fileID: 2065786251}
   copperObject: {fileID: 51488973}
@@ -4887,6 +4903,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7596233853418483005}
+  - component: {fileID: 4778878502188531553}
   m_Layer: 0
   m_Name: Days
   m_TagString: Untagged
@@ -4921,6 +4938,18 @@ RectTransform:
   m_AnchoredPosition: {x: 122, y: -63.600098}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!225 &4778878502188531553
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7596233853418482978}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &7596233853513391824
 GameObject:
   m_ObjectHideFlags: 0
@@ -5222,7 +5251,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0.48584908, g: 0.78039527, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -5299,7 +5328,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -5386,7 +5415,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0.48584908, g: 0.78039527, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -5615,10 +5644,35 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1189688901}
     m_Modifications:
+    - target: {fileID: 383929973058231016, guid: 76a4d643f0fb86344b75271e13617e09,
+        type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 863786723104871415, guid: 76a4d643f0fb86344b75271e13617e09,
+        type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007468598092850689, guid: 76a4d643f0fb86344b75271e13617e09,
+        type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2065879375737755501, guid: 76a4d643f0fb86344b75271e13617e09,
         type: 3}
       propertyPath: m_Name
       value: Hover FillAmount
+      objectReference: {fileID: 0}
+    - target: {fileID: 3701367222300139749, guid: 76a4d643f0fb86344b75271e13617e09,
+        type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5235979136949281429, guid: 76a4d643f0fb86344b75271e13617e09,
+        type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5235979136958211888, guid: 76a4d643f0fb86344b75271e13617e09,
         type: 3}
@@ -5635,6 +5689,11 @@ PrefabInstance:
       propertyPath: m_Color.b
       value: 0.1281186
       objectReference: {fileID: 0}
+    - target: {fileID: 5235979136958211888, guid: 76a4d643f0fb86344b75271e13617e09,
+        type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5235979137340266199, guid: 76a4d643f0fb86344b75271e13617e09,
         type: 3}
       propertyPath: m_text
@@ -5649,6 +5708,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_fontSizeBase
       value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 5235979137340266199, guid: 76a4d643f0fb86344b75271e13617e09,
+        type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5235979138051995714, guid: 76a4d643f0fb86344b75271e13617e09,
+        type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5235979138433946831, guid: 76a4d643f0fb86344b75271e13617e09,
+        type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5235979138440622850, guid: 76a4d643f0fb86344b75271e13617e09,
         type: 3}
@@ -5760,6 +5834,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ScienceProgressFuturistic (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 5646180899417830348, guid: 76a4d643f0fb86344b75271e13617e09,
+        type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6296126870827898834, guid: 76a4d643f0fb86344b75271e13617e09,
         type: 3}
       propertyPath: m_Color.r
@@ -5774,6 +5853,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.b
       value: 0.09019608
+      objectReference: {fileID: 0}
+    - target: {fileID: 6296126870827898834, guid: 76a4d643f0fb86344b75271e13617e09,
+        type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76a4d643f0fb86344b75271e13617e09, type: 3}
@@ -6100,10 +6184,35 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1189688901}
     m_Modifications:
+    - target: {fileID: 383929973058231016, guid: 76a4d643f0fb86344b75271e13617e09,
+        type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 863786723104871415, guid: 76a4d643f0fb86344b75271e13617e09,
+        type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007468598092850689, guid: 76a4d643f0fb86344b75271e13617e09,
+        type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2065879375737755501, guid: 76a4d643f0fb86344b75271e13617e09,
         type: 3}
       propertyPath: m_Name
       value: Hover FillAmount
+      objectReference: {fileID: 0}
+    - target: {fileID: 3701367222300139749, guid: 76a4d643f0fb86344b75271e13617e09,
+        type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5235979136949281429, guid: 76a4d643f0fb86344b75271e13617e09,
+        type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5235979136958211888, guid: 76a4d643f0fb86344b75271e13617e09,
         type: 3}
@@ -6120,6 +6229,11 @@ PrefabInstance:
       propertyPath: m_Color.b
       value: 0.11208572
       objectReference: {fileID: 0}
+    - target: {fileID: 5235979136958211888, guid: 76a4d643f0fb86344b75271e13617e09,
+        type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5235979137340266199, guid: 76a4d643f0fb86344b75271e13617e09,
         type: 3}
       propertyPath: m_text
@@ -6134,6 +6248,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_fontSizeBase
       value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 5235979137340266199, guid: 76a4d643f0fb86344b75271e13617e09,
+        type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5235979138051995714, guid: 76a4d643f0fb86344b75271e13617e09,
+        type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5235979138433946831, guid: 76a4d643f0fb86344b75271e13617e09,
+        type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5235979138440622850, guid: 76a4d643f0fb86344b75271e13617e09,
         type: 3}
@@ -6245,6 +6374,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ScienceProgressFuturistic (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 5646180899417830348, guid: 76a4d643f0fb86344b75271e13617e09,
+        type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6296126870827898834, guid: 76a4d643f0fb86344b75271e13617e09,
         type: 3}
       propertyPath: m_Color.r
@@ -6259,6 +6393,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.b
       value: 0.14163846
+      objectReference: {fileID: 0}
+    - target: {fileID: 6296126870827898834, guid: 76a4d643f0fb86344b75271e13617e09,
+        type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76a4d643f0fb86344b75271e13617e09, type: 3}
@@ -6275,10 +6414,35 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1189688901}
     m_Modifications:
+    - target: {fileID: 383929973058231016, guid: 76a4d643f0fb86344b75271e13617e09,
+        type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 863786723104871415, guid: 76a4d643f0fb86344b75271e13617e09,
+        type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007468598092850689, guid: 76a4d643f0fb86344b75271e13617e09,
+        type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2065879375737755501, guid: 76a4d643f0fb86344b75271e13617e09,
         type: 3}
       propertyPath: m_Name
       value: Hover FillAmount
+      objectReference: {fileID: 0}
+    - target: {fileID: 3701367222300139749, guid: 76a4d643f0fb86344b75271e13617e09,
+        type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5235979136949281429, guid: 76a4d643f0fb86344b75271e13617e09,
+        type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5235979136958211888, guid: 76a4d643f0fb86344b75271e13617e09,
         type: 3}
@@ -6304,6 +6468,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_fontSizeBase
       value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 5235979137340266199, guid: 76a4d643f0fb86344b75271e13617e09,
+        type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5235979138051995714, guid: 76a4d643f0fb86344b75271e13617e09,
+        type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5235979138433946831, guid: 76a4d643f0fb86344b75271e13617e09,
+        type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5235979138440622850, guid: 76a4d643f0fb86344b75271e13617e09,
         type: 3}
@@ -6415,6 +6594,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ScienceProgressFuturistic
       objectReference: {fileID: 0}
+    - target: {fileID: 5646180899417830348, guid: 76a4d643f0fb86344b75271e13617e09,
+        type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76a4d643f0fb86344b75271e13617e09, type: 3}
 --- !u!224 &1255228787 stripped
@@ -6430,10 +6614,35 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1189688901}
     m_Modifications:
+    - target: {fileID: 383929973058231016, guid: 76a4d643f0fb86344b75271e13617e09,
+        type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 863786723104871415, guid: 76a4d643f0fb86344b75271e13617e09,
+        type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007468598092850689, guid: 76a4d643f0fb86344b75271e13617e09,
+        type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2065879375737755501, guid: 76a4d643f0fb86344b75271e13617e09,
         type: 3}
       propertyPath: m_Name
       value: Hover FillAmount
+      objectReference: {fileID: 0}
+    - target: {fileID: 3701367222300139749, guid: 76a4d643f0fb86344b75271e13617e09,
+        type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5235979136949281429, guid: 76a4d643f0fb86344b75271e13617e09,
+        type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5235979136958211888, guid: 76a4d643f0fb86344b75271e13617e09,
         type: 3}
@@ -6449,6 +6658,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.b
       value: 0.5943396
+      objectReference: {fileID: 0}
+    - target: {fileID: 5235979136958211888, guid: 76a4d643f0fb86344b75271e13617e09,
+        type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5235979137340266196, guid: 76a4d643f0fb86344b75271e13617e09,
         type: 3}
@@ -6474,6 +6688,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_fontSizeBase
       value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 5235979137340266199, guid: 76a4d643f0fb86344b75271e13617e09,
+        type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5235979138051995714, guid: 76a4d643f0fb86344b75271e13617e09,
+        type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5235979138433946831, guid: 76a4d643f0fb86344b75271e13617e09,
+        type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5235979138440622850, guid: 76a4d643f0fb86344b75271e13617e09,
         type: 3}
@@ -6585,6 +6814,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ScienceProgressFuturistic (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5646180899417830348, guid: 76a4d643f0fb86344b75271e13617e09,
+        type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6296126870827898834, guid: 76a4d643f0fb86344b75271e13617e09,
         type: 3}
       propertyPath: m_Color.r
@@ -6599,6 +6833,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.b
       value: 0.972549
+      objectReference: {fileID: 0}
+    - target: {fileID: 6296126870827898834, guid: 76a4d643f0fb86344b75271e13617e09,
+        type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76a4d643f0fb86344b75271e13617e09, type: 3}

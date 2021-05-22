@@ -106,6 +106,9 @@ namespace ExpeditionMap
 
         public void ShowNewRaports()
         {
+            newRaportsButton?.SetActive(false);
+            newRaportsInCitySceneButton?.SetActive(false);
+
             RaportsReader.Instance.ShowRaports(waitingRaports.ToArray());
 
             waitingRaports.Clear();
