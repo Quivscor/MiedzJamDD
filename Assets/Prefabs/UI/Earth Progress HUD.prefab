@@ -273,9 +273,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Lorem ipsum es dolores Lorem ipsum es dolores Lorem ipsum es dolores Lorem
-    ipsum es dolores Lorem ipsum es dolores Lorem ipsum es dolores Lorem ipsum es
-    dolores Lorem ipsum es dolores '
+  m_text: "Elektronika od zawsze wykorzystywa\u0142a mied\u017A do uk\u0142ad\xF3w
+    scalonych. Wraz z biegiem czasu zapotrzebowanie na mikroprocesory wzros\u0142o
+    do tego stopnia, \u017Ce stan\u0119\u0142a produkcja komputer\xF3w, pojazd\xF3w,
+    mech\xF3w i innych maszyn."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7c2347113a7fe2c4a8ac283ae5656c23, type: 2}
   m_sharedMaterial: {fileID: -6620039768708891891, guid: 7c2347113a7fe2c4a8ac283ae5656c23,
@@ -311,7 +312,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 512
+  m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -409,9 +410,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Lorem ipsum es dolores Lorem ipsum es dolores Lorem ipsum es dolores Lorem
-    ipsum es dolores Lorem ipsum es dolores Lorem ipsum es dolores Lorem ipsum es
-    dolores Lorem ipsum es dolores '
+  m_text: "Prawie wszystkie kraje opieraj\u0105 swoj\u0105 energetyk\u0119 o wysokiej
+    jako\u015Bci panele fotowoltaniczne. Bez miedzi ich produkcja ale tak\u017Ce
+    utrzymanie i naprawa staj\u0119 si\u0119 niemo\u017Cliwa. Ju\u017C w tym momencie
+    w wielu miejscach dost\u0119p do pr\u0105du jest niestabilny."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7c2347113a7fe2c4a8ac283ae5656c23, type: 2}
   m_sharedMaterial: {fileID: -6620039768708891891, guid: 7c2347113a7fe2c4a8ac283ae5656c23,
@@ -447,7 +449,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 512
+  m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -808,7 +810,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Misja 2
+  m_text: "Ch\u0142odzenie"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7c2347113a7fe2c4a8ac283ae5656c23, type: 2}
   m_sharedMaterial: {fileID: -6620039768708891891, guid: 7c2347113a7fe2c4a8ac283ae5656c23,
@@ -942,7 +944,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Misja 3
+  m_text: Energetyka
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7c2347113a7fe2c4a8ac283ae5656c23, type: 2}
   m_sharedMaterial: {fileID: -6620039768708891891, guid: 7c2347113a7fe2c4a8ac283ae5656c23,
@@ -1191,7 +1193,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Misja 4
+  m_text: Marynarka handlowa
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7c2347113a7fe2c4a8ac283ae5656c23, type: 2}
   m_sharedMaterial: {fileID: -6620039768708891891, guid: 7c2347113a7fe2c4a8ac283ae5656c23,
@@ -1432,9 +1434,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Lorem ipsum es dolores Lorem ipsum es dolores Lorem ipsum es dolores Lorem
-    ipsum es dolores Lorem ipsum es dolores Lorem ipsum es dolores Lorem ipsum es
-    dolores Lorem ipsum es dolores '
+  m_text: "Mimo powszechnej bezprzewodowo\u015Bci i \u015Bwiat\u0142owod\xF3w, mied\u017A
+    wci\u0105\u017C jest potrzebna do utrzymywania serwerowni i baz telefonicznych.
+    W obecnej chwili, wiele mniejszych miast ma powa\u017Cne problemy z \u0142\u0105czno\u015Bci\u0105."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7c2347113a7fe2c4a8ac283ae5656c23, type: 2}
   m_sharedMaterial: {fileID: -6620039768708891891, guid: 7c2347113a7fe2c4a8ac283ae5656c23,
@@ -1470,7 +1472,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 512
+  m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -1698,9 +1700,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Lorem ipsum es dolores Lorem ipsum es dolores Lorem ipsum es dolores Lorem
-    ipsum es dolores Lorem ipsum es dolores Lorem ipsum es dolores Lorem ipsum es
-    dolores Lorem ipsum es dolores '
+  m_text: "Globalne ocieplenie spowodowa\u0142o znacz\u0105cy wzrost zapotrzebowania
+    na systemy klimatyzacji i ch\u0142odzenia. Mied\u017A jest kluczowa w tej ga\u0142\u0119zi
+    przemys\u0142u ze wzgl\u0119du na jej w\u0142a\u015Bciwo\u015Bci przewodnictwa
+    ciep\u0142a."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7c2347113a7fe2c4a8ac283ae5656c23, type: 2}
   m_sharedMaterial: {fileID: -6620039768708891891, guid: 7c2347113a7fe2c4a8ac283ae5656c23,
@@ -1736,7 +1739,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 512
+  m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -2079,9 +2082,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Lorem ipsum es dolores Lorem ipsum es dolores Lorem ipsum es dolores Lorem
-    ipsum es dolores Lorem ipsum es dolores Lorem ipsum es dolores Lorem ipsum es
-    dolores Lorem ipsum es dolores '
+  m_text: "Dostawy \u017Cywno\u015Bci na planecie sta\u0142y si\u0119 utrudnione
+    przez brak mo\u017Cliwo\u015Bci budowy i naprawy okr\u0119t\xF3w gdzie mied\u017A
+    znajduje szerokie zastosowanie."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7c2347113a7fe2c4a8ac283ae5656c23, type: 2}
   m_sharedMaterial: {fileID: -6620039768708891891, guid: 7c2347113a7fe2c4a8ac283ae5656c23,
@@ -2117,7 +2120,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 512
+  m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -2867,7 +2870,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Misja 5
+  m_text: "\u0141\u0105czno\u015B\u0107"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7c2347113a7fe2c4a8ac283ae5656c23, type: 2}
   m_sharedMaterial: {fileID: -6620039768708891891, guid: 7c2347113a7fe2c4a8ac283ae5656c23,
@@ -3472,7 +3475,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Misja 1
+  m_text: Mikroprocesory
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7c2347113a7fe2c4a8ac283ae5656c23, type: 2}
   m_sharedMaterial: {fileID: -6620039768708891891, guid: 7c2347113a7fe2c4a8ac283ae5656c23,
