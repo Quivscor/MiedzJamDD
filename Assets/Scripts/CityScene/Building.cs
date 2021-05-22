@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using TMPro;
 
 public class Building : MonoBehaviour, IPointerClickHandler, ISelectHandler
 {
+    public RuntimeAnimatorController mainAnimatorController = null;
     public RuntimeAnimatorController personalAnimatorController = null;
     //Map of boosts and building Ids
     [SerializeField] protected Dictionary<string, int> m_neighborBoosts;
@@ -120,9 +122,66 @@ public class Building : MonoBehaviour, IPointerClickHandler, ISelectHandler
         return result;
     }
 
-    public void ProcessPlacingInAnimation()
+    public void ProcessPlacingInAnimation(int points, PointsComboVisualManager visualManager)
     {
+        this.visualManager = visualManager;
+
+        addedPointsText.text = "+" + points;
+
+        switch (BuildingCategory)
+        {
+            case CategoriesProgressController.ScienceCategory.Energetyka:
+                addedPointsText.color = Color.yellow;
+                break;
+            case CategoriesProgressController.ScienceCategory.Telekomunikacja:
+                addedPointsText.color = Color.magenta;
+                break;
+            case CategoriesProgressController.ScienceCategory.Transport:
+                addedPointsText.color = Color.red;
+                break;
+            case CategoriesProgressController.ScienceCategory.Społeczność:
+                addedPointsText.color = Color.green;
+                break;
+        }
+
         GetComponent<Animator>()?.SetTrigger("buildingPlacedTrigger");
+    }
+
+    private PointsComboVisualManager visualManager = null;
+    private RuntimeAnimatorController currentControllerTmp = null;
+
+    public TextMeshProUGUI addedPointsText = null;
+
+    public void ShowVisualAddedPoints(int points, PointsComboVisualManager visualManager)
+    {
+        this.visualManager = visualManager;
+
+        Animator animator = GetComponent<Animator>();
+
+        currentControllerTmp = animator.runtimeAnimatorController;
+
+        animator.runtimeAnimatorController = mainAnimatorController;
+
+        addedPointsText.text = "+" + points;
+
+        switch (BuildingCategory)
+        {
+            case CategoriesProgressController.ScienceCategory.Energetyka:
+                addedPointsText.color = Color.yellow;
+                break;
+            case CategoriesProgressController.ScienceCategory.Telekomunikacja:
+                addedPointsText.color = Color.magenta;
+                break;
+            case CategoriesProgressController.ScienceCategory.Transport:
+                addedPointsText.color = Color.red;
+                break;
+            case CategoriesProgressController.ScienceCategory.Społeczność:
+                addedPointsText.color = Color.green;
+                break;
+        }
+
+
+        animator?.SetTrigger("addPointsTrigger");
     }
 
     #region Anim Events
@@ -133,6 +192,15 @@ public class Building : MonoBehaviour, IPointerClickHandler, ISelectHandler
 
         if (animator && personalAnimatorController != null)
             animator.runtimeAnimatorController = personalAnimatorController;
+
+        visualManager?.OnVisualAddingFinished();
+    }
+
+    public void OnPointsAdded()
+    {
+        GetComponent<Animator>().runtimeAnimatorController = currentControllerTmp;
+
+        visualManager?.OnVisualAddingFinished();
     }
 
     #endregion

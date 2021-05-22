@@ -107,21 +107,21 @@ public class CityDirector : MonoBehaviour
 
         //recalculate grid and apply extra points to points controller
         List<Building> buildingsGivingPoints = new List<Building>();
+        List<int> buildingsPointsToGive = new List<int>();
         buildingsGivingPoints.Add(b);
         b.RecalculatePointScore(eventData.selfReference.CityGridCoordinates, eventData.selfReference.GetNeighborsFromPlacedBuilding());
+        buildingsPointsToGive.Add(b.PointScoreDelta);
         CategoriesProgressController.Instance.AddPointsToScience(b.BuildingCategory, b.PointScoreDelta);
-        RecalculateHighlightedNeighbors(eventData.selfReference.GetNeighborsFromBuildingData(false), eventData.selfReference.CityGridCoordinates, ref buildingsGivingPoints);
+        RecalculateHighlightedNeighbors(eventData.selfReference.GetNeighborsFromBuildingData(false), eventData.selfReference.CityGridCoordinates, ref buildingsGivingPoints, ref buildingsPointsToGive);
 
         //if needed some info from city director here, edit the class and add what's needed
         OnBuildingPlaced?.Invoke(new CityDirectorEventData(b));
-
-        b.ProcessPlacingInAnimation();
 
         m_lastSelectedBuilding.Deselect();
         m_comboDisplayerComponent.CleanupDisplay(eventData);
     }
 
-    public void RecalculateHighlightedNeighbors(List<Vector2Int> coords, Vector2Int owncoords, ref List<Building> listToFill)
+    public void RecalculateHighlightedNeighbors(List<Vector2Int> coords, Vector2Int owncoords, ref List<Building> listToFill, ref List<int> pointsToAdd)
     {
         foreach(Vector2Int coord in coords)
         {
@@ -132,8 +132,11 @@ public class CityDirector : MonoBehaviour
             int value = 0;
             b.NeighborBoosts.TryGetValue(SelectedBuilding.SelectedBuildingMock.BuildingID, out value);
             listToFill.Add(b);
+            pointsToAdd.Add(value);
             CategoriesProgressController.Instance.AddPointsToScience(b.BuildingCategory, value);
         }
+
+        new PointsComboVisualManager(listToFill.ToArray(), pointsToAdd.ToArray());
     }
 
     public void RecalculateGrid(bool updateScore = false)
