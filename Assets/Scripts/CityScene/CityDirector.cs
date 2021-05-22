@@ -8,7 +8,7 @@ public class CityDirector : MonoBehaviour
 {
     public static CityDirector Instance;
 
-    public static int CityGridSize = 8;
+    public static int CityGridSize = 10;
     //turn this layer off in physics raycast in camera, so building can't be selected after placing
     public static int IgnoreCameraRaycastLayerID = 8;
     
@@ -36,12 +36,32 @@ public class CityDirector : MonoBehaviour
         else
             Destroy(this.gameObject);
 
+        int roadX = 3;
+        int roadX2 = 8;
+        int roadZ = 6;
+
+        float extraX = 0, extraZ = 0;
+
         //placing building fields
         for (int x = 0; x < CityGridSize; x++)
         {
+            if (x >= roadX)
+                extraX = .5f;
+            else
+                extraX = 0;
+
+            if (x >= roadX2)
+                extraX += .5f;
+
             for (int z = 0; z < CityGridSize; z++)
             {
-                BuildingField fieldGO = Instantiate(buildingFieldPrefab, this.transform.position + new Vector3(x + 0.5f, 0, z + 0.5f), Quaternion.identity, this.transform).GetComponentInChildren<BuildingField>();
+                //DODAC DROGI
+                if (z >= roadZ)
+                    extraZ = .5f;
+                else
+                    extraZ = 0;
+
+                BuildingField fieldGO = Instantiate(buildingFieldPrefab, this.transform.position + new Vector3(x + extraX + 0.5f, 0, z + extraZ + 0.5f), Quaternion.identity, this.transform).GetComponentInChildren<BuildingField>();
                 fieldGO.gameObject.name = "Field (" + x + ", " + z + ")";
                 fieldGO.OnClick += TryConfirmBuilding;
                 fieldGO.CityGridCoordinates = new Vector2Int(x, z);
