@@ -62,9 +62,11 @@ public class TutorialController : MonoBehaviour
         if (sequenceID != 0)
             blackBG.color = new Color(0, 0, 0, 0);
 
-        currentSequenceIndex = sequenceID;
-        if (sequences[currentSequenceIndex].hasFired)
+        if (sequences[sequenceID].hasFired)
             return;
+
+        currentSequenceIndex = sequenceID;
+
 
         sequences[currentSequenceIndex].hasFired = true;
 

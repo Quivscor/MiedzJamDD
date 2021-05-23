@@ -322,7 +322,7 @@ MonoBehaviour:
         z <color=#7CC7FF>tej samej kategorii</color> daje wi\u0119cej punkt\xF3w.
         Je\u017Celi zerkniesz na <color=#7CC7FF>opis budynku</color>, zobaczysz dodatkowe
         konstrukcje z kt\xF3rymi <color=#7CC7FF>dany budynek \u0142\u0105czy si\u0119</color>. "
-    hasFired: 1
+    hasFired: 0
     chainSequenceID: -1
     doEkspedycji: 0
     doMiasta: 0
