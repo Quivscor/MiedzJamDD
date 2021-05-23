@@ -13,6 +13,7 @@ public class EventController : MonoBehaviour
 
     public GameEventData currentEventData;
 
+    public Animator inventoryAnimator;
     public GameObject eventHUD;
     public TMProText titleObject;
     public TMProText descriptionObject;
@@ -77,6 +78,7 @@ public class EventController : MonoBehaviour
 
     public void DisplayEvent()
     {
+        inventoryAnimator.SetTrigger("hideTrigger");
         OnGameEventFire?.Invoke(3); // game event tutorial plays here
 
         eventHUD.SetActive(true);
@@ -138,6 +140,7 @@ public class EventController : MonoBehaviour
         nextButtonActionCloseEvent = false;
         eventHUD.SetActive(false);
         WeekStartRandomizeSeed();
+        inventoryAnimator.SetTrigger("showTrigger");
     }
 }
 
