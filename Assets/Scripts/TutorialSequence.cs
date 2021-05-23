@@ -11,12 +11,12 @@ public class TutorialSequence
     public bool hasFired = false;
     public int chainSequenceID = -1;
 
-    public bool doEkspedycji;
-    public bool doMiasta;
-    public bool sklep;
-    public bool paczka;
-    public bool zakonczMiesiac;
-    public bool misjeZZiemi;
+    public bool doEkspedycji = true;
+    public bool doMiasta = true;
+    public bool sklep = true;
+    public bool paczka = true;
+    public bool zakonczMiesiac = true;
+    public bool misjeZZiemi = true;
 }
 
 [System.Serializable]

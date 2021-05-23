@@ -58,13 +58,6 @@ public class TutorialController : MonoBehaviour
         if (sequences[currentSequenceIndex].hasFired)
             return;
 
-        doEkspedycji.interactable = sequences[currentSequenceIndex].doEkspedycji;
-        doMiasta.interactable = sequences[currentSequenceIndex].doMiasta;
-        sklep.interactable = sequences[currentSequenceIndex].sklep;
-        paczka.interactable = sequences[currentSequenceIndex].paczka;
-        zakonczMiesiac.interactable = sequences[currentSequenceIndex].zakonczMiesiac;
-        misjeZZiemi.interactable = sequences[currentSequenceIndex].misjeZZiemi;
-
         sequences[currentSequenceIndex].hasFired = true;
 
         TutorialHUD.SetActive(true);
@@ -99,12 +92,12 @@ public class TutorialController : MonoBehaviour
         currentDialogueInSequenceIndex = 0;
         TutorialHUD.SetActive(false);
 
-        doEkspedycji.interactable = true;
-        doMiasta.interactable = true;
-        sklep.interactable = true;
-        paczka.interactable = true;
-        zakonczMiesiac.interactable = true; 
-        misjeZZiemi.interactable = true;
+        doEkspedycji.interactable = sequences[currentSequenceIndex].doEkspedycji;
+        doMiasta.interactable = sequences[currentSequenceIndex].doMiasta;
+        sklep.interactable = sequences[currentSequenceIndex].sklep;
+        paczka.interactable = sequences[currentSequenceIndex].paczka;
+        zakonczMiesiac.interactable = sequences[currentSequenceIndex].zakonczMiesiac;
+        misjeZZiemi.interactable = sequences[currentSequenceIndex].misjeZZiemi;
 
         if (next)
             DisplaySequence(sequences[currentSequenceIndex].chainSequenceID);
