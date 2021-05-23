@@ -92,10 +92,12 @@ public class SceneFader : MonoBehaviour
 		}
 
 		img.raycastTarget = false;
-		if (TutorialController.Instance.currentSequenceIndex == 5)
-			TutorialController.Instance.DisplaySequence(11);
+		Debug.Log(TutorialController.Instance.currentSequenceIndex);
 
-		OnCityTransition?.Invoke(9);
+		if (TutorialController.Instance.currentSequenceIndex == 9)
+			TutorialController.Instance.DisplaySequence(10);
+		else
+			OnCityTransition?.Invoke(9);
 	}
 
 	public IEnumerator FadeOut()
