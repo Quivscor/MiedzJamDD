@@ -13,6 +13,12 @@ public class SceneManager : MonoBehaviour
     {
         if (!Instance)
             Instance = this;
+
+    }
+
+    private void Start()
+    {
+        SwitchToExpeditionScene();
     }
 
     public void SwitchToCityScene()

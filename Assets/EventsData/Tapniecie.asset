@@ -31,10 +31,10 @@ MonoBehaviour:
       d\u0142ugo musieliby\u015Bmy sp\u0119dzi\u0107 na obszarze kopalni\u201D -
       m\xF3wi\u0142 jeden z ratownik\xF3w. \r\nPomimo niewielkich strat materialnych,
       zyskali\u015Bmy na zaufaniu pracownik\xF3w.\r\n<color=red>Zu\u017Cyto 50 miedzi.
-      </color><color=green>Zwi\u0119kszono post\u0119p w kategorii <color=#00B917>Spo\u0142ecze\u0144stwo</color>.</color>"
+      </color><color=green>Zwi\u0119kszono post\u0119p w kategorii <color=#00B917>Spo\u0142eczno\u015B\u0107</color>.</color>"
     choiceCost: 50
     category: 3
-    scienceCategoryScorePenalty: 2
+    scienceCategoryScorePenalty: 3
     currencyReward: 0
     packageReward: {fileID: 0}
   - choiceButtonText: "Nie wysy\u0142aj"
@@ -49,6 +49,6 @@ MonoBehaviour:
       post\u0119p w kategorii <color=#00B917>Spo\u0142ecze\u0144stwo</color>.</color>"
     choiceCost: 0
     category: 3
-    scienceCategoryScorePenalty: -2
+    scienceCategoryScorePenalty: -1
     currencyReward: 0
     packageReward: {fileID: 0}

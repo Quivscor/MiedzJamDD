@@ -201,6 +201,13 @@ MonoBehaviour:
         aby pom\xF3c Ci przeprowadzi\u0107 ekspedycj\u0119 na planecie. Zacznijmy
         od podstaw."
     hasFired: 0
+    chainSequenceID: 8
+    doEkspedycji: 0
+    doMiasta: 0
+    sklep: 0
+    paczka: 0
+    zakonczMiesiac: 0
+    misjeZZiemi: 0
   - name: PustyInventoryTutorial
     dialogues:
     - dialogueSprite: {fileID: 21300000, guid: 3f9354d9f1b3fd045a5286d4cc41e21b, type: 3}
@@ -210,6 +217,13 @@ MonoBehaviour:
     - dialogueSprite: {fileID: 21300000, guid: c886fb8dd2fe2a74493214e38a11ea07, type: 3}
       dialogueMsg: "Kontynuuj dobr\u0105 robot\u0119 byczku, z pierogiem."
     hasFired: 0
+    chainSequenceID: -1
+    doEkspedycji: 0
+    doMiasta: 0
+    sklep: 0
+    paczka: 0
+    zakonczMiesiac: 0
+    misjeZZiemi: 0
   - name: MisjeZZiemiTutorial
     dialogues:
     - dialogueSprite: {fileID: 21300000, guid: 3f9354d9f1b3fd045a5286d4cc41e21b, type: 3}
@@ -220,6 +234,13 @@ MonoBehaviour:
     - dialogueSprite: {fileID: 21300000, guid: c886fb8dd2fe2a74493214e38a11ea07, type: 3}
       dialogueMsg: Z fartem, elo.
     hasFired: 0
+    chainSequenceID: -1
+    doEkspedycji: 0
+    doMiasta: 0
+    sklep: 0
+    paczka: 0
+    zakonczMiesiac: 0
+    misjeZZiemi: 0
   - name: WydarzenieTutorial
     dialogues:
     - dialogueSprite: {fileID: 21300000, guid: 3f9354d9f1b3fd045a5286d4cc41e21b, type: 3}
@@ -227,12 +248,26 @@ MonoBehaviour:
     - dialogueSprite: {fileID: 21300000, guid: c886fb8dd2fe2a74493214e38a11ea07, type: 3}
       dialogueMsg: "Cos sie sta\u0142o, we\u017A no sp\xF3jrz"
     hasFired: 0
+    chainSequenceID: -1
+    doEkspedycji: 0
+    doMiasta: 0
+    sklep: 0
+    paczka: 0
+    zakonczMiesiac: 0
+    misjeZZiemi: 0
   - name: PoWyslaniuEkspedycjiTutorial
     dialogues:
     - dialogueSprite: {fileID: 21300000, guid: 3f9354d9f1b3fd045a5286d4cc41e21b, type: 3}
       dialogueMsg: "Dobra robota byczku, za ile\u015Btam dni sp\u0142yn\u0105 do
         nas miedziane szekle."
     hasFired: 0
+    chainSequenceID: -1
+    doEkspedycji: 0
+    doMiasta: 0
+    sklep: 0
+    paczka: 0
+    zakonczMiesiac: 0
+    misjeZZiemi: 0
   - name: PrzyKupowaniuPaczkiTutorial
     dialogues:
     - dialogueSprite: {fileID: 21300000, guid: 3f9354d9f1b3fd045a5286d4cc41e21b, type: 3}
@@ -240,6 +275,13 @@ MonoBehaviour:
     - dialogueSprite: {fileID: 21300000, guid: 3f9354d9f1b3fd045a5286d4cc41e21b, type: 3}
       dialogueMsg: "A potem klepnij gdzie\u015B na mapie essa."
     hasFired: 0
+    chainSequenceID: -1
+    doEkspedycji: 0
+    doMiasta: 0
+    sklep: 0
+    paczka: 0
+    zakonczMiesiac: 0
+    misjeZZiemi: 0
   - name: PoOtrzymaniuRaportuTutorial
     dialogues:
     - dialogueSprite: {fileID: 21300000, guid: 3f9354d9f1b3fd045a5286d4cc41e21b, type: 3}
@@ -250,6 +292,13 @@ MonoBehaviour:
     - dialogueSprite: {fileID: 21300000, guid: 9a7b213f2ee592c40aeccf1771b3513f, type: 3}
       dialogueMsg: "To mied\u017A."
     hasFired: 0
+    chainSequenceID: -1
+    doEkspedycji: 0
+    doMiasta: 0
+    sklep: 0
+    paczka: 0
+    zakonczMiesiac: 0
+    misjeZZiemi: 0
   - name: PoWybraniuBudynkuTutorial
     dialogues:
     - dialogueSprite: {fileID: 21300000, guid: 3f9354d9f1b3fd045a5286d4cc41e21b, type: 3}
@@ -260,12 +309,38 @@ MonoBehaviour:
     - dialogueSprite: {fileID: 21300000, guid: 9a7b213f2ee592c40aeccf1771b3513f, type: 3}
       dialogueMsg: "Tak si\u0119 progressuje gre B)"
     hasFired: 0
+    chainSequenceID: -1
+    doEkspedycji: 0
+    doMiasta: 0
+    sklep: 0
+    paczka: 0
+    zakonczMiesiac: 0
+    misjeZZiemi: 0
+  - name: PoIntro
+    dialogues:
+    - dialogueSprite: {fileID: 21300000, guid: f91d4cb4b0ef90e4bb707a453067b02c, type: 3}
+      dialogueMsg: "Przy\u015Bwieca nam cel wydobycia miedzi"
+    hasFired: 0
+    chainSequenceID: -1
+    doEkspedycji: 0
+    doMiasta: 0
+    sklep: 0
+    paczka: 0
+    zakonczMiesiac: 0
+    misjeZZiemi: 0
   TutorialHUD: {fileID: 197744706308569468}
   dialogueText: {fileID: 197744705300829950}
   tutorialLadyImage: {fileID: 197744707271353739}
+  blackBG: {fileID: 141123717134866188}
   IsWorking: 1
   startingBuilding: {fileID: 2201244982822464578, guid: 6b0004b73bfe00545894c88b32d105a8,
     type: 3}
+  doEkspedycji: {fileID: 0}
+  doMiasta: {fileID: 0}
+  sklep: {fileID: 0}
+  paczka: {fileID: 0}
+  zakonczMiesiac: {fileID: 0}
+  misjeZZiemi: {fileID: 0}
 --- !u!1 &197744706100324223
 GameObject:
   m_ObjectHideFlags: 0
@@ -363,7 +438,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &197744706308569347
 RectTransform:
   m_ObjectHideFlags: 0
@@ -606,7 +681,7 @@ GameObject:
   - component: {fileID: 7154408256421979180}
   - component: {fileID: 141123717134866188}
   m_Layer: 0
-  m_Name: Image
+  m_Name: blackbg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

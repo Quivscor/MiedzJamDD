@@ -13,6 +13,7 @@ public class TutorialController : MonoBehaviour
     public GameObject TutorialHUD;
     public TMProText dialogueText;
     public Image tutorialLadyImage;
+    public Image blackBG;
 
     public bool IsWorking = true;
 
@@ -45,6 +46,9 @@ public class TutorialController : MonoBehaviour
 
     public void DisplaySequence(int sequenceID)
     {
+        if (sequenceID != 0)
+            blackBG.color = new Color(0, 0, 0, 0);
+
         currentSequenceIndex = sequenceID;
         if (sequences[currentSequenceIndex].hasFired)
             return;
@@ -83,6 +87,10 @@ public class TutorialController : MonoBehaviour
 
     public void HideDisplay()
     {
+        bool next = false;
+        if (sequences[currentSequenceIndex].chainSequenceID > -1)
+            next = true;
+
         currentDialogueInSequenceIndex = 0;
         TutorialHUD.SetActive(false);
 
@@ -92,5 +100,8 @@ public class TutorialController : MonoBehaviour
         paczka.interactable = true;
         zakonczMiesiac.interactable = true; 
         misjeZZiemi.interactable = true;
+
+        if (next)
+            DisplaySequence(sequences[currentSequenceIndex].chainSequenceID);
     }
 }

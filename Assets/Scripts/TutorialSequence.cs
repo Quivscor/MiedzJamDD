@@ -9,6 +9,7 @@ public class TutorialSequence
     public string name;
     public List<Dialogue> dialogues;
     public bool hasFired = false;
+    public int chainSequenceID = -1;
 
     public bool doEkspedycji;
     public bool doMiasta;
