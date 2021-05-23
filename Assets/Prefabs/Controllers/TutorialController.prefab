@@ -184,14 +184,22 @@ MonoBehaviour:
   sequences:
   - name: TestSekwencja
     dialogues:
-    - dialogueSprite: {fileID: 21300000, guid: 17e93189a9287a24ba5b23411c3bbf1d, type: 3}
-      dialogueMsg: "Jest rok 2107, zasoby miedzi na Ziemi s\u0105 na wyczerpaniu.
-        Naukowcy ostatkiem si\u0142 i czasu stworzyli nap\u0119d nad\u015Bwietlny
-        dzi\u0119ki kt\xF3remu w kilka tygodni mo\u017Cna znale\u017A\u0107 si\u0119
-        w innym zak\u0105tku galatyki."
-    - dialogueSprite: {fileID: 21300000, guid: f91d4cb4b0ef90e4bb707a453067b02c, type: 3}
+    - dialogueSprite: {fileID: 0}
+      dialogueMsg: "Jest rok <color=#7CC7FF>2107</color>, zasoby miedzi na Ziemi
+        s\u0105 na wyczerpaniu. Naukowcy ostatkiem si\u0142 i czasu stworzyli nap\u0119d
+        nad\u015Bwietlny dzi\u0119ki kt\xF3remu w kilka tygodni mo\u017Cna znale\u017A\u0107
+        si\u0119 w innym zak\u0105tku galatyki."
+    - dialogueSprite: {fileID: 0}
       dialogueMsg: "Z po\u015Br\xF3d wielu firm zajmuj\u0105cych si\u0119 wydobyciem
-        miedzi, wybrano nas - MHGK - do misji uratowania Ziemii. "
+        miedzi, wybrano nas - <color=#7CC7FF>MHGK</color> - do misji uratowania Ziemii.
+        Wraz z potrzebnym sprz\u0119tem i lud\u017Ami zostali\u015Bmy wys\u0142ani
+        na odl\u0119g\u0142\u0105 o 344 lata \u015Bwietlne planet\u0119 <color=#7CC7FF>Drara
+        2J4T</color>. Zarz\u0105d Ziemski wys\u0142a\u0142 wraz z nami Pani\u0105
+        mecenas <color=#7CC7FF>Barbar\u0119 Coppierfield</color>."
+    - dialogueSprite: {fileID: 21300000, guid: f91d4cb4b0ef90e4bb707a453067b02c, type: 3}
+      dialogueMsg: "Dzie\u0144 dobry. Jestem tutaj w imieniu Zarz\u0105du Ziemskiego
+        aby pom\xF3c Ci przeprowadzi\u0107 ekspedycj\u0119 na planecie. Zacznijmy
+        od podstaw."
     hasFired: 0
   - name: PustyInventoryTutorial
     dialogues:
@@ -355,7 +363,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &197744706308569347
 RectTransform:
   m_ObjectHideFlags: 0
