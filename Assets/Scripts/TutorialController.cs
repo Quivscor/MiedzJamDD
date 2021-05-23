@@ -18,6 +18,13 @@ public class TutorialController : MonoBehaviour
 
     public Building startingBuilding;
 
+    public Button doEkspedycji;
+    public Button doMiasta;
+    public Button sklep;
+    public Button paczka;
+    public Button zakonczMiesiac;
+    public Button misjeZZiemi;
+
     private void Start()
     {
         if (!IsWorking)
@@ -42,6 +49,13 @@ public class TutorialController : MonoBehaviour
         if (sequences[currentSequenceIndex].hasFired)
             return;
 
+        doEkspedycji.interactable = sequences[currentSequenceIndex].doEkspedycji;
+        doMiasta.interactable = sequences[currentSequenceIndex].doMiasta;
+        sklep.interactable = sequences[currentSequenceIndex].sklep;
+        paczka.interactable = sequences[currentSequenceIndex].paczka;
+        zakonczMiesiac.interactable = sequences[currentSequenceIndex].zakonczMiesiac;
+        misjeZZiemi.interactable = sequences[currentSequenceIndex].misjeZZiemi;
+
         sequences[currentSequenceIndex].hasFired = true;
 
         TutorialHUD.SetActive(true);
@@ -51,6 +65,10 @@ public class TutorialController : MonoBehaviour
     public void DisplayDialogue()
     {
         dialogueText.text = sequences[currentSequenceIndex].dialogues[currentDialogueInSequenceIndex].dialogueMsg;
+        if (sequences[currentSequenceIndex].dialogues[currentDialogueInSequenceIndex].dialogueSprite == null)
+            tutorialLadyImage.color = new Color(0, 0, 0, 0);
+        else
+            tutorialLadyImage.color = Color.white;
         tutorialLadyImage.sprite = sequences[currentSequenceIndex].dialogues[currentDialogueInSequenceIndex].dialogueSprite;
     }
 
@@ -67,5 +85,12 @@ public class TutorialController : MonoBehaviour
     {
         currentDialogueInSequenceIndex = 0;
         TutorialHUD.SetActive(false);
+
+        doEkspedycji.interactable = true;
+        doMiasta.interactable = true;
+        sklep.interactable = true;
+        paczka.interactable = true;
+        zakonczMiesiac.interactable = true; 
+        misjeZZiemi.interactable = true;
     }
 }
