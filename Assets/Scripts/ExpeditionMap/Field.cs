@@ -198,7 +198,7 @@ namespace ExpeditionMap
         {
             isExpeditionTarget = value;
 
-            expeditionModel?.SetActive(value);
+            //expeditionModel?.SetActive(value);
 
             if (!value)
             {
@@ -207,6 +207,18 @@ namespace ExpeditionMap
                 outline.enabled = false;
                 outline = exploredModel?.GetComponent<Outline>();
                 outline.enabled = false;
+
+                exploredModel.transform.GetChild(0)?.gameObject.SetActive(false);
+            }
+            else
+            {
+                normalModel?.SetActive(false);
+                exploredModel?.SetActive(true);
+                outline.enabled = false;
+                outline = exploredModel?.GetComponent<Outline>();
+                outline.enabled = false;
+
+                exploredModel.transform.GetChild(0)?.gameObject.SetActive(true);
             }
         }
 
