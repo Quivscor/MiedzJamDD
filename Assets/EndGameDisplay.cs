@@ -6,6 +6,8 @@ using TMProText = TMPro.TextMeshProUGUI;
 
 public class EndGameDisplay : MonoBehaviour
 {
+    public static EndGameDisplay Instance;
+
     public GameObject entireHUD;
 
     public TMProText timeText;
@@ -17,6 +19,8 @@ public class EndGameDisplay : MonoBehaviour
 
     private void Start()
     {
+        if(Instance == null)
+            Instance = this;
         startYear = TimeController.Instance.Years;
         //DisplayGameEnd();
     }

@@ -74,8 +74,19 @@ public class EarthProgressController : MonoBehaviour
 
     public void EndGame()
     {
+        StartCoroutine(EndGameFade());
         Debug.Log("BRAWO WYGRAŁEŚ");
     }
+
+    public IEnumerator EndGameFade()
+    {
+        SceneFader fader = FindObjectOfType<SceneFader>();
+        StartCoroutine(fader.FadeOut());
+        yield return new WaitForSeconds(1f);
+        EndGameDisplay.Instance.DisplayGameEnd();
+        StartCoroutine(fader.FadeIn());
+    }
+
     public void UpdateCosts()
     {
         for (int i = 0; i < missionObjects.Length; i++)

@@ -30,7 +30,7 @@ public class SceneFader : MonoBehaviour
 		StartCoroutine(FadeOutThenIn(toExpedition));
     }
 
-	IEnumerator FadeIn()
+	public IEnumerator FadeIn()
 	{
 		float t = 1f;
 
@@ -91,7 +91,7 @@ public class SceneFader : MonoBehaviour
 		img.raycastTarget = false;
 	}
 
-	IEnumerator FadeOut()
+	public IEnumerator FadeOut()
 	{
 		float t = 0f;
 
