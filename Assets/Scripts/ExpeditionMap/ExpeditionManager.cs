@@ -30,6 +30,7 @@ namespace ExpeditionMap
         private List<Expedition> expeditions = new List<Expedition>();
 
         private int currentAvailableTeams = 1;
+        public int GetCurrentAvailableTeams => currentAvailableTeams;
 
         private void Start()
         {

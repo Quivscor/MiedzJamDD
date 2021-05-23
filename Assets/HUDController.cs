@@ -18,10 +18,14 @@ public class HUDController : MonoBehaviour
     [SerializeField] GameObject scienceObject;
     [SerializeField] GameObject buildingDescriptionObject;
 
+    private FreeExpeditionsPopup freeExpeditionsPopup;
+
     private void Awake()
     {
         if (!Instance)
             Instance = this;
+
+        freeExpeditionsPopup = FindObjectOfType<FreeExpeditionsPopup>();
     }
 
     public void ShowEarthMissions()
@@ -40,6 +44,7 @@ public class HUDController : MonoBehaviour
 
     public void ToggleCityHUD(bool toggle)
     {
+        freeExpeditionsPopup.OnSwitchMaps();
         buttonsObject.SetActive(toggle);
         scienceObject.SetActive(toggle);
         buildingDescriptionObject.SetActive(toggle);
