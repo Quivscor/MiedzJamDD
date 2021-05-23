@@ -8,7 +8,7 @@ public class CityDirector : MonoBehaviour
 {
     public static CityDirector Instance;
 
-    public static int CityGridSize = 10;
+    public static int CityGridSize = 15;
     //turn this layer off in physics raycast in camera, so building can't be selected after placing
     public static int IgnoreCameraRaycastLayerID = 8;
     
@@ -36,9 +36,10 @@ public class CityDirector : MonoBehaviour
         else
             Destroy(this.gameObject);
 
-        int roadX = 3;
-        int roadX2 = 8;
-        int roadZ = 6;
+        int roadX = 5;
+        int roadX2 = 10;
+        int roadZ = 5;
+        int roadZ2 = 10;
 
         float extraX = 0, extraZ = 0;
 
@@ -61,6 +62,9 @@ public class CityDirector : MonoBehaviour
                     extraZ = .5f;
                 else
                     extraZ = 0;
+
+                if (z >= roadZ2)
+                    extraZ += .5f;
 
                 extraZ += z / 10f;
 
