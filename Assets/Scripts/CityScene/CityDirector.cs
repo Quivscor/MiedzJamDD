@@ -17,6 +17,7 @@ public class CityDirector : MonoBehaviour
     private AudioSource audioSource;
     public BuildingField[,] CityGrid { get => m_cityGrid; }
     public AudioClip[] buildingSounds;
+    public AudioClip[] combigSounds;
     protected LastSelectedBuilding m_lastSelectedBuilding;
     public LastSelectedBuilding SelectedBuilding => m_lastSelectedBuilding;
     protected ComboDisplayerComponent m_comboDisplayerComponent;

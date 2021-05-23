@@ -15123,6 +15123,13 @@ MonoBehaviour:
   buildingSounds:
   - {fileID: 8300000, guid: e44329fa9921ebf44ba97d8f8d74442e, type: 3}
   - {fileID: 8300000, guid: 460fb4ed2763a294dae11223d9d89b4f, type: 3}
+  combigSounds:
+  - {fileID: 8300000, guid: 22071a94ed83db947a31666362973942, type: 3}
+  - {fileID: 8300000, guid: 9e023d9737019b5458146ea5dde6a038, type: 3}
+  - {fileID: 8300000, guid: 519496141aeabe04b967ed7e71b1c636, type: 3}
+  - {fileID: 8300000, guid: 4fc6671bc125c1145a1875385ccd3d99, type: 3}
+  - {fileID: 8300000, guid: 1d0019b1f4a301944ad07626c2574137, type: 3}
+  - {fileID: 8300000, guid: 305528f24f9770a4ca6818463112b794, type: 3}
   buildingFieldPrefab: {fileID: 4845459734333124505, guid: 7f4c92fe56fede84a9f2ebaa4dd88c50,
     type: 3}
 --- !u!82 &980140302
