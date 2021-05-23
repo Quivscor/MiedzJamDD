@@ -22,6 +22,8 @@ namespace ExpeditionMap
         private FieldUI fieldUI = null;
         private FieldVisual fieldVisual = null;
 
+        private Outline outline = null;
+
         public float MaxCopper { get => maxCopper; }
         public int DistanceToRoot { get => distanceToRoot; }
         public bool IsRoot { get => isRoot; }
@@ -51,6 +53,8 @@ namespace ExpeditionMap
             fieldCoords.y = (int)this.transform.position.z;
 
             fieldVisual?.SetFieldDiscovered(hasBeenDiscovered);
+
+            outline = GetComponentInChildren<Outline>();
         }
 
         private bool isRoot = false;
@@ -117,6 +121,15 @@ namespace ExpeditionMap
 
         public void OnPointerEnter(PointerEventData eventData)
         {
+            if (outline)
+            {
+                outline.enabled = true;
+                if (ExpeditionManager.Instance.CanSendExpedition(this))
+                    outline.OutlineColor = Color.green;
+                else
+                    outline.OutlineColor = Color.red;
+            }
+
             //if (isExpeditionTarget)
             //    return;
 
@@ -129,6 +142,8 @@ namespace ExpeditionMap
 
         public void OnPointerExit(PointerEventData eventData)
         {
+            if (outline)
+                outline.enabled = false;
             //SetActive(false);
         }
 

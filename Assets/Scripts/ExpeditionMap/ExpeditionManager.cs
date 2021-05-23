@@ -102,6 +102,11 @@ namespace ExpeditionMap
             }
         }
 
+        public bool CanSendExpedition(Field field)
+        {
+            return field.DistanceToRoot <= (int)CategoriesProgressController.Instance.sciences[(int)CategoriesProgressController.ScienceCategory.Energetyka].level * TeamStatsModifiers.DistanceModifier && field.HasBeenDiscovered;
+        }
+
         #region Buttons
 
         public void ShowNewRaports()

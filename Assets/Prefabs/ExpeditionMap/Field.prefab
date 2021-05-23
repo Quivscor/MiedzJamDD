@@ -176,6 +176,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   expeditionModel: {fileID: 7528098181255793539}
+  outline: {fileID: 0}
   maxCopper: 300
   hasBeenDiscovered: 0
 --- !u!114 &3939308358195079629
