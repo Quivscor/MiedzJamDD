@@ -11,6 +11,8 @@ public class CategoriesProgressController : MonoBehaviour
 
     public static CategoriesProgressController Instance = null;
 
+    public AudioSource audioSource;
+    public AudioClip levelUpSound;
     [SerializeField] private int costIncreaseMultiplier = 1;
     public Science [] sciences;
 
@@ -55,6 +57,7 @@ public class CategoriesProgressController : MonoBehaviour
             //if (scienceCategory == ScienceCategory.Rolnictwo)
             //    ExpeditionMap.ExpeditionManager.Instance?.AddFreeTeam();
             OnCategoryLevelUp?.Invoke(scienceCategory);
+            audioSource.PlayOneShot(levelUpSound);
         }
         else
             sciences[(int)scienceCategory].currentExp += value;
