@@ -814,6 +814,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Controllers
       objectReference: {fileID: 0}
+    - target: {fileID: 6332133465946781024, guid: f1c99db0fef3bb746abeed0c2bb55ddc,
+        type: 3}
+      propertyPath: buildingsInventoryAnimator
+      value: 
+      objectReference: {fileID: 2147238523}
     - target: {fileID: 6434731495998345911, guid: f1c99db0fef3bb746abeed0c2bb55ddc,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -29798,6 +29803,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad2fc16d2e92b574b92f634ce683ca9c, type: 3}
+--- !u!1 &2147238522 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2965855275140302653, guid: ad2fc16d2e92b574b92f634ce683ca9c,
+    type: 3}
+  m_PrefabInstance: {fileID: 2147238521}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &2147238523
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2147238522}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 070ad372abfd1bf4fb532ac20c9a80b6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &197744706581492547
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29984,6 +30014,11 @@ PrefabInstance:
       propertyPath: buildDescriptionAnimator
       value: 
       objectReference: {fileID: 598645963}
+    - target: {fileID: 427278975171640095, guid: 116c2ff76ec42444a903bfe2aa8838c6,
+        type: 3}
+      propertyPath: buildInventoryAnimator
+      value: 
+      objectReference: {fileID: 2147238523}
     - target: {fileID: 565750107591901251, guid: 116c2ff76ec42444a903bfe2aa8838c6,
         type: 3}
       propertyPath: m_AnchorMin.y

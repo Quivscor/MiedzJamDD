@@ -11,6 +11,7 @@ namespace ExpeditionMap
         public GameObject expeditionModel = null;
         public GameObject normalModel = null;
         public GameObject exploredModel = null;
+        public Material expiredMaterial = null;
 
         [Header("Paramteres:")]
         [SerializeField] private float maxCopper = 0.0f;
@@ -30,7 +31,21 @@ namespace ExpeditionMap
         public int DistanceToRoot { get => distanceToRoot; }
         public bool IsRoot { get => isRoot; }
         public Vector2Int FieldCoords { get => fieldCoords; }
-        public float CurrentCopper { get => currentCopper; set => currentCopper = value; }
+        public float CurrentCopper 
+        { 
+            get => currentCopper;
+            set
+            {
+                currentCopper = value;
+
+                if (currentCopper <= 0)
+                {
+                    Debug.Log("Set material");
+                    exploredModel.GetComponent<MeshRenderer>().material = expiredMaterial;
+                }
+            }
+        }
+
         public bool HasBeenDiscovered 
         { 
             get => hasBeenDiscovered; 
@@ -153,7 +168,7 @@ namespace ExpeditionMap
 
         public void OnPointerClick(PointerEventData eventData)
         {
-            if (isRoot || isExpeditionTarget || !ExpeditionManager.Instance.CanSendExpedition())
+            if (isRoot || isExpeditionTarget || !ExpeditionManager.Instance.CanSendExpedition() || !(currentCopper > 0))
                 return;
 
             if (DistanceToRoot > (int)CategoriesProgressController.Instance.sciences[(int)CategoriesProgressController.ScienceCategory.Energetyka].level * TeamStatsModifiers.DistanceModifier)

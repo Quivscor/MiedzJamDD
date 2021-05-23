@@ -54,11 +54,28 @@ public class EarthProgressController : MonoBehaviour
             ResourceController.Instance.SpendCopper(currentCost);
             finishedMissions[category] = true;
             currentCost *= (int)(costIncreaseMutliplier);
+            CheckForEndGame();
             UpdateCosts();
             UpdateViability();
         }
     }
 
+
+    public void CheckForEndGame()
+    {
+        for (int i = 0; i < finishedMissions.Length; i++)
+        {
+            if (finishedMissions[i] == false)
+                return;
+        }
+
+        EndGame();
+    }
+
+    public void EndGame()
+    {
+        Debug.Log("BRAWO WYGRAŁEŚ");
+    }
     public void UpdateCosts()
     {
         for (int i = 0; i < missionObjects.Length; i++)
