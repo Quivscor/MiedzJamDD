@@ -92,6 +92,8 @@ public class SceneFader : MonoBehaviour
 		}
 
 		img.raycastTarget = false;
+		if (TutorialController.Instance.currentSequenceIndex == 5)
+			TutorialController.Instance.DisplaySequence(11);
 		OnCityTransition?.Invoke(9);
 	}
 
