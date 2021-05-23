@@ -61,6 +61,8 @@ namespace ExpeditionMap
 
             currentAvailableTeams--;
 
+            CameraControllerExp.Instance?.Shake();
+
             newPopup.OnSwitchMaps(); //no map switch, but hides on no more available expeditions
 
             numberOfFreeTeamsText.text = currentAvailableTeams + "";
