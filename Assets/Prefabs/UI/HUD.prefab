@@ -6497,11 +6497,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 3728097556938606548}
     - target: {fileID: 2151877141499235664, guid: 6f06babdf16ca2f4bbfa8058246e0c16,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SwitchToExpeditionScene
+      value: Play
       objectReference: {fileID: 0}
     - target: {fileID: 2307980225532803760, guid: 6f06babdf16ca2f4bbfa8058246e0c16,
         type: 3}
@@ -6640,6 +6640,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f06babdf16ca2f4bbfa8058246e0c16, type: 3}
+--- !u!82 &3728097556938606548 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 2052685234749363362, guid: 6f06babdf16ca2f4bbfa8058246e0c16,
+    type: 3}
+  m_PrefabInstance: {fileID: 3440827775395500918}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &5922744131454241320 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 9075200518311319902, guid: 6f06babdf16ca2f4bbfa8058246e0c16,
@@ -7623,6 +7629,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2065786252}
     m_Modifications:
+    - target: {fileID: 2151877141499235664, guid: 6f06babdf16ca2f4bbfa8058246e0c16,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2151877141499235664, guid: 6f06babdf16ca2f4bbfa8058246e0c16,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2151877141499235664, guid: 6f06babdf16ca2f4bbfa8058246e0c16,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2151877141499235664, guid: 6f06babdf16ca2f4bbfa8058246e0c16,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 8598229969698952417}
     - target: {fileID: 2307980225532803760, guid: 6f06babdf16ca2f4bbfa8058246e0c16,
         type: 3}
       propertyPath: m_text
@@ -7760,6 +7786,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f06babdf16ca2f4bbfa8058246e0c16, type: 3}
+--- !u!82 &8598229969698952417 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 2052685234749363362, guid: 6f06babdf16ca2f4bbfa8058246e0c16,
+    type: 3}
+  m_PrefabInstance: {fileID: 7723557647238742083}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &1647754564038416669 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 9075200518311319902, guid: 6f06babdf16ca2f4bbfa8058246e0c16,
