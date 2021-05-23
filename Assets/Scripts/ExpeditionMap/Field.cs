@@ -9,6 +9,8 @@ namespace ExpeditionMap
     {
         [Header("References:")]
         public GameObject expeditionModel = null;
+        public GameObject normalModel = null;
+        public GameObject exploredModel = null;
 
         [Header("Paramteres:")]
         [SerializeField] private float maxCopper = 0.0f;
@@ -178,6 +180,12 @@ namespace ExpeditionMap
             isExpeditionTarget = value;
 
             expeditionModel?.SetActive(value);
+
+            if (!value)
+            {
+                normalModel?.SetActive(false);
+                exploredModel?.SetActive(true);
+            }
         }
 
         public void SetExpedition(Expedition expedition)
