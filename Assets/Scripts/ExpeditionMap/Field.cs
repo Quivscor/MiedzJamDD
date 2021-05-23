@@ -13,6 +13,7 @@ namespace ExpeditionMap
         public GameObject exploredModel = null;
         public Material expiredMaterial = null;
         public GameObject border = null;
+        public ParticleSystem placingParticles = null;
 
         public Material goodFieldMaterial = null;
         public Material badFieldMaterial = null;
@@ -226,6 +227,8 @@ namespace ExpeditionMap
             }
             else
             {
+                placingParticles?.Play();
+
                 normalModel?.SetActive(false);
                 exploredModel?.SetActive(true);
                 //outline.enabled = false;
