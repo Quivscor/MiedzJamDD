@@ -129,26 +129,51 @@ namespace ExpeditionMap
 
         public string GenerateRaportContent()
         {
-            int lengthFluffOption = Random.Range(0, 4);
+            int lengthFluffOption = Random.Range(0, 5);
             string expeditionLength = "";
+            string miesiecy = "miesiące";
+            if (timeToFinishExpedition >= 5)
+                miesiecy = "miesięcy";
             switch (lengthFluffOption)
             {
                 case 0:
-                    expeditionLength = "Ekspedycja potrwała " + timeToFinishExpedition + " miesięcy.\n";
+                    expeditionLength = "Ekspedycja potrwała " + timeToFinishExpedition + " " + miesiecy +".\n";
                     break;
                 case 1:
-                    expeditionLength = "Prace kopalniane trzymały górników w pracy przez " + timeToFinishExpedition + " miesięcy.\n";
+                    expeditionLength = "Prace kopalniane trzymały górników w pracy przez " + timeToFinishExpedition + " " + miesiecy + ".\n";
                     break;
                 case 2:
-                    expeditionLength = "" + timeToFinishExpedition + ".\n";
+                    expeditionLength = "Po " + timeToFinishExpedition + " miesiącach prace zostały zakończone.\n";
                     break;
                 case 3:
-                    expeditionLength = "" + timeToFinishExpedition + ".\n";
+                    expeditionLength = "Długość wyprawy wyniosła " + timeToFinishExpedition + " " + miesiecy + ".\n";
                     break;
+                case 4:
+                    expeditionLength = "Drążenie tuneli i pozyskanie miedzi zajęło nam " + timeToFinishExpedition + " " + miesiecy + ".\n";
+                    break;
+
             }
 
-            string miningStory = "Prace przebiegły normalnie.";
-
+            string miningStory = "";
+            lengthFluffOption = Random.Range(0, 5);
+            switch (lengthFluffOption)
+            {
+                case 0:
+                    miningStory = "Prace przebiegły normalnie. Nie odnotowano żadnych wypadków ani zniszczeń.\n";
+                    break;
+                case 1:
+                    miningStory = "Zanotowano wykorzystanie materiałów wybuchowych podczas wydobycia.\n";
+                    break;
+                case 2:
+                    miningStory = "Część drążonego tunelu składała się z bardzo twardego materiału, ale nasze maszyny dały sobie radę.\n";
+                    break;
+                case 3:
+                    miningStory = "Wydobyte pokłady miedzi pokryły się z naszymi szacowaniami.\n";
+                    break;
+                case 4:
+                    miningStory = "Mimo rekordowych upałów udało się sprawnie przeprowadzić ekspedycję.\n";
+                    break;
+            }
 
             return expeditionLength + miningStory;
         }
