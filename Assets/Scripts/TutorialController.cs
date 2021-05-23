@@ -41,6 +41,8 @@ public class TutorialController : MonoBehaviour
         startingBuilding = BuildingsInventory.Instance.SpawnBuilding(startingBuilding, 0);
         startingBuilding.OnSelectPlaySequence += DisplaySequence; //OnFirstBuildingSelected;
 
+        FindObjectOfType<SceneFader>().OnCityTransition += DisplaySequence; //OnCityTransition tutorial
+
         DisplaySequence(0);
     }
 

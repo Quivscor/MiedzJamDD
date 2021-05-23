@@ -2,9 +2,11 @@
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections;
+using System;
 
 public class SceneFader : MonoBehaviour
 {
+	public Action<int> OnCityTransition;
 
 	public Image img;
 	public AnimationCurve curve;
@@ -28,6 +30,7 @@ public class SceneFader : MonoBehaviour
     {
 		//StartCoroutine(FadeInThenOut());
 		StartCoroutine(FadeOutThenIn(toExpedition));
+		OnCityTransition?.Invoke(9);
     }
 
 	public IEnumerator FadeIn()
