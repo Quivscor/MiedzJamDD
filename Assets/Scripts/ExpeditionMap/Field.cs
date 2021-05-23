@@ -102,6 +102,9 @@ namespace ExpeditionMap
 
             if (xDiff == zDiff)
                 distanceToRoot++;
+
+            maxCopper = (DistanceToRoot * 100) + (Random.Range(0, 3) * (50 * (int)(DistanceToRoot / 2)));
+            currentCopper = maxCopper;
         }
 
         public override string ToString()
