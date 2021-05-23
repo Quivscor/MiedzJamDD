@@ -315,7 +315,8 @@ MonoBehaviour:
       dialogueMsg: "Strategiczne stawianie budynk\xF3w na mapie jest kluczowe, poniewa\u017C
         <color=#7CC7FF>ka\u017Cda budowla ma sw\xF3j zasi\u0119g dzia\u0142ania</color>
         w kt\xF3rym inne budynki mog\u0105 otrzymywa\u0107 <color=#7CC7FF>bonusy
-        do przemys\u0142u</color>."
+        do przemys\u0142u</color>. Mo\u017Cesz rusza\u0107 si\u0119 po mapie kamer\u0105
+        za pomoc\u0105 klawiszy <color=#7CC7FF>WASD</color>"
     - dialogueSprite: {fileID: 21300000, guid: f91d4cb4b0ef90e4bb707a453067b02c, type: 3}
       dialogueMsg: "Pojedy\u0144czy budynek daje <color=#7CC7FF>1 punkt post\u0119pu</color>
         w kategorii z kt\xF3rej pochodzi. Dodatkowo \u0142\u0105czenie budynk\xF3w
