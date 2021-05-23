@@ -7,6 +7,9 @@ public class ResourceController : MonoBehaviour
 {
     public static ResourceController Instance = null;
 
+    [SerializeField] private Animator copperAnimator;
+    [SerializeField] private Animator copperDropDownAnimator;
+    [SerializeField] private TextMeshProUGUI copperDropDownText;
     [SerializeField] private TextMeshProUGUI copperText;
     [SerializeField] private int startingCopper;
     private int copper;
@@ -24,12 +27,15 @@ public class ResourceController : MonoBehaviour
     public void AddCopper(int value)
     {
         copper += value;
+        copperAnimator.SetTrigger("Pulse");
         UpdateUI();
     }
 
     public void SpendCopper(int value)
     {
         copper -= value;
+        copperDropDownText.text = "-" + value;
+        copperDropDownAnimator.SetTrigger("DropDown");
 
         if (copper < 0)
             Debug.LogError("COPPPER IS LESS THAN 0. CHECK IT AMOUNT BEFORE SPENDING");
