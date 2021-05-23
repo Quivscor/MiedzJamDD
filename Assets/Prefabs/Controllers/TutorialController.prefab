@@ -30,7 +30,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 197744706100324222}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -193,13 +193,13 @@ MonoBehaviour:
       dialogueMsg: "Z po\u015Br\xF3d wielu firm zajmuj\u0105cych si\u0119 wydobyciem
         miedzi, wybrano nas - <color=#7CC7FF>MHGK</color> - do misji uratowania Ziemii.
         Wraz z potrzebnym sprz\u0119tem i lud\u017Ami zostali\u015Bmy wys\u0142ani
-        na odl\u0119g\u0142\u0105 o 344 lata \u015Bwietlne planet\u0119 <color=#7CC7FF>Drara
-        2J4T</color>. Zarz\u0105d Ziemski wys\u0142a\u0142 wraz z nami Pani\u0105
-        mecenas <color=#7CC7FF>Barbar\u0119 Coppierfield</color>."
+        na odleg\u0142\u0105 o 344 lata \u015Bwietlne planet\u0119 <color=#7CC7FF>Drara
+        2J4T</color>. Zarz\u0105d Ziemski wys\u0142a\u0142 wraz z nami pani\u0105
+        profesor kosmicznej geologii."
     - dialogueSprite: {fileID: 21300000, guid: f91d4cb4b0ef90e4bb707a453067b02c, type: 3}
-      dialogueMsg: "Dzie\u0144 dobry. Jestem tutaj w imieniu Zarz\u0105du Ziemskiego
-        aby pom\xF3c Ci przeprowadzi\u0107 ekspedycj\u0119 na planecie. Zacznijmy
-        od podstaw."
+      dialogueMsg: "Witaj, nazywam si\u0119 <color=#7CC7FF>Minerve Shepard</color>.
+        Jestem tutaj w imieniu Zarz\u0105du Ziemskiego aby pom\xF3c Ci przeprowadzi\u0107
+        esktrakcj\u0119 miedzi z planety. Zacznijmy od podstaw."
     hasFired: 0
     chainSequenceID: 8
     doEkspedycji: 0
@@ -257,9 +257,15 @@ MonoBehaviour:
     misjeZZiemi: 0
   - name: PoWyslaniuEkspedycjiTutorial
     dialogues:
-    - dialogueSprite: {fileID: 21300000, guid: 3f9354d9f1b3fd045a5286d4cc41e21b, type: 3}
-      dialogueMsg: "Dobra robota byczku, za ile\u015Btam dni sp\u0142yn\u0105 do
-        nas miedziane szekle."
+    - dialogueSprite: {fileID: 21300000, guid: 17e93189a9287a24ba5b23411c3bbf1d, type: 3}
+      dialogueMsg: "Je\u017Celi najedziesz teraz na pole z wys\u0142an\u0105 ekspedycj\u0105,
+        dowiesz si\u0119 za ile <color=#7CC7FF>miesi\u0119cy</color> powr\xF3c\u0105.
+        Aktualny dat\u0105 mo\u017Cesz w <color=#7CC7FF>lewym g\xF3rnym rogu</color>."
+    - dialogueSprite: {fileID: 21300000, guid: f91d4cb4b0ef90e4bb707a453067b02c, type: 3}
+      dialogueMsg: "Podczas czekania na powr\xF3t ekspedycji, wr\xF3\u0107my na map\u0119
+        <color=#7CC7FF>Centrum Badawczego</color>. Poka\u017C\u0119 Ci w jaki spos\xF3b
+        mo\u017Cemy polepsza\u0107 dzia\u0142anie naszych maszyn i g\xF3rnik\xF3w.\nKliknij
+        przycisk na <color=#7CC7FF>g\xF3rze ekranu \"Do Centrum Badawczego\"</color>."
     hasFired: 0
     chainSequenceID: -1
     doEkspedycji: 0
@@ -319,7 +325,10 @@ MonoBehaviour:
   - name: PoIntro
     dialogues:
     - dialogueSprite: {fileID: 21300000, guid: f91d4cb4b0ef90e4bb707a453067b02c, type: 3}
-      dialogueMsg: "Przy\u015Bwieca nam cel wydobycia miedzi"
+      dialogueMsg: "Aby pozyskiwa\u0107 mied\u017A, musimy wysy\u0142a\u0107 <color=#7CC7FF>ekspedycje
+        g\xF3rnicze</color> poza obszar naszego centrum badawczego. Kliknij teraz
+        na dowolne pole w zasi\u0119gu naszych maszyn (z niebiesk\u0105 obw\xF3dk\u0105)
+        i <color=#7CC7FF>potwierd\u017A wys\u0142anie swojej pierwszej ekspedycji</color>."
     hasFired: 0
     chainSequenceID: -1
     doEkspedycji: 0
@@ -330,8 +339,17 @@ MonoBehaviour:
     misjeZZiemi: 0
   - name: DoMiastaTutorial
     dialogues:
+    - dialogueSprite: {fileID: 21300000, guid: 17e93189a9287a24ba5b23411c3bbf1d, type: 3}
+      dialogueMsg: "O to ono, nasze Centrum Badawcze. Jak widzisz na \u017Cadnym
+        z kafelk\xF3w jeszcze nie ma nic wybudowanego. Zmie\u0144my to. "
+    - dialogueSprite: {fileID: 21300000, guid: 17e93189a9287a24ba5b23411c3bbf1d, type: 3}
+      dialogueMsg: "Otrzyma\u0142e\u015B w\u0142a\u015Bnie dwa budynki do postawienia.
+        Znajduj\u0105 si\u0119 one panelu na <color=#7CC7FF>dole ekranu</color>.
+        Kliknij kt\xF3ry\u015B z nich a pojawi si\u0119 jego opis. "
     - dialogueSprite: {fileID: 21300000, guid: f91d4cb4b0ef90e4bb707a453067b02c, type: 3}
-      dialogueMsg: "Przy\u015Bwieca nam cel wydobycia miedzi"
+      dialogueMsg: "Stawianie nowych budynk\xF3w daje nam punkty rozwoju (prawy g\xF3rny
+        r\xF3g). Jak za chwil\u0119 zobaczysz, stawianie obok siebie odpowiednich
+        budynk\xF3w daje dodatkowe bonusy."
     hasFired: 0
     chainSequenceID: -1
     doEkspedycji: 0
@@ -384,8 +402,8 @@ RectTransform:
   m_Children:
   - {fileID: 6414961076726389489}
   - {fileID: 8142078638559806592}
+  - {fileID: 2605244275362649788}
   - {fileID: 197744705300829951}
-  - {fileID: 2935249728449931610}
   - {fileID: 8724247621457147356}
   m_Father: {fileID: 197744706308569347}
   m_RootOrder: 1
@@ -619,7 +637,7 @@ GameObject:
   - component: {fileID: 117013074724692566}
   - component: {fileID: 197294700579596783}
   m_Layer: 0
-  m_Name: Image (1)
+  m_Name: Decorations
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -641,8 +659,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2.2998047, y: 32.19995}
-  m_SizeDelta: {x: 1062.5145, y: 587.6261}
+  m_AnchoredPosition: {x: 2.5, y: 36}
+  m_SizeDelta: {x: 1038.6488, y: 587.6261}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &117013074724692566
 CanvasRenderer:
@@ -755,7 +773,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!1 &4950956753081863138
+--- !u!1 &7195245938069054396
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -763,50 +781,50 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2935249728449931610}
-  - component: {fileID: 7002471193996647087}
-  - component: {fileID: 880379768018345817}
+  - component: {fileID: 2605244275362649788}
+  - component: {fileID: 3801163631079397193}
+  - component: {fileID: 4782561808275080673}
   m_Layer: 0
-  m_Name: Image (2)
+  m_Name: Glow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &2935249728449931610
+--- !u!224 &2605244275362649788
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4950956753081863138}
+  m_GameObject: {fileID: 7195245938069054396}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 197744706100324222}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2.2998047, y: 32.19995}
-  m_SizeDelta: {x: 1062.5145, y: 587.6261}
+  m_AnchoredPosition: {x: 2.5, y: 36}
+  m_SizeDelta: {x: 1038.6488, y: 587.6261}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &7002471193996647087
+--- !u!222 &3801163631079397193
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4950956753081863138}
+  m_GameObject: {fileID: 7195245938069054396}
   m_CullTransparentMesh: 0
---- !u!114 &880379768018345817
+--- !u!114 &4782561808275080673
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4950956753081863138}
+  m_GameObject: {fileID: 7195245938069054396}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
@@ -814,7 +832,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0.48584908, g: 0.78039527, b: 1, a: 1}
-  m_RaycastTarget: 0
+  m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -887,7 +905,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.6}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1008,12 +1026,12 @@ PrefabInstance:
     - target: {fileID: 9075200518311319902, guid: 6f06babdf16ca2f4bbfa8058246e0c16,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 317
+      value: 299
       objectReference: {fileID: 0}
     - target: {fileID: 9075200518311319902, guid: 6f06babdf16ca2f4bbfa8058246e0c16,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -145
+      value: -125
       objectReference: {fileID: 0}
     - target: {fileID: 9075200518311319902, guid: 6f06babdf16ca2f4bbfa8058246e0c16,
         type: 3}

@@ -12,6 +12,11 @@ namespace ExpeditionMap
         public GameObject normalModel = null;
         public GameObject exploredModel = null;
         public Material expiredMaterial = null;
+        public GameObject border = null;
+        public ParticleSystem placingParticles = null;
+
+        public Material goodFieldMaterial = null;
+        public Material badFieldMaterial = null;
 
         [Header("Paramteres:")]
         [SerializeField] private float maxCopper = 0.0f;
@@ -143,13 +148,22 @@ namespace ExpeditionMap
 
         public void OnPointerEnter(PointerEventData eventData)
         {
-            if (outline)
+            /*if (outline)
             {
                 outline.enabled = true;
                 if (ExpeditionManager.Instance.CanSendExpedition(this))
                     outline.OutlineColor = Color.green;
                 else
                     outline.OutlineColor = Color.red;
+            }*/
+
+            if (border)
+            {
+                border.SetActive(true);
+                if (ExpeditionManager.Instance.CanSendExpedition(this))
+                    border.GetComponent<MeshRenderer>().material = goodFieldMaterial;
+                else
+                    border.GetComponent<MeshRenderer>().material = badFieldMaterial;
             }
 
             //if (isExpeditionTarget)
@@ -164,8 +178,9 @@ namespace ExpeditionMap
 
         public void OnPointerExit(PointerEventData eventData)
         {
-            if (outline)
-                outline.enabled = false;
+            border?.SetActive(false);
+            //if (outline)
+            //    outline.enabled = false;
             //SetActive(false);
         }
 
@@ -204,19 +219,21 @@ namespace ExpeditionMap
             {
                 normalModel?.SetActive(false);
                 exploredModel?.SetActive(true);
-                outline.enabled = false;
-                outline = exploredModel?.GetComponent<Outline>();
-                outline.enabled = false;
+                //outline.enabled = false;
+                //outline = exploredModel?.GetComponent<Outline>();
+                //outline.enabled = false;
 
                 exploredModel.transform.GetChild(0)?.gameObject.SetActive(false);
             }
             else
             {
+                placingParticles?.Play();
+
                 normalModel?.SetActive(false);
                 exploredModel?.SetActive(true);
-                outline.enabled = false;
-                outline = exploredModel?.GetComponent<Outline>();
-                outline.enabled = false;
+                //outline.enabled = false;
+                //outline = exploredModel?.GetComponent<Outline>();
+                //outline.enabled = false;
 
                 exploredModel.transform.GetChild(0)?.gameObject.SetActive(true);
             }
