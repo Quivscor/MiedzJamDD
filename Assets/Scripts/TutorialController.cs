@@ -6,8 +6,10 @@ using TMProText = TMPro.TextMeshProUGUI;
 
 public class TutorialController : MonoBehaviour
 {
+    public static TutorialController Instance = null;
+
     public List<TutorialSequence> sequences;
-    private int currentSequenceIndex = 0;
+    public int currentSequenceIndex = 0;
     private int currentDialogueInSequenceIndex = 0;
 
     public GameObject TutorialHUD;
@@ -26,6 +28,12 @@ public class TutorialController : MonoBehaviour
     public Button paczka;
     public Button zakonczMiesiac;
     public Button misjeZZiemi;
+
+    private void Awake()
+    {
+        if (!Instance)
+            Instance = this;
+    }
 
     private void Start()
     {

@@ -244,10 +244,11 @@ MonoBehaviour:
     misjeZZiemi: 0
   - name: WydarzenieTutorial
     dialogues:
-    - dialogueSprite: {fileID: 21300000, guid: 3f9354d9f1b3fd045a5286d4cc41e21b, type: 3}
-      dialogueMsg: Rzucaj wszystko, ja perdole
-    - dialogueSprite: {fileID: 21300000, guid: c886fb8dd2fe2a74493214e38a11ea07, type: 3}
-      dialogueMsg: "Cos sie sta\u0142o, we\u017A no sp\xF3jrz"
+    - dialogueSprite: {fileID: 21300000, guid: 17e93189a9287a24ba5b23411c3bbf1d, type: 3}
+      dialogueMsg: "Co\u015B si\u0119 wydarzy\u0142o na planecie. Podczas rozwoju
+        regularnie b\u0119d\u0105 wydarza\u0107 si\u0119 r\xF3\u017Cne sytaucje.
+        Podczas niekt\xF3rych, b\u0119dziesz <color=#7CC7FF> mia\u0142 r\xF3wnie\u017C
+        wyb\xF3r</color> co do ich przebiegu."
     hasFired: 0
     chainSequenceID: -1
     doEkspedycji: 0
@@ -298,7 +299,7 @@ MonoBehaviour:
         wyprawy. Mo\u017Cesz od razu wys\u0142a\u0107 wolny zesp\xF3\u0142 g\xF3rniczy
         na kolejn\u0105 ekspedycj\u0119. Zauwa\u017C, \u017Ce zasoby miedzi kurcz\u0105
         si\u0119, dlatego bardzo jest wa\u017Cne aby\u015B inwestowa\u0142 w <color=yellow>Energetyk\u0119</color>
-        aby zwi\u0119ksza\u0107 zasi\u0119 ekspedycji."
+        aby zwi\u0119ksza\u0107 zasi\u0119g ekspedycji."
     hasFired: 0
     chainSequenceID: -1
     doEkspedycji: 0
@@ -363,6 +364,27 @@ MonoBehaviour:
     paczka: 0
     zakonczMiesiac: 0
     misjeZZiemi: 0
+  - name: SkipowanieCzasu
+    dialogues:
+    - dialogueSprite: {fileID: 21300000, guid: 17e93189a9287a24ba5b23411c3bbf1d, type: 3}
+      dialogueMsg: "O to ono, Centrum Badawcze. Jak widzisz, na kafelkach nie stoi
+        jeszcze \u017Caden budynek. Zmie\u0144my to.\nOtrzyma\u0142e\u015B w\u0142a\u015Bnie
+        dwa budynki. Znajduj\u0105 si\u0119 one na panelu na <color=#7CC7FF>dole
+        ekranu.</color>."
+    - dialogueSprite: {fileID: 21300000, guid: f91d4cb4b0ef90e4bb707a453067b02c, type: 3}
+      dialogueMsg: "Kliknij na jeden z budynk\xF3w, a na <color=#7CC7FF>lewym dolnym
+        panelu</color> poka\u017Ce Ci si\u0119 jego opis. Budowanie nowych konstrukcji
+        jest wa\u017Cne aby zwi\u0119ksza\u0107 poziomy w poszczeg\xF3lnych kategoriach
+        przemys\u0142u <color=#7CC7FF> (panel w prawym g\xF3rnym rogu)</color>."
+    hasFired: 0
+    chainSequenceID: -1
+    doEkspedycji: 0
+    doMiasta: 0
+    sklep: 0
+    paczka: 0
+    zakonczMiesiac: 0
+    misjeZZiemi: 0
+  currentSequenceIndex: 0
   TutorialHUD: {fileID: 197744706308569468}
   dialogueText: {fileID: 197744705300829950}
   tutorialLadyImage: {fileID: 197744707271353739}
