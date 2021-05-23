@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 404d57312517f374fa27ee1f15bd23c8, type: 3}
+  m_Name: KoparkiPrzyszlosci
+  m_EditorClassIdentifier: 
+  eventTitle: Nowoczesne koparki
+  eventText: "Zak\u0142ady telekomunikacji zainwestowa\u0142y w nowe koparki. Zaskakuj\u0105co,
+    te ogromne maszyny s\u0105 stacjonarne i nigdy nie wyje\u017Cd\u017Caj\u0105
+    z naszej kolonii."
+  eventChoices:
+  - choiceButtonText: Dalej
+    choiceTitle: 
+    choiceText: "Okazuje si\u0119, \u017Ce ta inwestycja nie ma za wiele wsp\xF3lnego
+      z normalnymi koparkami. W odr\xF3\u017Cnieniu od naszego standardowego wyposarzenia,
+      te urz\u0105dzenia s\u0105 przeznaczone do kopania Mied\u017ACoin\xF3w.\n<color=green>Zwi\u0119kszono
+      post\u0119p w kategorii <color=#B900F8>Telekomunikacja</color>.</color>"
+    choiceCost: 0
+    category: 1
+    scienceCategoryScorePenalty: 2
+    currencyReward: 0
+    packageReward: {fileID: 0}

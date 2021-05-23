@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 404d57312517f374fa27ee1f15bd23c8, type: 3}
+  m_Name: OdpornePojazdy
+  m_EditorClassIdentifier: 
+  eventTitle: Odporne pojazdy
+  eventText: "Jeden z naukowc\xF3w zaproponowa\u0142 projekt zwi\u0119kszenia wykorzystania
+    miedzi w pojazdach stosowanych przez naszych pracownik\xF3w."
+  eventChoices:
+  - choiceButtonText: Dalej
+    choiceTitle: 
+    choiceText: "Wykorzystanie miedzi i jej stop\xF3w do produkcji naszej nowej linii
+      pojazd\xF3w wydobywczych pozwoli\u0142o nam zaoszcz\u0119dzi\u0107 \u015Brodki
+      na naprawach i renowacji naszych maszyn wydobywczych.\n<color=green>Zwi\u0119kszono
+      post\u0119p w kategorii <color=#CD1725>Transport</color>.</color>"
+    choiceCost: 0
+    category: 2
+    scienceCategoryScorePenalty: 2
+    currencyReward: 0
+    packageReward: {fileID: 0}

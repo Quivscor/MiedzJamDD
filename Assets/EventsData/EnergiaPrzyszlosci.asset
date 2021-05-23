@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 404d57312517f374fa27ee1f15bd23c8, type: 3}
+  m_Name: EnergiaPrzyszlosci
+  m_EditorClassIdentifier: 
+  eventTitle: "Energia przysz\u0142o\u015Bci"
+  eventText: "W jednym z naszych zak\u0142ad\xF3w energetycznych dosz\u0142o do przeci\u0105\u017Cenia,
+    chwilowo odcinaj\u0105c pr\u0105d od reszty bazy. Obecni przy zdarzeniu pracownicy
+    twierdz\u0105, \u017Ce dokonano prze\u0142omowego odkrycia!"
+  eventChoices:
+  - choiceButtonText: Dalej
+    choiceTitle: 
+    choiceText: "Opracowano nowoczesny reaktor ARC, do tego wielko\u015Bci zaci\u015Bni\u0119tej
+      pi\u0119\u015Bci. To prze\u0142omowe odkrycie w dziedzinie energetyki. Niestety
+      jak si\u0119 okaza\u0142o, reaktor natychmiast si\u0119 stopi\u0142, wywo\u0142uj\u0105c
+      zwarcie. Mimo to, przez 0.00324 sekundy dzia\u0142ania reaktora, wszystkie
+      baterie w Centrum Badawczym zd\u0105\u017Cy\u0142y si\u0119 na\u0142adowa\u0107.\n<color=green>Zwi\u0119kszono
+      post\u0119p w kategorii <color=#FFFA34>Energetyka</color>.</color>"
+    choiceCost: 0
+    category: 0
+    scienceCategoryScorePenalty: 2
+    currencyReward: 0
+    packageReward: {fileID: 0}
