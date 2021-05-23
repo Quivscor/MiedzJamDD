@@ -30,7 +30,7 @@ public class SceneFader : MonoBehaviour
     {
 		//StartCoroutine(FadeInThenOut());
 		StartCoroutine(FadeOutThenIn(toExpedition));
-		OnCityTransition?.Invoke(9);
+		
     }
 
 	public IEnumerator FadeIn()
@@ -92,6 +92,7 @@ public class SceneFader : MonoBehaviour
 		}
 
 		img.raycastTarget = false;
+		OnCityTransition?.Invoke(9);
 	}
 
 	public IEnumerator FadeOut()
