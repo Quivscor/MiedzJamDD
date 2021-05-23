@@ -121,13 +121,14 @@ namespace ExpeditionMap
 
         public void OnPointerEnter(PointerEventData eventData)
         {
-            outline.enabled = true;
-            if (ExpeditionManager.Instance.CanSendExpedition(this))
-                outline.OutlineColor = Color.green;
-            else
-                outline.OutlineColor = Color.red;
-
-
+            if (outline)
+            {
+                outline.enabled = true;
+                if (ExpeditionManager.Instance.CanSendExpedition(this))
+                    outline.OutlineColor = Color.green;
+                else
+                    outline.OutlineColor = Color.red;
+            }
 
             //if (isExpeditionTarget)
             //    return;
@@ -141,7 +142,8 @@ namespace ExpeditionMap
 
         public void OnPointerExit(PointerEventData eventData)
         {
-            outline.enabled = false;
+            if (outline)
+                outline.enabled = false;
             //SetActive(false);
         }
 
