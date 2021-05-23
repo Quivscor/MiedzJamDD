@@ -17646,7 +17646,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 918100982, guid: fb9dc7b8e16c93345bf8c2faa74cf1b8, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6027239571563074690, guid: fb9dc7b8e16c93345bf8c2faa74cf1b8,
         type: 3}
@@ -42905,6 +42905,21 @@ PrefabInstance:
         type: 3}
       propertyPath: sequences.Array.data[9].chainSequenceID
       value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 197744705751548224, guid: 6e89962b28899a34580d55142bc56c3f,
+        type: 3}
+      propertyPath: sequences.Array.data[0].dialogues.Array.data[2].dialogueMsg
+      value: "Witaj, nazywam si\u0119 <color=#7CC7FF>Minerva Shepard</color>. Jestem
+        tutaj w imieniu Zarz\u0105du Ziemskiego aby pom\xF3c Ci przeprowadzi\u0107
+        esktrakcj\u0119 miedzi z planety. Zacznijmy od podstaw."
+      objectReference: {fileID: 0}
+    - target: {fileID: 197744705751548224, guid: 6e89962b28899a34580d55142bc56c3f,
+        type: 3}
+      propertyPath: sequences.Array.data[4].dialogues.Array.data[0].dialogueMsg
+      value: "Je\u017Celi najedziesz teraz na pole z wys\u0142an\u0105 ekspedycj\u0105,
+        dowiesz si\u0119 za ile <color=#7CC7FF>miesi\u0119cy</color> powr\xF3c\u0105.
+        Aktualny dat\u0105 mo\u017Cesz zobaczy\u0107 w <color=#7CC7FF>lewym g\xF3rnym
+        rogu</color>."
       objectReference: {fileID: 0}
     - target: {fileID: 197744705751548225, guid: 6e89962b28899a34580d55142bc56c3f,
         type: 3}
