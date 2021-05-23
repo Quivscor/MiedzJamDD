@@ -192,8 +192,8 @@ MonoBehaviour:
     - dialogueSprite: {fileID: 0}
       dialogueMsg: "Z po\u015Br\xF3d wielu firm zajmuj\u0105cych si\u0119 wydobyciem
         miedzi, wybrano nas - <color=#7CC7FF>MHGK</color> - do misji uratowania Ziemii.
-        Naszym celem b\u0119dzie przesy\u0142anietego cennego materia\u0142u  na
-        planet\u0119 macierzyst\u0105 . Wraz z potrzebnym sprz\u0119tem i lud\u017Ami
+        Naszym celem b\u0119dzie przesy\u0142anie tego cennego materia\u0142u na
+        planet\u0119 macierzyst\u0105. Wraz z potrzebnym sprz\u0119tem i lud\u017Ami
         zostali\u015Bmy wys\u0142ani na odleg\u0142\u0105 o 344 lata \u015Bwietlne
         planet\u0119 <color=#7CC7FF>Drara 2J4T</color>. Zarz\u0105d Ziemski wys\u0142a\u0142
         wraz z nami pani\u0105 profesor kosmicznej geologii."
@@ -252,12 +252,12 @@ MonoBehaviour:
         wyb\xF3r</color> co do ich przebiegu."
     hasFired: 0
     chainSequenceID: -1
-    doEkspedycji: 0
-    doMiasta: 0
-    sklep: 0
-    paczka: 0
-    zakonczMiesiac: 0
-    misjeZZiemi: 0
+    doEkspedycji: 1
+    doMiasta: 1
+    sklep: 1
+    paczka: 1
+    zakonczMiesiac: 1
+    misjeZZiemi: 1
   - name: PoWyslaniuEkspedycjiTutorial
     dialogues:
     - dialogueSprite: {fileID: 21300000, guid: 17e93189a9287a24ba5b23411c3bbf1d, type: 3}
@@ -348,10 +348,10 @@ MonoBehaviour:
   - name: DoMiastaTutorial
     dialogues:
     - dialogueSprite: {fileID: 21300000, guid: 17e93189a9287a24ba5b23411c3bbf1d, type: 3}
-      dialogueMsg: "O to ono, Centrum Badawcze. Jak widzisz, na kafelkach nie stoi
+      dialogueMsg: "Oto ono, Centrum Badawcze. Jak widzisz, na kafelkach nie stoi
         jeszcze \u017Caden budynek. Zmie\u0144my to.\nOtrzyma\u0142e\u015B w\u0142a\u015Bnie
         dwa budynki. Znajduj\u0105 si\u0119 one na panelu na <color=#7CC7FF>dole
-        ekranu.</color>."
+        ekranu</color>."
     - dialogueSprite: {fileID: 21300000, guid: f91d4cb4b0ef90e4bb707a453067b02c, type: 3}
       dialogueMsg: "Kliknij na jeden z budynk\xF3w, a na <color=#7CC7FF>lewym dolnym
         panelu</color> poka\u017Ce Ci si\u0119 jego opis. Budowanie nowych konstrukcji
