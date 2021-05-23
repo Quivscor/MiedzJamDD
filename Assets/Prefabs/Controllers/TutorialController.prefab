@@ -449,9 +449,9 @@ MonoBehaviour:
   sequences:
   - name: TestSekwencja
     dialogues:
-    - dialogueSprite: {fileID: 21300000, guid: 3f9354d9f1b3fd045a5286d4cc41e21b, type: 3}
+    - dialogueSprite: {fileID: 21300000, guid: 17e93189a9287a24ba5b23411c3bbf1d, type: 3}
       dialogueMsg: "Dzie\u0144 dobry."
-    - dialogueSprite: {fileID: 21300000, guid: c886fb8dd2fe2a74493214e38a11ea07, type: 3}
+    - dialogueSprite: {fileID: 21300000, guid: f91d4cb4b0ef90e4bb707a453067b02c, type: 3}
       dialogueMsg: "Szcz\u0119\u015B\u0107 Bo\u017Ce."
     hasFired: 0
   - name: PustyInventoryTutorial
@@ -516,7 +516,7 @@ MonoBehaviour:
   TutorialHUD: {fileID: 197744706308569468}
   dialogueText: {fileID: 197744705300829950}
   tutorialLadyImage: {fileID: 197744707271353739}
-  IsWorking: 1
+  IsWorking: 0
   startingBuilding: {fileID: 2201244982822464578, guid: 6b0004b73bfe00545894c88b32d105a8,
     type: 3}
 --- !u!1 &197744706100324223
@@ -555,7 +555,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -9.299988, y: -262.8}
+  m_AnchoredPosition: {x: -9.299805, y: -262.80005}
   m_SizeDelta: {x: -1058.9828, y: -675.95416}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &197744706100324220
@@ -729,8 +729,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 681.3, y: -175.8}
-  m_SizeDelta: {x: 424.04138, y: 728.1599}
+  m_AnchoredPosition: {x: 638, y: -130.57}
+  m_SizeDelta: {x: 811.1428, y: 818.8594}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &197744707271353738
 CanvasRenderer:
@@ -759,9 +759,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c886fb8dd2fe2a74493214e38a11ea07, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 17e93189a9287a24ba5b23411c3bbf1d, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
