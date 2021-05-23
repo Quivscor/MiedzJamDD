@@ -56,6 +56,6 @@ public class EndGameDisplay : MonoBehaviour
         float time = TimeController.Instance.Years - startYear + (float)((int)TimeController.Instance.CurrentMonth + 1);
 
 
-        return "Mateusz Zawisza";
+        return "Miedziowy potentat";
     }
 }

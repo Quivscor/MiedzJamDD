@@ -16,6 +16,9 @@ public class MoveCam : MonoBehaviour
 
     private void Update()
     {
+        if (!this.gameObject.activeInHierarchy)
+            return;
+
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
 

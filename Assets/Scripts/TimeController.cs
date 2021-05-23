@@ -31,12 +31,13 @@ public class TimeController : MonoBehaviour
     {
         if(!Instance)
             Instance = this;
+        years = 2107;
     }
     
     void Start()
     {
         totalMonths = 0;
-        years = 2107;
+        
         currentMonth = MonthType.Styczeń;
         CityDirector.Instance.OnBuildingPlaced += NextDay;
         UpdateUI();
