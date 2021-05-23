@@ -53,6 +53,9 @@ public class EndGameDisplay : MonoBehaviour
     {
         float score = 0;
 
+        float time = TimeController.Instance.Years - startYear + (float)((int)TimeController.Instance.CurrentMonth + 1);
+
+
         return "Mateusz Zawisza";
     }
 }
