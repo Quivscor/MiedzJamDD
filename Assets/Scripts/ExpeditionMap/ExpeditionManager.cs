@@ -17,6 +17,8 @@ namespace ExpeditionMap
         public Action<int> OnReceiveRaport;
         private Animator popupAnimator;
 
+        private FreeExpeditionsPopup newPopup;
+
         private void Awake()
         {
             if (ExpeditionManager.Instance == null)
@@ -25,6 +27,7 @@ namespace ExpeditionMap
                 Destroy(this);
 
             popupAnimator = newRaportsInCitySceneButton.GetComponent<Animator>();
+            newPopup = FindObjectOfType<FreeExpeditionsPopup>();
         }
 
         private List<Expedition> expeditions = new List<Expedition>();
@@ -57,6 +60,8 @@ namespace ExpeditionMap
             destinationField.SetExpedition(expedition);
 
             currentAvailableTeams--;
+
+            newPopup.OnSwitchMaps(); //no map switch, but hides on no more available expeditions
 
             numberOfFreeTeamsText.text = currentAvailableTeams + "";
         }
