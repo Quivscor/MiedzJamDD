@@ -16,14 +16,14 @@ public class TimeController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI monthsText;
     [SerializeField] private TextMeshProUGUI currentDayText;
 
-    private DayType currentDay;
-    private int totalDays = 1;
-    private int thisMonthDays = 1;
-    private int months = 0;
+    private MonthType currentMonth;
+    private int totalMonths = 1;
+    private int thisYearMonths = 1;
+    private int years = 0;
 
-    public int TotalDays { get => totalDays; }
-    public int Months { get => months; }
-    public DayType CurrentDay { get => currentDay; }
+    public int TotalMonths { get => totalMonths; }
+    public int Years { get => years; }
+    public MonthType CurrentMonth { get => currentMonth; }
 
     private void Awake()
     {
@@ -33,19 +33,11 @@ public class TimeController : MonoBehaviour
     
     void Start()
     {
-        totalDays = 1;
-        months = 0;
-        currentDay = DayType.Poniedziałek;
+        totalMonths = 0;
+        years = 0;
+        currentMonth = MonthType.Styczeń;
         CityDirector.Instance.OnBuildingPlaced += NextDay;
         UpdateUI();
-    }
-
-    public void SkipToSunday()
-    {
-        while(currentDay != DayType.Niedziela)
-        {
-            NextDay(null);
-        }
     }
 
     public void NextDay()
@@ -55,58 +47,53 @@ public class TimeController : MonoBehaviour
 
     public void NextDay(CityDirectorEventData cityDirectorEventData)
     {
-        if (CurrentDay != DayType.Niedziela)
+        if (CurrentMonth != MonthType.Grudzień)
         {
-            currentDay++;
+            currentMonth++;
             
-            if (CurrentDay == DayType.Niedziela)
-            {
-                OnEndOfTheWeek?.Invoke();
-            }
         }
         else
         {
-            currentDay = DayType.Poniedziałek;
-
-            OnFirstCommonDay?.Invoke();
-            // FAZA BUDOWANIA
+            currentMonth = MonthType.Styczeń;
+            years++;
+            //OnFirstCommonDay?.Invoke();
         }
 
         OnNextDay?.Invoke();
 
-        totalDays++;
-        thisMonthDays++;
-        if (thisMonthDays % 30 == 0)
-        {
-            thisMonthDays = 0;
-            months++;
-        }
+        totalMonths++;
 
-        OnEndOfDay((int)currentDay);
+        OnEndOfDay((int)currentMonth);
         UpdateUI();
     }
 
     public void UpdateUI()
     {
         if(currentDayText)
-            currentDayText.text = currentDay.ToString();
+            currentDayText.text = currentMonth.ToString();
 
-        if(daysText)
-            daysText.text = thisMonthDays.ToString();
+        //if(daysText)
+        //    daysText.text = thisYearMonths.ToString();
 
         if(monthsText)
-            monthsText.text = months.ToString();
+            monthsText.text = years.ToString();
     }
 
     // Polish signs in code ;_;
-    public enum DayType
+    public enum MonthType
     {
-        Poniedziałek,
-        Wtorek,
-        Środa,
-        Czwartek,
-        Piątek,
-        Sobota,
-        Niedziela
+        Styczeń,
+        Luty,
+        Marzec,
+        Kwiecień,
+        Maj,
+        Czerwiec,
+        Lipiec,
+        Sierpień,
+        Wrzesień,
+        Październik,
+        Listopad,
+        Grudzień
     }
+
 }

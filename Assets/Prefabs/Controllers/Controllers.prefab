@@ -993,6 +993,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5415579699716356851, guid: 2f4360491e4c4c7459a31fbe036dac01,
+        type: 3}
+      propertyPath: m_text
+      value: "Zako\u0144cz miesi\u0105c"
+      objectReference: {fileID: 0}
     - target: {fileID: 5429344278453866073, guid: 2f4360491e4c4c7459a31fbe036dac01,
         type: 3}
       propertyPath: m_AnchoredPosition.x
