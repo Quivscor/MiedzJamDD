@@ -7188,7 +7188,7 @@ PrefabInstance:
     - target: {fileID: 2307980225532803760, guid: 6f06babdf16ca2f4bbfa8058246e0c16,
         type: 3}
       propertyPath: m_text
-      value: Kolonia
+      value: Do Centrum Badawczego
       objectReference: {fileID: 0}
     - target: {fileID: 3353711982452328106, guid: 6f06babdf16ca2f4bbfa8058246e0c16,
         type: 3}
