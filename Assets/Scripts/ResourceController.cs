@@ -41,7 +41,11 @@ public class ResourceController : MonoBehaviour
         copperDropDownAnimator.SetTrigger("DropDown");
 
         if (copper < 0)
+        {
+            copper = 0;
             Debug.LogError("COPPPER IS LESS THAN 0. CHECK IT AMOUNT BEFORE SPENDING");
+
+        }
 
         UpdateUI();
     }
