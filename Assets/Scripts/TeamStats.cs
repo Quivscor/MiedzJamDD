@@ -26,7 +26,7 @@ public class TeamStats : MonoBehaviour
 
         maxDistance.text = (int)CategoriesProgressController.Instance.sciences[(int)CategoriesProgressController.ScienceCategory.Energetyka].level * TeamStatsModifiers.DistanceModifier + "";
         maxLoadText.text = (int)CategoriesProgressController.Instance.sciences[(int)CategoriesProgressController.ScienceCategory.Transport].level * TeamStatsModifiers.LoadModifier + "";
-        chanceToDiscover.text = "Missing?";
+        chanceToDiscover.text = (int)CategoriesProgressController.Instance.sciences[(int)CategoriesProgressController.ScienceCategory.Telekomunikacja].level * TeamStatsModifiers.CommunicationModifier + "";
     }
 
     public int AvailableDistance = 1;
@@ -43,6 +43,6 @@ public class TeamStats : MonoBehaviour
             maxLoadText.text = (int)CategoriesProgressController.Instance.sciences[(int)category].level * TeamStatsModifiers.LoadModifier + "";
 
         if (category == CategoriesProgressController.ScienceCategory.Telekomunikacja)
-            chanceToDiscover.text = "Missing?";
+            chanceToDiscover.text = (int)CategoriesProgressController.Instance.sciences[(int)CategoriesProgressController.ScienceCategory.Telekomunikacja].level * TeamStatsModifiers.CommunicationModifier + "%";
     }
 }

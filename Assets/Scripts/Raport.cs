@@ -20,6 +20,7 @@ public class Raport : MonoBehaviour
         this.discoveredFieldsText.text = raportData.discoveredFieldsText;
 
         this.additionalActivityText.gameObject.SetActive(raportData.additionalActivity);
+        this.additionalActivityText.text = raportData.additionalActivityText;
 
         this.fieldCoordinatesText.text = raportData.fieldCoordinatesText;
     }
