@@ -109,11 +109,13 @@ public class EarthProgressController : MonoBehaviour
             {
                 missionObjects[i].GetComponentInChildren<Button>().interactable = false;
                 redBars[i].SetActive(false);
-                icons[i].color = new Color(0.4235294f, 0.4235294f, 0.4235294f, 0.72f);
+                
             }
             else
                 missionObjects[i].GetComponentInChildren<Button>().interactable = true;
 
+            if(finishedMissions[i])
+                icons[i].color = new Color(0.4235294f, 0.4235294f, 0.4235294f, 0.72f);
         }
 
     }
