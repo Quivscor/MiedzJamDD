@@ -18,6 +18,7 @@ public class TutorialController : MonoBehaviour
     public bool IsWorking = true;
 
     public Building startingBuilding;
+    public Building startingBuilding2;
 
     public Button doEkspedycji;
     public Button doMiasta;
@@ -40,6 +41,8 @@ public class TutorialController : MonoBehaviour
 
         startingBuilding = BuildingsInventory.Instance.SpawnBuilding(startingBuilding, 0);
         startingBuilding.OnSelectPlaySequence += DisplaySequence; //OnFirstBuildingSelected;
+        startingBuilding2 = BuildingsInventory.Instance.SpawnBuilding(startingBuilding2, 1);
+        startingBuilding2.OnSelectPlaySequence += DisplaySequence; //OnFirstBuildingSelected;
 
         FindObjectOfType<SceneFader>().OnCityTransition += DisplaySequence; //OnCityTransition tutorial
 
