@@ -11,6 +11,7 @@ public class EarthProgressController : MonoBehaviour
 
     [SerializeField] private float costIncreaseMutliplier = 1f;
     [SerializeField] private TextMeshProUGUI [] costTexts;
+    [SerializeField] private Image [] icons;
     [SerializeField] private GameObject [] redBars;
     [SerializeField] private GameObject [] missionObjects;
 
@@ -28,6 +29,7 @@ public class EarthProgressController : MonoBehaviour
         for(int i = 0; i < finishedMissions.Length; i++)
         {
             finishedMissions[i] = false;
+            redBars[i].SetActive(false);
         }
     }
 
@@ -79,6 +81,7 @@ public class EarthProgressController : MonoBehaviour
             {
                 missionObjects[i].GetComponentInChildren<Button>().interactable = false;
                 redBars[i].SetActive(false);
+                icons[i].color = new Color(0.4235294f, 0.4235294f, 0.4235294f, 0.72f);
             }
             else
                 missionObjects[i].GetComponentInChildren<Button>().interactable = true;
