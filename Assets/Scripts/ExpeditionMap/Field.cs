@@ -153,7 +153,7 @@ namespace ExpeditionMap
 
         public void OnPointerClick(PointerEventData eventData)
         {
-            if (isRoot || isExpeditionTarget || !ExpeditionManager.Instance.CanSendExpedition())
+            if (isRoot || isExpeditionTarget || !ExpeditionManager.Instance.CanSendExpedition() || !(currentCopper > 0))
                 return;
 
             if (DistanceToRoot > (int)CategoriesProgressController.Instance.sciences[(int)CategoriesProgressController.ScienceCategory.Energetyka].level * TeamStatsModifiers.DistanceModifier)
