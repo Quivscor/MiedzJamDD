@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eventTitle: List od specjalisty
   eventText: "Z\u0142ocimir Patynowicz to szanowany geolog, z wykszta\u0142cenia
-    in\u017Cynier g\xF3rnik, specjalista w zakresie geologii z\u0142\xF3\u017C miedzi.\r\nW
+    in\u017Cynier g\xF3rnik, specjalista w zakresie geologii z\u0142\xF3\u017C miedzi.\r\\n\nW
     li\u015Bcie skierowanym do Ciebie pisze o znajduj\u0105cym si\u0119 w obszarze
     dzia\u0142a\u0144 naszej kolonii z\u0142o\u017Cu, i to niema\u0142ym. Ot\xF3\u017C
     Pan Patynowicz wys\u0142a\u0142 w przestrze\u0144 kosmiczn\u0105 sond\u0119,
