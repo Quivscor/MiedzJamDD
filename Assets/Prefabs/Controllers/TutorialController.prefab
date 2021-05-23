@@ -221,27 +221,28 @@ MonoBehaviour:
     chainSequenceID: -1
     doEkspedycji: 0
     doMiasta: 0
-    sklep: 0
+    sklep: 1
     paczka: 0
     zakonczMiesiac: 0
     misjeZZiemi: 0
   - name: MisjeZZiemiTutorial
     dialogues:
-    - dialogueSprite: {fileID: 21300000, guid: 3f9354d9f1b3fd045a5286d4cc41e21b, type: 3}
-      dialogueMsg: Hej byku, tu masz misje z ziemi
-    - dialogueSprite: {fileID: 21300000, guid: 9a7b213f2ee592c40aeccf1771b3513f, type: 3}
-      dialogueMsg: "Wydaj swoj\u0105 mied\u017A na jakie\u015B pierdo\u0142y \u017Ceby
-        progresowa\u0107 gre"
-    - dialogueSprite: {fileID: 21300000, guid: c886fb8dd2fe2a74493214e38a11ea07, type: 3}
-      dialogueMsg: Z fartem, elo.
+    - dialogueSprite: {fileID: 21300000, guid: 17e93189a9287a24ba5b23411c3bbf1d, type: 3}
+      dialogueMsg: "Je\u017Celi b\u0119dziesz mia\u0142 wystarczaj\u0105co du\u017Co
+        miedzi aby zako\u0144czy\u0107 kt\xF3r\u0105\u015B z misji, kliknij przycisk
+        <color=#7CC7FF>\"Zako\u0144cz\"</color>. Wy\u015Blemy wtedy odpowiedni\u0105
+        ilo\u015B\u0107 miedzi na Ziemi\u0119 i na d\u0142u\u017Cszy czas zaspokoimy
+        jej zapotrzebowanie w danej dziedzinie \u017Cycia."
+    - dialogueSprite: {fileID: 21300000, guid: f91d4cb4b0ef90e4bb707a453067b02c, type: 3}
+      dialogueMsg: To wszystkie potrzebne informacje na teraz. Powodzenia!
     hasFired: 0
     chainSequenceID: -1
-    doEkspedycji: 0
-    doMiasta: 0
-    sklep: 0
-    paczka: 0
-    zakonczMiesiac: 0
-    misjeZZiemi: 0
+    doEkspedycji: 1
+    doMiasta: 1
+    sklep: 1
+    paczka: 1
+    zakonczMiesiac: 1
+    misjeZZiemi: 1
   - name: WydarzenieTutorial
     dialogues:
     - dialogueSprite: {fileID: 21300000, guid: 17e93189a9287a24ba5b23411c3bbf1d, type: 3}
@@ -272,7 +273,7 @@ MonoBehaviour:
     hasFired: 0
     chainSequenceID: -1
     doEkspedycji: 0
-    doMiasta: 0
+    doMiasta: 1
     sklep: 0
     paczka: 0
     zakonczMiesiac: 0
@@ -288,7 +289,7 @@ MonoBehaviour:
     doEkspedycji: 0
     doMiasta: 0
     sklep: 0
-    paczka: 0
+    paczka: 1
     zakonczMiesiac: 0
     misjeZZiemi: 0
   - name: PoOtrzymaniuRaportuTutorial
@@ -302,10 +303,10 @@ MonoBehaviour:
         aby zwi\u0119ksza\u0107 zasi\u0119g ekspedycji."
     hasFired: 0
     chainSequenceID: -1
-    doEkspedycji: 0
-    doMiasta: 0
-    sklep: 0
-    paczka: 0
+    doEkspedycji: 1
+    doMiasta: 1
+    sklep: 1
+    paczka: 1
     zakonczMiesiac: 0
     misjeZZiemi: 0
   - name: PoWybraniuBudynkuTutorial
@@ -367,15 +368,16 @@ MonoBehaviour:
   - name: SkipowanieCzasu
     dialogues:
     - dialogueSprite: {fileID: 21300000, guid: 17e93189a9287a24ba5b23411c3bbf1d, type: 3}
-      dialogueMsg: "O to ono, Centrum Badawcze. Jak widzisz, na kafelkach nie stoi
-        jeszcze \u017Caden budynek. Zmie\u0144my to.\nOtrzyma\u0142e\u015B w\u0142a\u015Bnie
-        dwa budynki. Znajduj\u0105 si\u0119 one na panelu na <color=#7CC7FF>dole
-        ekranu.</color>."
+      dialogueMsg: "Wybudowanie ka\u017Cdej konstrukcji zajmuje <color=#7CC7FF>1
+        miesi\u0105c</color>, ale czasami b\u0119dziesz chcia\u0142 poczeka\u0107
+        na np. powr\xF3t ekspedycji. U\u017Cyj wtedy przycisku \"Zako\u0144cz miesi\u0105c\"
+        w lewym g\xF3rnym rogu. Pami\u0119taj tylko, \u017Ce \u015Bpieszy nam si\u0119,
+        Ziemia nas potrzebuje!"
     - dialogueSprite: {fileID: 21300000, guid: f91d4cb4b0ef90e4bb707a453067b02c, type: 3}
-      dialogueMsg: "Kliknij na jeden z budynk\xF3w, a na <color=#7CC7FF>lewym dolnym
-        panelu</color> poka\u017Ce Ci si\u0119 jego opis. Budowanie nowych konstrukcji
-        jest wa\u017Cne aby zwi\u0119ksza\u0107 poziomy w poszczeg\xF3lnych kategoriach
-        przemys\u0142u <color=#7CC7FF> (panel w prawym g\xF3rnym rogu)</color>."
+      dialogueMsg: "M\xF3wi\u0105c wi\u0119cej o naszej miedziowej misji. Kliknij
+        przycisk <color=#7CC7FF>\"Misje z Ziemii\"</color> u g\xF3ry ekranu aby zapozna\u0107
+        si\u0119 z konkretnymi problemami z jakimi borykaj\u0105 si\u0119 aktualnie
+        ludzie na macierzystej planecie. "
     hasFired: 0
     chainSequenceID: -1
     doEkspedycji: 0
@@ -383,7 +385,7 @@ MonoBehaviour:
     sklep: 0
     paczka: 0
     zakonczMiesiac: 0
-    misjeZZiemi: 0
+    misjeZZiemi: 1
   currentSequenceIndex: 0
   TutorialHUD: {fileID: 197744706308569468}
   dialogueText: {fileID: 197744705300829950}
