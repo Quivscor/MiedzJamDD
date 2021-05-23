@@ -21,6 +21,8 @@ public class BuildingDescriptionController : MonoBehaviour
 
     private void Start()
     {
+        UpdateUI(new BuildingEventData());
+
         foreach(Building building in FindObjectsOfType<Building>())
         {
             building.OnClick += UpdateUI;
