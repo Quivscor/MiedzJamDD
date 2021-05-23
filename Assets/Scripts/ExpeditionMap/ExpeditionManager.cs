@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System;
+using Random = UnityEngine.Random;
 
 namespace ExpeditionMap
 {
@@ -17,6 +18,9 @@ namespace ExpeditionMap
         public Action<int> OnReceiveRaport;
         private Animator popupAnimator;
 
+        public AudioClip[] placeExpedition;
+        public AudioSource audioSource;
+
         private FreeExpeditionsPopup newPopup;
 
         private void Awake()
@@ -26,6 +30,7 @@ namespace ExpeditionMap
             else
                 Destroy(this);
 
+            audioSource = GetComponent<AudioSource>();
             popupAnimator = newRaportsInCitySceneButton.GetComponent<Animator>();
             newPopup = FindObjectOfType<FreeExpeditionsPopup>();
         }
@@ -62,6 +67,7 @@ namespace ExpeditionMap
             currentAvailableTeams--;
 
             CameraControllerExp.Instance?.Shake();
+            audioSource.PlayOneShot(placeExpedition[Random.Range(0, placeExpedition.Length)]);
 
             newPopup.OnSwitchMaps(); //no map switch, but hides on no more available expeditions
 
