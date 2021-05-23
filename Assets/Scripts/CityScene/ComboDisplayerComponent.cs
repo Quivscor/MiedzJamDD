@@ -58,7 +58,8 @@ public class ComboDisplayerComponent : MonoBehaviour
     {
         foreach(BuildingField f in displayedFields)
         {
-            f.Renderer.material = boostedField;
+            f.Renderer.enabled = true;
+            //f.Renderer.material = boostedField;
         }
     }
 
@@ -129,7 +130,8 @@ public class ComboDisplayerComponent : MonoBehaviour
         eventData.selfReference.HideDisplay();
         foreach (BuildingField f in fieldsToCleanup)
         {
-            f.Renderer.material = defaultBuildingFieldMaterial;
+            f.Renderer.enabled = false;
+            //f.Renderer.material = defaultBuildingFieldMaterial;
             f.HideDisplay();
         }
         CategoriesProgressController.Instance.StopHover();

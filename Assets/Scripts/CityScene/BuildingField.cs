@@ -8,6 +8,8 @@ using TMProText = TMPro.TextMeshProUGUI;
 
 public class BuildingField : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
+    public Sprite[] groundSprites = null;
+
     private MeshRenderer m_renderer;
     public MeshRenderer Renderer => m_renderer;
     private TMProText text;
@@ -32,6 +34,14 @@ public class BuildingField : MonoBehaviour, IPointerClickHandler, IPointerEnterH
         m_renderer = GetComponent<MeshRenderer>();
         text = transform.parent.GetComponentInChildren<TMProText>();
         text.transform.parent.gameObject.SetActive(false);
+
+        SpriteRenderer sr = GetComponentInChildren<SpriteRenderer>();
+        if (sr)
+        {
+            sr.sprite = groundSprites[UnityEngine.Random.Range(0, groundSprites.Length)];
+            sr.transform.Rotate(Vector3.forward * (UnityEngine.Random.Range(0, 4) * 90));
+        }
+            
     }
 
     public void AssignBuilding(Building b)
