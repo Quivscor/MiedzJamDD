@@ -11,6 +11,7 @@ public class EarthProgressController : MonoBehaviour
 
     [SerializeField] private float costIncreaseMutliplier = 1f;
     [SerializeField] private TextMeshProUGUI [] costTexts;
+    [SerializeField] private GameObject [] redBars;
     [SerializeField] private GameObject [] missionObjects;
 
     private int currentCost = 100;
@@ -77,6 +78,7 @@ public class EarthProgressController : MonoBehaviour
             if (!CanFinish() || finishedMissions[i])
             {
                 missionObjects[i].GetComponentInChildren<Button>().interactable = false;
+                redBars[i].SetActive(false);
             }
             else
                 missionObjects[i].GetComponentInChildren<Button>().interactable = true;
