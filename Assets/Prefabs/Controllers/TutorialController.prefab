@@ -197,7 +197,7 @@ MonoBehaviour:
         2J4T</color>. Zarz\u0105d Ziemski wys\u0142a\u0142 wraz z nami pani\u0105
         profesor kosmicznej geologii."
     - dialogueSprite: {fileID: 21300000, guid: f91d4cb4b0ef90e4bb707a453067b02c, type: 3}
-      dialogueMsg: "Witaj, nazywam si\u0119 <color=#7CC7FF>Minerve Shepard</color>.
+      dialogueMsg: "Witaj, nazywam si\u0119 <color=#7CC7FF>Minerva Shepard</color>.
         Jestem tutaj w imieniu Zarz\u0105du Ziemskiego aby pom\xF3c Ci przeprowadzi\u0107
         esktrakcj\u0119 miedzi z planety. Zacznijmy od podstaw."
     hasFired: 0
@@ -260,7 +260,8 @@ MonoBehaviour:
     - dialogueSprite: {fileID: 21300000, guid: 17e93189a9287a24ba5b23411c3bbf1d, type: 3}
       dialogueMsg: "Je\u017Celi najedziesz teraz na pole z wys\u0142an\u0105 ekspedycj\u0105,
         dowiesz si\u0119 za ile <color=#7CC7FF>miesi\u0119cy</color> powr\xF3c\u0105.
-        Aktualny dat\u0105 mo\u017Cesz w <color=#7CC7FF>lewym g\xF3rnym rogu</color>."
+        Aktualny dat\u0105 mo\u017Cesz zobaczy\u0107 w <color=#7CC7FF>lewym g\xF3rnym
+        rogu</color>."
     - dialogueSprite: {fileID: 21300000, guid: f91d4cb4b0ef90e4bb707a453067b02c, type: 3}
       dialogueMsg: "Podczas czekania na powr\xF3t ekspedycji, wr\xF3\u0107my na map\u0119
         <color=#7CC7FF>Centrum Badawczego</color>. Poka\u017C\u0119 Ci w jaki spos\xF3b
@@ -307,13 +308,18 @@ MonoBehaviour:
     misjeZZiemi: 0
   - name: PoWybraniuBudynkuTutorial
     dialogues:
-    - dialogueSprite: {fileID: 21300000, guid: 3f9354d9f1b3fd045a5286d4cc41e21b, type: 3}
-      dialogueMsg: "No i patrz z\u0142ociutki, we\u017A no poje\u017Adzij sobie tym
-        budynkiem po mapie."
-    - dialogueSprite: {fileID: 21300000, guid: 3f9354d9f1b3fd045a5286d4cc41e21b, type: 3}
-      dialogueMsg: "Ma takie zielone pole, to jest zasi\u0119g kombienia."
-    - dialogueSprite: {fileID: 21300000, guid: 9a7b213f2ee592c40aeccf1771b3513f, type: 3}
-      dialogueMsg: "Tak si\u0119 progressuje gre B)"
+    - dialogueSprite: {fileID: 21300000, guid: 17e93189a9287a24ba5b23411c3bbf1d, type: 3}
+      dialogueMsg: "Strategiczne stawianie budynk\xF3w na mapie jest kluczowe, poniewa\u017C
+        <color=#7CC7FF>ka\u017Cda budowla ma sw\xF3j zasi\u0119g dzia\u0142ania</color>
+        w kt\xF3rym inne budynki mog\u0105 otrzymywa\u0107 <color=#7CC7FF>bonusy
+        do przemys\u0142u</color>."
+    - dialogueSprite: {fileID: 21300000, guid: f91d4cb4b0ef90e4bb707a453067b02c, type: 3}
+      dialogueMsg: "Pojedy\u0144czy budynek daje <color=#7CC7FF>1 punkt post\u0119pu</color>
+        w kategorii z kt\xF3rej pochodzi. Dodatkowo stawianie budynk\xF3w z <color=#7CC7FF>tej
+        samej kategorii</color> daje dodatkowo <color=#7CC7FF>1 punkt post\u0119pu</color>.
+        Je\u017Celi zerkniesz na <color=#7CC7FF>opis budynku</color>, zobaczysz dodatkowe
+        konstrukcje z innych kategorii z kt\xF3rymi <color=#7CC7FF>dany budynek wchodzi
+        w bonusow\u0105 interakcj\u0119</color>."
     hasFired: 0
     chainSequenceID: -1
     doEkspedycji: 0
@@ -340,16 +346,15 @@ MonoBehaviour:
   - name: DoMiastaTutorial
     dialogues:
     - dialogueSprite: {fileID: 21300000, guid: 17e93189a9287a24ba5b23411c3bbf1d, type: 3}
-      dialogueMsg: "O to ono, nasze Centrum Badawcze. Jak widzisz na \u017Cadnym
-        z kafelk\xF3w jeszcze nie ma nic wybudowanego. Zmie\u0144my to. "
-    - dialogueSprite: {fileID: 21300000, guid: 17e93189a9287a24ba5b23411c3bbf1d, type: 3}
-      dialogueMsg: "Otrzyma\u0142e\u015B w\u0142a\u015Bnie dwa budynki do postawienia.
-        Znajduj\u0105 si\u0119 one panelu na <color=#7CC7FF>dole ekranu</color>.
-        Kliknij kt\xF3ry\u015B z nich a pojawi si\u0119 jego opis. "
+      dialogueMsg: "O to ono, Centrum Badawcze. Jak widzisz, na kafelkach nie stoi
+        jeszcze \u017Caden budynek. Zmie\u0144my to.\nOtrzyma\u0142e\u015B w\u0142a\u015Bnie
+        dwa budynki. Znajduj\u0105 si\u0119 one na panelu na <color=#7CC7FF>dole
+        ekranu.</color>."
     - dialogueSprite: {fileID: 21300000, guid: f91d4cb4b0ef90e4bb707a453067b02c, type: 3}
-      dialogueMsg: "Stawianie nowych budynk\xF3w daje nam punkty rozwoju (prawy g\xF3rny
-        r\xF3g). Jak za chwil\u0119 zobaczysz, stawianie obok siebie odpowiednich
-        budynk\xF3w daje dodatkowe bonusy."
+      dialogueMsg: "Kliknij na jeden z budynk\xF3w, a na <color=#7CC7FF>lewym dolnym
+        panelu</color> poka\u017Ce Ci si\u0119 jego opis. Budowanie nowych konstrukcji
+        jest wa\u017Cne aby zwi\u0119ksza\u0107 poziomy w poszczeg\xF3lnych kategoriach
+        przemys\u0142u <color=#7CC7FF> (panel w prawym g\xF3rnym rogu)</color>."
     hasFired: 0
     chainSequenceID: -1
     doEkspedycji: 0
@@ -365,6 +370,7 @@ MonoBehaviour:
   IsWorking: 1
   startingBuilding: {fileID: 2201244982822464578, guid: 6b0004b73bfe00545894c88b32d105a8,
     type: 3}
+  startingBuilding2: {fileID: 0}
   doEkspedycji: {fileID: 0}
   doMiasta: {fileID: 0}
   sklep: {fileID: 0}
