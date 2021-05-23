@@ -13,7 +13,9 @@ public class ResourceController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI copperText;
     [SerializeField] private int startingCopper;
     private int copper;
+    private int lifeTimeCopper = 0;
 
+    public int LifetimeCopper => lifeTimeCopper;
     public int Copper { get => copper; }
 
     private void Awake()
@@ -27,6 +29,7 @@ public class ResourceController : MonoBehaviour
     public void AddCopper(int value)
     {
         copper += value;
+        lifeTimeCopper += value;
         copperAnimator.SetTrigger("Pulse");
         UpdateUI();
     }
