@@ -221,7 +221,7 @@ MonoBehaviour:
     chainSequenceID: -1
     doEkspedycji: 0
     doMiasta: 0
-    sklep: 0
+    sklep: 1
     paczka: 0
     zakonczMiesiac: 0
     misjeZZiemi: 0
@@ -272,7 +272,7 @@ MonoBehaviour:
     hasFired: 0
     chainSequenceID: -1
     doEkspedycji: 0
-    doMiasta: 0
+    doMiasta: 1
     sklep: 0
     paczka: 0
     zakonczMiesiac: 0
@@ -288,7 +288,7 @@ MonoBehaviour:
     doEkspedycji: 0
     doMiasta: 0
     sklep: 0
-    paczka: 0
+    paczka: 1
     zakonczMiesiac: 0
     misjeZZiemi: 0
   - name: PoOtrzymaniuRaportuTutorial
@@ -302,10 +302,10 @@ MonoBehaviour:
         aby zwi\u0119ksza\u0107 zasi\u0119g ekspedycji."
     hasFired: 0
     chainSequenceID: -1
-    doEkspedycji: 0
-    doMiasta: 0
-    sklep: 0
-    paczka: 0
+    doEkspedycji: 1
+    doMiasta: 1
+    sklep: 1
+    paczka: 1
     zakonczMiesiac: 0
     misjeZZiemi: 0
   - name: PoWybraniuBudynkuTutorial
