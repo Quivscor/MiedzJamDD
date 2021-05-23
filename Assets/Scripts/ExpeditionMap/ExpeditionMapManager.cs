@@ -93,5 +93,49 @@ namespace ExpeditionMap
 
             return neighbours.ToArray();
         }
+
+        public void OnExpeditionImpact1(Field field)
+        {
+            int firstX = field.FieldCoords.x - 1;
+            int lastX = field.FieldCoords.x + 2;
+            int firstY = field.FieldCoords.y - 1;
+            int lastY = field.FieldCoords.y + 2;
+
+            for (int i = firstX; i < lastX; i++)
+            {
+                for (int j = firstY; j < lastY; j++)
+                {
+                    if (i == firstX || i == lastX - 1 || j == firstY || j == lastY - 1)
+                    {
+                        if (i > 0 && j > 0 && i < MapSize.x && j < MapSize.y && fieldsMap[i,j] != null)
+                        {
+                            fieldsMap[i, j]?.Animator?.SetTrigger("impact1Trigger");
+                        }
+                    }
+                }
+            }
+        }
+
+        public void OnExpeditionImpact2(Field field)
+        {
+            int firstX = field.FieldCoords.x - 2;
+            int lastX = field.FieldCoords.x + 3;
+            int firstY = field.FieldCoords.y - 2;
+            int lastY = field.FieldCoords.y + 3;
+
+            for (int i = firstX; i < lastX; i++)
+            {
+                for (int j = firstY; j < lastY; j++)
+                {
+                    if (i == firstX || i == lastX - 1|| j == firstY || j == lastY - 1)
+                    {
+                        if (i > 0 && j > 0 && i < MapSize.x && j < MapSize.y && fieldsMap[i, j] != null)
+                        {
+                            fieldsMap[i, j]?.Animator?.SetTrigger("impact2Trigger");
+                        }
+                    }
+                }
+            }
+        }
     }
 }

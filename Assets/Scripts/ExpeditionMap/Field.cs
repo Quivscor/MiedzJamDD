@@ -39,6 +39,8 @@ namespace ExpeditionMap
             }
         }
 
+        public Animator Animator { get => animator; }
+
         private Expedition expedition = null;
 
         private void Start()
@@ -181,7 +183,23 @@ namespace ExpeditionMap
         public void SetExpedition(Expedition expedition)
         {
             this.expedition = expedition;
+
+            animator?.SetTrigger("pressedTrigger");
         }
+
+        #region Anim Events
+
+        public void OnReachImpact1()
+        {
+            //ExpeditionMapManager.Instance?.OnExpeditionImpact1(this);
+        }
+
+        public void OnReachImpact2()
+        {
+            //ExpeditionMapManager.Instance?.OnExpeditionImpact2(this);
+        }
+
+        #endregion
 
         #region Button Actions
 
