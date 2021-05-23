@@ -104,6 +104,7 @@ public class CityDirector : MonoBehaviour
         b.transform.parent = null;
         b.transform.position = eventData.fieldPosition;
         b.IsPlaced = true;
+        b?.ChangeLayer(0);
         //turn this layer off in physics raycast in camera
         b.gameObject.layer = IgnoreCameraRaycastLayerID;
         eventData.selfReference.AssignBuilding(b);
