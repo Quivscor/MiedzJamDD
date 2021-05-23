@@ -431,7 +431,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 57061073}
   m_LocalRotation: {x: 0.1464466, y: -0.8535535, z: 0.35355338, w: 0.35355338}
-  m_LocalPosition: {x: 11.5, y: 9.5, z: 11.5}
+  m_LocalPosition: {x: 16.08, y: 11.34, z: 16.08}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 989221447}
@@ -579,7 +579,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2123ebca70e8fee4b9df7f6535a2fddf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxMovement: {x: 10, y: 10}
+  maxMovement: {x: 5, y: 3, z: 3}
   moveSpeed: 1.75
 --- !u!4 &64382346 stripped
 Transform:
@@ -3653,7 +3653,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2123ebca70e8fee4b9df7f6535a2fddf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxMovement: {x: 2, y: 2}
+  maxMovement: {x: 2, y: 2, z: 2}
   moveSpeed: 1.75
 --- !u!1001 &256541033
 PrefabInstance:
