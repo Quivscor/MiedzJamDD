@@ -874,6 +874,16 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7141962739209774929, guid: f1c99db0fef3bb746abeed0c2bb55ddc,
+        type: 3}
+      propertyPath: dropDownAnimator
+      value: 
+      objectReference: {fileID: 1410183103}
+    - target: {fileID: 7141962739209774929, guid: f1c99db0fef3bb746abeed0c2bb55ddc,
+        type: 3}
+      propertyPath: monthsDropDownText
+      value: 
+      objectReference: {fileID: 1410183104}
     - target: {fileID: 7255303464895899093, guid: f1c99db0fef3bb746abeed0c2bb55ddc,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -19626,6 +19636,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a90198ceadff544788c063f9b9e0e89, type: 3}
+--- !u!95 &1410183103 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 4056744260090425552, guid: f1c99db0fef3bb746abeed0c2bb55ddc,
+    type: 3}
+  m_PrefabInstance: {fileID: 66309704}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1410183104 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6537776227292940847, guid: f1c99db0fef3bb746abeed0c2bb55ddc,
+    type: 3}
+  m_PrefabInstance: {fileID: 66309704}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1412992257 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 2a90198ceadff544788c063f9b9e0e89,

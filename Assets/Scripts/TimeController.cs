@@ -13,6 +13,8 @@ public class TimeController : MonoBehaviour
     public static TimeController Instance = null;
 
     [SerializeField] private TextMeshProUGUI daysText;
+    [SerializeField] private TextMeshProUGUI monthsDropDownText;
+    [SerializeField] private Animator dropDownAnimator;
     [SerializeField] private TextMeshProUGUI monthsText;
     [SerializeField] private TextMeshProUGUI currentDayText;
 
@@ -47,6 +49,9 @@ public class TimeController : MonoBehaviour
 
     public void NextDay(CityDirectorEventData cityDirectorEventData)
     {
+        monthsDropDownText.text = CurrentMonth.ToString();
+        dropDownAnimator.SetTrigger("DropDown");
+
         if (CurrentMonth != MonthType.Grudzień)
         {
             currentMonth++;
