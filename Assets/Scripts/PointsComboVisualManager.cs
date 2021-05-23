@@ -30,7 +30,7 @@ public class PointsComboVisualManager
         {
             buildings[currentBuildingPlayingIndex].ShowVisualAddedPoints(pointsToAdd[currentBuildingPlayingIndex], this);
 
-            audioSource.PlayOneShot(CityDirector.Instance.buildingSounds[Random.Range(0, CityDirector.Instance.buildingSounds.Length)]);
+            audioSource.PlayOneShot(CityDirector.Instance.combigSounds[Random.Range(0, CityDirector.Instance.combigSounds.Length)]);
         }
 
     }

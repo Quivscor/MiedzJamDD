@@ -12,8 +12,13 @@ public class Raport : MonoBehaviour
     public TextMeshProUGUI discoveredFieldsText = null;
     public TextMeshProUGUI additionalActivityText = null;
 
+    private FreeExpeditionsPopup newPopup;
+
     public void SetRaportData(RaportData raportData)
     {
+        if (newPopup == null)
+            newPopup = FindObjectOfType<FreeExpeditionsPopup>();
+
         this.fieldCoordinatesText.text = raportData.fieldCoordinatesText;
         this.contextText.text = raportData.contextText;
         this.gainedCopperText.text = raportData.gainedCopperText;
@@ -28,6 +33,7 @@ public class Raport : MonoBehaviour
     public void RaportClosed()
     {
         RaportsReader.Instance?.RaportReaded();
+        newPopup.OnSwitchMaps(); //shows free expeditions popup
 
         Destroy(this.gameObject);
     }
