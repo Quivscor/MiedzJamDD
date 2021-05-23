@@ -123,8 +123,100 @@ namespace ExpeditionMap
         {
             //Implement later
             //Add smth to managers or increase smth
-            additionalActivityOccured = false;
-            additionalActivityOutput = "Nothing happened";
+
+            if (Random.Range(0, 100) < (int)CategoriesProgressController.Instance.sciences[(int)CategoriesProgressController.ScienceCategory.Telekomunikacja].level * TeamStatsModifiers.CommunicationModifier)
+            {
+                additionalActivityOccured = true;
+
+                //80% points
+                if (Random.Range(0, 100) < 80)
+                {
+                    int pointsToAdd = Random.Range(1, 4);
+
+                    int category = Random.Range(0, 4);
+
+                    int textRandom = Random.Range(0, 2);
+
+                    switch (category)
+                    {
+                        case 0:
+                            switch (textRandom)
+                            {
+                                case 0:
+                                    additionalActivityOutput += "Dzięki wysoko rozwiniętej strukturze telekomunikacyjnej w trakcie ekspedycji dodatkowo udało się zmierzyć wydajność najnowszych części zamontowanych w naszych maszynach.\n";
+                                    break;
+                                default:
+                                    additionalActivityOutput += "Wysoko rozwinięta struktura telekomunikacyjna pozwoliła na zbadanie i zoptymalizowanie działań górników.\n";
+                                    break;
+                            }
+                            additionalActivityOutput += "Rozwój kategorii <color=#FFFA34>" + (CategoriesProgressController.ScienceCategory)category + "</color> został zwiększony o <color=#FFFA34>" + pointsToAdd + "</color> " + (pointsToAdd > 1 ? "punkty." : "punkt.");
+                            break;
+                        case 1:
+                            switch (textRandom)
+                            {
+                                case 0:
+                                    additionalActivityOutput += "Zaawansowana struktura telekomunikacyjna pozwoliła dodatkowo usprawnić działanie radarów w trakcie ekspedycji.\n";
+                                    break;
+                                default:
+                                    additionalActivityOutput += "W trakcie ekspedycji zarejestrowane zostały bliżej niezidentyfikowane sygnały.\n";
+                                    break;
+                            }
+                            additionalActivityOutput += "Rozwój kategorii <color=#B900F8>" + (CategoriesProgressController.ScienceCategory)category + "</color> został zwiększony o <color=#B900F8>" + pointsToAdd + "</color> " + (pointsToAdd > 1 ? "punkty." : "punkt.");
+                            break;
+                        case 2:
+                            switch (textRandom)
+                            {
+                                case 0:
+                                    additionalActivityOutput += "Zaawansowana struktura telekomunikacyjna pozwoliła prześledzić i zoptymalizować trasę naszych maszyn.\n";
+                                    break;
+                                default:
+                                    additionalActivityOutput += "Nasze radary wykryły i wyznaczyły nowe podziemne trasy dla naszych maszyn.\n";
+                                    break;
+                            }
+                            additionalActivityOutput += "Rozwój kategorii <color=#CD1725>" + (CategoriesProgressController.ScienceCategory)category + "</color> został zwiększony o <color=#CD1725>" + pointsToAdd + "</color> " + (pointsToAdd > 1 ? "punkty." : "punkt.");
+                            break;
+                        case 3:
+                            switch (textRandom)
+                            {
+                                case 0:
+                                    additionalActivityOutput += "Nasze radary wykryły nową, nieznaną do tej pory substancję w trakcie ekspedycji. Technicy-górnicy zabezpieczyli ją i pracują obecnie nad wykorzystaniem jej jako nawozu do naszych upraw.\n";
+                                    break;
+                                default:
+                                    additionalActivityOutput += "Wysoko rozwinięta struktura telekomunikacyjna pozwoliła na sprawniejszą komunikację między zespołami i lepszą organizację zadań.\n";
+                                    break;
+                            }
+                            additionalActivityOutput += "Rozwój kategorii <color=#00B917>" + (CategoriesProgressController.ScienceCategory)category + "</color> został zwiększony o <color=#00B917>" + pointsToAdd + "</color> " + (pointsToAdd > 1 ? "punkty." : "punkt.");
+                            break;
+                    }
+
+                    CategoriesProgressController.Instance.AddPointsToScience((CategoriesProgressController.ScienceCategory)category, pointsToAdd);
+                }
+                //20% copper
+                else
+                {
+                    int copperToAdd = Random.Range(1, 4) * 50;
+
+                    int textRandom = Random.Range(0, 2);
+
+                    switch (textRandom)
+                    {
+                        case 0:
+                            additionalActivityOutput += "Nasze radary wykryły w trakcie ekspedycji nowe złoża miedzi. Organizowana jest obecnie ekspedycja mająca przeprowadzić szczegółowe badania na ten temat.\n";
+                            break;
+                        default:
+                            additionalActivityOutput += "Dzięki wysoko rozwiniętej strukturze teleinformatycznej prace przebiegły szybciej niż początkowo zakładano.\n";
+                            break;
+                    }
+                    additionalActivityOutput += "Otrzymano dodatkowo <color=yellow>" + copperToAdd + " miedzi</color>.";
+
+                    ResourceController.Instance.AddCopper(copperToAdd);
+                }
+            }
+            else
+            {
+                additionalActivityOccured = false;
+                additionalActivityOutput = "Nothing happened";
+            }
         }
 
         public string GenerateRaportContent()

@@ -6,4 +6,5 @@ public static class TeamStatsModifiers
 {
     public const int DistanceModifier = 1;
     public const int LoadModifier = 100;
+    public const int CommunicationModifier = 10;
 }
