@@ -22,6 +22,8 @@ public class CityDirector : MonoBehaviour
     public LastSelectedBuilding SelectedBuilding => m_lastSelectedBuilding;
     protected ComboDisplayerComponent m_comboDisplayerComponent;
 
+    public Building rockBuilding;
+
     #region Setup
     [Header("Scene setup")]
     public GameObject buildingFieldPrefab;
@@ -74,6 +76,14 @@ public class CityDirector : MonoBehaviour
 
                 BuildingField fieldGO = Instantiate(buildingFieldPrefab, this.transform.position + new Vector3(x + extraX + 0.5f, 0, z + extraZ + 0.5f), Quaternion.identity, this.transform).GetComponentInChildren<BuildingField>();
                 fieldGO.gameObject.name = "Field (" + x + ", " + z + ")";
+                if (Random.Range(0.0f, 1.0f) < .06f)
+                {
+                    Building b = Instantiate(rockBuilding, fieldGO.transform.position, Quaternion.identity, null);
+                    b.IsPlaced = true;
+                    fieldGO.AssignBuilding(b);
+                    b.gameObject.layer = IgnoreCameraRaycastLayerID;
+                }
+                    
                 fieldGO.OnClick += TryConfirmBuilding;
                 fieldGO.CityGridCoordinates = new Vector2Int(x, z);
                 m_cityGrid[x, z] = fieldGO;

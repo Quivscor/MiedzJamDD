@@ -106,5 +106,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e718ca1ee758db4d976ad68c2d6e4dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_bData: {fileID: 0}
-  m_buildingID: 
+  mainAnimatorController: {fileID: 0}
+  personalAnimatorController: {fileID: 0}
+  m_buildingData: {fileID: 11400000, guid: 59be71514918b554da67a64c4181f2f9, type: 2}
+  addedPointsText: {fileID: 0}
+  objectsToChangeLayer: []

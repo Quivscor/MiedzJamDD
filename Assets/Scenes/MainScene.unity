@@ -21739,6 +21739,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 4fc6671bc125c1145a1875385ccd3d99, type: 3}
   - {fileID: 8300000, guid: 1d0019b1f4a301944ad07626c2574137, type: 3}
   - {fileID: 8300000, guid: 305528f24f9770a4ca6818463112b794, type: 3}
+  rockBuilding: {fileID: 2201244982822464578, guid: c70f0dd9f4f4f534db92dd22eef528ef,
+    type: 3}
   buildingFieldPrefab: {fileID: 4845459734333124505, guid: 7f4c92fe56fede84a9f2ebaa4dd88c50,
     type: 3}
 --- !u!82 &980140302
