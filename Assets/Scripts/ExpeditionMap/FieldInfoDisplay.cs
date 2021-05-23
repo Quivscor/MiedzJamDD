@@ -40,7 +40,7 @@ public class FieldInfoDisplay : MonoBehaviour
 
             expectedCopperText.text = copperLeft + "";
 
-            expectedTimeText.text = timeToExtract + " " + (timeToExtract != 1 ? "dni" : "dzień");
+            expectedTimeText.text = timeToExtract + " " + (timeToExtract != 1 ? "miesięcy" : "miesiąc");
         }
         else
         {
@@ -48,7 +48,7 @@ public class FieldInfoDisplay : MonoBehaviour
             expeditionInfo.SetActive(false);
 
             copperLeftText.text = copperLeft + " / " + maxCopper;
-            timeToExtractText.text = timeToExtract + " dni";
+            timeToExtractText.text = timeToExtract + " miesięcy";
         }
 
         distanceText.text = distanceToRoot + "";
