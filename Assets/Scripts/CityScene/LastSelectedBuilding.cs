@@ -27,6 +27,7 @@ public class LastSelectedBuilding : MonoBehaviour
 
     public void Deselect()
     {
+        m_selectedBuilding?.ChangeLayer(13);
         m_selectedBuilding = null;
         BuildingDescriptionController.Instance.UpdateUI(new BuildingEventData());
         DestroyMock();

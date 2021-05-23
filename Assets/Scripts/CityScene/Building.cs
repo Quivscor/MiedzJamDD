@@ -102,6 +102,7 @@ public class Building : MonoBehaviour, IPointerClickHandler, ISelectHandler
     {
         OnClick?.Invoke(new BuildingEventData(m_buildingData.thisBuildingID, m_buildingData.pointCategory, m_buildingData.description, BonusesStringGenerator()));
         EventSystem.current.SetSelectedGameObject(this.gameObject);
+        ChangeLayer(0);
     }
 
     public void OnSelect(BaseEventData eventData)
@@ -208,4 +209,13 @@ public class Building : MonoBehaviour, IPointerClickHandler, ISelectHandler
     }
 
     #endregion
+
+    public GameObject[] objectsToChangeLayer;
+
+    public void ChangeLayer(int layer)
+    {
+        if (objectsToChangeLayer != null)
+            foreach (GameObject go in objectsToChangeLayer)
+                go.layer = layer;
+    }
 }

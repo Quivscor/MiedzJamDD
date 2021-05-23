@@ -80,7 +80,13 @@ public class PackagesInventory : MonoBehaviour
 
         for (int i = 0; i < buildingsToAdd.Length; i++)
         {
-            buildingsToAdd[i] = GetRandomBuildingFromCategory(category);
+            Building droppedBuilding = GetRandomBuildingFromCategory(category);
+
+            for (int j = 0; j < i; j++)
+                if (buildingsToAdd[j].BuildingCategory == droppedBuilding.BuildingCategory)
+                    droppedBuilding = GetRandomBuildingFromCategory(category);
+
+            buildingsToAdd[i] = droppedBuilding;
         }
 
         BuildingsInventory.Instance?.AddBuildingsToInventory(buildingsToAdd, category);
