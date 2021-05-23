@@ -19,7 +19,7 @@ public class TimeController : MonoBehaviour
     private MonthType currentMonth;
     private int totalMonths = 1;
     private int thisYearMonths = 1;
-    private int years = 0;
+    private int years;
 
     public int TotalMonths { get => totalMonths; }
     public int Years { get => years; }
@@ -34,7 +34,7 @@ public class TimeController : MonoBehaviour
     void Start()
     {
         totalMonths = 0;
-        years = 0;
+        years = 2107;
         currentMonth = MonthType.Styczeń;
         CityDirector.Instance.OnBuildingPlaced += NextDay;
         UpdateUI();
