@@ -114,6 +114,9 @@ MonoBehaviour:
   personalAnimatorController: {fileID: 0}
   m_buildingData: {fileID: 11400000, guid: c76e58b3619686e4f818667309c6337c, type: 2}
   addedPointsText: {fileID: 4622936441774372982}
+  objectsToChangeLayer:
+  - {fileID: 1066512317110437514}
+  - {fileID: 6433643776020808971}
 --- !u!95 &4123067888932568778
 Animator:
   serializedVersion: 3
@@ -577,6 +580,18 @@ PrefabInstance:
 --- !u!4 &6949902390670859740 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2fefbaef2cdd07941a3ee0d9f589333b,
+    type: 3}
+  m_PrefabInstance: {fileID: 7492224082603047479}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1066512317110437514 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7580887855226698941, guid: 2fefbaef2cdd07941a3ee0d9f589333b,
+    type: 3}
+  m_PrefabInstance: {fileID: 7492224082603047479}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6433643776020808971 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -4705875721142010052, guid: 2fefbaef2cdd07941a3ee0d9f589333b,
     type: 3}
   m_PrefabInstance: {fileID: 7492224082603047479}
   m_PrefabAsset: {fileID: 0}
