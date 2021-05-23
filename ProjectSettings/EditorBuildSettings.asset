@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainScene.unity
     guid: 3d1359a9d72e3a5489d94917f7b4a6e3
+  - enabled: 1
+    path: Assets/Scenes/ReloadingScene.unity
+    guid: 848d60635a064d648b66e2af8319cd7c
   m_configObjects: {}

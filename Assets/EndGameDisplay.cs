@@ -39,8 +39,8 @@ public class EndGameDisplay : MonoBehaviour
         if (month > 4)
             miesiace = "miesięcy";
 
-        timeText.text = "Czas rozgrywki: " + years + " " + lata + " i " + " " + month + " " + miesiace;
-        copperText.text = "Wydobyta miedź: " + ResourceController.Instance.LifetimeCopper;
+        timeText.text = "Czas rozgrywki: " + years + " " + lata + " i " + month + " " + miesiace;
+        copperText.text = "Wydobyta miedź: <color=#FF947C>" + ResourceController.Instance.LifetimeCopper + "</color>";
         progressText.text = "Postępy w kategoriach\n<color=#FFFA34>Energetyka</color>\t\t\t" + CategoriesProgressController.Instance.sciences[0].level +
             "\n<color=#B900F8>Telekomunikacja</color>\t\t" + CategoriesProgressController.Instance.sciences[1].level +
             "\n<color=#CD1725>Transport</color>\t\t\t" + CategoriesProgressController.Instance.sciences[2].level +
