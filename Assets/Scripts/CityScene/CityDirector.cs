@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using Random = UnityEngine.Random;
 
 public class CityDirector : MonoBehaviour
 {
@@ -13,9 +14,9 @@ public class CityDirector : MonoBehaviour
     public static int IgnoreCameraRaycastLayerID = 8;
     
     private readonly BuildingField[,] m_cityGrid = new BuildingField[CityGridSize, CityGridSize];
-
+    private AudioSource audioSource;
     public BuildingField[,] CityGrid { get => m_cityGrid; }
-
+    public AudioClip[] buildingSounds;
     protected LastSelectedBuilding m_lastSelectedBuilding;
     public LastSelectedBuilding SelectedBuilding => m_lastSelectedBuilding;
     protected ComboDisplayerComponent m_comboDisplayerComponent;
@@ -35,6 +36,8 @@ public class CityDirector : MonoBehaviour
             Instance = this;
         else
             Destroy(this.gameObject);
+
+        audioSource = GetComponent<AudioSource>();
 
         int roadX = 5;
         int roadX2 = 10;
@@ -103,6 +106,10 @@ public class CityDirector : MonoBehaviour
             Debug.Log("Field taken");
             return;
         }
+
+        audioSource.PlayOneShot(buildingSounds[Random.Range(0, buildingSounds.Length)]);
+        //AudioSource.PlayClipAtPoint(buildingSounds[Random.Range(0, buildingSounds.Length)], Vector3.zero);
+
         Building b = m_lastSelectedBuilding.SelectedBuilding;
 
         b.transform.parent = null;
@@ -147,7 +154,7 @@ public class CityDirector : MonoBehaviour
             CategoriesProgressController.Instance.AddPointsToScience(b.BuildingCategory, value);
         }
 
-        new PointsComboVisualManager(listToFill.ToArray(), pointsToAdd.ToArray());
+        new PointsComboVisualManager(listToFill.ToArray(), pointsToAdd.ToArray(), audioSource);
     }
 
     public void RecalculateGrid(bool updateScore = false)
