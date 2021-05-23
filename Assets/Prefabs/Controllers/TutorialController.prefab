@@ -192,10 +192,11 @@ MonoBehaviour:
     - dialogueSprite: {fileID: 0}
       dialogueMsg: "Z po\u015Br\xF3d wielu firm zajmuj\u0105cych si\u0119 wydobyciem
         miedzi, wybrano nas - <color=#7CC7FF>MHGK</color> - do misji uratowania Ziemii.
-        Wraz z potrzebnym sprz\u0119tem i lud\u017Ami zostali\u015Bmy wys\u0142ani
-        na odleg\u0142\u0105 o 344 lata \u015Bwietlne planet\u0119 <color=#7CC7FF>Drara
-        2J4T</color>. Zarz\u0105d Ziemski wys\u0142a\u0142 wraz z nami pani\u0105
-        profesor kosmicznej geologii."
+        Naszym celem b\u0119dzie przesy\u0142anietego cennego materia\u0142u  na
+        planet\u0119 macierzyst\u0105 . Wraz z potrzebnym sprz\u0119tem i lud\u017Ami
+        zostali\u015Bmy wys\u0142ani na odleg\u0142\u0105 o 344 lata \u015Bwietlne
+        planet\u0119 <color=#7CC7FF>Drara 2J4T</color>. Zarz\u0105d Ziemski wys\u0142a\u0142
+        wraz z nami pani\u0105 profesor kosmicznej geologii."
     - dialogueSprite: {fileID: 21300000, guid: f91d4cb4b0ef90e4bb707a453067b02c, type: 3}
       dialogueMsg: "Witaj, nazywam si\u0119 <color=#7CC7FF>Minerva Shepard</color>.
         Jestem tutaj w imieniu Zarz\u0105du Ziemskiego aby pom\xF3c Ci przeprowadzi\u0107
@@ -210,12 +211,12 @@ MonoBehaviour:
     misjeZZiemi: 0
   - name: PustyInventoryTutorial
     dialogues:
-    - dialogueSprite: {fileID: 21300000, guid: 3f9354d9f1b3fd045a5286d4cc41e21b, type: 3}
-      dialogueMsg: Hej byku, masz puste inventory.
-    - dialogueSprite: {fileID: 21300000, guid: 9a7b213f2ee592c40aeccf1771b3513f, type: 3}
-      dialogueMsg: Kliknij se tu byczku i kup nowe paczki.
-    - dialogueSprite: {fileID: 21300000, guid: c886fb8dd2fe2a74493214e38a11ea07, type: 3}
-      dialogueMsg: "Kontynuuj dobr\u0105 robot\u0119 byczku, z pierogiem."
+    - dialogueSprite: {fileID: 0}
+      dialogueMsg: "Dobra robota. Aby kontynuowa\u0107 rozw\xF3j naszego Centrum
+        Badawczego b\u0119dziemy potrzebowa\u0107 wi\u0119cej budynk\xF3w. Wydobyt\u0105
+        mied\u017A mo\u017Cesz wymienia\u0107 na <color=#7CC7FF>Pakiety Przemys\u0142owe</color>.
+        Znajdziesz je pod przyciskiem <color=#7CC7FF> \"Inwestycje\" po prawej stronie
+        ekranu</color>. Kliknij go teraz."
     hasFired: 0
     chainSequenceID: -1
     doEkspedycji: 0
@@ -258,10 +259,10 @@ MonoBehaviour:
   - name: PoWyslaniuEkspedycjiTutorial
     dialogues:
     - dialogueSprite: {fileID: 21300000, guid: 17e93189a9287a24ba5b23411c3bbf1d, type: 3}
-      dialogueMsg: "Je\u017Celi najedziesz teraz na pole z wys\u0142an\u0105 ekspedycj\u0105,
-        dowiesz si\u0119 za ile <color=#7CC7FF>miesi\u0119cy</color> powr\xF3c\u0105.
-        Aktualny dat\u0105 mo\u017Cesz zobaczy\u0107 w <color=#7CC7FF>lewym g\xF3rnym
-        rogu</color>."
+      dialogueMsg: "Dobra robota. Je\u017Celi najedziesz teraz na pole z wys\u0142an\u0105
+        ekspedycj\u0105, dowiesz si\u0119 za ile <color=#7CC7FF>miesi\u0119cy</color>
+        powr\xF3c\u0105. Aktualny dat\u0119 mo\u017Cesz zobaczy\u0107 w <color=#7CC7FF>lewym
+        g\xF3rnym rogu</color>."
     - dialogueSprite: {fileID: 21300000, guid: f91d4cb4b0ef90e4bb707a453067b02c, type: 3}
       dialogueMsg: "Podczas czekania na powr\xF3t ekspedycji, wr\xF3\u0107my na map\u0119
         <color=#7CC7FF>Centrum Badawczego</color>. Poka\u017C\u0119 Ci w jaki spos\xF3b
@@ -277,10 +278,10 @@ MonoBehaviour:
     misjeZZiemi: 0
   - name: PrzyKupowaniuPaczkiTutorial
     dialogues:
-    - dialogueSprite: {fileID: 21300000, guid: 3f9354d9f1b3fd045a5286d4cc41e21b, type: 3}
-      dialogueMsg: "Zajebista paka byku, teraz we\u017A j\u0105 otw\xF3rz."
-    - dialogueSprite: {fileID: 21300000, guid: 3f9354d9f1b3fd045a5286d4cc41e21b, type: 3}
-      dialogueMsg: "A potem klepnij gdzie\u015B na mapie essa."
+    - dialogueSprite: {fileID: 21300000, guid: f91d4cb4b0ef90e4bb707a453067b02c, type: 3}
+      dialogueMsg: "Super. Kupi\u0142e\u015B swoj\u0105 pierwsz\u0105 <color=#7CC7FF>Paczk\u0119
+        Przemys\u0142ow\u0105</color>. Otw\xF3rz j\u0105 teraz klikaj\u0105c na przycisk
+        <color=#7CC7FF>\"Otw\xF3rz paczk\u0119\" w prawym dolnym rogu</color>."
     hasFired: 0
     chainSequenceID: -1
     doEkspedycji: 0
@@ -291,13 +292,13 @@ MonoBehaviour:
     misjeZZiemi: 0
   - name: PoOtrzymaniuRaportuTutorial
     dialogues:
-    - dialogueSprite: {fileID: 21300000, guid: 3f9354d9f1b3fd045a5286d4cc41e21b, type: 3}
-      dialogueMsg: "Ty patrz, wr\xF3cili g\xF3rnicy, we\u017A no id\u017A tam zobacz
-        co maj\u0105"
-    - dialogueSprite: {fileID: 21300000, guid: 3f9354d9f1b3fd045a5286d4cc41e21b, type: 3}
-      dialogueMsg: O chuj.
-    - dialogueSprite: {fileID: 21300000, guid: 9a7b213f2ee592c40aeccf1771b3513f, type: 3}
-      dialogueMsg: "To mied\u017A."
+    - dialogueSprite: {fileID: 21300000, guid: 17e93189a9287a24ba5b23411c3bbf1d, type: 3}
+      dialogueMsg: "Oho, wr\xF3ci\u0142a nasza ekspedycja g\xF3rnicza. Kliknij na
+        przycisk <color=#7CC7FF>\"Do Mapy G\xF3rniczej</color> i odbierz raport z
+        wyprawy. Mo\u017Cesz od razu wys\u0142a\u0107 wolny zesp\xF3\u0142 g\xF3rniczy
+        na kolejn\u0105 ekspedycj\u0119. Zauwa\u017C, \u017Ce zasoby miedzi kurcz\u0105
+        si\u0119, dlatego bardzo jest wa\u017Cne aby\u015B inwestowa\u0142 w <color=yellow>Energetyk\u0119</color>
+        aby zwi\u0119ksza\u0107 zasi\u0119 ekspedycji."
     hasFired: 0
     chainSequenceID: -1
     doEkspedycji: 0
@@ -315,12 +316,11 @@ MonoBehaviour:
         do przemys\u0142u</color>."
     - dialogueSprite: {fileID: 21300000, guid: f91d4cb4b0ef90e4bb707a453067b02c, type: 3}
       dialogueMsg: "Pojedy\u0144czy budynek daje <color=#7CC7FF>1 punkt post\u0119pu</color>
-        w kategorii z kt\xF3rej pochodzi. Dodatkowo stawianie budynk\xF3w z <color=#7CC7FF>tej
-        samej kategorii</color> daje dodatkowo <color=#7CC7FF>1 punkt post\u0119pu</color>.
+        w kategorii z kt\xF3rej pochodzi. Dodatkowo \u0142\u0105czenie budynk\xF3w
+        z <color=#7CC7FF>tej samej kategorii</color> daje wi\u0119cej punkt\xF3w.
         Je\u017Celi zerkniesz na <color=#7CC7FF>opis budynku</color>, zobaczysz dodatkowe
-        konstrukcje z innych kategorii z kt\xF3rymi <color=#7CC7FF>dany budynek wchodzi
-        w bonusow\u0105 interakcj\u0119</color>."
-    hasFired: 0
+        konstrukcje z kt\xF3rymi <color=#7CC7FF>dany budynek \u0142\u0105czy si\u0119</color>. "
+    hasFired: 1
     chainSequenceID: -1
     doEkspedycji: 0
     doMiasta: 0
