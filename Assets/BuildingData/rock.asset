@@ -15,7 +15,7 @@ MonoBehaviour:
   thisBuildingID: rock
   description: This is rock
   buildingIDs:
-  - rock
+  - nicniekombdeklu
   buildingBoosts: 00000000
   pointValue: 0
   pointCategory: 0
