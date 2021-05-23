@@ -94,7 +94,7 @@ public class SceneFader : MonoBehaviour
 		img.raycastTarget = false;
 		Debug.Log(TutorialController.Instance.currentSequenceIndex);
 
-		if (TutorialController.Instance.currentSequenceIndex == 9)
+		if (TutorialController.Instance.currentSequenceIndex == 6)
 			TutorialController.Instance.DisplaySequence(10);
 		else
 			OnCityTransition?.Invoke(9);
