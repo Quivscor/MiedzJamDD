@@ -19,6 +19,7 @@ namespace ExpeditionMap
         private Animator popupAnimator;
 
         public AudioClip[] placeExpedition;
+        public AudioClip onRaportReceivedSound;
         public AudioSource audioSource;
 
         private FreeExpeditionsPopup newPopup;
@@ -89,6 +90,8 @@ namespace ExpeditionMap
 
             newRaportsButton?.SetActive(true);
             newRaportsInCitySceneButton?.SetActive(true);
+            audioSource.PlayOneShot(onRaportReceivedSound);
+
             popupAnimator.SetTrigger("ShowPopup");
         }
 

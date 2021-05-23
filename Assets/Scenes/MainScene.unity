@@ -72026,6 +72026,9 @@ MonoBehaviour:
   placeExpedition:
   - {fileID: 8300000, guid: e44329fa9921ebf44ba97d8f8d74442e, type: 3}
   - {fileID: 8300000, guid: 460fb4ed2763a294dae11223d9d89b4f, type: 3}
+  onRaportReceivedSound: {fileID: 8300000, guid: cec8f2b17ba539b459e40e79b4c6f545,
+    type: 3}
+  audioSource: {fileID: 0}
 --- !u!4 &1956205568
 Transform:
   m_ObjectHideFlags: 0
