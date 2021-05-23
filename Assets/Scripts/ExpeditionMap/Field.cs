@@ -185,6 +185,9 @@ namespace ExpeditionMap
             {
                 normalModel?.SetActive(false);
                 exploredModel?.SetActive(true);
+                outline.enabled = false;
+                outline = exploredModel?.GetComponent<Outline>();
+                outline.enabled = false;
             }
         }
 
