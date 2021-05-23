@@ -51,6 +51,8 @@ public class EndGameDisplay : MonoBehaviour
 
     private string GenerateRanking()
     {
+        float score = 0;
+
         return "Mateusz Zawisza";
     }
 }
