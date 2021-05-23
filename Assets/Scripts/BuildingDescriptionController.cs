@@ -11,6 +11,7 @@ public class BuildingDescriptionController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI categoryText;
     [SerializeField] private TextMeshProUGUI descriptionText;
     [SerializeField] private TextMeshProUGUI bonusesText;
+    [SerializeField] private TextMeshProUGUI otrzymujeBonusyOd;
 
     private void Awake()
     {
@@ -34,6 +35,11 @@ public class BuildingDescriptionController : MonoBehaviour
 
     public void UpdateUI(BuildingEventData buildingEventData)
     {
+        if (buildingEventData.buildingName == "")
+            otrzymujeBonusyOd.gameObject.SetActive(false);
+        else
+            otrzymujeBonusyOd.gameObject.SetActive(true);
+
         buildingNameText.text = buildingEventData.buildingName;
         categoryText.text = buildingEventData.category;
         descriptionText.text = buildingEventData.description;

@@ -62,7 +62,7 @@ namespace ExpeditionMap
 
             raportData.discoveredFieldsText = discoveredFields + "";
 
-            raportData.contextText = "No i co pajacu?"; //Change to static method for generating context or something
+            raportData.contextText = GenerateRaportContent(); //Change to static method for generating context or something
 
             raportData.additionalActivity = additionalActivityOccured;
 
@@ -125,6 +125,32 @@ namespace ExpeditionMap
             //Add smth to managers or increase smth
             additionalActivityOccured = false;
             additionalActivityOutput = "Nothing happened";
+        }
+
+        public string GenerateRaportContent()
+        {
+            int lengthFluffOption = Random.Range(0, 4);
+            string expeditionLength = "";
+            switch (lengthFluffOption)
+            {
+                case 0:
+                    expeditionLength = "Ekspedycja potrwała " + timeToFinishExpedition + " miesięcy.\n";
+                    break;
+                case 1:
+                    expeditionLength = "Prace kopalniane trzymały górników w pracy przez " + timeToFinishExpedition + " miesięcy.\n";
+                    break;
+                case 2:
+                    expeditionLength = "" + timeToFinishExpedition + ".\n";
+                    break;
+                case 3:
+                    expeditionLength = "" + timeToFinishExpedition + ".\n";
+                    break;
+            }
+
+            string miningStory = "Prace przebiegły normalnie.";
+
+
+            return expeditionLength + miningStory;
         }
     }
 }

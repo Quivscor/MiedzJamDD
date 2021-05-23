@@ -9,6 +9,14 @@ public class BuildingEventData
     public string description;
     public string bonuses;
 
+    public BuildingEventData() 
+    { 
+        buildingName = "";
+        category = "";
+        description = "";
+        bonuses = "";
+    }
+
     public BuildingEventData(string buildingName, CategoriesProgressController.ScienceCategory category, string description, string bonuses)
     {
         this.buildingName = GetCategoryColor(category) + buildingName + "</color>";
