@@ -347,6 +347,15 @@ MonoBehaviour:
     type: 2}
   m_buildingData: {fileID: 11400000, guid: ba171b0149cd7d046a70f113e4ceb192, type: 2}
   addedPointsText: {fileID: 1740641529888435684}
+  objectsToChangeLayer:
+  - {fileID: 8998026689740522055}
+  - {fileID: 2197442968551656607}
+  - {fileID: 8397871105415051933}
+  - {fileID: 813191531271710705}
+  - {fileID: 3358872077922653514}
+  - {fileID: 6163102855804475543}
+  - {fileID: 7011248418130171373}
+  - {fileID: 8063064257241516615}
 --- !u!95 &7356346996036259238
 Animator:
   serializedVersion: 3

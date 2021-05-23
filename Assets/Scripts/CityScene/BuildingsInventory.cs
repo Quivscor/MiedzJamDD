@@ -68,6 +68,7 @@ public class BuildingsInventory : MonoBehaviour
         building.transform.localPosition = slotPosition;
 
         Building bScr = building.GetComponent<Building>();
+        bScr?.ChangeLayer(13);
 
         BuildingDescriptionController.Instance.AddToEvent(bScr);
         this.buildings.Add(bScr);

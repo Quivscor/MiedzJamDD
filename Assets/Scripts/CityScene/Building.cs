@@ -208,4 +208,13 @@ public class Building : MonoBehaviour, IPointerClickHandler, ISelectHandler
     }
 
     #endregion
+
+    public GameObject[] objectsToChangeLayer;
+
+    public void ChangeLayer(int layer)
+    {
+        if (objectsToChangeLayer != null)
+            foreach (GameObject go in objectsToChangeLayer)
+                go.layer = layer;
+    }
 }

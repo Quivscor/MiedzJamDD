@@ -20,7 +20,9 @@ public class LastSelectedBuilding : MonoBehaviour
         m_selectedBuilding = b;
         if (m_selectedBuildingMock != null)
             Destroy(m_selectedBuildingMock.gameObject);
+
         m_selectedBuildingMock = Instantiate(m_selectedBuilding, mockHidingPosition, Quaternion.identity, this.transform);
+        m_selectedBuildingMock?.ChangeLayer(0);
         m_selectedBuildingMock.gameObject.layer = CityDirector.IgnoreCameraRaycastLayerID;
         //m_selectedBuildingMock.GetComponent<MeshRenderer>().material.color = new Color(1, 1, 1, .5f);
     }
