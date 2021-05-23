@@ -35829,6 +35829,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 427278975626303010}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1605081995 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5232628209823692814, guid: 116c2ff76ec42444a903bfe2aa8838c6,
+    type: 3}
+  m_PrefabInstance: {fileID: 427278975626303010}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1605081994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1605338199 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3959926184340813690, guid: 8aab5efa39f9ce24c9d65efd3a973f3c,
@@ -42847,21 +42859,6 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 197744705751548224, guid: 6e89962b28899a34580d55142bc56c3f,
         type: 3}
-      propertyPath: sequences.Array.size
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 197744705751548224, guid: 6e89962b28899a34580d55142bc56c3f,
-        type: 3}
-      propertyPath: sequences.Array.data[9].dialogues.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 197744705751548224, guid: 6e89962b28899a34580d55142bc56c3f,
-        type: 3}
-      propertyPath: misjeZZiemi
-      value: 
-      objectReference: {fileID: 66309708}
-    - target: {fileID: 197744705751548224, guid: 6e89962b28899a34580d55142bc56c3f,
-        type: 3}
       propertyPath: doEkspedycji
       value: 
       objectReference: {fileID: 66309711}
@@ -42879,7 +42876,7 @@ PrefabInstance:
         type: 3}
       propertyPath: paczka
       value: 
-      objectReference: {fileID: 427278975626303011}
+      objectReference: {fileID: 1605081995}
     - target: {fileID: 197744705751548224, guid: 6e89962b28899a34580d55142bc56c3f,
         type: 3}
       propertyPath: zakonczMiesiac
@@ -42887,40 +42884,9 @@ PrefabInstance:
       objectReference: {fileID: 66309709}
     - target: {fileID: 197744705751548224, guid: 6e89962b28899a34580d55142bc56c3f,
         type: 3}
-      propertyPath: sequences.Array.data[9].name
-      value: DoMiastaTutorial
-      objectReference: {fileID: 0}
-    - target: {fileID: 197744705751548224, guid: 6e89962b28899a34580d55142bc56c3f,
-        type: 3}
-      propertyPath: sequences.Array.data[9].dialogues.Array.data[0].dialogueSprite
+      propertyPath: misjeZZiemi
       value: 
-      objectReference: {fileID: 21300000, guid: f91d4cb4b0ef90e4bb707a453067b02c,
-        type: 3}
-    - target: {fileID: 197744705751548224, guid: 6e89962b28899a34580d55142bc56c3f,
-        type: 3}
-      propertyPath: sequences.Array.data[9].dialogues.Array.data[0].dialogueMsg
-      value: "Przy\u015Bwieca nam cel wydobycia miedzi"
-      objectReference: {fileID: 0}
-    - target: {fileID: 197744705751548224, guid: 6e89962b28899a34580d55142bc56c3f,
-        type: 3}
-      propertyPath: sequences.Array.data[9].chainSequenceID
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 197744705751548224, guid: 6e89962b28899a34580d55142bc56c3f,
-        type: 3}
-      propertyPath: sequences.Array.data[0].dialogues.Array.data[2].dialogueMsg
-      value: "Witaj, nazywam si\u0119 <color=#7CC7FF>Minerva Shepard</color>. Jestem
-        tutaj w imieniu Zarz\u0105du Ziemskiego aby pom\xF3c Ci przeprowadzi\u0107
-        esktrakcj\u0119 miedzi z planety. Zacznijmy od podstaw."
-      objectReference: {fileID: 0}
-    - target: {fileID: 197744705751548224, guid: 6e89962b28899a34580d55142bc56c3f,
-        type: 3}
-      propertyPath: sequences.Array.data[4].dialogues.Array.data[0].dialogueMsg
-      value: "Je\u017Celi najedziesz teraz na pole z wys\u0142an\u0105 ekspedycj\u0105,
-        dowiesz si\u0119 za ile <color=#7CC7FF>miesi\u0119cy</color> powr\xF3c\u0105.
-        Aktualny dat\u0105 mo\u017Cesz zobaczy\u0107 w <color=#7CC7FF>lewym g\xF3rnym
-        rogu</color>."
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 66309708}
     - target: {fileID: 197744705751548225, guid: 6e89962b28899a34580d55142bc56c3f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -43147,18 +43113,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 116c2ff76ec42444a903bfe2aa8838c6, type: 3}
---- !u!114 &427278975626303011 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 427278973867137090, guid: 116c2ff76ec42444a903bfe2aa8838c6,
-    type: 3}
-  m_PrefabInstance: {fileID: 427278975626303010}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &427278975626303012 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2822853080798411878, guid: 116c2ff76ec42444a903bfe2aa8838c6,
