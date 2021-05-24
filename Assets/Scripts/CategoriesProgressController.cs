@@ -51,7 +51,7 @@ public class CategoriesProgressController : MonoBehaviour
             int difference = (sciences[(int)scienceCategory].currentExp + value) - sciences[(int)scienceCategory].expToNextLevel;
             sciences[(int)scienceCategory].level++;
 
-            if (scienceCategory == ScienceCategory.Społeczność)
+            if (scienceCategory == ScienceCategory.Community)
                 FindObjectOfType<FreeExpeditionsPopup>().OnSwitchMaps();
 
             sciences[(int)scienceCategory].currentExp = difference;
@@ -102,10 +102,10 @@ public class CategoriesProgressController : MonoBehaviour
     // PLACEHOLDERS
     public enum ScienceCategory
     {
-        Energetyka,
-        Telekomunikacja,
+        Energetics,
+        Telecommunication,
         Transport,
-        Społeczność,
+        Community,
     }
 
     [System.Serializable]

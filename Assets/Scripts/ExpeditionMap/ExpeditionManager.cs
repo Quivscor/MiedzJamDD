@@ -44,7 +44,7 @@ namespace ExpeditionMap
 
         private void Start()
         {
-            currentAvailableTeams = (int)CategoriesProgressController.Instance.sciences[(int)CategoriesProgressController.ScienceCategory.Społeczność].level;
+            currentAvailableTeams = (int)CategoriesProgressController.Instance.sciences[(int)CategoriesProgressController.ScienceCategory.Community].level;
 
             numberOfFreeTeamsText.text = currentAvailableTeams + "";
 
@@ -103,8 +103,9 @@ namespace ExpeditionMap
 
         public void OnCategoryLevelUp(CategoriesProgressController.ScienceCategory category)
         {
-            if (category == CategoriesProgressController.ScienceCategory.Społeczność)
+            if (category == CategoriesProgressController.ScienceCategory.Community)
             {
+                newPopup.OnSwitchMaps(); //no map switch, but hides on no more available expeditions
                 AddFreeTeam();
             }
         }
@@ -127,7 +128,7 @@ namespace ExpeditionMap
 
         public bool CanSendExpedition(Field field)
         {
-            return field.DistanceToRoot <= (int)CategoriesProgressController.Instance.sciences[(int)CategoriesProgressController.ScienceCategory.Energetyka].level * TeamStatsModifiers.DistanceModifier && field.HasBeenDiscovered && field.CurrentCopper > 0;
+            return field.DistanceToRoot <= (int)CategoriesProgressController.Instance.sciences[(int)CategoriesProgressController.ScienceCategory.Energetics].level * TeamStatsModifiers.DistanceModifier && field.HasBeenDiscovered && field.CurrentCopper > 0;
         }
 
         #region Buttons

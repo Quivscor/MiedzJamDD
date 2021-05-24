@@ -29,13 +29,13 @@ public class BuildingEventData
     {
         switch(category)
         {
-            case CategoriesProgressController.ScienceCategory.Energetyka:
+            case CategoriesProgressController.ScienceCategory.Energetics:
                 return "<color=#FFFA34>";
-            case CategoriesProgressController.ScienceCategory.Telekomunikacja:
+            case CategoriesProgressController.ScienceCategory.Telecommunication:
                 return "<color=#B900F8>";
             case CategoriesProgressController.ScienceCategory.Transport:
                 return "<color=#CD1725>";
-            case CategoriesProgressController.ScienceCategory.Społeczność:
+            case CategoriesProgressController.ScienceCategory.Community:
                 return "<color=#00B917>";
         }
 
