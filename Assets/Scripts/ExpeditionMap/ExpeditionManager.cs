@@ -18,6 +18,7 @@ namespace ExpeditionMap
         public Action<int> OnReceiveRaport;
         private Animator popupAnimator;
 
+        bool playedSound = false;
         public AudioClip[] placeExpedition;
         public AudioClip onRaportReceivedSound;
         public AudioSource audioSource;
@@ -84,13 +85,18 @@ namespace ExpeditionMap
 
         public void ExpeditionFinished(RaportData raportData)
         {
+            playedSound = false;
             waitingRaports.Add(raportData);
 
             OnReceiveRaport?.Invoke(6); // On receiving raport tutorial
 
             newRaportsButton?.SetActive(true);
             newRaportsInCitySceneButton?.SetActive(true);
-            audioSource.PlayOneShot(onRaportReceivedSound);
+            if(!playedSound)
+            {
+                audioSource.PlayOneShot(onRaportReceivedSound);
+                playedSound = true;
+            }
 
             popupAnimator.SetTrigger("ShowPopup");
         }
