@@ -194,7 +194,7 @@ MonoBehaviour:
         miedzi, wybrano nas - <color=#7CC7FF>MHGK</color> - do misji uratowania Ziemii.
         Naszym celem b\u0119dzie przesy\u0142anie tego cennego materia\u0142u na
         planet\u0119 macierzyst\u0105. Wraz z potrzebnym sprz\u0119tem i lud\u017Ami
-        zostali\u015Bmy wys\u0142ani na odleg\u0142\u0105 o 344 lata \u015Bwietlne
+        zostali\u015Bmy wys\u0142ani na odleg\u0142\u0105 o 3424 lata \u015Bwietlne
         planet\u0119 <color=#7CC7FF>Drara 2J4T</color>. Zarz\u0105d Ziemski wys\u0142a\u0142
         wraz z nami pani\u0105 profesor kosmicznej geologii."
     - dialogueSprite: {fileID: 21300000, guid: f91d4cb4b0ef90e4bb707a453067b02c, type: 3}
@@ -338,8 +338,10 @@ MonoBehaviour:
     - dialogueSprite: {fileID: 21300000, guid: f91d4cb4b0ef90e4bb707a453067b02c, type: 3}
       dialogueMsg: "Aby pozyskiwa\u0107 mied\u017A, musimy wysy\u0142a\u0107 <color=#7CC7FF>ekspedycje
         g\xF3rnicze</color> poza obszar naszego centrum badawczego. Kliknij teraz
-        na dowolne pole w zasi\u0119gu naszych maszyn (z niebiesk\u0105 obw\xF3dk\u0105)
-        i <color=#7CC7FF>potwierd\u017A wys\u0142anie swojej pierwszej ekspedycji</color>."
+        na pole oddalone o 1 kratk\u0119 od centrum (z niebiesk\u0105 obw\xF3dk\u0105)
+        i <color=#7CC7FF>potwierd\u017A wys\u0142anie swojej pierwszej ekspedycji</color>.
+        Zasi\u0119g ekspedycji b\u0119dziesz m\xF3g\u0142 zwi\u0119ksza\u0107 rozwijaj\u0105c
+        <color=yellow>Energetyk\u0119</color>"
     hasFired: 0
     chainSequenceID: -1
     doEkspedycji: 0

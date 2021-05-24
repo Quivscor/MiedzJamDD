@@ -200,7 +200,7 @@ namespace ExpeditionMap
             isSelected = true;
             fieldUI?.HideFieldInfo();
             //fieldUI?.ShowExpeditionInfo(true);
-            ExpeditionPopUp.Instance.SetupFieldInfo(this, (int)CategoriesProgressController.Instance.sciences[(int)CategoriesProgressController.ScienceCategory.Transport].level * TeamStatsModifiers.LoadModifier, DistanceToRoot + 2);
+            ExpeditionPopUp.Instance.SetupFieldInfo(this, (int)currentCopper, DistanceToRoot + 2);
         }
 
         public void OnDeselect()

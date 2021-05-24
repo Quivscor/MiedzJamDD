@@ -15,8 +15,9 @@ public class EarthProgressController : MonoBehaviour
     [SerializeField] private GameObject [] redBars;
     [SerializeField] private GameObject [] missionObjects;
 
-    private int currentCost = 100;
+    private int currentCost = 200;
     private bool [] finishedMissions;
+    private int currentMission;
 
     public Action<int> OnMissionsFromEarthWindowOpen;
 
@@ -25,6 +26,7 @@ public class EarthProgressController : MonoBehaviour
         if (!Instance)
             Instance = this;
 
+        currentMission = 0;
         finishedMissions = new bool[5];
         for(int i = 0; i < finishedMissions.Length; i++)
         {
@@ -55,6 +57,7 @@ public class EarthProgressController : MonoBehaviour
             finishedMissions[category] = true;
             currentCost *= (int)(costIncreaseMutliplier);
             CheckForEndGame();
+            currentMission++;
             UpdateCosts();
             UpdateViability();
         }
@@ -75,7 +78,6 @@ public class EarthProgressController : MonoBehaviour
     public void EndGame()
     {
         StartCoroutine(EndGameFade());
-        Debug.Log("BRAWO WYGRAŁEŚ");
     }
 
     public IEnumerator EndGameFade()
@@ -91,12 +93,14 @@ public class EarthProgressController : MonoBehaviour
     {
         for (int i = 0; i < missionObjects.Length; i++)
         {
-            if(!finishedMissions[i])
+            if(currentMission == i)
             {
                 costTexts[i].text = "Zakończ (" + currentCost + ")";
             }
-            else
+            else if(finishedMissions[i])
                 costTexts[i].text = "Zakończono";
+            else
+                costTexts[i].text = "Zablokowane";
         }
 
     }
@@ -105,7 +109,7 @@ public class EarthProgressController : MonoBehaviour
 
         for (int i = 0; i < missionObjects.Length; i++)
         {
-            if (!CanFinish() || finishedMissions[i])
+            if (!CanFinish() || finishedMissions[i] || currentMission != i)
             {
                 missionObjects[i].GetComponentInChildren<Button>().interactable = false;
                 redBars[i].SetActive(false);
@@ -116,6 +120,9 @@ public class EarthProgressController : MonoBehaviour
 
             if(finishedMissions[i])
                 icons[i].color = new Color(0.4235294f, 0.4235294f, 0.4235294f, 0.72f);
+
+            if (currentMission == i)
+                icons[i].color = new Color(0.4858491f, 0.7803953f, 1f, 1f);
         }
 
     }

@@ -58,6 +58,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a67704abc59f7f847922dabffecfaa14, type: 2}
   - {fileID: 11400000, guid: 2d941255b9800b24595a8ea4d4176154, type: 2}
   - {fileID: 11400000, guid: 2059fee5fee2b4145993ee7a8d0807b9, type: 2}
+  - {fileID: 11400000, guid: 39fa4a9a6b862d94ca6a89654fa8f95a, type: 2}
+  - {fileID: 11400000, guid: e2774c846882a9e4d9446f0357c0a012, type: 2}
+  - {fileID: 11400000, guid: 1a2e9f8e70b20ea4994f40d0701a1a46, type: 2}
   currentLibrary: []
 --- !u!1 &5889907050471287563
 GameObject:
@@ -440,7 +443,7 @@ PrefabInstance:
     - target: {fileID: 6082941422881749904, guid: f1c40cc3ec27e7e4b920dfc0839ec6f5,
         type: 3}
       propertyPath: costIncreaseMutliplier
-      value: 2.5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6082941422881749904, guid: f1c40cc3ec27e7e4b920dfc0839ec6f5,
         type: 3}
@@ -784,7 +787,7 @@ PrefabInstance:
     - target: {fileID: 7364815004456953169, guid: 3ab6206a7f309f54f81116bff96606db,
         type: 3}
       propertyPath: sciences.Array.data[3].expToNextLevel
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7364815004456953169, guid: 3ab6206a7f309f54f81116bff96606db,
         type: 3}
@@ -889,7 +892,7 @@ PrefabInstance:
     - target: {fileID: 7364815004456953169, guid: 3ab6206a7f309f54f81116bff96606db,
         type: 3}
       propertyPath: costIncreaseMultiplier
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7364815004456953169, guid: 3ab6206a7f309f54f81116bff96606db,
         type: 3}
@@ -1062,6 +1065,21 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 843969822696745091, guid: 2f4360491e4c4c7459a31fbe036dac01,
+        type: 3}
+      propertyPath: m_MinValue
+      value: -20
+      objectReference: {fileID: 0}
+    - target: {fileID: 843969822696745091, guid: 2f4360491e4c4c7459a31fbe036dac01,
+        type: 3}
+      propertyPath: m_MaxValue
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 843969822696745091, guid: 2f4360491e4c4c7459a31fbe036dac01,
+        type: 3}
+      propertyPath: m_Value
+      value: -5
+      objectReference: {fileID: 0}
     - target: {fileID: 1634497540846775735, guid: 2f4360491e4c4c7459a31fbe036dac01,
         type: 3}
       propertyPath: m_text
@@ -1116,6 +1134,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Hover FillAmount
+      objectReference: {fileID: 0}
+    - target: {fileID: 2874934801431557740, guid: 2f4360491e4c4c7459a31fbe036dac01,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3131252748573579863, guid: 2f4360491e4c4c7459a31fbe036dac01,
         type: 3}
@@ -1422,6 +1445,16 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7573009504518281957, guid: 2f4360491e4c4c7459a31fbe036dac01,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7573009504518281957, guid: 2f4360491e4c4c7459a31fbe036dac01,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7596233852630962610, guid: 2f4360491e4c4c7459a31fbe036dac01,
         type: 3}
       propertyPath: m_Name
@@ -1481,6 +1514,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7827683175640960977, guid: 2f4360491e4c4c7459a31fbe036dac01,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7827683175640960977, guid: 2f4360491e4c4c7459a31fbe036dac01,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7827683175640960977, guid: 2f4360491e4c4c7459a31fbe036dac01,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8013690332046831750, guid: 2f4360491e4c4c7459a31fbe036dac01,
         type: 3}
@@ -1991,7 +2039,7 @@ PrefabInstance:
     - target: {fileID: 1480929084856965657, guid: 1034aad5643c3de4ebf95667a0e0c3f7,
         type: 3}
       propertyPath: startingCopper
-      value: 100000
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 1480929084856965657, guid: 1034aad5643c3de4ebf95667a0e0c3f7,
         type: 3}

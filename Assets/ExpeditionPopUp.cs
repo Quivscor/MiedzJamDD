@@ -19,10 +19,10 @@ public class ExpeditionPopUp : MonoBehaviour
     }
 
 
-    public void SetupFieldInfo(ExpeditionMap.Field field, int expectedCopper, int expectedTime)
+    public void SetupFieldInfo(ExpeditionMap.Field field, int currentCopper, int expectedTime)
     {
         curentField = field;
-        copperText.text = expectedCopper.ToString() + " miedzi";
+        copperText.text = CalculateExpectedCopper(currentCopper).ToString() + " miedzi";
         monthsText.text = expectedTime.ToString() + " miesięcy";
         holder.SetActive(true);
     }
@@ -34,6 +34,11 @@ public class ExpeditionPopUp : MonoBehaviour
 
     }
 
+    private int CalculateExpectedCopper(int currentCopper)
+    {
+        return (int)Mathf.Min((int)CategoriesProgressController.Instance.sciences[(int)CategoriesProgressController.ScienceCategory.Transport].level * TeamStatsModifiers.LoadModifier, currentCopper);
+
+    }
 
 
 }

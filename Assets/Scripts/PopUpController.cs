@@ -61,7 +61,7 @@ public class PopUpController : MonoBehaviour
         }
         if (scienceCategory == CategoriesProgressController.ScienceCategory.Telekomunikacja)
         {
-            popupText.text = "Zwiększyła się szansa na znalezienie dodatkowych pakietów";
+            popupText.text = "Zwiększyła się szansa na dodatkowe odkrycia podczas ekspedycji";
         }
         if (scienceCategory == CategoriesProgressController.ScienceCategory.Społeczność)
         {
