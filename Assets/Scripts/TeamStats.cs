@@ -24,9 +24,9 @@ public class TeamStats : MonoBehaviour
     {
         CategoriesProgressController.Instance.OnCategoryLevelUp += OnCategoryLevelUp;
 
-        maxDistance.text = (int)CategoriesProgressController.Instance.sciences[(int)CategoriesProgressController.ScienceCategory.Energetyka].level * TeamStatsModifiers.DistanceModifier + "";
+        maxDistance.text = (int)CategoriesProgressController.Instance.sciences[(int)CategoriesProgressController.ScienceCategory.Energetics].level * TeamStatsModifiers.DistanceModifier + "";
         maxLoadText.text = (int)CategoriesProgressController.Instance.sciences[(int)CategoriesProgressController.ScienceCategory.Transport].level * TeamStatsModifiers.LoadModifier + "";
-        chanceToDiscover.text = (int)CategoriesProgressController.Instance.sciences[(int)CategoriesProgressController.ScienceCategory.Telekomunikacja].level * TeamStatsModifiers.CommunicationModifier + "%";
+        chanceToDiscover.text = (int)CategoriesProgressController.Instance.sciences[(int)CategoriesProgressController.ScienceCategory.Telecommunication].level * TeamStatsModifiers.CommunicationModifier + "%";
     }
 
     public int AvailableDistance = 1;
@@ -36,13 +36,13 @@ public class TeamStats : MonoBehaviour
 
     public void OnCategoryLevelUp(CategoriesProgressController.ScienceCategory category)
     {
-        if (category == CategoriesProgressController.ScienceCategory.Energetyka)
+        if (category == CategoriesProgressController.ScienceCategory.Energetics)
             maxDistance.text = (int)CategoriesProgressController.Instance.sciences[(int)category].level * TeamStatsModifiers.DistanceModifier + "";
 
         if (category == CategoriesProgressController.ScienceCategory.Transport)
             maxLoadText.text = (int)CategoriesProgressController.Instance.sciences[(int)category].level * TeamStatsModifiers.LoadModifier + "";
 
-        if (category == CategoriesProgressController.ScienceCategory.Telekomunikacja)
-            chanceToDiscover.text = (int)CategoriesProgressController.Instance.sciences[(int)CategoriesProgressController.ScienceCategory.Telekomunikacja].level * TeamStatsModifiers.CommunicationModifier + "%";
+        if (category == CategoriesProgressController.ScienceCategory.Telecommunication)
+            chanceToDiscover.text = (int)CategoriesProgressController.Instance.sciences[(int)CategoriesProgressController.ScienceCategory.Telecommunication].level * TeamStatsModifiers.CommunicationModifier + "%";
     }
 }

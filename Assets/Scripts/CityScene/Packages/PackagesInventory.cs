@@ -160,7 +160,7 @@ public class PackagesInventory : MonoBehaviour
         OnBuyPackage?.Invoke(5); //Buying package tutorial
         UpdateButtonsInteractions();
 
-        AddPackage(ScienceCategory.Społeczność);
+        AddPackage(ScienceCategory.Community);
     }
 
     public void BuyEnergetykaPackage()
@@ -170,7 +170,7 @@ public class PackagesInventory : MonoBehaviour
         OnBuyPackage?.Invoke(5); //Buying package tutorial
         UpdateButtonsInteractions();
 
-        AddPackage(ScienceCategory.Energetyka);
+        AddPackage(ScienceCategory.Energetics);
     }
 
     public void BuyTelekomunikacjaPackage()
@@ -180,7 +180,7 @@ public class PackagesInventory : MonoBehaviour
         OnBuyPackage?.Invoke(5); //Buying package tutorial
         UpdateButtonsInteractions();
 
-        AddPackage(ScienceCategory.Telekomunikacja);
+        AddPackage(ScienceCategory.Telecommunication);
     }
 
     public void BuyTransportPackage()

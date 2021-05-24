@@ -189,7 +189,7 @@ namespace ExpeditionMap
             if (isRoot || isExpeditionTarget || !ExpeditionManager.Instance.CanSendExpedition() || !(currentCopper > 0))
                 return;
 
-            if (DistanceToRoot > (int)CategoriesProgressController.Instance.sciences[(int)CategoriesProgressController.ScienceCategory.Energetyka].level * TeamStatsModifiers.DistanceModifier)
+            if (DistanceToRoot > (int)CategoriesProgressController.Instance.sciences[(int)CategoriesProgressController.ScienceCategory.Energetics].level * TeamStatsModifiers.DistanceModifier)
             {
                 Debug.Log("Cannot reach field with given distance!");
                 return;

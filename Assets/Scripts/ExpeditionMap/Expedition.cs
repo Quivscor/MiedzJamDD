@@ -124,7 +124,7 @@ namespace ExpeditionMap
             //Implement later
             //Add smth to managers or increase smth
 
-            if (Random.Range(0, 100) < (int)CategoriesProgressController.Instance.sciences[(int)CategoriesProgressController.ScienceCategory.Telekomunikacja].level * TeamStatsModifiers.CommunicationModifier)
+            if (Random.Range(0, 100) < (int)CategoriesProgressController.Instance.sciences[(int)CategoriesProgressController.ScienceCategory.Telecommunication].level * TeamStatsModifiers.CommunicationModifier)
             {
                 additionalActivityOccured = true;
 
@@ -143,34 +143,41 @@ namespace ExpeditionMap
                             switch (textRandom)
                             {
                                 case 0:
-                                    additionalActivityOutput += "Dzięki wysoko rozwiniętej strukturze telekomunikacyjnej w trakcie ekspedycji dodatkowo udało się zmierzyć wydajność najnowszych części zamontowanych w naszych maszynach.\n";
+                                    //Dzięki wysoko rozwiniętej strukturze telekomunikacyjnej w trakcie ekspedycji dodatkowo udało się zmierzyć wydajność najnowszych części zamontowanych w naszych maszynach.
+                                    additionalActivityOutput += "Thanks to our highly developed telecommunication network, during the expedition we managed to measure performance of our newest parts in our new machines.\n";
                                     break;
                                 default:
-                                    additionalActivityOutput += "Wysoko rozwinięta struktura telekomunikacyjna pozwoliła na zbadanie i zoptymalizowanie działań górników.\n";
+                                    //Wysoko rozwinięta struktura telekomunikacyjna pozwoliła na zbadanie i zoptymalizowanie działań górników.
+                                    additionalActivityOutput += "Highly developed telecommunication network allowed us to examine and enhance the work of our miners.\n";
                                     break;
                             }
-                            additionalActivityOutput += "Rozwój kategorii <color=#FFFA34>" + (CategoriesProgressController.ScienceCategory)category + "</color> został zwiększony o <color=#FFFA34>" + pointsToAdd + "</color> " + (pointsToAdd > 1 ? "punkty." : "punkt.");
+                            //Rozwój kategorii <color=#FFFA34>" + (CategoriesProgressController.ScienceCategory)category + "</color> został zwiększony o <color=#FFFA34>" + pointsToAdd + "</color> " + (pointsToAdd > 1 ? "punkty." : "punkt.")
+                            additionalActivityOutput += "Development in <color=#FFFA34>" + (CategoriesProgressController.ScienceCategory)category + "</color> category was increased by <color=#FFFA34>" + pointsToAdd + "</color> " + (pointsToAdd > 1 ? "points." : "point.");
                             break;
                         case 1:
                             switch (textRandom)
                             {
                                 case 0:
-                                    additionalActivityOutput += "Zaawansowana struktura telekomunikacyjna pozwoliła dodatkowo usprawnić działanie radarów w trakcie ekspedycji.\n";
+                                    //Zaawansowana struktura telekomunikacyjna pozwoliła dodatkowo usprawnić działanie radarów w trakcie ekspedycji.
+                                    additionalActivityOutput += "Advanced telecommunication network allowed us to improve radar efficiency during expeditions.\n";
                                     break;
                                 default:
-                                    additionalActivityOutput += "W trakcie ekspedycji zarejestrowane zostały bliżej niezidentyfikowane sygnały.\n";
+                                    //W trakcie ekspedycji zarejestrowane zostały bliżej niezidentyfikowane sygnały.
+                                    additionalActivityOutput += "During expedtion we registered unidentified signals.\n";
                                     break;
                             }
-                            additionalActivityOutput += "Rozwój kategorii <color=#B900F8>" + (CategoriesProgressController.ScienceCategory)category + "</color> został zwiększony o <color=#B900F8>" + pointsToAdd + "</color> " + (pointsToAdd > 1 ? "punkty." : "punkt.");
+                            additionalActivityOutput += "Development in <color=#B900F8>" + (CategoriesProgressController.ScienceCategory)category + "</color> category was increased by <color=#B900F8>" + pointsToAdd + "</color> " + (pointsToAdd > 1 ? "points." : "point.");
                             break;
                         case 2:
                             switch (textRandom)
                             {
                                 case 0:
-                                    additionalActivityOutput += "Zaawansowana struktura telekomunikacyjna pozwoliła prześledzić i zoptymalizować trasę naszych maszyn.\n";
+                                    //Zaawansowana struktura telekomunikacyjna pozwoliła prześledzić i zoptymalizować trasę naszych maszyn.
+                                    additionalActivityOutput += "Advanced telecommunication network allowed us to track and improve routes of our machines.\n";
                                     break;
                                 default:
-                                    additionalActivityOutput += "Nasze radary wykryły i wyznaczyły nowe podziemne trasy dla naszych maszyn.\n";
+                                    //Nasze radary wykryły i wyznaczyły nowe podziemne trasy dla naszych maszyn.
+                                    additionalActivityOutput += "\n";
                                     break;
                             }
                             additionalActivityOutput += "Rozwój kategorii <color=#CD1725>" + (CategoriesProgressController.ScienceCategory)category + "</color> został zwiększony o <color=#CD1725>" + pointsToAdd + "</color> " + (pointsToAdd > 1 ? "punkty." : "punkt.");

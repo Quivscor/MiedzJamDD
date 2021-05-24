@@ -99,10 +99,10 @@ public class ComboDisplayerComponent : MonoBehaviour
         CategoriesProgressController.ScienceCategory[] categories = new CategoriesProgressController.ScienceCategory[4];
         int[] categoryPoints = new int[4];
 
-        categories[0] = CategoriesProgressController.ScienceCategory.Energetyka;
-        categories[1] = CategoriesProgressController.ScienceCategory.Telekomunikacja;
+        categories[0] = CategoriesProgressController.ScienceCategory.Energetics;
+        categories[1] = CategoriesProgressController.ScienceCategory.Telecommunication;
         categories[2] = CategoriesProgressController.ScienceCategory.Transport;
-        categories[3] = CategoriesProgressController.ScienceCategory.Społeczność;
+        categories[3] = CategoriesProgressController.ScienceCategory.Community;
 
         int extra = CityDirector.Instance.SelectedBuilding.SelectedBuildingMock.GetBonusFromNeighbors(pointedField.CityGridCoordinates, pointedField.GetNeighborsFromBuildingData());
         pointedField.DisplayInfo(extra, BuildingEventData.GetCategoryColor(CityDirector.Instance.SelectedBuilding.SelectedBuildingMock.BuildingCategory) ,CityDirector.Instance.SelectedBuilding.SelectedBuildingMock.BaseScore);

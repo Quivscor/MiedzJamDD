@@ -134,16 +134,16 @@ public class Building : MonoBehaviour, IPointerClickHandler, ISelectHandler
 
         switch (BuildingCategory)
         {
-            case CategoriesProgressController.ScienceCategory.Energetyka:
+            case CategoriesProgressController.ScienceCategory.Energetics:
                 addedPointsText.color = Color.yellow;
                 break;
-            case CategoriesProgressController.ScienceCategory.Telekomunikacja:
+            case CategoriesProgressController.ScienceCategory.Telecommunication:
                 addedPointsText.color = Color.magenta;
                 break;
             case CategoriesProgressController.ScienceCategory.Transport:
                 addedPointsText.color = Color.red;
                 break;
-            case CategoriesProgressController.ScienceCategory.Społeczność:
+            case CategoriesProgressController.ScienceCategory.Community:
                 addedPointsText.color = Color.green;
                 break;
         }
@@ -170,16 +170,16 @@ public class Building : MonoBehaviour, IPointerClickHandler, ISelectHandler
 
         switch (BuildingCategory)
         {
-            case CategoriesProgressController.ScienceCategory.Energetyka:
+            case CategoriesProgressController.ScienceCategory.Energetics:
                 addedPointsText.color = Color.yellow;
                 break;
-            case CategoriesProgressController.ScienceCategory.Telekomunikacja:
+            case CategoriesProgressController.ScienceCategory.Telecommunication:
                 addedPointsText.color = Color.magenta;
                 break;
             case CategoriesProgressController.ScienceCategory.Transport:
                 addedPointsText.color = Color.red;
                 break;
-            case CategoriesProgressController.ScienceCategory.Społeczność:
+            case CategoriesProgressController.ScienceCategory.Community:
                 addedPointsText.color = Color.green;
                 break;
         }

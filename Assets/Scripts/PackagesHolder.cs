@@ -30,6 +30,6 @@ public class PackagesHolder : MonoBehaviour
         }
 
         // default
-        return CategoriesProgressController.ScienceCategory.Energetyka;
+        return CategoriesProgressController.ScienceCategory.Energetics;
     }
 }

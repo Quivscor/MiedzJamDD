@@ -51,7 +51,7 @@ public class PopUpController : MonoBehaviour
     public void SetPopupText(CategoriesProgressController.ScienceCategory scienceCategory)
     {
         // Wartosci na sztywno, do zmiany potem > Czerpac z team stats
-        if(scienceCategory == CategoriesProgressController.ScienceCategory.Energetyka)
+        if(scienceCategory == CategoriesProgressController.ScienceCategory.Energetics)
         {
             popupText.text = "Zasięg ekspedycji zwiększył się o 1";
         }
@@ -59,11 +59,11 @@ public class PopUpController : MonoBehaviour
         {
             popupText.text = "Pojemność ekspedycji zwiększyła się o 100";
         }
-        if (scienceCategory == CategoriesProgressController.ScienceCategory.Telekomunikacja)
+        if (scienceCategory == CategoriesProgressController.ScienceCategory.Telecommunication)
         {
             popupText.text = "Zwiększyła się szansa na dodatkowe odkrycia podczas ekspedycji";
         }
-        if (scienceCategory == CategoriesProgressController.ScienceCategory.Społeczność)
+        if (scienceCategory == CategoriesProgressController.ScienceCategory.Community)
         {
             popupText.text = "Powstał nowy zespół do ekspedycji";
         }
