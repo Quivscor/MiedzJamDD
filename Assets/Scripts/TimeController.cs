@@ -38,7 +38,7 @@ public class TimeController : MonoBehaviour
     {
         totalMonths = 0;
         
-        currentMonth = MonthType.Styczeń;
+        currentMonth = MonthType.January;
         CityDirector.Instance.OnBuildingPlaced += NextDay;
         UpdateUI();
     }
@@ -53,14 +53,14 @@ public class TimeController : MonoBehaviour
         monthsDropDownText.text = CurrentMonth.ToString();
         dropDownAnimator.SetTrigger("DropDown");
 
-        if (CurrentMonth != MonthType.Grudzień)
+        if (CurrentMonth != MonthType.December)
         {
             currentMonth++;
             
         }
         else
         {
-            currentMonth = MonthType.Styczeń;
+            currentMonth = MonthType.January;
             years++;
             //OnFirstCommonDay?.Invoke();
         }
@@ -88,18 +88,18 @@ public class TimeController : MonoBehaviour
     // Polish signs in code ;_;
     public enum MonthType
     {
-        Styczeń,
-        Luty,
-        Marzec,
-        Kwiecień,
-        Maj,
-        Czerwiec,
-        Lipiec,
-        Sierpień,
-        Wrzesień,
-        Październik,
-        Listopad,
-        Grudzień
+        January,
+        February,
+        March,
+        April,
+        May,
+        June,
+        July,
+        August,
+        September,
+        October,
+        November,
+        December
     }
 
 }
